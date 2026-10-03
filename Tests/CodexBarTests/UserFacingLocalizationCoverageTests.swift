@@ -65,6 +65,22 @@ struct UserFacingLocalizationCoverageTests {
             "Sources/CodexBar/PreferencesSpendDashboardPane.swift": [
                 "Text(\"Partial estimate\")",
             ],
+            "Sources/CodexBar/PreferencesMenuPane.swift": [
+                "title: \"Stay Awake\",",
+            ],
+            "Sources/CodexBar/PreferencesTransferSection.swift": [
+                "Text(\"Portable Preferences\")",
+                "Button(\"Export…\")",
+                "Button(\"Import…\")",
+                "Text(\"Shortcuts\")",
+            ],
+            "Sources/CodexBar/ShareStatsCardView.swift": [
+                "Text(\"LOCAL SNAPSHOT\")",
+                "Label(\"LOCAL · AGGREGATE ONLY\"",
+            ],
+            "Sources/CodexBarWidget/WidgetTiles.swift": [
+                "String(describing: Text(reset, style: .relative))",
+            ],
             "Sources/CodexBar/PreferencesNotificationsPane.swift": [
                 "\"Credential expiry\"",
                 "\"Notify once when a provider account needs you to sign in again.\"",
