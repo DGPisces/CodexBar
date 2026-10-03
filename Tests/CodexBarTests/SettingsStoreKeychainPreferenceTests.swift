@@ -28,6 +28,9 @@ struct SettingsStoreKeychainPreferenceTests {
             let expectedCalls = behavior == .automatic ? initialCalls + ["login:true", "login:false"] : []
             #expect(calls == expectedCalls)
             #expect(defaults.object(forKey: AppGroupSupport.migrationVersionKey) == nil)
+            if behavior == .isolated {
+                #expect(defaults.object(forKey: "codexbar.legacySecretsMigrationCompleted") == nil)
+            }
         }
     }
 

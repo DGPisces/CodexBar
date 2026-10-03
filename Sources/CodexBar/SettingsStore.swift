@@ -360,7 +360,8 @@ final class SettingsStore {
             startupServices.refreshUserPlugins()
         }
         // Capture this before app-group/config migrations can create prior-installation state.
-        let hadExistingConfig = (try? configStore.load()) != nil
+        let existingConfig = try? configStore.load()
+        let hadExistingConfig = existingConfig != nil
         let hadPreviousInstallationState = hadExistingConfig || Self.hadPreviousAppLaunch(userDefaults: userDefaults)
         // Migration tests inject every dependency directly; ordinary settings tests must not discover user state.
         if startupBehavior == .automatic {
@@ -372,26 +373,31 @@ final class SettingsStore {
         {
             userDefaults.set(legacyOpenAIWebAccess, forKey: "openAIWebAccessEnabled")
         }
-        let legacyStores = CodexBarConfigMigrator.LegacyStores(
-            zaiTokenStore: zaiTokenStore,
-            syntheticTokenStore: syntheticTokenStore,
-            codexCookieStore: codexCookieStore,
-            claudeCookieStore: claudeCookieStore,
-            cursorCookieStore: cursorCookieStore,
-            opencodeCookieStore: opencodeCookieStore,
-            factoryCookieStore: factoryCookieStore,
-            minimaxCookieStore: minimaxCookieStore,
-            minimaxAPITokenStore: minimaxAPITokenStore,
-            kimiTokenStore: kimiTokenStore,
-            augmentCookieStore: augmentCookieStore,
-            ampCookieStore: ampCookieStore,
-            copilotTokenStore: copilotTokenStore,
-            tokenAccountStore: tokenAccountStore)
-        let config = CodexBarConfigMigrator.loadOrMigrate(
-            configStore: configStore,
-            userDefaults: userDefaults,
-            keychainAccessDisabled: keychainAccessPolicy.isExplicitlyDisabled(),
-            stores: legacyStores)
+        let config: CodexBarConfig
+        if startupBehavior == .isolated {
+            config = (existingConfig ?? CodexBarConfig.makeDefault()).normalized()
+        } else {
+            let legacyStores = CodexBarConfigMigrator.LegacyStores(
+                zaiTokenStore: zaiTokenStore,
+                syntheticTokenStore: syntheticTokenStore,
+                codexCookieStore: codexCookieStore,
+                claudeCookieStore: claudeCookieStore,
+                cursorCookieStore: cursorCookieStore,
+                opencodeCookieStore: opencodeCookieStore,
+                factoryCookieStore: factoryCookieStore,
+                minimaxCookieStore: minimaxCookieStore,
+                minimaxAPITokenStore: minimaxAPITokenStore,
+                kimiTokenStore: kimiTokenStore,
+                augmentCookieStore: augmentCookieStore,
+                ampCookieStore: ampCookieStore,
+                copilotTokenStore: copilotTokenStore,
+                tokenAccountStore: tokenAccountStore)
+            config = CodexBarConfigMigrator.loadOrMigrate(
+                configStore: configStore,
+                userDefaults: userDefaults,
+                keychainAccessDisabled: keychainAccessPolicy.isExplicitlyDisabled(),
+                stores: legacyStores)
+        }
         _ = Self.initializeOpenAIWebAccessPreference(
             userDefaults: userDefaults, config: config, hadExistingConfig: hadExistingConfig)
         self.userDefaults = userDefaults
@@ -418,11 +424,13 @@ final class SettingsStore {
         userDefaults.removeObject(forKey: "showCodexUsage")
         userDefaults.removeObject(forKey: "showClaudeUsage")
         self.updateLoginItem(self.launchAtLogin)
-        if performInitialProviderDetection {
-            self.runInitialProviderDetectionIfNeeded()
+        if startupBehavior == .automatic {
+            if performInitialProviderDetection {
+                self.runInitialProviderDetectionIfNeeded()
+            }
+            self.ensureAlibabaProviderAutoEnabledIfNeeded()
+            self.applyTokenCostDefaultIfNeeded()
         }
-        self.ensureAlibabaProviderAutoEnabledIfNeeded()
-        self.applyTokenCostDefaultIfNeeded()
         if self.claudeUsageDataSource != .cli {
             if Self.isRunningTests {
                 self.claudeWebExtrasEnabled = false
