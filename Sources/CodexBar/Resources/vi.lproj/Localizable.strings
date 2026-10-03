@@ -507,6 +507,10 @@
 "refresh_on_open_subtitle" = "Tải mức sử dụng mới nhất của mọi nhà cung cấp mỗi khi bạn mở menu.";
 "check_provider_status_title" = "Kiểm tra Nhà cung cấp trạng thái";
 "check_provider_status_subtitle" = "Thăm dò ý kiến ​​OpenAI / Claude các trang trạng thái và Google Không gian làm việc dành cho Gemini /AntiGravity, phát hiện các sự cố trong biểu tượng và menu.";
+"credential_expiry_notifications_title" = "Thông tin đăng nhập hết hạn";
+"credential_expiry_notifications_subtitle" = "Thông báo một lần khi tài khoản nhà cung cấp yêu cầu bạn đăng nhập lại.";
+"credential_expiry_notification_title" = "%@ cần đăng nhập";
+"credential_expiry_notification_body" = "Mở CodexBar để xem lỗi tài khoản và đăng nhập lại.";
 "session_quota_notifications_subtitle" = "Thông báo khi phiên 5 giờ Hạn mức đạt 0% và khi phiên này khả dụng trở lại.";
 "quota_depleted_title" = "Hạn mức đã cạn & được khôi phục";
 "quota_warning_notifications_subtitle" = "Cảnh báo khi phiên hoặc Hạn mức còn lại hàng tuần vượt qua ngưỡng được định cấu hình.";

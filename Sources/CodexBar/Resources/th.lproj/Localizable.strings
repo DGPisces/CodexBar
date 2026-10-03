@@ -495,6 +495,10 @@
 "refresh_on_open_subtitle" = "ดึงข้อมูลการใช้งานล่าสุดของผู้ให้บริการทุกรายทุกครั้งที่คุณเปิดเมนู";
 "check_provider_status_title" = "ตรวจสอบสถานะผู้ให้บริการ";
 "check_provider_status_subtitle" = "โพล OpenAI/Claude หน้าสถานะและ Google Workspace for Gemini/Antigravity โดยแสดงเหตุการณ์ในไอคอนและเมนู";
+"credential_expiry_notifications_title" = "ข้อมูลรับรองหมดอายุ";
+"credential_expiry_notifications_subtitle" = "แจ้งเตือนหนึ่งครั้งเมื่อบัญชีผู้ให้บริการต้องการให้คุณลงชื่อเข้าใช้อีกครั้ง";
+"credential_expiry_notification_title" = "%@ ต้องลงชื่อเข้าใช้";
+"credential_expiry_notification_body" = "เปิด CodexBar เพื่อตรวจสอบข้อผิดพลาดของบัญชีและลงชื่อเข้าใช้อีกครั้ง";
 "session_quota_notifications_subtitle" = "แจ้งเตือนเมื่อโควตาเซสชัน 5 ชั่วโมงเหลือ 0% และเมื่อกลับมาใช้งานได้อีกครั้ง";
 "quota_depleted_title" = "โควต้าหมดและกลับมาใช้งานได้";
 "quota_warning_notifications_subtitle" = "เตือนเมื่อเซสชันหรือโควต้ารายสัปดาห์ที่เหลืออยู่ข้ามเกณฑ์ที่กําหนดค่าไว้";

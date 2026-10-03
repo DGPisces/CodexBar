@@ -495,6 +495,10 @@
 "refresh_on_open_subtitle" = "هر بار که منو را باز می‌کنید، آخرین میزان مصرف هر ارائه‌دهنده دریافت می‌شود.";
 "check_provider_status_title" = "وضعیت ارائه دهنده را بررسی کنید";
 "check_provider_status_subtitle" = "نظرسنجی ها OpenAI/Claude صفحات وضعیت و Google Workspace برای Gemini/Antigravity که حوادث را در آیکون و منو نمایش می دهد.";
+"credential_expiry_notifications_title" = "انقضای اطلاعات ورود";
+"credential_expiry_notifications_subtitle" = "وقتی حساب ارائه‌دهنده نیاز به ورود مجدد دارد، یک بار اطلاع بده.";
+"credential_expiry_notification_title" = "%@ نیاز به ورود دارد";
+"credential_expiry_notification_body" = "CodexBar را باز کنید تا خطای حساب را بررسی کرده و دوباره وارد شوید.";
 "session_quota_notifications_subtitle" = "هنگامی که سهمیه جلسه پنج‌ساعته به 0% می‌رسد و دوباره در دسترس قرار می‌گیرد، اطلاع می‌دهد.";
 "quota_depleted_title" = "اتمام و بازیابی سهمیه";
 "quota_warning_notifications_subtitle" = "هشدار می دهد وقتی سهمیه نشست یا هفتگی باقی مانده از آستانه های پیکربندی شده عبور کند.";

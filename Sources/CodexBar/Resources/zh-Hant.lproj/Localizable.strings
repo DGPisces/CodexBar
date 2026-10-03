@@ -516,6 +516,10 @@
 "refresh_on_open_subtitle" = "每次開啟選單時擷取每個供應商的最新用量。";
 "check_provider_status_title" = "檢查提供者狀態";
 "check_provider_status_subtitle" = "輪詢 OpenAI/Claude 狀態頁面和 Google Workspace 的 Gemini/Antigravity，並在圖示和選單中顯示服務異常資訊。";
+"credential_expiry_notifications_title" = "登入憑證過期";
+"credential_expiry_notifications_subtitle" = "當服務商帳戶需要重新登入時，傳送一次通知。";
+"credential_expiry_notification_title" = "%@ 需要重新登入";
+"credential_expiry_notification_body" = "開啟 CodexBar 查看帳戶錯誤並重新登入。";
 "session_quota_notifications_subtitle" = "當 5 小時工作階段配額用完或恢復可用時傳送通知。";
 "quota_depleted_title" = "配額用完與恢復";
 "quota_warning_notifications_subtitle" = "當工作階段或每週剩餘配額達到設定門檻時提醒。";

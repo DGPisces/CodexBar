@@ -497,6 +497,10 @@
 "refresh_on_open_subtitle" = "Ambil penggunaan terbaru untuk setiap penyedia setiap kali Anda membuka menu.";
 "check_provider_status_title" = "Periksa status penyedia";
 "check_provider_status_subtitle" = "Memeriksa halaman status OpenAI/Claude dan Google Workspace untuk Gemini/Antigravity, menampilkan insiden di ikon dan menu.";
+"credential_expiry_notifications_title" = "Kedaluwarsa kredensial";
+"credential_expiry_notifications_subtitle" = "Beri tahu sekali saat akun penyedia mengharuskan Anda masuk kembali.";
+"credential_expiry_notification_title" = "%@ perlu masuk";
+"credential_expiry_notification_body" = "Buka CodexBar untuk meninjau kesalahan akun dan masuk kembali.";
 "session_quota_notifications_subtitle" = "Memberi tahu saat kuota sesi 5 jam mencapai 0% dan saat tersedia kembali.";
 "quota_depleted_title" = "Kuota habis & tersedia kembali";
 "quota_warning_notifications_subtitle" = "Memperingatkan saat sisa kuota sesi atau mingguan melewati ambang batas yang dikonfigurasi.";

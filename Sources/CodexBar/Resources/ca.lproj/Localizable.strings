@@ -493,6 +493,10 @@
 "refresh_on_open_subtitle" = "Obté l'ús més recent de cada proveïdor cada vegada que obriu el menú.";
 "check_provider_status_title" = "Comproveu l'estat del proveïdor";
 "check_provider_status_subtitle" = "Consulta les pàgines d'estat d'OpenAI/Claude i Google Workspace per a Gemini/Antigravity, mostrant incidències a la icona i al menú.";
+"credential_expiry_notifications_title" = "Caducitat de les credencials";
+"credential_expiry_notifications_subtitle" = "Notifica una sola vegada quan un compte de proveïdor requereix que tornis a iniciar sessió.";
+"credential_expiry_notification_title" = "%@ requereix iniciar sessió";
+"credential_expiry_notification_body" = "Obre CodexBar per revisar l’error del compte i tornar a iniciar sessió.";
 "session_quota_notifications_subtitle" = "Avisa quan la quota de sessió de 5 hores arriba al 0% i quan torna a estar disponible.";
 "quota_depleted_title" = "Quota esgotada i restablerta";
 "quota_warning_notifications_subtitle" = "Avisa quan la quota restant de sessió o setmanal baixa per sota dels llindars configurats.";

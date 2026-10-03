@@ -489,6 +489,10 @@
 "manual_refresh_hint" = "A actualización automática está desactivada; usa a orde Actualizar do menú.";
 "check_provider_status_title" = "Comprobar o estado do provedor";
 "check_provider_status_subtitle" = "Consulta as páxinas de estado de OpenAI/Claude e Google Workspace para Gemini/Antigravity, amosando incidencias na icona e no menú.";
+"credential_expiry_notifications_title" = "Caducidade das credenciais";
+"credential_expiry_notifications_subtitle" = "Avisa unha soa vez cando unha conta de provedor require que volvas iniciar sesión.";
+"credential_expiry_notification_title" = "%@ require iniciar sesión";
+"credential_expiry_notification_body" = "Abre CodexBar para revisar o erro da conta e volver iniciar sesión.";
 "session_quota_notifications_subtitle" = "Avisa cando a cota de sesión de 5 horas chega ao 0% e cando volve estar dispoñible.";
 "quota_depleted_title" = "Cota esgotada e restaurada";
 "quota_warning_notifications_subtitle" = "Avisa cando a cota restante de sesión ou semanal supera os limiares configurados.";

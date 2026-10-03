@@ -21,6 +21,37 @@ struct LocalizationLanguageCatalogTests {
         }
     }
 
+    @Test
+    func `credential expiry settings and alerts are translated in every language`() throws {
+        let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
+            .deletingLastPathComponent().deletingLastPathComponent()
+        let resources = root.appendingPathComponent("Sources/CodexBar/Resources")
+        let catalogs = try FileManager.default.contentsOfDirectory(at: resources, includingPropertiesForKeys: nil)
+            .filter { $0.pathExtension == "lproj" }
+        let english = try #require(NSDictionary(
+            contentsOf: resources.appendingPathComponent("en.lproj/Localizable.strings")) as? [String: String])
+        let keys = [
+            "credential_expiry_notifications_title",
+            "credential_expiry_notifications_subtitle",
+            "credential_expiry_notification_title",
+            "credential_expiry_notification_body",
+        ]
+        for url in catalogs {
+            let catalog = try #require(NSDictionary(contentsOf: url.appendingPathComponent("Localizable.strings"))
+                as? [String: String])
+            for key in keys {
+                let value = try #require(catalog[key], "Missing \(key) in \(url.lastPathComponent)")
+                #expect(!value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                if url.lastPathComponent != "en.lproj" {
+                    #expect(value != english[key], "Untranslated \(key) in \(url.lastPathComponent)")
+                }
+            }
+            let alertTitle = try #require(catalog["credential_expiry_notification_title"])
+            #expect(alertTitle.components(separatedBy: "%@").count == 2)
+            #expect(alertTitle.count(where: { $0 == "%" }) == 1)
+        }
+    }
+
     private let languageKeys = [
         "language_system",
         "language_english",

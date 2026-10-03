@@ -511,6 +511,10 @@
 "refresh_on_open_subtitle" = "Отримує найновіші дані про використання для кожного провайдера щоразу, коли ви відкриваєте меню.";
 "check_provider_status_title" = "Перевірте статус провайдера";
 "check_provider_status_subtitle" = "Опитує сторінки статусу OpenAI/Claude і Google Workspace для Gemini/Antigravity, виявляючи інциденти в значку та меню.";
+"credential_expiry_notifications_title" = "Закінчення терміну дії облікових даних";
+"credential_expiry_notifications_subtitle" = "Сповіщати один раз, коли обліковий запис провайдера потребує повторного входу.";
+"credential_expiry_notification_title" = "%@ потребує входу";
+"credential_expiry_notification_body" = "Відкрийте CodexBar, щоб переглянути помилку облікового запису та ввійти знову.";
 "session_quota_notifications_subtitle" = "Повідомляє, коли 5-годинна квота сеансу досягає 0% і коли вона знову стає доступною.";
 "quota_depleted_title" = "Вичерпання та відновлення квоти";
 "quota_warning_notifications_subtitle" = "Попереджає, коли залишок сеансу або тижневої квоти перевищує налаштовані порогові значення.";

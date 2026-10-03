@@ -512,6 +512,10 @@
 "refresh_on_open_subtitle" = "Obtén el uso más reciente de cada proveedor cada vez que abres el menú.";
 "check_provider_status_title" = "Comprobar estado del proveedor";
 "check_provider_status_subtitle" = "Consulta las páginas de estado de OpenAI/Claude y Google Workspace para Gemini/Antigravity, mostrando incidencias en el icono y el menú.";
+"credential_expiry_notifications_title" = "Caducidad de las credenciales";
+"credential_expiry_notifications_subtitle" = "Notifica una sola vez cuando una cuenta de proveedor requiere que vuelvas a iniciar sesión.";
+"credential_expiry_notification_title" = "%@ requiere iniciar sesión";
+"credential_expiry_notification_body" = "Abre CodexBar para revisar el error de la cuenta y volver a iniciar sesión.";
 "session_quota_notifications_subtitle" = "Avisa cuando la cuota de sesión de 5 horas llega al 0 % y cuando vuelve a estar disponible.";
 "quota_depleted_title" = "Cuota agotada y restaurada";
 "quota_warning_notifications_subtitle" = "Avisa cuando la cuota restante de sesión o semanal cruza los umbrales configurados.";

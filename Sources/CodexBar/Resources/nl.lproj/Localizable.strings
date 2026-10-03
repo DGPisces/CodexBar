@@ -511,6 +511,10 @@
 "refresh_on_open_subtitle" = "Haalt bij elke keer dat je het menu opent het meest recente gebruik van elke provider op.";
 "check_provider_status_title" = "Controleer de status van de provider";
 "check_provider_status_subtitle" = "Polls van OpenAI/Claude-statuspagina's en Google Workspace voor Gemini/Antigravity, waarbij incidenten in het pictogram en het menu worden weergegeven.";
+"credential_expiry_notifications_title" = "Verlopen van inloggegevens";
+"credential_expiry_notifications_subtitle" = "Geeft één melding wanneer een provideraccount opnieuw moet worden aangemeld.";
+"credential_expiry_notification_title" = "%@ vereist aanmelding";
+"credential_expiry_notification_body" = "Open CodexBar om de accountfout te bekijken en opnieuw aan te melden.";
 "session_quota_notifications_subtitle" = "Geeft een melding wanneer het sessiequotum van 5 uur 0% bereikt en wanneer het weer beschikbaar komt.";
 "quota_depleted_title" = "Quotum uitgeput en hersteld";
 "quota_warning_notifications_subtitle" = "Waarschuwt wanneer het resterende sessie- of wekelijkse quotum de geconfigureerde drempels overschrijdt.";

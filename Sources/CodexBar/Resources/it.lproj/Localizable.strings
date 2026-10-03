@@ -497,6 +497,10 @@
 "refresh_on_open_subtitle" = "Recupera l'utilizzo più recente di ogni provider ogni volta che apri il menu.";
 "check_provider_status_title" = "Controlla stato provider";
 "check_provider_status_subtitle" = "Controlla le pagine di stato OpenAI/Claude e Google Workspace per Gemini/Antigravity, mostrando incidenti in icona e menu.";
+"credential_expiry_notifications_title" = "Scadenza delle credenziali";
+"credential_expiry_notifications_subtitle" = "Notifica una sola volta quando un account del fornitore richiede un nuovo accesso.";
+"credential_expiry_notification_title" = "%@ richiede l’accesso";
+"credential_expiry_notification_body" = "Apri CodexBar per controllare l’errore dell’account e accedere di nuovo.";
 "session_quota_notifications_subtitle" = "Notifica quando la quota sessione di 5 ore arriva allo 0% e quando torna disponibile.";
 "quota_depleted_title" = "Quota esaurita e ripristinata";
 "quota_warning_notifications_subtitle" = "Avvisa quando la quota residua di sessione o settimanale scende sotto le soglie configurate.";

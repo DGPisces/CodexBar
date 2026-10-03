@@ -507,6 +507,10 @@
 "refresh_on_open_subtitle" = "메뉴를 열 때마다 모든 공급자의 최신 사용량을 가져옵니다.";
 "check_provider_status_title" = "공급자 상태 확인";
 "check_provider_status_subtitle" = "OpenAI/Claude 상태 페이지와 Gemini/Antigravity용 Google Workspace를 폴링하여 아이콘과 메뉴에 문제를 표시합니다.";
+"credential_expiry_notifications_title" = "인증 정보 만료";
+"credential_expiry_notifications_subtitle" = "제공업체 계정에 다시 로그인해야 할 때 한 번 알립니다.";
+"credential_expiry_notification_title" = "%@에 로그인이 필요합니다";
+"credential_expiry_notification_body" = "CodexBar를 열어 계정 오류를 확인하고 다시 로그인하세요.";
 "session_quota_notifications_subtitle" = "5시간 세션 할당량이 0%에 도달할 때와 다시 사용할 수 있게 될 때 알립니다.";
 "quota_depleted_title" = "할당량 소진 및 복원";
 "quota_warning_notifications_subtitle" = "세션 또는 주간 할당량 잔여량이 설정된 임곗값을 넘으면 경고합니다.";

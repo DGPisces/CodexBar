@@ -495,6 +495,10 @@
 "refresh_on_open_subtitle" = "Menüyü her açtığınızda her sağlayıcının en güncel kullanım verisini alır.";
 "check_provider_status_title" = "Sağlayıcı durumunu denetle";
 "check_provider_status_subtitle" = "OpenAI/Claude durum sayfalarını ve Google Workspace'i (Gemini/Antigravity) sorgular, olayları simge ve menüde gösterir.";
+"credential_expiry_notifications_title" = "Kimlik bilgilerinin süresi dolması";
+"credential_expiry_notifications_subtitle" = "Bir sağlayıcı hesabı yeniden oturum açmanızı gerektirdiğinde bir kez bildir.";
+"credential_expiry_notification_title" = "%@ oturum açılmasını gerektiriyor";
+"credential_expiry_notification_body" = "Hesap hatasını incelemek ve yeniden oturum açmak için CodexBar’ı açın.";
 "session_quota_notifications_subtitle" = "5 saatlik oturum kotası %0'a ulaştığında ve yeniden kullanılabilir olduğunda bildirim gönderir.";
 "quota_depleted_title" = "Kota tükenmesi ve yenilenmesi";
 "quota_warning_notifications_subtitle" = "Oturum veya haftalık kalan kota yapılandırılan eşikleri geçtiğinde uyarır.";

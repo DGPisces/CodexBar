@@ -511,6 +511,10 @@
 "refresh_on_open_subtitle" = "Hämtar den senaste användningen för varje leverantör varje gång du öppnar menyn.";
 "check_provider_status_title" = "Kontrollera leverantörsstatus";
 "check_provider_status_subtitle" = "Kontrollerar OpenAI/Claude-statussidor och Google Workspace för Gemini/Antigravity och visar incidenter i ikonen och menyn.";
+"credential_expiry_notifications_title" = "Inloggningsuppgifter löper ut";
+"credential_expiry_notifications_subtitle" = "Avisera en gång när ett leverantörskonto kräver att du loggar in igen.";
+"credential_expiry_notification_title" = "%@ kräver inloggning";
+"credential_expiry_notification_body" = "Öppna CodexBar för att granska kontofelet och logga in igen.";
 "session_quota_notifications_subtitle" = "Aviserar när femtimmarssessionens kvot når 0 % och när den blir tillgänglig igen.";
 "quota_depleted_title" = "Kvoten tar slut och återställs";
 "quota_warning_notifications_subtitle" = "Varnar när återstående sessions- eller veckokvot passerar inställda trösklar.";
