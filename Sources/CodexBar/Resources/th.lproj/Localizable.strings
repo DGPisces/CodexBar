@@ -1968,7 +1968,7 @@
 "The pasted header is sent only to this tenant." = "ส่วนหัวที่วางจะถูกส่งไปยังผู้เช่ารายนี้เท่านั้น";
 "The selected Codex profile has no verified account email." = "โปรไฟล์ Codex ที่เลือกไม่มีอีเมลบัญชีที่ได้รับการยืนยัน";
 "The selected managed Codex account is unavailable." = "บัญชี Codex ที่ได้รับการจัดการที่เลือกไม่พร้อมใช้งาน";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "ทางลัดเหล่านี้ทำงานในขณะที่เมนูตัวสลับผู้ให้บริการเปิดอยู่ ใช้ Ctrl, Alt, Shift และ cmd ด้วยตัวอักษร ตัวเลข ซ้ายหรือขวา ใช้ none เพื่อปิดใช้งานการดำเนินการ";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "ทางลัดเหล่านี้ใช้งานได้ขณะเปิดเมนูสลับผู้ให้บริการ ใช้ `ctrl`, `alt`, `shift` และ `cmd` ร่วมกับตัวอักษร ตัวเลข `left` หรือ `right` และใช้ `none` เพื่อปิดใช้งานการดำเนินการ";
 "Third quota" = "โควต้า ตัวที่สาม";
 "Today cost" = "ราคาวันนี้";
 "Token Refreshed" = "โทเค็น รีเฟรชแล้ว";
@@ -2122,7 +2122,7 @@
 "Subscription usage from the Chutes API." = "การใช้งานการสมัครสมาชิกจาก Chutes API";
 "Chutes cost history is not available from CodexBar." = "ไม่มีประวัติต้นทุน Chutes จาก CodexBar";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "เก็บไว้ใน ~/.codexbar/config.json วางคีย์ Chutes API";
-"chutes key..." = "กุญแจตู้...";
+"chutes key..." = "คีย์ API ของ Chutes...";
 "Spend" = "ใช้จ่าย";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "การใช้จ่าย Fireworks มาจากสรุปการเรียกเก็บเงิน API ไม่มีการติดตามประวัติต้นทุน";
 "Doubao API-key accounts" = "บัญชีคีย์ Doubao API";
@@ -2201,7 +2201,7 @@
 "API key or Cookie: …" = "คีย์ API หรือ Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "แสดง เครดิต ที่ใช้/คงเหลือเทียบกับขีดจำกัดงบประมาณ ZoomMate ของคุณ";
 "Amp Free" = "Amp ฟรี";
-"Individual and workspace credit balances from Amp." = "ยอดดุลส่วนบุคคลและพื้นที่ทำงาน เครดิต จาก Amp";
+"Individual and workspace credit balances from Amp." = "ยอดเครดิตของบัญชีส่วนบุคคลและพื้นที่ทำงานใน Amp";
 "Agent" = "ตัวแทน";
 "Bonus" = "โบนัส";
 "Daily refresh" = "รีเฟรชทุกวัน";

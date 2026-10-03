@@ -1965,7 +1965,7 @@
 "The pasted header is sent only to this tenant." = "Tiêu đề đã dán chỉ được gửi cho đối tượng thuê này.";
 "The selected Codex profile has no verified account email." = "Hồ sơ Codex đã chọn không có email tài khoản được xác minh.";
 "The selected managed Codex account is unavailable." = "Tài khoản Codex được quản lý đã chọn không khả dụng.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Các phím tắt này hoạt động khi menu trình chuyển đổi nhà cung cấp đang mở. Sử dụng ctrl, alt, shift và cmd với một chữ cái, chữ số, trái hoặc phải; sử dụng none để tắt một hành động.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Các phím tắt này hoạt động khi menu chuyển nhà cung cấp đang mở. Dùng `ctrl`, `alt`, `shift` và `cmd` với chữ cái, chữ số, `left` hoặc `right`; dùng `none` để tắt một thao tác.";
 "Third quota" = "Hạn mức thứ ba";
 "Today cost" = "giá hôm nay";
 "Token Refreshed" = "mã thông báo đã được làm mới";
@@ -2119,7 +2119,7 @@
 "Subscription usage from the Chutes API." = "Mức sử dụng đăng ký từ Chutes API.";
 "Chutes cost history is not available from CodexBar." = "Lịch sử chi phí Chutes không có sẵn từ CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Được lưu trữ trong ~/.codexbar/config.json. Dán khóa Chutes API.";
-"chutes key..." = "chìa khóa máng...";
+"chutes key..." = "Khóa API Chutes...";
 "Spend" = "chi tiêu";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Chi tiêu Fireworks xuất phát từ bản tóm tắt thanh toán API; lịch sử chi phí không được theo dõi.";
 "Doubao API-key accounts" = "Tài khoản khóa Doubao API";
@@ -2198,7 +2198,7 @@
 "API key or Cookie: …" = "Phím API hoặc Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "Hiển thị Tín dụng đã sử dụng/còn lại so với giới hạn ngân sách ZoomMate của bạn.";
 "Amp Free" = "Amp miễn phí";
-"Individual and workspace credit balances from Amp." = "Số dư Tín dụng cá nhân và không gian làm việc từ Amp.";
+"Individual and workspace credit balances from Amp." = "Số dư tín dụng của tài khoản cá nhân và không gian làm việc trên Amp.";
 "Agent" = "đại lý";
 "Bonus" = "Tiền thưởng";
 "Daily refresh" = "Làm mới hàng ngày";

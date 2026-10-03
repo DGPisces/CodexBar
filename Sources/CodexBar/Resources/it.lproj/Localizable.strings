@@ -1967,7 +1967,7 @@
 "The pasted header is sent only to this tenant." = "L'intestazione incollata viene inviata solo a questo tenant.";
 "The selected Codex profile has no verified account email." = "Il profilo Codex selezionato non ha un account email verificato.";
 "The selected managed Codex account is unavailable." = "L'account gestito Codex selezionato non è disponibile.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Queste scorciatoie funzionano mentre il menu di cambio provider è aperto. Usa ctrl, alt, maiusc e cmd con una lettera, cifra, sinistra o destra; utilizzare none per disabilitare un'azione.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Queste scorciatoie funzionano mentre il menu di selezione del provider è aperto. Usa `ctrl`, `alt`, `shift` e `cmd` con una lettera, una cifra, `left` o `right`; usa `none` per disabilitare un’azione.";
 "Third quota" = "Terzo Limite";
 "Today cost" = "Oggi costa";
 "Token Refreshed" = "token Aggiornato";
@@ -2121,7 +2121,7 @@
 "Subscription usage from the Chutes API." = "Utilizzo dell'abbonamento da Chutes API.";
 "Chutes cost history is not available from CodexBar." = "Lo storico dei costi Chutes non è disponibile da CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Memorizzato in ~/.codexbar/config.json. Incolla una chiave Chutes API.";
-"chutes key..." = "chiave degli scivoli...";
+"chutes key..." = "Chiave API Chutes...";
 "Spend" = "Spendere";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "La spesa Fireworks proviene dal riepilogo pagamenti API; la cronologia dei costi non viene tracciata.";
 "Doubao API-key accounts" = "Doubao API-conti chiave";
@@ -2200,7 +2200,7 @@
 "API key or Cookie: …" = "Chiave API o Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "Mostra gli Crediti usati/rimanenti rispetto al limite del budget ZoomMate.";
 "Amp Free" = "Amp Gratuito";
-"Individual and workspace credit balances from Amp." = "Bilance individuali e da lavoro Crediti da Amp.";
+"Individual and workspace credit balances from Amp." = "Saldi dei crediti individuali e dello spazio di lavoro di Amp.";
 "Agent" = "Agente";
 "Bonus" = "Bonus";
 "Daily refresh" = "Aggiornamento quotidiano";

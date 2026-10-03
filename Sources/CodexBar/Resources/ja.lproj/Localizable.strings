@@ -1964,7 +1964,7 @@
 "The pasted header is sent only to this tenant." = "貼り付けられたヘッダーは、このテナントにのみ送信されます。";
 "The selected Codex profile has no verified account email." = "選択した Codex プロファイルには検証済みのアカウント電子メールがありません。";
 "The selected managed Codex account is unavailable." = "選択した管理対象 Codex アカウントは使用できません。";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "これらのショートカットは、プロバイダー スイッチャー メニューが開いているときに機能します。 ctrl、alt、shift、cmd を文字、数字、左または右で使用します。アクションを無効にするには、none を使用します。";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "これらのショートカットは、プロバイダー切り替えメニューが開いている間に使えます。`ctrl`、`alt`、`shift`、`cmd` を文字、数字、`left` または `right` と組み合わせて入力します。操作を無効にするには `none` を使います。";
 "Third quota" = "3 番目の クォータ";
 "Today cost" = "今日の費用";
 "Token Refreshed" = "トークン 更新されました";
@@ -2118,7 +2118,7 @@
 "Subscription usage from the Chutes API." = "Chutes API からのサブスクリプションの使用。";
 "Chutes cost history is not available from CodexBar." = "Chutes のコスト履歴は、CodexBar からは利用できません。";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "~/.codexbar/config.json に保存されます。 Chutes API キーを貼り付けます。";
-"chutes key..." = "シュートキー…";
+"chutes key..." = "Chutes API キー...";
 "Spend" = "支出する";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Fireworks の支出は、料金概要 API から取得されます。コスト履歴は追跡されません。";
 "Doubao API-key accounts" = "Doubao API-キーアカウント";
@@ -2197,7 +2197,7 @@
 "API key or Cookie: …" = "API キーまたは Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "ZoomMate の予算上限に対して、使用済み/残りの クレジット が表示されます。";
 "Amp Free" = "Amp 無料";
-"Individual and workspace credit balances from Amp." = "個人およびワークスペースの クレジット バランスは Amp から提供されます。";
+"Individual and workspace credit balances from Amp." = "Amp の個人アカウントとワークスペースのクレジット残高。";
 "Agent" = "エージェント";
 "Bonus" = "ボーナス";
 "Daily refresh" = "毎日のリフレッシュ";

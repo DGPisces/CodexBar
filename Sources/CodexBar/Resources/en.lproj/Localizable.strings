@@ -2122,7 +2122,7 @@
 "Subscription usage from the Chutes API." = "Subscription usage from the Chutes API.";
 "Chutes cost history is not available from CodexBar." = "Chutes cost history is not available from CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Stored in ~/.codexbar/config.json. Paste a Chutes API key.";
-"chutes key..." = "chutes key...";
+"chutes key..." = "Chutes API key...";
 "Spend" = "Spend";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Fireworks spend comes from the billing summary API; cost history is not tracked.";
 "Doubao API-key accounts" = "Doubao API-key accounts";

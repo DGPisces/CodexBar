@@ -1966,7 +1966,7 @@
 "The pasted header is sent only to this tenant." = "Yapıştırılan başlık yalnızca bu kiracıya gönderilir.";
 "The selected Codex profile has no verified account email." = "Seçilen Codex profilinde doğrulanmış hesap e-postası yok.";
 "The selected managed Codex account is unavailable." = "Seçilen yönetilen Codex hesabı kullanılamıyor.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Bu kısayollar, sağlayıcı değiştirici menüsü açıkken çalışır. Bir harf, rakam, sol veya sağ ile ctrl, alt, Shift ve cmd tuşlarını kullanın; bir eylemi devre dışı bırakmak için none'yi kullanın.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Bu kısayollar sağlayıcı değiştirme menüsü açıkken çalışır. `ctrl`, `alt`, `shift` ve `cmd` ile bir harf, rakam, `left` veya `right` kullanın; bir eylemi devre dışı bırakmak için `none` kullanın.";
 "Third quota" = "Üçüncü Kota";
 "Today cost" = "Bugünkü maliyet";
 "Token Refreshed" = "token Yenilendi";
@@ -2120,7 +2120,7 @@
 "Subscription usage from the Chutes API." = "Chutes API'den abonelik kullanımı.";
 "Chutes cost history is not available from CodexBar." = "Chutes maliyet geçmişi CodexBar'de mevcut değildir.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "~/.codexbar/config.json konumunda saklanır. Bir Chutes API anahtarını yapıştırın.";
-"chutes key..." = "şut anahtarı...";
+"chutes key..." = "Chutes API anahtarı...";
 "Spend" = "Harcama";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Fireworks harcaması, API faturalandırma özetinden gelir; maliyet geçmişi takip edilmez.";
 "Doubao API-key accounts" = "Doubao API-anahtar hesapları";
@@ -2199,7 +2199,7 @@
 "API key or Cookie: …" = "API anahtarı veya Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "Kullanılan/kalan Krediler'yi ZoomMate bütçe sınırınıza göre gösterir.";
 "Amp Free" = "Amp Ücretsiz";
-"Individual and workspace credit balances from Amp." = "Amp'den bireysel ve çalışma alanı Krediler dengeleri.";
+"Individual and workspace credit balances from Amp." = "Amp kişisel hesap ve çalışma alanı kredi bakiyeleri.";
 "Agent" = "Temsilci";
 "Bonus" = "Bonus";
 "Daily refresh" = "Günlük yenileme";

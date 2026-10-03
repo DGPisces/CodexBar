@@ -1969,7 +1969,7 @@
 "The pasted header is sent only to this tenant." = "粘贴的标头仅发送给该租户。";
 "The selected Codex profile has no verified account email." = "所选的 Codex 配置文件没有经过验证的帐户电子邮件。";
 "The selected managed Codex account is unavailable." = "所选托管 Codex 帐户不可用。";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "这些快捷方式在提供商切换器菜单打开时起作用。使用 ctrl、alt、shift 和 cmd 与字母、数字、向左或向右；使用 none 禁用操作。";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "这些快捷键在服务商切换菜单打开时可用。输入 `ctrl`、`alt`、`shift` 和 `cmd`，搭配字母、数字、`left` 或 `right`；输入 `none` 可禁用对应操作。";
 "Third quota" = "第三项配额";
 "Today cost" = "今日费用";
 "Token Refreshed" = "已刷新令牌";
@@ -2114,7 +2114,7 @@
 "Subscription usage from the Chutes API." = "来自 Chutes API 的订阅使用情况。";
 "Chutes cost history is not available from CodexBar." = "Chutes 成本历史记录无法从 CodexBar 获得。";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "存储在~/.codexbar/config.json中。粘贴 Chutes API 密钥。";
-"chutes key..." = "滑槽钥匙...";
+"chutes key..." = "Chutes API 密钥...";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Fireworks 支出来自账单汇总 API；不跟踪成本历史记录。";
 "Doubao API-key accounts" = "豆包 API 密钥账户";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "保存带标签的 Ark API 密钥。此处不支持 AK/SK 密钥对和 arkcli 配置。";
@@ -2192,7 +2192,7 @@
 "API key or Cookie: …" = "API 密钥或 Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "根据您的 ZoomMate 预算上限显示已用/剩余 额度。";
 "Amp Free" = "Amp Free";
-"Individual and workspace credit balances from Amp." = "Amp 的个人和工作区 额度 余额。";
+"Individual and workspace credit balances from Amp." = "Amp 的个人账户和工作区额度余额。";
 "Agent" = "智能体";
 "Bonus" = "赠送额度";
 "Daily refresh" = "每日刷新";

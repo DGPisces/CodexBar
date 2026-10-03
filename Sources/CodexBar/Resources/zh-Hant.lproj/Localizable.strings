@@ -1951,7 +1951,7 @@
 "TRACKED TOKENS · %@" = "已記錄 token · %@";
 "That managed account uses a workspace that differs from its saved Codex auth default. Keep it as a managed account; CodexBar will not rewrite Codex-owned auth to promote it." = "此托管帳戶的工作區與保存的 Codex 默認認證工作區不同。請繼續將其作為托管帳戶使用；CodexBar 不會修改 Codex 管理的認證信息來將其設為系統帳戶。";
 "The pasted header is sent only to this tenant." = "貼上的標頭僅發送給該租戶。";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "這些快捷方式在提供者切換器選單開啟時起作用。使用 ctrl、alt、shift 和 cmd 與字母、數字、向左或向右；使用 none 停用操作。";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "這些快速鍵在服務商切換選單開啟時可用。輸入 `ctrl`、`alt`、`shift` 和 `cmd`，搭配字母、數字、`left` 或 `right`；輸入 `none` 可停用對應操作。";
 "Third quota" = "第三項配額";
 "Today cost" = "今日費用";
 "Token value only (without Bearer)" = "僅輸入令牌值，不含 Bearer 前綴";
@@ -2100,7 +2100,7 @@
 "Subscription usage from the Chutes API." = "來自 Chutes API 的訂閱使用量。";
 "Chutes cost history is not available from CodexBar." = "Chutes 成本歷史記錄無法從 CodexBar 取得。";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "儲存在~/.codexbar/config.json中。貼上 Chutes API 金鑰。";
-"chutes key..." = "滑槽鑰匙...";
+"chutes key..." = "Chutes API 金鑰...";
 "Spend" = "支出";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Fireworks 支出來自帳單總計 API；不追蹤成本歷史記錄。";
 "Doubao API-key accounts" = "豆包 API 密鑰帳戶";
@@ -2179,7 +2179,7 @@
 "API key or Cookie: …" = "API 密鑰或 Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "根據您的 ZoomMate 預算上限顯示已使用/剩餘 額度。";
 "Amp Free" = "Amp Free";
-"Individual and workspace credit balances from Amp." = "Amp 的個人和工作區 額度 餘額。";
+"Individual and workspace credit balances from Amp." = "Amp 的個人帳戶和工作區額度餘額。";
 "Agent" = "智能體";
 "Bonus" = "贈送額度";
 "Daily refresh" = "每日重新整理";

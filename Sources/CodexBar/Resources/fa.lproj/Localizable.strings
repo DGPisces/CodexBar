@@ -1968,7 +1968,7 @@
 "The pasted header is sent only to this tenant." = "هدر چسبانده شده فقط برای این مستاجر ارسال می شود.";
 "The selected Codex profile has no verified account email." = "نمایه Codex انتخاب شده هیچ ایمیل حساب تایید شده ای ندارد.";
 "The selected managed Codex account is unavailable." = "حساب مدیریت انتخاب شده Codex در دسترس نیست.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "این میانبرها زمانی کار می کنند که منوی تعویض کننده ارائه دهنده باز است. از ctrl، alt، shift و cmd با حرف، رقم، چپ یا راست استفاده کنید. از none برای غیرفعال کردن یک عمل استفاده کنید.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "این میانبرها هنگام باز بودن منوی تغییر ارائه‌دهنده کار می‌کنند. از `ctrl`، `alt`، `shift` و `cmd` همراه با یک حرف، رقم، `left` یا `right` استفاده کنید؛ برای غیرفعال کردن یک عمل از `none` استفاده کنید.";
 "Third quota" = "سوم سهمیه";
 "Today cost" = "هزینه امروز";
 "Token Refreshed" = "توکن ها به روز شد";
@@ -2122,7 +2122,7 @@
 "Subscription usage from the Chutes API." = "استفاده از اشتراک از Chutes API.";
 "Chutes cost history is not available from CodexBar." = "تاریخچه هزینه Chutes از CodexBar در دسترس نیست.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "ذخیره شده در ~/.codexbar/config.json. یک کلید Chutes API جایگذاری کنید.";
-"chutes key..." = "کلید ناودان...";
+"chutes key..." = "کلید API سرویس Chutes...";
 "Spend" = "خرج کن";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "خرج Fireworks از خلاصه صورتحساب API حاصل می شود. تاریخچه هزینه ردیابی نمی شود";
 "Doubao API-key accounts" = "حساب‌های کلیدی Doubao API";
@@ -2201,7 +2201,7 @@
 "API key or Cookie: …" = "کلید API یا Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "اعتبارات استفاده شده/باقی مانده را در برابر سقف بودجه ZoomMate شما نشان می دهد.";
 "Amp Free" = "Amp رایگان";
-"Individual and workspace credit balances from Amp." = "تعادل فردی و فضای کاری اعتبارات از Amp.";
+"Individual and workspace credit balances from Amp." = "موجودی اعتبار حساب فردی و فضای کاری در Amp.";
 "Agent" = "عامل";
 "Bonus" = "پاداش";
 "Daily refresh" = "تازه کردن روزانه";

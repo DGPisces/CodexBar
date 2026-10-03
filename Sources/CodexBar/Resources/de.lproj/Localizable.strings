@@ -1964,7 +1964,7 @@
 "The pasted header is sent only to this tenant." = "Der eingefügte Header wird nur an diesen Mandanten gesendet.";
 "The selected Codex profile has no verified account email." = "Das ausgewählte Codex-Profil verfügt über keine bestätigte Konto-E-Mail-Adresse.";
 "The selected managed Codex account is unavailable." = "Das ausgewählte verwaltete Codex-Konto ist nicht verfügbar.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Diese Verknüpfungen funktionieren, während das Anbieterwechselmenü geöffnet ist. Verwenden Sie Strg, Alt, Umschalt und cmd mit einem Buchstaben, einer Ziffer, links oder rechts; Verwenden Sie none, um eine Aktion zu deaktivieren.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Diese Tastenkürzel funktionieren, während das Anbieterwechselmenü geöffnet ist. Verwenden Sie `ctrl`, `alt`, `shift` und `cmd` mit einem Buchstaben, einer Ziffer, `left` oder `right`; mit `none` deaktivieren Sie eine Aktion.";
 "Third quota" = "Dritter Kontingent";
 "Today cost" = "Heute Kosten";
 "Token Refreshed" = "Token Aktualisiert";
@@ -2118,7 +2118,7 @@
 "Subscription usage from the Chutes API." = "Abonnementnutzung ab Chutes API.";
 "Chutes cost history is not available from CodexBar." = "Der Kostenverlauf Chutes ist für CodexBar nicht verfügbar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Gespeichert in ~/.codexbar/config.json. Fügen Sie einen Chutes API-Schlüssel ein.";
-"chutes key..." = "Rutschenschlüssel...";
+"chutes key..." = "Chutes-API-Schlüssel...";
 "Spend" = "Verbringen";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Die Ausgaben Fireworks stammen aus der Abrechnungszusammenfassung API; Der Kostenverlauf wird nicht verfolgt.";
 "Doubao API-key accounts" = "Doubao API-Hauptkonten";
@@ -2197,7 +2197,7 @@
 "API key or Cookie: …" = "API-Taste oder Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "Zeigt die verbrauchten/verbleibenden Credits im Vergleich zu Ihrer ZoomMate-Budgetobergrenze an.";
 "Amp Free" = "Amp Kostenlos";
-"Individual and workspace credit balances from Amp." = "Einzel- und Arbeitsplatzwaagen Credits von Amp.";
+"Individual and workspace credit balances from Amp." = "Guthaben für Einzelpersonen und Arbeitsbereiche von Amp.";
 "Agent" = "Agent";
 "Bonus" = "Bonus";
 "Daily refresh" = "Tägliche Aktualisierung";

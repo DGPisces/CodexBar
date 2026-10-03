@@ -1963,7 +1963,7 @@
 "The pasted header is sent only to this tenant." = "Den inklistrade rubriken skickas endast till denna klient.";
 "The selected Codex profile has no verified account email." = "Den valda Codex-profilen har ingen verifierad konto-e-postadress.";
 "The selected managed Codex account is unavailable." = "Det valda hanterade Codex-kontot är inte tillgängligt.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Dessa genvägar fungerar medan leverantörsväxlingsmenyn är öppen. Använd ctrl, alt, shift och cmd med en bokstav, siffra, vänster eller höger; använd none för att inaktivera en åtgärd.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Dessa kortkommandon fungerar medan menyn för leverantörsbyte är öppen. Använd `ctrl`, `alt`, `shift` och `cmd` med en bokstav, siffra, `left` eller `right`; använd `none` för att inaktivera en åtgärd.";
 "Third quota" = "Tredje Kvot";
 "Today cost" = "Kostar idag";
 "Token Refreshed" = "token Uppdaterad";
@@ -2117,7 +2117,7 @@
 "Subscription usage from the Chutes API." = "Prenumerationsanvändning från Chutes API.";
 "Chutes cost history is not available from CodexBar." = "Kostnadshistorik för Chutes är inte tillgänglig från CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Lagrat i ~/.codexbar/config.json. Klistra in en Chutes API-nyckel.";
-"chutes key..." = "rännans nyckel...";
+"chutes key..." = "Chutes API-nyckel...";
 "Spend" = "Spendera";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Fireworks-utgifterna kommer från faktureringsöversikten API; kostnadshistorik spåras inte.";
 "Doubao API-key accounts" = "Doubao API-nyckelkonton";
@@ -2196,7 +2196,7 @@
 "API key or Cookie: …" = "API-nyckel eller Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "Visar använd/återstående Krediter mot ditt budgettak för ZoomMate.";
 "Amp Free" = "Amp gratis";
-"Individual and workspace credit balances from Amp." = "Individuell och arbetsyta Krediter balanserar från Amp.";
+"Individual and workspace credit balances from Amp." = "Kreditsaldon för enskilda konton och arbetsytor i Amp.";
 "Agent" = "Agent";
 "Bonus" = "Bonus";
 "Daily refresh" = "Daglig uppdatering";

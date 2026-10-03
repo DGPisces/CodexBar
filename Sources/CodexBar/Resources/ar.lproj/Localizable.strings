@@ -1968,7 +1968,7 @@
 "The pasted header is sent only to this tenant." = "يتم إرسال الرأس الملصق إلى هذا المستأجر فقط.";
 "The selected Codex profile has no verified account email." = "لا يحتوي ملف تعريف Codex المحدد على بريد إلكتروني للحساب الذي تم التحقق منه.";
 "The selected managed Codex account is unavailable." = "حساب Codex المُدار المحدد غير متاح.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "تعمل هذه الاختصارات عندما تكون قائمة تبديل الموفر مفتوحة. استخدم ctrl وalt وshift وcmd مع حرف أو رقم أو يسار أو يمين؛ استخدم none لتعطيل الإجراء.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "تعمل هذه الاختصارات عندما تكون قائمة تبديل الموفر مفتوحة. استخدم `ctrl` و`alt` و`shift` و`cmd` مع حرف أو رقم أو `left` أو `right`؛ استخدم `none` لتعطيل الإجراء.";
 "Third quota" = "الثالث الحصة";
 "Today cost" = "تكلفة اليوم";
 "Token Refreshed" = "تم تحديث الرموز";
@@ -2122,7 +2122,7 @@
 "Subscription usage from the Chutes API." = "استخدام الاشتراك من Chutes API.";
 "Chutes cost history is not available from CodexBar." = "سجل تكلفة Chutes غير متاح من CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "مخزنة في ~/.codexbar/config.json. قم بلصق مفتاح Chutes API.";
-"chutes key..." = "مفتاح المزالق...";
+"chutes key..." = "مفتاح API لخدمة Chutes...";
 "Spend" = "انفق";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "يأتي إنفاق Fireworks من ملخص الفواتير API؛ لا يتم تعقب تاريخ التكلفة.";
 "Doubao API-key accounts" = "Doubao API-حسابات المفاتيح";
@@ -2201,7 +2201,7 @@
 "API key or Cookie: …" = "مفتاح API أو Cookie: ...";
 "Shows used/remaining credits against your ZoomMate budget cap." = "يُظهر الاعتمادات المستخدم/المتبقي مقابل الحد الأقصى لميزانية ZoomMate.";
 "Amp Free" = "Amp مجاني";
-"Individual and workspace credit balances from Amp." = "أرصدة الاعتمادات الفردية ومساحة العمل من Amp.";
+"Individual and workspace credit balances from Amp." = "أرصدة الاعتمادات للحساب الفردي ومساحة العمل في Amp.";
 "Agent" = "وكيل";
 "Bonus" = "مكافأة";
 "Daily refresh" = "التحديث اليومي";

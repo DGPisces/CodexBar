@@ -1965,7 +1965,7 @@
 "The pasted header is sent only to this tenant." = "Вставленный заголовок отправляется только этому клиенту.";
 "The selected Codex profile has no verified account email." = "Выбранный профиль Codex не имеет подтвержденного адреса электронной почты.";
 "The selected managed Codex account is unavailable." = "Выбранный управляемый аккаунт Codex недоступен.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Эти ярлыки работают, пока открыто меню переключения провайдера. Используйте Ctrl, Alt, Shift и cmd с буквой, цифрой, влево или вправо; используйте none, чтобы отключить действие.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Эти сочетания клавиш работают, пока открыто меню переключения провайдера. Используйте `ctrl`, `alt`, `shift` и `cmd` с буквой, цифрой, `left` или `right`; используйте `none`, чтобы отключить действие.";
 "Third quota" = "Третий Квота";
 "Today cost" = "Стоимость сегодня";
 "Token Refreshed" = "токены Обновленный";
@@ -2119,7 +2119,7 @@
 "Subscription usage from the Chutes API." = "Использование подписки от Chutes API.";
 "Chutes cost history is not available from CodexBar." = "История затрат Chutes недоступна из CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Хранится в ~/.codexbar/config.json. Вставьте ключ Chutes API.";
-"chutes key..." = "ключ от желоба...";
+"chutes key..." = "Ключ API Chutes...";
 "Spend" = "Тратить";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Расходы Fireworks берутся из сводки счетов API; История затрат не отслеживается.";
 "Doubao API-key accounts" = "Doubao API-ключевые аккаунты";
@@ -2198,7 +2198,7 @@
 "API key or Cookie: …" = "Ключ API или Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "Показывает использованный/оставшийся Кредиты в сравнении с пределом бюджета ZoomMate.";
 "Amp Free" = "Amp Бесплатно";
-"Individual and workspace credit balances from Amp." = "Индивидуальные и рабочие весы Кредиты от Amp.";
+"Individual and workspace credit balances from Amp." = "Остатки кредитов личного аккаунта и рабочего пространства в Amp.";
 "Agent" = "Агент";
 "Bonus" = "Бонус";
 "Daily refresh" = "Ежедневное обновление";

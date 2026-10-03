@@ -1966,7 +1966,7 @@
 "The pasted header is sent only to this tenant." = "La capçalera enganxada només s'envia a aquest inquilí.";
 "The selected Codex profile has no verified account email." = "El perfil Codex seleccionat no té cap correu electrònic de compte verificat.";
 "The selected managed Codex account is unavailable." = "El compte Codex gestionat seleccionat no està disponible.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Aquestes dreceres funcionen mentre el menú del commutador de proveïdors està obert. Utilitzeu ctrl, alt, shift i cmd amb una lletra, dígit, esquerra o dreta; utilitzeu none per desactivar una acció.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Aquestes dreceres funcionen mentre el menú del commutador de proveïdors és obert. Feu servir `ctrl`, `alt`, `shift` i `cmd` amb una lletra, un dígit, `left` o `right`; feu servir `none` per desactivar una acció.";
 "Third quota" = "Tercera quota";
 "Today cost" = "Avui costa";
 "Token Refreshed" = "Token actualitzat";
@@ -2120,7 +2120,7 @@
 "Subscription usage from the Chutes API." = "Ús de la subscripció del Chutes API.";
 "Chutes cost history is not available from CodexBar." = "L'historial de costos de Chutes no està disponible a CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Emmagatzemat a ~/.codexbar/config.json. Enganxeu una clau Chutes API.";
-"chutes key..." = "clau de canals...";
+"chutes key..." = "Clau API de Chutes...";
 "Spend" = "Gastar";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "La despesa Fireworks prové del resum de facturació API; no es fa un seguiment de l'historial de costos.";
 "Doubao API-key accounts" = "Doubao API-comptes clau";
@@ -2199,7 +2199,7 @@
 "API key or Cookie: …" = "Clau API o Cookie:...";
 "Shows used/remaining credits against your ZoomMate budget cap." = "Mostra el Crèdits utilitzat/resta amb el límit pressupostari de ZoomMate.";
 "Amp Free" = "Amp Gratuït";
-"Individual and workspace credit balances from Amp." = "Balanços individuals i d'espai de treball Crèdits de Amp.";
+"Individual and workspace credit balances from Amp." = "Saldos de crèdits individuals i de l’espai de treball d’Amp.";
 "Agent" = "Agent";
 "Bonus" = "Bonificació";
 "Daily refresh" = "Actualització diària";

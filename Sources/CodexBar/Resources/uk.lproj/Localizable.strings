@@ -1964,7 +1964,7 @@
 "The pasted header is sent only to this tenant." = "Вставлений заголовок надсилається лише цьому орендарю.";
 "The selected Codex profile has no verified account email." = "Вибраний профіль Codex не має підтвердженої електронної адреси облікового запису.";
 "The selected managed Codex account is unavailable." = "Вибраний керований обліковий запис Codex недоступний.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Ці ярлики працюють, коли відкрите меню перемикача постачальників. Використовуйте ctrl, alt, shift і cmd з літерою, цифрою, ліворуч або праворуч; використовуйте none, щоб вимкнути дію.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Ці сполучення клавіш працюють, коли відкрито меню перемикання постачальника. Використовуйте `ctrl`, `alt`, `shift` і `cmd` з літерою, цифрою, `left` або `right`; використовуйте `none`, щоб вимкнути дію.";
 "Third quota" = "Третій Квота";
 "Today cost" = "Сьогодні вартість";
 "Token Refreshed" = "жетони Оновлено";
@@ -2118,7 +2118,7 @@
 "Subscription usage from the Chutes API." = "Використання підписки від Chutes API.";
 "Chutes cost history is not available from CodexBar." = "Історія витрат Chutes недоступна з CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Зберігається в ~/.codexbar/config.json. Вставте ключ Chutes API.";
-"chutes key..." = "ключ до лотків...";
+"chutes key..." = "Ключ API Chutes...";
 "Spend" = "витрачати";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Витрати на Fireworks походять із підсумку платежів API; історія витрат не відслідковується.";
 "Doubao API-key accounts" = "Doubao API-ключові облікові записи";
@@ -2197,7 +2197,7 @@
 "API key or Cookie: …" = "Ключ API або Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "Показує використаний/залишок Кредити порівняно з обмеженням бюджету ZoomMate.";
 "Amp Free" = "Amp Безкоштовно";
-"Individual and workspace credit balances from Amp." = "Індивідуальні та робочі ваги Кредити від Amp.";
+"Individual and workspace credit balances from Amp." = "Залишки кредитів особистого облікового запису й робочого простору в Amp.";
 "Agent" = "Агент";
 "Bonus" = "Бонус";
 "Daily refresh" = "Щоденне оновлення";

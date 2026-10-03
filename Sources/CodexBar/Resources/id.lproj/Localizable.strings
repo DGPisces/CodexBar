@@ -1967,7 +1967,7 @@
 "The pasted header is sent only to this tenant." = "Header yang ditempel hanya dikirim ke penyewa ini.";
 "The selected Codex profile has no verified account email." = "Profil Codex yang dipilih tidak memiliki email akun terverifikasi.";
 "The selected managed Codex account is unavailable." = "Akun Codex terkelola yang dipilih tidak tersedia.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Pintasan ini berfungsi saat menu pengalih penyedia terbuka. Gunakan ctrl, alt, shift dan cmd dengan huruf, angka, kiri atau kanan; gunakan none untuk menonaktifkan suatu tindakan.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "Pintasan ini berfungsi saat menu pengalih penyedia terbuka. Gunakan `ctrl`, `alt`, `shift`, dan `cmd` dengan huruf, angka, `left`, atau `right`; gunakan `none` untuk menonaktifkan tindakan.";
 "Third quota" = "Kuota ketiga";
 "Today cost" = "Biaya hari ini";
 "Token Refreshed" = "token Disegarkan";
@@ -2121,7 +2121,7 @@
 "Subscription usage from the Chutes API." = "Penggunaan berlangganan dari Chutes API.";
 "Chutes cost history is not available from CodexBar." = "Riwayat biaya Chutes tidak tersedia dari CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Disimpan di ~/.codexbar/config.json. Tempelkan kunci Chutes API.";
-"chutes key..." = "kunci peluncuran...";
+"chutes key..." = "Kunci API Chutes...";
 "Spend" = "Menghabiskan";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Pembelanjaan Fireworks berasal dari ringkasan penagihan API; riwayat biaya tidak dilacak.";
 "Doubao API-key accounts" = "Doubao API-akun kunci";
@@ -2200,7 +2200,7 @@
 "API key or Cookie: …" = "Kunci API atau Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "Menampilkan Kredit yang terpakai/tersisa dibandingkan batas anggaran ZoomMate Anda.";
 "Amp Free" = "Amp Gratis";
-"Individual and workspace credit balances from Amp." = "Saldo Kredit individu dan ruang kerja dari Amp.";
+"Individual and workspace credit balances from Amp." = "Saldo kredit individu dan ruang kerja dari Amp.";
 "Agent" = "Agen";
 "Bonus" = "Bonusnya";
 "Daily refresh" = "Penyegaran setiap hari";

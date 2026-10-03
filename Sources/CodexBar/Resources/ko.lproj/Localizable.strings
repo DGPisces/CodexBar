@@ -1932,7 +1932,7 @@
 "The pasted header is sent only to this tenant." = "붙여넣은 헤더는 이 테넌트에게만 전송됩니다.";
 "The selected Codex profile has no verified account email." = "선택한 Codex 프로필에는 확인된 계정 이메일이 없습니다.";
 "The selected managed Codex account is unavailable." = "선택한 관리형 Codex 계정을 사용할 수 없습니다.";
-"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "이러한 바로가기는 공급자 전환기 메뉴가 열려 있는 동안 작동합니다. 문자, 숫자, 왼쪽 또는 오른쪽과 함께 Ctrl, Alt, Shift 및 cmd를 사용하십시오. 작업을 비활성화하려면 none를 사용하십시오.";
+"These shortcuts work while the provider switcher menu is open. Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action." = "이 단축키는 공급자 전환 메뉴가 열려 있을 때 작동합니다. `ctrl`, `alt`, `shift`, `cmd`를 문자, 숫자, `left` 또는 `right`와 함께 입력하세요. 동작을 비활성화하려면 `none`을 사용하세요.";
 "Third quota" = "세 번째 할당량";
 "Today cost" = "오늘의 비용";
 "Token Refreshed" = "토큰 새로 고침";
@@ -2086,7 +2086,7 @@
 "Subscription usage from the Chutes API." = "Chutes API의 구독 사용량입니다.";
 "Chutes cost history is not available from CodexBar." = "Chutes 비용 내역은 CodexBar에서 확인할 수 없습니다.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "~/.codexbar/config.json에 저장됩니다. Chutes API 키를 붙여넣습니다.";
-"chutes key..." = "낙하산 열쇠...";
+"chutes key..." = "Chutes API 키...";
 "Spend" = "지출";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Fireworks 지출은 청구 요약 API에서 발생합니다. 비용 내역은 추적되지 않습니다.";
 "Doubao API-key accounts" = "Doubao API-키 계정";
@@ -2165,7 +2165,7 @@
 "API key or Cookie: …" = "API 키 또는 Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "ZoomMate 예산 한도 대비 사용/남은 크레딧를 표시합니다.";
 "Amp Free" = "Amp 무료";
-"Individual and workspace credit balances from Amp." = "개인 및 작업 공간 크레딧는 Amp에서 균형을 이룹니다.";
+"Individual and workspace credit balances from Amp." = "Amp의 개인 계정 및 작업 공간 크레딧 잔액.";
 "Agent" = "대리인";
 "Bonus" = "보너스";
 "Daily refresh" = "매일 새로고침";
