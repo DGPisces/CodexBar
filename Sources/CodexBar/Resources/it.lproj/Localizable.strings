@@ -2341,3 +2341,4 @@
 "Avg decision" = "Decisione media";
 "%@h" = "%@h";
 "Unavailable account" = "Account: Non disponibile";
+"%@ over" = "%@ oltre il limite";

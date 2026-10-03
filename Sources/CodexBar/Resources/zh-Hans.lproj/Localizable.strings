@@ -2331,3 +2331,4 @@
 "Avg decision" = "平均决策耗时";
 "%@h" = "%@小时";
 "Unavailable account" = "账户: 不可用";
+"%@ over" = "超出 %@";

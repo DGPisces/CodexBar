@@ -185,6 +185,7 @@ enum CompactMetricFormatter {
     }
 
     static func costMetricLabel(_ label: String, provider: ProviderInstanceID) -> String {
+        // Provider-specific by design: old Codex widget timelines lack the API-estimate billing disclaimer.
         guard provider == .codex else { return W("%@ cost", self.localizedPeriod(label)) }
         // Snapshots written by older app versions contain the English estimate suffix.
         // Keep its meaning while translating the period and billing disclaimer together.

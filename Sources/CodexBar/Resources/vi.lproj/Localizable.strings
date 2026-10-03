@@ -2339,3 +2339,4 @@
 "Avg decision" = "Quyết định trung bình";
 "%@h" = "%@giờ";
 "Unavailable account" = "Tài khoản: Không có sẵn";
+"%@ over" = "Vượt %@";

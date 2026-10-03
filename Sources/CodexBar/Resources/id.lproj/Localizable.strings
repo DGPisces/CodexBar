@@ -2341,3 +2341,4 @@
 "Avg decision" = "Keputusan rata-rata";
 "%@h" = "%@j";
 "Unavailable account" = "Akun: Tidak tersedia";
+"%@ over" = "%@ terlampaui";

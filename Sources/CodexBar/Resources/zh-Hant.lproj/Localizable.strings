@@ -2320,3 +2320,4 @@
 "Avg decision" = "平均決策耗時";
 "%@h" = "%@小時";
 "Unavailable account" = "帳號: 無法使用";
+"%@ over" = "超出 %@";

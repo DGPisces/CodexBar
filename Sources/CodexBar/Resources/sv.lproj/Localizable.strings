@@ -2337,3 +2337,4 @@
 "Avg decision" = "Genomsnittligt beslut";
 "%@h" = "%@t";
 "Unavailable account" = "Konto: Inte tillgänglig";
+"%@ over" = "%@ över gränsen";

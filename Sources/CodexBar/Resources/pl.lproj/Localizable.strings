@@ -2341,3 +2341,4 @@
 "Avg decision" = "Średnia decyzja";
 "%@h" = "%@godz";
 "Unavailable account" = "Konto: Niedostępne";
+"%@ over" = "%@ ponad limit";

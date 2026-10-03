@@ -2306,3 +2306,4 @@
 "Avg decision" = "평균 결정";
 "%@h" = "%@시간";
 "Unavailable account" = "계정: 사용할 수 없음";
+"%@ over" = "%@ 초과";
