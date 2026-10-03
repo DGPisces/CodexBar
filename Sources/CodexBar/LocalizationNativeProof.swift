@@ -1,6 +1,7 @@
 #if DEBUG
 import AppKit
 import CodexBarCore
+import ServiceManagement
 import SwiftUI
 @preconcurrency import UserNotifications
 
@@ -30,19 +31,27 @@ enum LocalizationNativeProof {
         func applicationDidFinishLaunching(_ notification: Notification) {
             do {
                 try FileManager.default.createDirectory(at: self.output, withIntermediateDirectories: true)
-                // A saved, empty config avoids credential migration; no provider is contacted.
+                // Keep configuration and legacy credential stores inside this fixture directory.
                 let configStore = CodexBarConfigStore(fileURL: self.output.appendingPathComponent("config.json"))
                 var config = CodexBarConfig.makeDefault()
                 for index in config.providers.indices {
                     config.providers[index].enabled = false
                 }
                 try configStore.save(config)
-                let defaults = UserDefaults(suiteName: "codexbar-localization-proof-\(UUID().uuidString)")!
-                defaults.set(true, forKey: "debugDisableKeychainAccess")
-                defaults.set(false, forKey: "launchAtLogin")
+                let defaults = InMemoryUserDefaults(values: [
+                    "debugDisableKeychainAccess": true,
+                    "launchAtLogin": false,
+                    "codexbar.legacySecretsMigrationCompleted": true,
+                ])
+                let loginItemStatusBefore = SMAppService.mainApp.status
                 let settings = SettingsStore(
                     userDefaults: defaults,
                     configStore: configStore,
+                    tokenAccountStore: FileTokenAccountStore(
+                        fileURL: self.output.appendingPathComponent("accounts.json")),
+                    antigravityOAuthCredentialsStore: AntigravityOAuthCredentialsStore(
+                        fileURL: self.output.appendingPathComponent("antigravity.json")),
+                    startupBehavior: .isolated,
                     performInitialProviderDetection: false)
                 settings.credentialExpiryNotificationsEnabled = true
                 // Provider-specific by design: this fixture exercises Codex's localized credential alert.
@@ -83,6 +92,9 @@ enum LocalizationNativeProof {
                     "settingsTitle": L("credential_expiry_notifications_title"),
                     "settingsSubtitle": L("credential_expiry_notifications_subtitle"),
                     "taskLocalOverride": String(CodexBarLocalizationOverride.appLanguage != nil),
+                    "settingsStartupMode": "isolated",
+                    "loginItemStatusBefore": String(loginItemStatusBefore.rawValue),
+                    "loginItemStatusAfter": String(SMAppService.mainApp.status.rawValue),
                 ], filename: "app-\(codexBarLocalizationSignature()).json")
             } catch {
                 FileHandle.standardError.write(Data("localization-proof: \(error)\n".utf8))

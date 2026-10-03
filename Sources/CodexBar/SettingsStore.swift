@@ -235,6 +235,28 @@ struct SettingsStoreKeychainAccessPolicy {
     }
 }
 
+enum SettingsStoreStartupBehavior {
+    case automatic
+    case isolated
+}
+
+@MainActor
+struct SettingsStoreStartupServices {
+    let refreshUserPlugins: () -> Void
+    let initializeAppGroup: () -> Void
+    let updateLoginItem: (Bool) -> Void
+
+    static var live: Self {
+        Self(
+            refreshUserPlugins: {
+                guard !SettingsStore.isRunningTests else { return }
+                _ = UserProviderPluginRegistry.refresh()
+            },
+            initializeAppGroup: { SettingsStore.initializeAppGroup() },
+            updateLoginItem: { LaunchAtLoginManager.setEnabled($0) })
+    }
+}
+
 @MainActor
 @Observable
 final class SettingsStore {
@@ -251,6 +273,8 @@ final class SettingsStore {
     @ObservationIgnored let configStore: CodexBarConfigStore
     @ObservationIgnored let antigravityOAuthCredentialsStore: AntigravityOAuthCredentialsStore
     @ObservationIgnored let keychainAccessPolicy: SettingsStoreKeychainAccessPolicy
+    @ObservationIgnored let startupBehavior: SettingsStoreStartupBehavior
+    @ObservationIgnored let startupServices: SettingsStoreStartupServices
     @ObservationIgnored var config: CodexBarConfig
     @ObservationIgnored var configPersistTask: Task<Void, Never>?
     @ObservationIgnored var configFileWatcher: ConfigFileWatcher?
@@ -285,8 +309,11 @@ final class SettingsStore {
         return resolve()
     }
 
-    static func shouldBridgeSharedDefaults(for _: UserDefaults) -> Bool {
-        !self.isRunningTests
+    static func shouldBridgeSharedDefaults(
+        for _: UserDefaults,
+        startupBehavior: SettingsStoreStartupBehavior = .automatic) -> Bool
+    {
+        startupBehavior == .automatic && !self.isRunningTests
     }
 
     init(
@@ -322,31 +349,22 @@ final class SettingsStore {
         tokenAccountStore: any ProviderTokenAccountStoring = FileTokenAccountStore(),
         antigravityOAuthCredentialsStore: AntigravityOAuthCredentialsStore = AntigravityOAuthCredentialsStore(),
         keychainAccessPolicy: SettingsStoreKeychainAccessPolicy = .live,
+        startupBehavior: SettingsStoreStartupBehavior = .automatic,
+        startupServices: SettingsStoreStartupServices = .live,
         performInitialProviderDetection: Bool = !SettingsStore.isRunningTests)
     {
         // Legacy credential migration must see the saved policy, including shared-defaults fallback.
-        keychainAccessPolicy.setDisabled(Self.loadDebugDisableKeychainAccess(userDefaults: userDefaults))
-        if !Self.isRunningTests {
-            _ = UserProviderPluginRegistry.refresh()
+        keychainAccessPolicy.setDisabled(Self.loadDebugDisableKeychainAccess(
+            userDefaults: userDefaults, startupBehavior: startupBehavior))
+        if startupBehavior == .automatic {
+            startupServices.refreshUserPlugins()
         }
         // Capture this before app-group/config migrations can create prior-installation state.
         let hadExistingConfig = (try? configStore.load()) != nil
         let hadPreviousInstallationState = hadExistingConfig || Self.hadPreviousAppLaunch(userDefaults: userDefaults)
         // Migration tests inject every dependency directly; ordinary settings tests must not discover user state.
-        if !Self.isRunningTests {
-            let appGroupID = AppGroupSupport.currentGroupID()
-            Self.scheduleAppGroupMigration()
-            let appGroupMigration = AppGroupSupport.MigrationResult(status: .targetUnavailable)
-            let sharedDefaultsAvailable = Self.sharedDefaults != nil
-            CodexBarLog.logger(LogCategories.settings).info(
-                "App group resolved",
-                metadata: [
-                    "groupID": appGroupID,
-                    "sharedDefaultsAvailable": sharedDefaultsAvailable ? "1" : "0",
-                    "migrationStatus": appGroupMigration.status.rawValue,
-                    "migratedSnapshot": appGroupMigration.copiedSnapshot ? "1" : "0",
-                    "migratedDefaults": "\(appGroupMigration.copiedDefaults)",
-                ])
+        if startupBehavior == .automatic {
+            startupServices.initializeAppGroup()
         }
 
         if userDefaults.object(forKey: "openAIWebAccessEnabled") == nil,
@@ -380,11 +398,14 @@ final class SettingsStore {
         self.configStore = configStore
         self.antigravityOAuthCredentialsStore = antigravityOAuthCredentialsStore
         self.keychainAccessPolicy = keychainAccessPolicy
+        self.startupBehavior = startupBehavior
+        self.startupServices = startupServices
         self.config = config
         self.configLoading = true
         let defaultsState = Self.loadDefaultsState(
             userDefaults: userDefaults,
-            hadPreviousInstallationState: hadPreviousInstallationState)
+            hadPreviousInstallationState: hadPreviousInstallationState,
+            startupBehavior: startupBehavior)
         self.defaultsState = defaultsState
         self.providerSwitcherShortcuts = (try? ProviderSwitcherShortcuts.validated(
             userDefaults.dictionary(forKey: "switcherShortcuts") as? [String: String] ?? [:]))
@@ -396,7 +417,7 @@ final class SettingsStore {
         CodexBarLog.setFileLoggingEnabled(self.debugFileLoggingEnabled)
         userDefaults.removeObject(forKey: "showCodexUsage")
         userDefaults.removeObject(forKey: "showClaudeUsage")
-        LaunchAtLoginManager.setEnabled(self.launchAtLogin)
+        self.updateLoginItem(self.launchAtLogin)
         if performInitialProviderDetection {
             self.runInitialProviderDetectionIfNeeded()
         }
@@ -425,6 +446,11 @@ final class SettingsStore {
         }
     }
 
+    func updateLoginItem(_ enabled: Bool) {
+        guard self.startupBehavior == .automatic else { return }
+        self.startupServices.updateLoginItem(enabled)
+    }
+
     /// Automatic Low Power Mode reads `ProcessInfo.isLowPowerModeEnabled` live, but background
     /// timers only restart when `backgroundWorkSettingsRevision` changes. Without this, toggling
     /// the system's Low Power Mode mid-session would leave a running fixed-frequency timer stuck
@@ -449,6 +475,23 @@ extension SettingsStore {
         let sessionQuotaNotificationsEnabled: Bool
         let predictivePaceWarningNotificationsEnabled: Bool
         let limitResetNotificationsEnabled: Bool
+    }
+
+    fileprivate static func initializeAppGroup() {
+        guard !self.isRunningTests else { return }
+        let appGroupID = AppGroupSupport.currentGroupID()
+        self.scheduleAppGroupMigration()
+        let appGroupMigration = AppGroupSupport.MigrationResult(status: .targetUnavailable)
+        let sharedDefaultsAvailable = self.sharedDefaults != nil
+        CodexBarLog.logger(LogCategories.settings).info(
+            "App group resolved",
+            metadata: [
+                "groupID": appGroupID,
+                "sharedDefaultsAvailable": sharedDefaultsAvailable ? "1" : "0",
+                "migrationStatus": appGroupMigration.status.rawValue,
+                "migratedSnapshot": appGroupMigration.copiedSnapshot ? "1" : "0",
+                "migratedDefaults": "\(appGroupMigration.copiedDefaults)",
+            ])
     }
 
     private static func scheduleAppGroupMigration() {
@@ -494,13 +537,15 @@ extension SettingsStore {
     // swiftlint:disable:next function_body_length
     private static func loadDefaultsState(
         userDefaults: UserDefaults,
-        hadPreviousInstallationState: Bool) -> SettingsDefaultsState
+        hadPreviousInstallationState: Bool,
+        startupBehavior: SettingsStoreStartupBehavior) -> SettingsDefaultsState
     {
         let refreshFrequency = Self.loadRefreshFrequency(
             userDefaults: userDefaults,
             hadPreviousInstallationState: hadPreviousInstallationState)
         let adaptiveActivityScanConsent = Self.loadAdaptiveActivityScanConsent(userDefaults: userDefaults)
-        let debugDisableKeychainAccess = Self.loadDebugDisableKeychainAccess(userDefaults: userDefaults)
+        let debugDisableKeychainAccess = Self.loadDebugDisableKeychainAccess(
+            userDefaults: userDefaults, startupBehavior: startupBehavior)
         let debugLogLevelRaw = userDefaults.string(forKey: "debugLogLevel") ?? CodexBarLog.Level.verbose.rawValue
         if Self.isRunningTests, userDefaults.string(forKey: "debugLogLevel") == nil {
             userDefaults.set(debugLogLevelRaw, forKey: "debugLogLevel")
@@ -888,10 +933,14 @@ extension SettingsStore {
         userDefaults.string(forKey: "copilotIconSecondaryWindowID") ?? CopilotIconSecondaryWindowSelection.chat
     }
 
-    static func loadDebugDisableKeychainAccess(userDefaults: UserDefaults) -> Bool {
+    static func loadDebugDisableKeychainAccess(
+        userDefaults: UserDefaults,
+        startupBehavior: SettingsStoreStartupBehavior = .automatic) -> Bool
+    {
         self.loadDebugDisableKeychainAccess(
             userDefaults: userDefaults,
-            sharedDefaults: self.shouldBridgeSharedDefaults(for: userDefaults) ? self.sharedDefaults : nil)
+            sharedDefaults: self.shouldBridgeSharedDefaults(
+                for: userDefaults, startupBehavior: startupBehavior) ? self.sharedDefaults : nil)
     }
 
     static func loadDebugDisableKeychainAccess(userDefaults: UserDefaults, sharedDefaults: UserDefaults?) -> Bool {
