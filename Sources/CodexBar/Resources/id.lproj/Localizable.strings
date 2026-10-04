@@ -80,6 +80,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "Rata-rata (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "Hindari permintaan Keychain";
 "Balance" = "Saldo";
+"Cloud credits" = "Kredit cloud";
+"Expired" = "Kedaluwarsa";
 "Battery Saver" = "Penghemat Baterai";
 "Bordered" = "Berbingkai";
 "Build" = "Versi pembuatan";
@@ -1572,6 +1574,9 @@
 "Include OpenCodex usage logs" = "Sertakan log penggunaan OpenCodex";
 "Hide native Codex when OpenCodex is present" = "Sembunyikan Codex asli saat OpenCodex ada";
 "Export JSON" = "Ekspor JSON";
+"Independent chat" = "Obrolan mandiri";
+"Independent chats" = "Obrolan mandiri";
+"Chat %d" = "Obrolan %d";
 "Copy JSON" = "Salin JSON";
 "Sources" = "Sumber";
 "OpenCodex" = "OpenCodex";
@@ -2342,3 +2347,9 @@
 "%@h" = "%@j";
 "Unavailable account" = "Akun: Tidak tersedia";
 "%@ over" = "%@ terlampaui";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "Tempel header Cookie dari permintaan Chrome ke www.workbuddy.cn/profile/plans-usage.";
+"Reserved" = "Dicadangkan";
+
+"Add folder…" = "Tambahkan folder…";
+"Additional Gemini profile homes" = "Lokasi profil Gemini tambahan";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "Opsional. Pilih folder .gemini dari setiap profil untuk menggabungkan riwayat token dan biaya lokal. Lokasi utama selalu disertakan. Tidak mengubah proses masuk atau kuota.";

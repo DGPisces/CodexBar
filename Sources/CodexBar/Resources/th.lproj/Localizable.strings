@@ -80,6 +80,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "เฉลี่ย (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "หลีกเลี่ยงข้อความแจ้ง Keychain";
 "Balance" = "สมดุล";
+"Cloud credits" = "เครดิตคลาวด์";
+"Expired" = "หมดอายุแล้ว";
 "Battery Saver" = "ประหยัดแบตเตอรี่";
 "Bordered" = "มีพรมแดน";
 "Build" = "สร้าง";
@@ -1572,6 +1574,9 @@
 "Include OpenCodex usage logs" = "รวมบันทึกการใช้งาน OpenCodex";
 "Hide native Codex when OpenCodex is present" = "ซ่อน Codex ดั้งเดิมเมื่อมี OpenCodex อยู่";
 "Export JSON" = "ส่งออก JSON";
+"Independent chat" = "แชทอิสระ";
+"Independent chats" = "แชทอิสระ";
+"Chat %d" = "แชท %d";
 "Copy JSON" = "คัดลอก JSON";
 "Sources" = "แหล่งที่มา";
 "OpenCodex" = "OpenCodex";
@@ -2343,3 +2348,9 @@
 "%@h" = "%@ชม.";
 "Unavailable account" = "บัญชี: ไม่พร้อมใช้งาน";
 "%@ over" = "เกิน %@";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "วางส่วนหัว Cookie จากคำขอของ Chrome ไปยัง www.workbuddy.cn/profile/plans-usage";
+"Reserved" = "สำรองไว้";
+
+"Add folder…" = "เพิ่มโฟลเดอร์…";
+"Additional Gemini profile homes" = "ไดเรกทอรีหลักเพิ่มเติมของโปรไฟล์ Gemini";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "ไม่บังคับ เลือกโฟลเดอร์ .gemini ของแต่ละโปรไฟล์เพื่อรวมประวัติการใช้โทเค็นและค่าใช้จ่ายในเครื่อง โดยจะรวมไดเรกทอรีหลักเริ่มต้นไว้เสมอ การตั้งค่านี้ไม่เปลี่ยนการลงชื่อเข้าใช้หรือโควตา";

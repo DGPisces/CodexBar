@@ -80,6 +80,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "Ortalama (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "Anahtar Zinciri istemlerini atla";
 "Balance" = "Bakiye";
+"Cloud credits" = "Bulut kredileri";
+"Expired" = "Süresi doldu";
 "Battery Saver" = "Pil tasarrufu";
 "Bordered" = "Kenarlıklı";
 "Build" = "Derleme";
@@ -1557,6 +1559,10 @@
 "Cache write" = "Önbellek yazımı";
 "Reasoning" = "Akıl yürütme";
 "Sessions" = "Oturumlar";
+
+"Independent chat" = "Bağımsız sohbet";
+"Independent chats" = "Bağımsız sohbetler";
+"Chat %d" = "Sohbet %d";
 "Projects" = "Projeler";
 "Plan metered" = "Plan kotasıyla ölçülen";
 "List-price equivalent" = "Liste fiyatı karşılığı";
@@ -2341,3 +2347,9 @@
 "%@h" = "%@sa";
 "Unavailable account" = "Hesap: kullanılamıyor";
 "%@ over" = "%@ aşım";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "Chrome’dan www.workbuddy.cn/profile/plans-usage adresine gönderilen isteğin Cookie başlığını yapıştırın.";
+"Reserved" = "Ayrılmış";
+
+"Add folder…" = "Klasör ekle…";
+"Additional Gemini profile homes" = "Ek Gemini profil ana dizinleri";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "İsteğe bağlı. Yerel token ve maliyet geçmişini birleştirmek için her profilin .gemini klasörünü seçin. Birincil ana dizin her zaman dahil edilir. Oturum açma bilgilerini veya kotaları değiştirmez.";

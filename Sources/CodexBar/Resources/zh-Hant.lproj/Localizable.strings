@@ -104,6 +104,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "平均（\\(metadata.sessionLabel) + \\(metadata.weeklyLabel)）";
 "Avoid Keychain prompts" = "避免鑰匙圈提示";
 "Balance" = "餘額";
+"Cloud credits" = "雲端額度";
+"Expired" = "已過期";
 "Battery Saver" = "省電模式";
 "Bordered" = "有邊框";
 "Build" = "建置";
@@ -1599,6 +1601,9 @@
 "Include OpenCodex usage logs" = "包括 OpenCodex 使用日誌";
 "Hide native Codex when OpenCodex is present" = "當 OpenCodex 存在時隱藏本機 Codex";
 "Export JSON" = "出口JSON";
+"Independent chat" = "獨立聊天";
+"Independent chats" = "獨立聊天";
+"Chat %d" = "聊天 %d";
 "Copy JSON" = "複製 JSON";
 "Sources" = "來源";
 "OpenCodex" = "OpenCodex";
@@ -2321,3 +2326,9 @@
 "%@h" = "%@小時";
 "Unavailable account" = "帳號: 無法使用";
 "%@ over" = "超出 %@";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "貼上 Chrome 向 www.workbuddy.cn/profile/plans-usage 傳送的請求中的 Cookie 標頭。";
+"Reserved" = "已保留";
+
+"Add folder…" = "新增資料夾…";
+"Additional Gemini profile homes" = "額外的 Gemini 設定檔主目錄";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "選用設定。選取各設定檔的 .gemini 資料夾，合併本機 Token 用量與費用紀錄。預設主目錄始終包含在內，不影響登入或配額。";

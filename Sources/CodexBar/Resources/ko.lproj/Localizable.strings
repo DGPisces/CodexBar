@@ -100,6 +100,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "평균 (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "키체인 프롬프트 방지";
 "Balance" = "잔액";
+"Cloud credits" = "클라우드 크레딧";
+"Expired" = "만료됨";
 "Battery Saver" = "배터리 절약";
 "Bordered" = "테두리 있음";
 "Build" = "빌드";
@@ -1538,6 +1540,9 @@
 "Include OpenCodex usage logs" = "OpenCodex 사용 로그 포함";
 "Hide native Codex when OpenCodex is present" = "OpenCodex가 있는 경우 기본 Codex 숨기기";
 "Export JSON" = "JSON 내보내기";
+"Independent chat" = "독립 채팅";
+"Independent chats" = "독립 채팅";
+"Chat %d" = "채팅 %d";
 "Copy JSON" = "JSON 복사";
 "Sources" = "출처";
 "OpenCodex" = "OpenCodex";
@@ -2307,3 +2312,9 @@
 "%@h" = "%@시간";
 "Unavailable account" = "계정: 사용할 수 없음";
 "%@ over" = "%@ 초과";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "Chrome에서 www.workbuddy.cn/profile/plans-usage로 보낸 요청의 Cookie 헤더를 붙여넣으세요.";
+"Reserved" = "보류됨";
+
+"Add folder…" = "폴더 추가…";
+"Additional Gemini profile homes" = "추가 Gemini 프로필 홈 디렉터리";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "선택 사항입니다. 각 프로필의 .gemini 폴더를 선택하여 로컬 토큰 및 비용 내역을 통합할 수 있습니다. 기본 홈 디렉터리는 항상 포함됩니다. 로그인 정보나 할당량에는 영향을 미치지 않습니다.";

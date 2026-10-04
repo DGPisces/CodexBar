@@ -5,6 +5,10 @@
 "Conversations (%@)" = "Converses (%@)";
 "Fast" = "Ràpid";
 "iCloud Sync" = "Sincronització amb iCloud";
+
+"Independent chat" = "Xat independent";
+"Independent chats" = "Xats independents";
+"Chat %d" = "Xat %d";
 "Projects" = "Projectes";
 "Session %@" = "Sessió %@";
 "Std" = "Est.";
@@ -80,6 +84,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "Mitjana (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "Evita les sol·licituds del Clauer";
 "Balance" = "Saldo";
+"Cloud credits" = "Crèdits al núvol";
+"Expired" = "Caducat";
 "Battery Saver" = "Estalvi de bateria";
 "Bordered" = "Amb vora";
 "Build" = "Compilació";
@@ -2341,3 +2347,9 @@
 "%@h" = "%@h";
 "Unavailable account" = "Compte: No disponible";
 "%@ over" = "%@ d’excés";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "Enganxeu la capçalera Cookie d’una sol·licitud de Chrome a www.workbuddy.cn/profile/plans-usage.";
+"Reserved" = "Reservat";
+
+"Add folder…" = "Afegeix carpeta…";
+"Additional Gemini profile homes" = "Directoris d’inici addicionals dels perfils de Gemini";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "Opcional. Selecciona la carpeta .gemini de cada perfil per combinar l’historial local de tokens i costos. El directori d’inici principal sempre s’inclou. No modifica l’inici de sessió ni les quotes.";

@@ -100,6 +100,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "Середній (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "Уникайте підказок Keychain";
 "Balance" = "Баланс";
+"Cloud credits" = "Хмарні кредити";
+"Expired" = "Термін дії минув";
 "Battery Saver" = "Економія батареї";
 "Bordered" = "З рамкою";
 "Build" = "Збірка";
@@ -1568,6 +1570,9 @@
 "Include OpenCodex usage logs" = "Включати журнали використання OpenCodex";
 "Hide native Codex when OpenCodex is present" = "Приховати нативний Codex, коли присутній OpenCodex";
 "Export JSON" = "Експорт JSON";
+"Independent chat" = "Окремий чат";
+"Independent chats" = "Окремі чати";
+"Chat %d" = "Чат %d";
 "Copy JSON" = "Копіювати JSON";
 "Sources" = "Джерела";
 "OpenCodex" = "OpenCodex";
@@ -2339,3 +2344,9 @@
 "%@h" = "%@год";
 "Unavailable account" = "Обліковий запис: Недоступний";
 "%@ over" = "%@ понад ліміт";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "Вставте заголовок Cookie із запиту Chrome до www.workbuddy.cn/profile/plans-usage.";
+"Reserved" = "Зарезервовано";
+
+"Add folder…" = "Додати папку…";
+"Additional Gemini profile homes" = "Додаткові базові каталоги профілів Gemini";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "Необов’язково. Виберіть папку .gemini для кожного профілю, щоб об’єднати локальні дані про токени та історію витрат. Основний базовий каталог завжди враховується. Це не впливає на вхід у систему та квоти.";

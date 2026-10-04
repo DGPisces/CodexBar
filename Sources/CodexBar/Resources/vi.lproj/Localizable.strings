@@ -100,6 +100,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "Trung bình (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "Tránh Keychain lời nhắc";
 "Balance" = "Số dư";
+"Cloud credits" = "Tín dụng đám mây";
+"Expired" = "Đã hết hạn";
 "Battery Saver" = "Trình tiết kiệm pin";
 "Bordered" = "Có viền";
 "Build" = "Xây dựng";
@@ -1569,6 +1571,9 @@
 "Include OpenCodex usage logs" = "Bao gồm nhật ký sử dụng OpenCodex";
 "Hide native Codex when OpenCodex is present" = "Ẩn Codex gốc khi có OpenCodex";
 "Export JSON" = "Xuất JSON";
+"Independent chat" = "Cuộc trò chuyện độc lập";
+"Independent chats" = "Các cuộc trò chuyện độc lập";
+"Chat %d" = "Cuộc trò chuyện %d";
 "Copy JSON" = "Sao chép JSON";
 "Sources" = "Nguồn";
 "OpenCodex" = "OpenCodex";
@@ -2340,3 +2345,9 @@
 "%@h" = "%@giờ";
 "Unavailable account" = "Tài khoản: Không có sẵn";
 "%@ over" = "Vượt %@";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "Dán tiêu đề Cookie từ yêu cầu Chrome tới www.workbuddy.cn/profile/plans-usage.";
+"Reserved" = "Đã giữ lại";
+
+"Add folder…" = "Thêm thư mục…";
+"Additional Gemini profile homes" = "Thư mục chính bổ sung cho các hồ sơ Gemini";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "Tùy chọn. Chọn thư mục .gemini của từng hồ sơ để kết hợp lịch sử token và chi phí cục bộ. Thư mục chính luôn được bao gồm. Tính năng này không ảnh hưởng đến thông tin đăng nhập hoặc hạn mức.";

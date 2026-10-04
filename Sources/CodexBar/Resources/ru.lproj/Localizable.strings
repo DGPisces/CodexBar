@@ -101,6 +101,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "Среднее (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "Избегать запросов Keychain";
 "Balance" = "Баланс";
+"Cloud credits" = "Облачные кредиты";
+"Expired" = "Истекло";
 "Battery Saver" = "Экономия энергии";
 "Bordered" = "С рамкой";
 "Build" = "Сборка";
@@ -1570,6 +1572,9 @@
 "Include OpenCodex usage logs" = "Включить журналы использования OpenCodex";
 "Hide native Codex when OpenCodex is present" = "Скрыть собственный Codex при наличии OpenCodex";
 "Export JSON" = "Экспортировать JSON";
+"Independent chat" = "Отдельный чат";
+"Independent chats" = "Отдельные чаты";
+"Chat %d" = "Чат %d";
 "Copy JSON" = "Копировать JSON";
 "Sources" = "Источники";
 "OpenCodex" = "OpenCodex";
@@ -2340,3 +2345,9 @@
 "%@h" = "%@ч";
 "Unavailable account" = "Аккаунт: Недоступно";
 "%@ over" = "%@ сверх лимита";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "Вставьте заголовок Cookie из запроса Chrome к www.workbuddy.cn/profile/plans-usage.";
+"Reserved" = "Зарезервировано";
+
+"Add folder…" = "Добавить папку…";
+"Additional Gemini profile homes" = "Дополнительные домашние каталоги профилей Gemini";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "Необязательно. Выберите папку .gemini для каждого профиля, чтобы объединить локальную историю токенов и затрат. Основной домашний каталог всегда включается. Это не влияет на процесс входа в систему или квоты.";

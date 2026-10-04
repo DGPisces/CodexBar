@@ -104,6 +104,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "平均（\\(metadata.sessionLabel) + \\(metadata.weeklyLabel)）";
 "Avoid Keychain prompts" = "避免钥匙串提示";
 "Balance" = "余额";
+"Cloud credits" = "云端额度";
+"Expired" = "已过期";
 "Battery Saver" = "省电模式";
 "Bordered" = "带边框";
 "Build" = "构建";
@@ -1368,6 +1370,9 @@
 "Cache write" = "缓存写入";
 "Reasoning" = "推理";
 "Sessions" = "会话";
+"Independent chats" = "独立聊天";
+"Independent chat" = "独立聊天";
+"Chat %d" = "聊天 %d";
 "Projects" = "项目";
 "Plan metered" = "套餐计量";
 "List-price equivalent" = "目录价等值";
@@ -2332,3 +2337,9 @@
 "%@h" = "%@小时";
 "Unavailable account" = "账户: 不可用";
 "%@ over" = "超出 %@";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "粘贴 Chrome 向 www.workbuddy.cn/profile/plans-usage 发送的请求中的 Cookie 标头。";
+"Reserved" = "已预留";
+
+"Add folder…" = "添加文件夹…";
+"Additional Gemini profile homes" = "额外的 Gemini 配置主目录";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "可选。选择各配置的 .gemini 文件夹，合并本地 Token 用量和费用历史。默认主目录始终包含在内，不影响登录或配额。";

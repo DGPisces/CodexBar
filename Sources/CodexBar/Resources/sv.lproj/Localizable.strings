@@ -100,6 +100,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "Genomsnitt (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "Undvik frågor från Nyckelring";
 "Balance" = "Saldo";
+"Cloud credits" = "Molnkrediter";
+"Expired" = "Upphört";
 "Battery Saver" = "Batterisparläge";
 "Bordered" = "Med ram";
 "Build" = "Bygge";
@@ -1567,6 +1569,9 @@
 "Include OpenCodex usage logs" = "Inkludera OpenCodex-användningsloggar";
 "Hide native Codex when OpenCodex is present" = "Dölj ursprunglig Codex när OpenCodex finns";
 "Export JSON" = "Exportera JSON";
+"Independent chat" = "Fristående chatt";
+"Independent chats" = "Fristående chattar";
+"Chat %d" = "Chatt %d";
 "Copy JSON" = "Kopiera JSON";
 "Sources" = "Källor";
 "OpenCodex" = "OpenCodex";
@@ -2338,3 +2343,9 @@
 "%@h" = "%@t";
 "Unavailable account" = "Konto: Inte tillgänglig";
 "%@ over" = "%@ över gränsen";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "Klistra in Cookie-headern från en Chrome-begäran till www.workbuddy.cn/profile/plans-usage.";
+"Reserved" = "Reserverat";
+
+"Add folder…" = "Lägg till mapp…";
+"Additional Gemini profile homes" = "Ytterligare hemkataloger för Gemini-profiler";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "Valfritt. Välj varje profils .gemini-mapp för att slå samman lokal token- och kostnadshistorik. Den primära hemkatalogen ingår alltid. Detta påverkar inte inloggning eller kvoter.";

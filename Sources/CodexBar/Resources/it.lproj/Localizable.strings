@@ -80,6 +80,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "Media (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "Evita i prompt del portachiavi";
 "Balance" = "Saldo";
+"Cloud credits" = "Crediti cloud";
+"Expired" = "Scaduto";
 "Battery Saver" = "Risparmio batteria";
 "Bordered" = "Con bordo";
 "Build" = "Costruisci la versione";
@@ -1559,6 +1561,10 @@
 "Cache write" = "Scrittura cache";
 "Reasoning" = "Ragionamento";
 "Sessions" = "Sessioni";
+
+"Independent chat" = "Chat indipendente";
+"Independent chats" = "Chat indipendenti";
+"Chat %d" = "Conversazione %d";
 "Projects" = "Progetti";
 "Plan metered" = "Piano misurato";
 "List-price equivalent" = "Equivalente a listino";
@@ -2342,3 +2348,9 @@
 "%@h" = "%@h";
 "Unavailable account" = "Account: Non disponibile";
 "%@ over" = "%@ oltre il limite";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "Incolla l’intestazione Cookie di una richiesta Chrome a www.workbuddy.cn/profile/plans-usage.";
+"Reserved" = "Riservato";
+
+"Add folder…" = "Aggiungi cartella…";
+"Additional Gemini profile homes" = "Cartelle home aggiuntive per i profili Gemini";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "Facoltativo. Seleziona la cartella .gemini di ciascun profilo per unire la cronologia locale dei token e dei costi. La cartella home principale è sempre inclusa. Non modifica l’accesso né le quote.";

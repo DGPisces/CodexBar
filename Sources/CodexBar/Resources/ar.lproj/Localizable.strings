@@ -80,6 +80,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "المتوسط (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "تجنب Keychain الأسئلة";
 "Balance" = "التوازن";
+"Cloud credits" = "رصيد السحابة";
+"Expired" = "منتهية الصلاحية";
 "Battery Saver" = "منقذ البطارية";
 "Bordered" = "الحدود";
 "Build" = "البناء";
@@ -1572,6 +1574,9 @@
 "Include OpenCodex usage logs" = "قم بتضمين سجلات استخدام OpenCodex";
 "Hide native Codex when OpenCodex is present" = "إخفاء Codex الأصلي عند وجود OpenCodex";
 "Export JSON" = "تصدير JSON";
+"Independent chat" = "محادثة مستقلة";
+"Independent chats" = "محادثات مستقلة";
+"Chat %d" = "محادثة %d";
 "Copy JSON" = "نسخ JSON";
 "Sources" = "المصادر";
 "OpenCodex" = "OpenCodex";
@@ -2343,3 +2348,9 @@
 "%@h" = "%@س";
 "Unavailable account" = "الحساب: غير متوفر";
 "%@ over" = "تجاوز %@";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "الصق ترويسة Cookie من طلب Chrome إلى www.workbuddy.cn/profile/plans-usage.";
+"Reserved" = "محجوز";
+
+"Add folder…" = "إضافة مجلد…";
+"Additional Gemini profile homes" = "مجلدات رئيسية إضافية لملفات تعريف Gemini";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "اختياري. حدد مجلد .gemini الخاص بكل ملف تعريف لدمج سجل استخدام الرموز والتكاليف المحلية. يتم تضمين المجلد الرئيسي دائمًا. لا يؤثر ذلك على تسجيل الدخول أو الحصص.";

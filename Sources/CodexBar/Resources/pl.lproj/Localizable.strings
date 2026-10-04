@@ -80,6 +80,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "Średnia (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "Unikaj monitów pęku kluczy";
 "Balance" = "Saldo";
+"Cloud credits" = "Kredyty w chmurze";
+"Expired" = "Wygasło";
 "Battery Saver" = "Oszczędzanie baterii";
 "Bordered" = "Z obramowaniem";
 "Build" = "Wersja kompilacji";
@@ -1572,6 +1574,9 @@
 "Include OpenCodex usage logs" = "Dołącz dzienniki użytkowania OpenCodex";
 "Hide native Codex when OpenCodex is present" = "Ukryj natywny Codex, gdy obecny jest OpenCodex";
 "Export JSON" = "Eksportuj JSON";
+"Independent chat" = "Niezależny czat";
+"Independent chats" = "Niezależne czaty";
+"Chat %d" = "Czat %d";
 "Copy JSON" = "Kopiuj JSON";
 "Sources" = "Źródła";
 "OpenCodex" = "OpenCodex";
@@ -2342,3 +2347,9 @@
 "%@h" = "%@godz";
 "Unavailable account" = "Konto: Niedostępne";
 "%@ over" = "%@ ponad limit";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "Wklej nagłówek Cookie z żądania Chrome do www.workbuddy.cn/profile/plans-usage.";
+"Reserved" = "Zarezerwowane";
+
+"Add folder…" = "Dodaj folder…";
+"Additional Gemini profile homes" = "Dodatkowe katalogi domowe profili Gemini";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "Opcjonalnie. Wybierz folder .gemini dla każdego profilu, aby połączyć lokalną historię tokenów i kosztów. Główny katalog domowy jest zawsze uwzględniony. Nie ma to wpływu na logowanie ani limity.";

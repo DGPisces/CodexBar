@@ -80,6 +80,8 @@
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "میانگین (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "از درخواست های Keychain اجتناب کنید";
 "Balance" = "تعادل";
+"Cloud credits" = "اعتبار ابری";
+"Expired" = "منقضی شده";
 "Battery Saver" = "باتری سیور";
 "Bordered" = "مرز";
 "Build" = "ساخت";
@@ -1572,6 +1574,9 @@
 "Include OpenCodex usage logs" = "شامل گزارش های استفاده از OpenCodex";
 "Hide native Codex when OpenCodex is present" = "هنگامی که OpenCodex وجود دارد، Codex بومی را مخفی کنید";
 "Export JSON" = "صادرات JSON";
+"Independent chat" = "گفتگوی مستقل";
+"Independent chats" = "گفتگوهای مستقل";
+"Chat %d" = "گفتگو %d";
 "Copy JSON" = "کپی JSON";
 "Sources" = "منابع";
 "OpenCodex" = "OpenCodex";
@@ -2343,3 +2348,9 @@
 "%@h" = "%@س";
 "Unavailable account" = "حساب: در دسترس نیست";
 "%@ over" = "مازاد %@";
+"Paste the Cookie header from a Chrome request to www.workbuddy.cn/profile/plans-usage." = "هدر Cookie را از یک درخواست Chrome به www.workbuddy.cn/profile/plans-usage جای‌گذاری کنید.";
+"Reserved" = "رزروشده";
+
+"Add folder…" = "افزودن پوشه…";
+"Additional Gemini profile homes" = "پوشه‌های اصلی اضافی پروفایل‌های Gemini";
+"Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "اختیاری. پوشه .gemini هر پروفایل را برای ادغام تاریخچه محلی توکن‌ها و هزینه‌ها انتخاب کنید. پوشه اصلی همیشه گنجانده می‌شود. ورود به حساب یا سهمیه‌ها را تغییر نمی‌دهد.";
