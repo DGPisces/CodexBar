@@ -1641,6 +1641,11 @@
 "account_widgets_title" = "Aktualizuj konta dla widżetów";
 "account_widgets_description" = "Wybierz konto w każdym widżecie Account Usage. Odświeża do sześciu kont na dostawcę.";
 
+/* Spend time zone */
+"Statistics time zone" = "Strefa czasowa statystyk";
+"Use Mac's current time zone" = "Użyj bieżącej strefy czasowej Maca";
+"Daily usage uses a fixed time zone. Changing it may move usage to a different day." = "Dzienne użycie jest grupowane według stałej strefy czasowej. Jej zmiana może przypisać użycie do innego dnia.";
+
 /* Antigravity local cost estimates */
 "antigravity_cost_estimate_hint" = "Lokalne użycie × publiczne ceny API · to nie opłaty ani kredyty Antigravity";
 "antigravity_quota_window_note" = "Koszt okna obejmuje wszystkie modele · pokazane okno to najbardziej ograniczona rodzina";
@@ -2353,3 +2358,9 @@
 "Add folder…" = "Dodaj folder…";
 "Additional Gemini profile homes" = "Dodatkowe katalogi domowe profili Gemini";
 "Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "Opcjonalnie. Wybierz folder .gemini dla każdego profilu, aby połączyć lokalną historię tokenów i kosztów. Główny katalog domowy jest zawsze uwzględniony. Nie ma to wpływu na logowanie ani limity.";
+
+/* Selected browser profile */
+"Browser profile" = "Profil przeglądarki";
+"Unavailable profile: %@" = "Niedostępny profil: %@";
+"Read only the selected %@ profile. Accounts are never selected automatically." = "Odczytuj tylko wybrany profil %@. Konta nigdy nie są wybierane automatycznie.";
+"Langdock cost usage is not supported." = "Śledzenie kosztów Langdock nie jest obsługiwane.";

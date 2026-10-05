@@ -1639,6 +1639,11 @@
 "account_widgets_title" = "Cập nhật tài khoản cho tiện ích";
 "account_widgets_description" = "Chọn một tài khoản trong mỗi tiện ích Account Usage. Làm mới tối đa sáu tài khoản cho mỗi nhà cung cấp.";
 
+/* Spend time zone */
+"Statistics time zone" = "Múi giờ thống kê";
+"Use Mac's current time zone" = "Dùng múi giờ hiện tại của Mac";
+"Daily usage uses a fixed time zone. Changing it may move usage to a different day." = "Mức sử dụng hằng ngày được nhóm theo một múi giờ cố định. Thay đổi múi giờ có thể chuyển mức sử dụng sang ngày khác.";
+
 /* Antigravity local cost estimates */
 "antigravity_cost_estimate_hint" = "Mức dùng cục bộ × giá API công khai · không phải phí hay tín dụng Antigravity";
 "antigravity_quota_window_note" = "Chi phí cửa sổ bao gồm mọi mô hình · cửa sổ hiển thị là nhóm bị giới hạn nhất";
@@ -2351,3 +2356,9 @@
 "Add folder…" = "Thêm thư mục…";
 "Additional Gemini profile homes" = "Thư mục chính bổ sung cho các hồ sơ Gemini";
 "Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "Tùy chọn. Chọn thư mục .gemini của từng hồ sơ để kết hợp lịch sử token và chi phí cục bộ. Thư mục chính luôn được bao gồm. Tính năng này không ảnh hưởng đến thông tin đăng nhập hoặc hạn mức.";
+
+/* Selected browser profile */
+"Browser profile" = "Hồ sơ trình duyệt";
+"Unavailable profile: %@" = "Hồ sơ không khả dụng: %@";
+"Read only the selected %@ profile. Accounts are never selected automatically." = "Chỉ đọc hồ sơ %@ đã chọn. Tài khoản không bao giờ được chọn tự động.";
+"Langdock cost usage is not supported." = "Chức năng theo dõi chi phí sử dụng Langdock chưa được hỗ trợ.";

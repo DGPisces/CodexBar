@@ -1642,6 +1642,11 @@
 "account_widgets_title" = "تحديث الحسابات للأدوات";
 "account_widgets_description" = "اختر حسابًا في كل أداة Account Usage. يتم تحديث ما يصل إلى ستة حسابات لكل مزوّد.";
 
+/* Spend time zone */
+"Statistics time zone" = "المنطقة الزمنية للإحصاءات";
+"Use Mac's current time zone" = "استخدام المنطقة الزمنية الحالية للـ Mac";
+"Daily usage uses a fixed time zone. Changing it may move usage to a different day." = "يُحسب الاستخدام اليومي وفق منطقة زمنية ثابتة. قد يؤدي تغييرها إلى نقل الاستخدام إلى يوم مختلف.";
+
 /* Antigravity local cost estimates */
 "antigravity_cost_estimate_hint" = "الاستخدام المحلي × أسعار واجهة البرمجة العامة · ليست رسوم أو أرصدة Antigravity";
 "antigravity_quota_window_note" = "تكلفة النافذة تشمل كل النماذج · النافذة المعروضة هي الفئة الأكثر تقييدًا";
@@ -2354,3 +2359,9 @@
 "Add folder…" = "إضافة مجلد…";
 "Additional Gemini profile homes" = "مجلدات رئيسية إضافية لملفات تعريف Gemini";
 "Optional. Select each profile's .gemini folder to combine local token and cost history. The primary home is always included. Does not change sign-in or quotas." = "اختياري. حدد مجلد .gemini الخاص بكل ملف تعريف لدمج سجل استخدام الرموز والتكاليف المحلية. يتم تضمين المجلد الرئيسي دائمًا. لا يؤثر ذلك على تسجيل الدخول أو الحصص.";
+
+/* Selected browser profile */
+"Browser profile" = "ملف تعريف المتصفح";
+"Unavailable profile: %@" = "ملف التعريف غير متاح: %@";
+"Read only the selected %@ profile. Accounts are never selected automatically." = "قراءة ملف تعريف %@ المحدد فقط. لا يتم اختيار الحسابات تلقائيًا مطلقًا.";
+"Langdock cost usage is not supported." = "لا يتم دعم تتبع تكاليف استخدام Langdock.";
