@@ -39,16 +39,19 @@ enum WidgetLocalization {
         return self.bundle(language: language)
     }
 
-    static func bundle(language: String) -> Bundle {
+    static func bundle(language: String, resourceBundle: Bundle = WidgetLocalization.resourceBundle) -> Bundle {
         let language = language.isEmpty
-            ? Bundle.preferredLocalizations(from: self.resourceBundle.localizations).first ?? "en"
+            ? Bundle.preferredLocalizations(from: resourceBundle.localizations).first ?? "en"
             : language
-        if let path = self.resourceBundle.path(forResource: language, ofType: "lproj"),
-           let bundle = Bundle(path: path)
-        {
-            return bundle
+        // Native SwiftPM builds lowercase language-directory names, including region and script suffixes.
+        for candidate in [language, language.lowercased()] {
+            if let path = resourceBundle.path(forResource: candidate, ofType: "lproj"),
+               let bundle = Bundle(path: path)
+            {
+                return bundle
+            }
         }
-        return self.resourceBundle
+        return resourceBundle
     }
 }
 

@@ -13,7 +13,8 @@ struct WidgetLocalizationTests {
             let app = try #require(NSDictionary(contentsOf: appResources.appendingPathComponent(
                 "\(language.rawValue).lproj/Localizable.strings")) as? [String: String])
             let bundle = WidgetLocalization.bundle(language: language.rawValue)
-            #expect(bundle.bundleURL.lastPathComponent == "\(language.rawValue).lproj")
+            #expect(bundle.bundleURL.lastPathComponent.caseInsensitiveCompare("\(language.rawValue).lproj") ==
+                .orderedSame)
             try WidgetLocalizationOverride.$language.withValue(language.rawValue) {
                 for key in ["Choose an account", "Usage data will appear once the app refreshes.", "Credits left"] {
                     #expect(W(key) == app[key])
@@ -34,6 +35,27 @@ struct WidgetLocalizationTests {
                 #expect(WidgetLaneCopy.duration(86399) == W("%@d", "1"))
             }
         }
+    }
+
+    @Test(arguments: ["zh-Hans", "zh-Hant", "pt-BR"])
+    func `widget resolves lowercased SwiftPM locale directories`(language: String) throws {
+        let root = FileManager.default.temporaryDirectory.appendingPathComponent(
+            "codexbar-widget-localization-\(UUID().uuidString)", isDirectory: true)
+        defer { try? FileManager.default.removeItem(at: root) }
+        let resourceURL = root.appendingPathComponent("WidgetLocalization.bundle", isDirectory: true)
+        for fixtureLanguage in ["en", "zh-Hans", "zh-Hant", "pt-BR"] {
+            let localizedURL = resourceURL.appendingPathComponent(
+                "\(fixtureLanguage.lowercased()).lproj", isDirectory: true)
+            try FileManager.default.createDirectory(at: localizedURL, withIntermediateDirectories: true)
+            try "\"Choose an account\" = \"Fixture \(fixtureLanguage)\";\n".write(
+                to: localizedURL.appendingPathComponent("Localizable.strings"), atomically: true, encoding: .utf8)
+        }
+        let resourceBundle = try #require(Bundle(url: resourceURL))
+
+        let bundle = WidgetLocalization.bundle(language: language, resourceBundle: resourceBundle)
+
+        #expect(bundle.bundleURL.lastPathComponent == "\(language.lowercased()).lproj")
+        #expect(bundle.localizedString(forKey: "Choose an account", value: nil, table: nil) == "Fixture \(language)")
     }
 
     @Test
