@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "production_code_commit": "22fdcb88e8d77a03c9d8447f889012247d4bb483",
+  "parser_hash": "de14dd5f901910bc",
+  "test_expectation_update": "Respect upstream retained-report invalidation for predecessor ed735dc27ffa70d9 while asserting all other ledger/checkpoint/pricing state remains equal.",
+  "updated_test_sha256": "368ca01c0519ad5a133dac86efc91284d8ca9268fafad238a4d6fb0defee78ab",
+  "check": {
+    "command": "make check",
+    "exit_code": 0,
+    "swift_files": 2818,
+    "violations": 0
+  },
+  "focused": {
+    "tests": 123,
+    "suites": 7,
+    "exit_code": 0
+  },
+  "native_input_proof": {
+    "tests": 1,
+    "suites": 1,
+    "exit_code": 0,
+    "fresh_and_cached_reference_match": true
+  },
+  "full": {
+    "command": "make test",
+    "exit_code": 0,
+    "discovered_selections": 1570,
+    "selected_selections": 1570,
+    "selected_groups": 143,
+    "first_pass_successful_groups": 143,
+    "first_pass_failed_groups": 0,
+    "full_group_retries": 0,
+    "recovered_groups": 0,
+    "timed_out_groups": 0,
+    "isolated_selection_retries": 0,
+    "discovery_seconds": 7.3,
+    "execution_seconds": 1213.6,
+    "total_seconds": 1221.0
+  },
+  "package": {
+    "command": "CODEXBAR_SIGNING=adhoc Scripts/package_app.sh release",
+    "exit_code": 0,
+    "resource_probe": "pass",
+    "checkout_unreadable_launch_smoke_seconds": 6,
+    "launch_smoke": "pass",
+    "signature_verification": "pass"
+  },
+  "window_and_sustained_interaction": "Still pending: manual Mac unlock required by the computer-use tool.",
+  "public_data": "Operational validation counters only; no private identifiers or usage values."
+}

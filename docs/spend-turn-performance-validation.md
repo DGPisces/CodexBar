@@ -7,107 +7,147 @@ read_when:
 
 # Spend session turn performance validation
 
-Local prototype measured on arm64 macOS 27 with Swift 6.4 in a debug build.
-Baseline: `6a26b2e9b1b60471970deb6fe663f9e5f284e2ce`.
-Parser revision: 9; parser hash: `e79fcc60eec6f0b0`.
+Validated on arm64 macOS 27 with Swift 6.4. Upstream baseline:
+`ab32496d3c1f861981aa1a19aee2f933204f9bb9`. Feature production code:
+`22fdcb88e8d77a03c9d8447f889012247d4bb483`.
+Parser revision: 9; parser hash: `de14dd5f901910bc`.
 
 ## Metric contract
 
-Native Codex sessions show total valid output tokens divided by total valid turn
-duration, the median available first-token latency, and the number of timed turns.
-Output includes reasoning tokens already contained in output. Turn duration
-includes tools, retries, network and waiting; this is whole-turn throughput,
-not streaming model throughput. Samples belong to their completion day.
+Native Codex session rows show total valid output tokens divided by total valid
+turn duration, median available first-token latency, and the number of timed
+turns. Output includes reasoning tokens already contained in output. Duration
+includes tools, retries, network and waiting; this is whole-turn throughput.
+Session summaries can combine models and tool-heavy turns and are not a model
+streaming benchmark. Samples belong to their completion day.
 
 Only successful completed turns with deduplicated authoritative request usage
 matching the reported turn total are counted. Invalid owned usage or completion
 timestamps invalidate timing; missing first-token timing only removes that
-latency observation. Billing behavior is unchanged. Compatible previous cache
-rows and pricing survive bounded timing backfill.
+latency observation. Billing behavior is unchanged. Compatible predecessor
+ledger rows and saved pricing survive bounded timing backfill, including the
+current upstream parser hash. Upstream's retained-report pricing migration still
+clears the affected older report payload while keeping the ledger/checkpoints.
 
-## UI evidence
+## UI evidence and runtime boundary
 
 These images render the production session component with **synthetic inputs**,
-including normal and hidden-personal-info variants. They are component evidence,
-not installed-app interaction evidence. English and Simplified Chinese, light and
-dark appearances, and 820- and 420-point widths were checked locally.
+including normal and hidden-personal-info variants. English and Simplified
+Chinese, light and dark appearances, and 820- and 420-point widths were checked.
 
 ![Synthetic English session rows](screenshots/spend-turn-performance-synthetic.png)
 
 [Narrow synthetic session rows](screenshots/spend-turn-performance-synthetic-narrow.png)
 
-## Synthetic benchmark
+A fresh release bundle was produced by `Scripts/package_app.sh release` with
+ad-hoc signing and passed its resource and six-second launch smoke checks.
+The follow-up application copy uses a separate bundle identity, isolated home,
+configuration and app-group team, disabled Keychain/cookie access, and a failing
+provider CLI stub. No credentials or account configuration were copied.
 
-The smaller corpus contains 24 files / 960 turns / 3,840 requests. The larger
-contains 96 files / 7,680 turns / 46,080 requests. Each corpus has three trials,
-each with one cold read, three unchanged refreshes and one single-file append.
-The following are medians. Cache reload includes SQLite decoding and session
-projection, not app startup or UI interaction.
+**Installed-window behavior and sustained interactive operation remain pending.**
+The computer-use tool reported a locked Mac and requested manual unlock; no
+native-window/date-picker/responsiveness success is claimed. Component images,
+packaging smoke checks and production fetcher receipts do not establish that
+behavior. A private reference expects 36 timed turns for today and 41 for the
+last seven days, ready for the actual window check after unlock.
 
-| Corpus | Path | Baseline | Prototype | Change |
+## Release benchmark
+
+Both production Core targets were independently built in release mode (`-O`).
+`-enable-testing` allows the standalone adapter to access internal scanner
+counters; it does not enable DEBUG code. The adapter is identical for both
+builds, with `TURN_PERF_FEATURE` selecting only the optional sample assertion.
+The scanner, cache and projection are production implementations.
+
+The smaller corpus has 24 files / 960 turns / 3,840 requests; the larger has
+96 files / 7,680 turns / 46,080 requests. Each has three trials, each with one
+cold read, three unchanged refreshes and one single-file append. These are
+medians. Reload includes SQLite decoding and session projection, not UI startup.
+
+| Corpus | Path | Baseline | Feature | Change |
 | --- | --- | ---: | ---: | ---: |
-| Smaller | Cold scan | 338.0 ms | 359.0 ms | +6.2% |
-| Smaller | Unchanged refresh | 87.4 ms | 89.6 ms | +2.5% |
-| Smaller | Append | 83.5 ms | 82.6 ms | -1.1% |
-| Smaller | Unchanged cache reload / sessions | 73.1 ms | 77.3 ms | +5.9% |
-| Larger | Cold scan | 3,677.6 ms | 3,910.2 ms | +6.3% |
-| Larger | Unchanged refresh | 985.9 ms | 995.0 ms | +0.9% |
-| Larger | Append | 898.6 ms | 889.0 ms | -1.1% |
-| Larger | Unchanged cache reload / sessions | 847.8 ms | 892.0 ms | +5.2% |
+| Smaller | Cold scan | 194.0 ms | 197.0 ms | +1.5% |
+| Smaller | Unchanged refresh | 59.5 ms | 57.1 ms | -4.0% |
+| Smaller | Single-file append | 31.9 ms | 29.7 ms | -6.7% |
+| Smaller | Cache reload / session projection | 47.8 ms | 48.6 ms | +1.5% |
+| Larger | Cold scan | 2,009.1 ms | 2,099.9 ms | +4.5% |
+| Larger | Unchanged refresh | 633.9 ms | 633.6 ms | -0.1% |
+| Larger | Single-file append | 291.1 ms | 278.4 ms | -4.4% |
+| Larger | Cache reload / session projection | 542.8 ms | 556.7 ms | +2.6% |
 
-Cold cache and side-file size increased by 6.5% / 4.5%. Unchanged refreshes
-processed zero usage rows; append processed only the 4 / 6 new requests. Timed
-turn counts matched the fixtures before and after append. The baseline harness
-initially asserted zero file checks, confusing metadata checks with reparsing;
-its timings were recorded but that baseline test invocation did not pass.
-Prototype runs use the corrected zero-usage-rows assertion and passed.
+Cold cache and side files grew by 6.5% / 4.5% (4.32 to 4.60 MiB / 49.54 to
+51.80 MiB). All unchanged refreshes processed zero usage rows; append processed
+only the 4 / 6 new requests. Every feature run matched expected timing counts,
+including the one appended turn.
 
-Load matters: a separate run during other Swift compilation reached 11.37 seconds
-for the larger cold scan and 2.84 seconds for its cache reload. These are debug
-measurements on one machine, not a release performance guarantee or an app-memory
-measurement. The existing larger cache path still warrants optimization.
+The complete benchmark process peaked at 1.21 / 1.23 GiB RSS, a 1.7% increase.
+This includes fixture construction, all trials, scanning and cache projection;
+**it is not an application memory or leak measurement**. Repository tests and
+other host work were active, so small changes are noisy observations. The
+larger cached projection still takes roughly half a second; these finite
+measurements are not a release performance guarantee.
 
-## Validation and remaining gates
+[Raw synthetic results and build metadata](proofs/spend-turn-performance-release.json)
+and [standalone adapter](proofs/spend-turn-performance-release-probe.swift.txt)
+are public and contain no real usage data.
 
-- `make check` passed: 2,816 Swift files, zero lint violations.
-- 118 focused tests passed, including numeric and timestamp rejection, duplicates,
-  partial scan / append, completion-only append, 128-byte resumable scans,
-  revision-8 backfill, cache reopening and 25 unchanged refreshes.
-- Localization catalog tests: 36 passed. Provider architecture tests: 48 passed.
-- Production fresh and cached reads matched an independent reference for 41
-  valid turns from privately copied native history; two invalid-usage candidates
-  were rejected. Real usage values, source files and account data are withheld.
-- All 143 groups / 1,569 selections were covered across batches. Runtime discovery
-  matched the full 13,848-method inventory; this inventory count is not a count
-  of passing test executions. 141 groups passed in those batches. Menu renderer
-  timing and mocked cost-catch-up waits failed in two groups; final isolated
-  reruns passed all 83 renderer and 30 catch-up tests. One other group hit its
-  180-second deadline and passed the runner's isolated selection retries.
-  **No single complete full-suite invocation passed.** The relevant renderer,
-  catch-up scheduler and their tests were not modified; load causality remains
-  unproven.
+## Native-history validation
 
-Full regression under controlled load, release-build measurements, installed-app
-interaction and sustained operation remain release gates. Completely missing or
-unrecognizable log records cannot be proven complete from the available protocol.
-English, Simplified/Traditional Chinese and Italian strings are translated; other
-catalogs currently use English fallback.
+Production fresh and reopened-cache reads matched an independent reference for
+41 valid turns in six privately copied native files (75,187,821 bytes). Full
+usage-counter validation excluded two output-only candidates, including owned
+records with reasoning greater than output. The source histories were left
+untouched. No credentials, identities, actual token counts, monetary values or
+real throughput/latency values are published.
 
-## Reproduce synthetic measurements
+[Redacted receipt](proofs/spend-turn-performance-native.json) and the
+[independent offline join](proofs/spend-turn-performance-native-reference.py)
+are available. The reference is intentionally limited to this dependency-closed
+root-session corpus; adversarial/fork/partial-scan behavior is covered by Swift
+tests. Private reference output must stay private.
 
-After building tests, from the repository root:
+## Regression validation
 
-```sh
-mkdir -p .build/turn-performance-proof
-CODEXBAR_SUPPRESS_TEST_KEYCHAIN_ACCESS=1 \
-CODEXBAR_TEST_CODEX_FILE_ISOLATION=1 \
-CODEXBAR_TEST_SESSION_FILE_ISOLATION=1 \
-CODEXBAR_TOKEN_SPEED_BENCHMARK_OUTPUT="$PWD/.build/turn-performance-proof/benchmark.json" \
-swift test --skip-build --filter CostUsageTurnPerformanceBenchmarkTests
+- `make check` passed: 2,818 Swift files, zero lint violations.
+- 123 focused tests in seven suites passed after the upstream rebase, including
+  numeric/timestamp rejection, duplicate ownership, partial/completion-only
+  append, bounded revision-8 backfill, pricing migration and cache reopening.
+- The opt-in native-history proof passed separately with its input supplied;
+  ordinary full-suite execution intentionally skips its private-input branch.
+- `make test` passed in one complete invocation: all 143 groups / 1,570
+  discovered selections passed on their first attempt, with zero failures,
+  timeouts or retries (1,221 seconds total). This uses the repository default
+  serial runner and unmodified assertions; earlier interrupted preparation
+  runs are not counted as complete passes.
+
+English, Simplified/Traditional Chinese and Italian captions are translated;
+other catalogs currently use English fallback. Completely missing or
+unrecognizable log records cannot establish sample completeness from the
+available protocol. App-level interaction and sustained responsiveness still
+require the locked-screen gate to be cleared.
+
+## Reproduction
+
+Use two clean worktrees at the baseline and feature commits. Copy the linked
+adapter to `ProofTarget/main.swift` in each, and temporarily append these
+SwiftPM manifest entries:
+
+```swift
+package.products.append(.executable(name: "TokenSpeedReleaseProbe", targets: ["TokenSpeedReleaseProbe"]))
+package.targets.append(.executableTarget(name: "TokenSpeedReleaseProbe", dependencies: ["CodexBarCore"], path: "ProofTarget"))
 ```
 
-Optional UI evidence uses `CODEXBAR_PERFORMANCE_UI_PROOF_DIR` and
-`CODEXBAR_PERFORMANCE_UI_PROOF_WIDTH` with `SpendSessionPerformanceTests`.
-The optional native-history test requires a private directory containing
-`sessions/` and an independently prepared `expected.json`; it returns early
-unless `CODEXBAR_PERFORMANCE_NATIVE_PROOF_DIR` is explicitly supplied.
+Build each independently using `swift build -c release --product
+TokenSpeedReleaseProbe -j 2 -Xswiftc -enable-testing`; add `-Xswiftc
+-DTURN_PERF_FEATURE` for the feature adapter. Set
+`CODEXBAR_TOKEN_SPEED_BENCHMARK_OUTPUT` when running the produced binary.
+No test-only flag changes the scanner execution path. Restore the temporary
+manifest afterward, and never copy build products between worktrees.
+
+The existing opt-in Swift test benchmark uses the same fixture through
+`CostUsageTurnPerformanceBenchmarkTests`. Optional component rendering uses
+`CODEXBAR_PERFORMANCE_UI_PROOF_DIR` and `CODEXBAR_PERFORMANCE_UI_PROOF_WIDTH`
+with `SpendSessionPerformanceTests`. The native-history proof requires a private
+directory with `sessions/` and independently prepared `expected.json`, supplied
+through `CODEXBAR_PERFORMANCE_NATIVE_PROOF_DIR`.

@@ -1,0 +1,377 @@
+import Foundation
+import Darwin
+@testable import CodexBarCore
+
+/// Opt-in baseline comparison. All inputs are synthetic and never access account state.
+struct CostUsageTurnPerformanceBenchmarkTests {
+    func run() throws {
+        guard let output = ProcessInfo.processInfo.environment["CODEXBAR_TOKEN_SPEED_BENCHMARK_OUTPUT"] else { return }
+        var results: [[String: Any]] = []
+        for (name, files, turns, requests) in [("normal", 24, 40, 4), ("large", 96, 80, 6)] {
+            for trial in 0..<3 {
+                let env = try CostUsageTestEnvironment()
+                defer { env.cleanup() }
+                let day = try env.makeLocalNoon(
+                    year: 2026,
+                    month: 5,
+                    day: 10)
+                var urls: [URL] = []
+                for file in 0..<files {
+                    let id = "synthetic-speed-\(file)"
+                    let prefix = try env.jsonl([[
+                        "type": "session_meta",
+                        "timestamp": env.isoString(for: day),
+                        "payload": ["id": id],
+                    ]])
+                    let body = try (0..<turns).map {
+                        try Self.turn(
+                            env: env,
+                            day: day,
+                            session: id,
+                            turn: $0,
+                            requests: requests)
+                    }.joined()
+                    try urls.append(env.seedCodexSessionFile(
+                        day: day,
+                        filename: "speed-\(file).jsonl",
+                        contents: prefix + body))
+                }
+                var options = CostUsageScanner.Options(
+                    codexSessionsRoot: env.codexSessionsRoot,
+                    cacheRoot: env.cacheRoot,
+                    codexTraceDatabaseURL: env.root.appendingPathComponent("missing.sqlite"),
+                    maxCodexSessionFileBytes: 0,
+                    maxCodexScanBytesPerRefresh: 0,
+                    maxCodexScanDurationPerRefresh: 60)
+                options.refreshMinIntervalSeconds = 0
+                let expected = files * turns * requests * 110
+                var now = day
+                for mode in ["cold", "warm", "warm", "warm", "append"] {
+                    if mode == "append" {
+                        let handle = try FileHandle(forWritingTo: urls[0])
+                        try handle.seekToEnd()
+                        try handle.write(contentsOf: Data(Self.turn(
+                            env: env,
+                            day: day,
+                            session: "synthetic-speed-0",
+                            turn: turns,
+                            requests: requests).utf8))
+                        try handle.close()
+                    }
+                    let recorder = CostUsageScanner.CodexScanWorkRecorder()
+                    options.codexScanWorkRecorderForTesting = recorder
+                    let start = ContinuousClock.now
+                    let report = CostUsageScanner.loadDailyReport(
+                        provider: .codex,
+                        since: day,
+                        until: day,
+                        now: now,
+                        options: options)
+                    let scanMS = Self.milliseconds(since: start)
+                    try Self.require(report.summary?.totalTokens == expected + (mode == "append" ? requests * 110 : 0))
+                    let store = CostUsageStore(cacheRoot: env.cacheRoot)
+                    let reloadStart = ContinuousClock.now
+                    let cache = store.syncLoadCodexCache(calendar: options.calendar)
+                    let range = CostUsageScanner.CostUsageDayRange(
+                        since: day,
+                        until: day,
+                        calendar: options.calendar)
+                    let sessions = CostUsageScanner.buildCodexSessionBreakdownsFromCache(
+                        cache: cache,
+                        range: range,
+                        modelsDevCatalog: ModelsDevCatalog(providers: [:]))
+                    let reloadMS = Self.milliseconds(since: reloadStart)
+                    try Self.require(sessions.count == files)
+                    #if TURN_PERF_FEATURE
+                    let timedTurns = sessions.reduce(0) { $0 + $1.turnPerformanceSamples.count }
+                    try Self.require(timedTurns == files * turns + (mode == "append" ? 1 : 0))
+                    #else
+                    let timedTurns = -1
+                    #endif
+                    if mode == "warm" {
+                        try Self.require(recorder.snapshot().usageRowsProcessed == 0)
+                    }
+                    let bytes = try (FileManager.default.contentsOfDirectory(
+                        at: store.databaseURL.deletingLastPathComponent(),
+                        includingPropertiesForKeys: [.fileSizeKey]))
+                        .reduce(0) { $0 + ((try? $1.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0) }
+                    results.append([
+                        "corpus": name,
+                        "trial": trial,
+                        "mode": mode,
+                        "files": files,
+                        "turns": files * turns,
+                        "requests": files * turns * requests,
+                        "timed_turns": timedTurns,
+                        "scan_ms": scanMS,
+                        "reload_ms": reloadMS,
+                        "cache_bytes": bytes,
+                        "parser_hash": CodexParserHash.value,
+                        "file_scans": recorder.snapshot().codexFileScanAttempts,
+                        "usage_rows_processed": recorder.snapshot().usageRowsProcessed,
+                    ])
+                    now = now.addingTimeInterval(1)
+                }
+            }
+        }
+        let data = try JSONSerialization.data(
+            withJSONObject: results,
+            options: [.prettyPrinted, .sortedKeys])
+        try data.write(to: URL(fileURLWithPath: output))
+    }
+
+    private static func require(_ condition: Bool) throws {
+        guard condition else { throw NSError(domain: "ReleaseProbeInvariant", code: 1) }
+    }
+
+    private static func milliseconds(since start: ContinuousClock.Instant) -> Double {
+        let elapsed = (ContinuousClock.now - start).components
+        return Double(elapsed.seconds) * 1000 + Double(elapsed.attoseconds) / 1e15
+    }
+
+    static func turn(
+        env: CostUsageTestEnvironment,
+        day: Date,
+        session: String,
+        turn: Int,
+        requests: Int) throws -> String
+    {
+        let turnID = "turn-\(turn)"
+        let start = day.addingTimeInterval(Double(turn * 30))
+        var objects: [[String: Any]] = [[
+            "type": "event_msg", "timestamp": env.isoString(for: start),
+            "payload": ["type": "task_started", "turn_id": turnID],
+        ]]
+        for request in 0..<requests {
+            let count = turn * requests + request + 1
+            objects.append([
+                "type": "token_usage_record",
+                "timestamp": env.isoString(for: start.addingTimeInterval(Double(request))),
+                "payload": [
+                    "thread_id": session,
+                    "session_id": session,
+                    "turn_id": turnID,
+                    "response_id": "\(session)-\(turn)-\(request)",
+                    "model": "gpt-5.4",
+                    "usage": Self.usage(1),
+                    "thread_token_usage": Self.usage(count),
+                    "turn_token_usage": Self.usage(request + 1),
+                ],
+            ])
+        }
+        objects.append([
+            "type": "event_msg", "timestamp": env.isoString(for: start.addingTimeInterval(10)),
+            "payload": [
+                "type": "task_complete",
+                "turn_id": turnID,
+                "started_at": Int(start.timeIntervalSince1970),
+                "completed_at": Int(start.timeIntervalSince1970) + 10,
+                "duration_ms": 10000,
+                "time_to_first_token_ms": 200,
+                "error": NSNull(),
+            ],
+        ])
+        return try env.jsonl(objects)
+    }
+
+    private static func usage(_ count: Int) -> [String: Int] {
+        [
+            "input_tokens": count * 100,
+            "output_tokens": count * 10,
+            "cached_input_tokens": 0,
+            "reasoning_output_tokens": count * 5,
+        ]
+    }
+}
+
+struct CostUsageTestEnvironment {
+    let root: URL
+    let cacheRoot: URL
+    let codexHomeRoot: URL
+    let codexSessionsRoot: URL
+    let codexArchivedSessionsRoot: URL
+    let claudeProjectsRoot: URL
+    let piSessionsRoot: URL
+
+    init() throws {
+        let root = FileManager.default.temporaryDirectory.appendingPathComponent(
+            "codexbar-cost-usage-\(UUID().uuidString)",
+            isDirectory: true)
+        try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
+        self.root = root
+        self.cacheRoot = root.appendingPathComponent("cache", isDirectory: true)
+        self.codexHomeRoot = root.appendingPathComponent("codex-home", isDirectory: true)
+        self.codexSessionsRoot = self.codexHomeRoot.appendingPathComponent("sessions", isDirectory: true)
+        self.codexArchivedSessionsRoot = self.codexHomeRoot
+            .appendingPathComponent("archived_sessions", isDirectory: true)
+        self.claudeProjectsRoot = root.appendingPathComponent("claude-projects", isDirectory: true)
+        self.piSessionsRoot = root.appendingPathComponent("pi-sessions", isDirectory: true)
+        try FileManager.default.createDirectory(at: self.cacheRoot, withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(at: self.codexSessionsRoot, withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(at: self.codexArchivedSessionsRoot, withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(at: self.claudeProjectsRoot, withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(at: self.piSessionsRoot, withIntermediateDirectories: true)
+    }
+
+    func cleanup() {
+        try? FileManager.default.removeItem(at: self.root)
+    }
+
+    func makeLocalNoon(year: Int, month: Int, day: Int) throws -> Date {
+        var comps = DateComponents()
+        comps.calendar = Calendar.current
+        comps.timeZone = TimeZone.current
+        comps.year = year
+        comps.month = month
+        comps.day = day
+        comps.hour = 12
+        comps.minute = 0
+        comps.second = 0
+        guard let date = comps.date else { throw NSError(domain: "CostUsageTestEnvironment", code: 1) }
+        return date
+    }
+
+    func isoString(for date: Date) -> String {
+        let fmt = ISO8601DateFormatter()
+        fmt.formatOptions = [.withInternetDateTime]
+        return fmt.string(from: date)
+    }
+
+    func writeCodexSessionFile(day: Date, filename: String, contents: String) throws -> URL {
+        let url = try self.codexSessionFileURL(day: day, filename: filename)
+        try contents.write(to: url, atomically: true, encoding: .utf8)
+        return url
+    }
+
+    func seedCodexSessionFile(day: Date, filename: String, contents: String) throws -> URL {
+        let url = try self.codexSessionFileURL(day: day, filename: filename)
+        // Initial corpus files have no readers until setup returns; no atomic publication or fsync is needed.
+        let descriptor = open(url.path, O_WRONLY | O_CREAT | O_EXCL | O_CLOEXEC, 0o666)
+        guard descriptor >= 0 else {
+            let code = errno
+            throw NSError(domain: NSPOSIXErrorDomain, code: Int(code))
+        }
+        let handle = FileHandle(fileDescriptor: descriptor, closeOnDealloc: true)
+        do {
+            try handle.write(contentsOf: Data(contents.utf8))
+            try handle.close()
+        } catch {
+            try? handle.close()
+            throw error
+        }
+        return url
+    }
+
+    private func codexSessionFileURL(day: Date, filename: String) throws -> URL {
+        let comps = Calendar.current.dateComponents([.year, .month, .day], from: day)
+        let y = String(format: "%04d", comps.year ?? 1970)
+        let m = String(format: "%02d", comps.month ?? 1)
+        let d = String(format: "%02d", comps.day ?? 1)
+
+        let dir = self.codexSessionsRoot
+            .appendingPathComponent(y, isDirectory: true)
+            .appendingPathComponent(m, isDirectory: true)
+            .appendingPathComponent(d, isDirectory: true)
+        try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+
+        return dir.appendingPathComponent(filename, isDirectory: false)
+    }
+
+    func writeClaudeProjectFile(relativePath: String, contents: String) throws -> URL {
+        let url = self.claudeProjectsRoot.appendingPathComponent(relativePath, isDirectory: false)
+        try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try contents.write(to: url, atomically: true, encoding: .utf8)
+        return url
+    }
+
+    func writeClaudeDesktopLocalAgentFile(relativePath: String, contents: String) throws -> URL {
+        let localAgentRoot = self.root
+            .appendingPathComponent("Library", isDirectory: true)
+            .appendingPathComponent("Application Support", isDirectory: true)
+            .appendingPathComponent("Claude", isDirectory: true)
+            .appendingPathComponent("local-agent-mode-sessions", isDirectory: true)
+            .appendingPathComponent("workspace-id", isDirectory: true)
+            .appendingPathComponent("session-id", isDirectory: true)
+            .appendingPathComponent("local_agent", isDirectory: true)
+        let url = localAgentRoot.appendingPathComponent(relativePath, isDirectory: false)
+        try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try contents.write(to: url, atomically: true, encoding: .utf8)
+        return url
+    }
+
+    func writeClaudeDesktopLocalAgentProjectFile(relativePath: String, contents: String) throws -> URL {
+        try self.writeClaudeDesktopLocalAgentFile(
+            relativePath: ".claude/projects/\(relativePath)",
+            contents: contents)
+    }
+
+    func writeClaudeDesktopCodeSessionProjectFile(relativePath: String, contents: String) throws -> URL {
+        let projectsRoot = self.root
+            .appendingPathComponent("Library", isDirectory: true)
+            .appendingPathComponent("Application Support", isDirectory: true)
+            .appendingPathComponent("Claude", isDirectory: true)
+            .appendingPathComponent("claude-code-sessions", isDirectory: true)
+            .appendingPathComponent("account-id", isDirectory: true)
+            .appendingPathComponent("org-id", isDirectory: true)
+            .appendingPathComponent(".claude", isDirectory: true)
+            .appendingPathComponent("projects", isDirectory: true)
+        let url = projectsRoot.appendingPathComponent(relativePath, isDirectory: false)
+        try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try contents.write(to: url, atomically: true, encoding: .utf8)
+        return url
+    }
+
+    func writeClaudeDesktopSharedProjectFile(relativePath: String, contents: String) throws -> URL {
+        let projectsRoot = self.root
+            .appendingPathComponent(".claude", isDirectory: true)
+            .appendingPathComponent("projects", isDirectory: true)
+        let url = projectsRoot.appendingPathComponent(relativePath, isDirectory: false)
+        try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try contents.write(to: url, atomically: true, encoding: .utf8)
+        return url
+    }
+
+    func writeNestedClaudeDesktopLocalAgentProjectFile(relativePath: String, contents: String) throws -> URL {
+        let projectsRoot = self.root
+            .appendingPathComponent("Library", isDirectory: true)
+            .appendingPathComponent("Application Support", isDirectory: true)
+            .appendingPathComponent("Claude", isDirectory: true)
+            .appendingPathComponent("local-agent-mode-sessions", isDirectory: true)
+            .appendingPathComponent("workspace-id", isDirectory: true)
+            .appendingPathComponent("session-id", isDirectory: true)
+            .appendingPathComponent("agent", isDirectory: true)
+            .appendingPathComponent("local_agent", isDirectory: true)
+            .appendingPathComponent(".claude", isDirectory: true)
+            .appendingPathComponent("projects", isDirectory: true)
+        let url = projectsRoot.appendingPathComponent(relativePath, isDirectory: false)
+        try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try contents.write(to: url, atomically: true, encoding: .utf8)
+        return url
+    }
+
+    func writeCodexArchivedSessionFile(filename: String, contents: String) throws -> URL {
+        let url = self.codexArchivedSessionsRoot.appendingPathComponent(filename, isDirectory: false)
+        try contents.write(to: url, atomically: true, encoding: .utf8)
+        return url
+    }
+
+    func writePiSessionFile(relativePath: String, contents: String) throws -> URL {
+        let url = self.piSessionsRoot.appendingPathComponent(relativePath, isDirectory: false)
+        try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try contents.write(to: url, atomically: true, encoding: .utf8)
+        return url
+    }
+
+    func jsonl(_ objects: [Any]) throws -> String {
+        let lines = try objects.map { obj in
+            let data = try JSONSerialization.data(withJSONObject: obj)
+            guard let text = String(bytes: data, encoding: .utf8) else {
+                throw NSError(domain: "CostUsageTestEnvironment", code: 2)
+            }
+            return text
+        }
+        return lines.joined(separator: "\n") + "\n"
+    }
+}
+
+try CostUsageTurnPerformanceBenchmarkTests().run()

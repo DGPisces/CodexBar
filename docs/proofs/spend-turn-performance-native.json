@@ -1,0 +1,20 @@
+{
+  "actual_timed_turns": 41,
+  "cached_matches_fresh": true,
+  "expected_timed_turns": 41,
+  "fresh_matches_reference": true,
+  "real_usage_values": "withheld",
+  "scan_wall_ms": 2501.044833,
+  "source": "copied native Codex JSONL, independent Python join",
+  "format_version": 1,
+  "parser_hash": "de14dd5f901910bc",
+  "parser_revision": 9,
+  "feature_code_commit": "22fdcb88e8d77a03c9d8447f889012247d4bb483",
+  "source_files": 6,
+  "source_bytes": 75187821,
+  "invalid_usage_turn_candidates_excluded": 2,
+  "scope": "Production fetcher fresh and reopened cache only; installed application window not yet validated.",
+  "original_materials": "Retained privately; source, identities and real usage values are withheld.",
+  "reference": "Independent strict ownership/deduplication join; no reused Swift timing extractor.",
+  "window_interaction": "Pending manual Mac unlock; computer-use tool reported the Mac locked."
+}
