@@ -46,11 +46,44 @@ configuration and app-group team, disabled Keychain/cookie access, and a failing
 provider CLI stub. No credentials or account configuration were copied.
 
 **Installed-window behavior and sustained interactive operation remain pending.**
-The computer-use tool reported a locked Mac and requested manual unlock; no
+An earlier computer-use attempt reported a locked Mac and requested manual unlock; no
 native-window/date-picker/responsiveness success is claimed. Component images,
 packaging smoke checks and production fetcher receipts do not establish that
 behavior. A private reference expects 36 timed turns for today and 41 for the
-last seven days, ready for the actual window check after unlock.
+last seven days, ready for the actual window check once desktop access works.
+
+## Follow-up date-filter review
+
+A follow-up review reproduced a completion-day omission on the previously
+validated feature: a turn starting at 23:59:55 and completing ten seconds later
+had a valid timing sample, but its session row was discarded because all billed
+requests belonged to the previous day. Session projection now retains valid
+completion-day samples even when that day has no billing rows. Billing remains
+on the original request day; no tokens or cost are moved into the completion day.
+
+The dashboard also retains native Codex timing samples in the selected range
+when the session file was modified outside that range. This exception does not
+apply to other providers or OpenCodex sessions. Both cases have regression tests.
+The follow-up parser hash is `d35c9fb00bee059b`; the historical receipts below
+remain evidence for the earlier feature revision, not this follow-up.
+
+Follow-up validation passed: 20 focused tests in three suites, and `make check`
+with 2,819 Swift files and zero violations. The initial serial `make test` stopped
+after 108 successful groups at a source-architecture check: moving the Codex-only
+condition had left its required explanatory comment at the old location. The
+comment was moved alongside the condition; no assertion was relaxed.
+
+A complete fresh `./Scripts/test.sh --direct-workers 4` then passed all 143 groups
+and all 1,571 discovered selections on their first attempt, with zero failures,
+timeouts or retries (370.6 seconds total). This is the repository's supported
+four-worker direct runtime, which verified 13,861 test methods against discovery;
+it is distinct from the earlier serial invocation.
+
+The existing English/Chinese, light/dark and narrow-width component renders were
+visually reviewed again. Native application selection repeatedly timed out in
+the desktop tool, while Finder remained accessible. Process startup and an idle
+main-thread sample do not establish window interaction or responsiveness; that
+proof gate remains open. No new installed-window success is claimed.
 
 ## Release benchmark
 
@@ -143,7 +176,7 @@ English, Simplified/Traditional Chinese and Italian captions are translated;
 other catalogs currently use English fallback. Completely missing or
 unrecognizable log records cannot establish sample completeness from the
 available protocol. App-level interaction and sustained responsiveness still
-require the locked-screen gate to be cleared.
+require native-window verification.
 
 ## Reproduction
 

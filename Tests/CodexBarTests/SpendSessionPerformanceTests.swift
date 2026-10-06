@@ -40,6 +40,32 @@ struct SpendSessionPerformanceTests {
     }
 
     @Test
+    func `completion day keeps native timing when file activity is outside the selected day`() throws {
+        let now = try #require(CostUsageScanner.dateFromTimestamp("2026-05-10T12:00:00Z"))
+        let sample = try #require(CostUsageTurnPerformanceSample(
+            completedAt: now,
+            outputTokens: 100,
+            durationMilliseconds: 1000))
+        for (provider, source) in [
+            (UsageProvider.codex, SpendDashboardModel.SourceKind.native),
+            (.claude, .native),
+            (.codex, .openCodex),
+        ] {
+            let group = try Self.group(
+                now: now,
+                samples: [sample],
+                provider: provider,
+                source: source,
+                lastActivity: now.addingTimeInterval(86400))
+            if provider == .codex, source == .native {
+                #expect(group.sessions.first?.turnPerformance?.sampleCount == 1)
+            } else {
+                #expect(group.sessions.isEmpty)
+            }
+        }
+    }
+
+    @Test
     func `labels describe whole turn throughput and omit missing first token timing`() throws {
         let sample = try #require(CostUsageTurnPerformanceSample(
             completedAt: Date(),
@@ -113,12 +139,13 @@ struct SpendSessionPerformanceTests {
         now: Date,
         samples: [CostUsageTurnPerformanceSample],
         provider: UsageProvider = .codex,
-        source: SpendDashboardModel.SourceKind = .native) throws
+        source: SpendDashboardModel.SourceKind = .native,
+        lastActivity: Date? = nil) throws
         -> SpendDashboardModel.CurrencyGroup
     {
         let sessions = [CostUsageSessionBreakdown(
             sessionID: "synthetic-session",
-            lastActivity: now,
+            lastActivity: lastActivity ?? now,
             inputTokens: 2000,
             cachedInputTokens: 1000,
             outputTokens: 1500,

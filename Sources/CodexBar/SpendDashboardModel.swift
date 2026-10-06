@@ -1460,7 +1460,12 @@ struct SpendDashboardModel: Equatable, Sendable {
         let rows = summaries.flatMap { summary -> [SessionRow] in
             summary.input.snapshot.sessions.compactMap { session -> SessionRow? in
                 let day = calendar.startOfDay(for: session.lastActivity)
-                guard bounds.contains(day) else { return nil }
+                // Provider-specific by design: only the native Codex ledger has validated turn timing.
+                let performanceSamples = summary.input.provider == .codex && summary.input.sourceKind == .native
+                    ? session.turnPerformanceSamples.filter {
+                        bounds.contains(calendar.startOfDay(for: $0.completedAt))
+                    } : []
+                guard bounds.contains(day) || !performanceSamples.isEmpty else { return nil }
                 let modelName = session.modelBreakdowns.max {
                     ($0.totalTokens ?? 0) < ($1.totalTokens ?? 0)
                 }?.modelName
@@ -1477,11 +1482,7 @@ struct SpendDashboardModel: Equatable, Sendable {
                     totalTokens: session.totalTokens,
                     totalCost: session.costUSD.map { $0 * summary.costMultiplier },
                     modelName: modelName,
-                    // Provider-specific by design: only the native Codex ledger has validated turn timing.
-                    turnPerformance: summary.input.provider == .codex && summary.input.sourceKind == .native
-                        ? CostUsageTurnPerformanceSummary(samples: session.turnPerformanceSamples.filter {
-                            bounds.contains(calendar.startOfDay(for: $0.completedAt))
-                        }) : nil)
+                    turnPerformance: CostUsageTurnPerformanceSummary(samples: performanceSamples))
             }
         }
         .sorted(by: Self.sessionOrder)
