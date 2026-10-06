@@ -76,7 +76,7 @@ extension StatusItemController {
         provider: UsageProvider,
         width: CGFloat)
     {
-        let hosting = UsageHistoryMenuHostingView(rootView: chartView.codexBarLocalized())
+        let hosting = UsageHistoryMenuHostingView(rootView: chartView)
         hosting.frame = NSRect(
             origin: .zero,
             size: NSSize(width: width, height: self.hostedSubviewFittingHeight(for: hosting, width: width)))
