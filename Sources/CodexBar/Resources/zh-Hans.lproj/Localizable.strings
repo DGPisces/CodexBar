@@ -1666,3 +1666,14 @@
 "Browser profile" = "浏览器配置文件";
 "Unavailable profile: %@" = "配置文件不可用：%@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "仅读取所选的 %@ 配置文件。绝不会自动选择账户。";
+
+"All accounts" = "全部账号";
+"Refresh all accounts" = "刷新全部账号";
+"CodexBar follows" = "CodexBar 跟随账号";
+"%@ accounts" = "%@ 个账号";
+"Refreshes up to %@ accounts at a time." = "每批最多刷新 %@ 个账号。";
+"Each account has its own limits. Viewing usage does not switch accounts." = "各账号的额度独立计算。查看用量不会切换账号。";
+"Local usage is shared across accounts on this Mac." = "本机用量包含这台 Mac 上各账号的使用记录。";
+
+"Local usage" = "本机用量";
+"Local usage comes from the current Codex profile." = "本机用量来自当前 Codex 配置档案。";

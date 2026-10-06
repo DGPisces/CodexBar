@@ -1653,3 +1653,14 @@
 "Browser profile" = "Hồ sơ trình duyệt";
 "Unavailable profile: %@" = "Hồ sơ không khả dụng: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Chỉ đọc hồ sơ %@ đã chọn. Tài khoản không bao giờ được chọn tự động.";
+
+"All accounts" = "All accounts";
+"Refresh all accounts" = "Refresh all accounts";
+"CodexBar follows" = "CodexBar follows";
+"%@ accounts" = "%@ accounts";
+"Refreshes up to %@ accounts at a time." = "Refreshes up to %@ accounts at a time.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Each account has its own limits. Viewing usage does not switch accounts.";
+"Local usage is shared across accounts on this Mac." = "Local usage is shared across accounts on this Mac.";
+
+"Local usage" = "Local usage";
+"Local usage comes from the current Codex profile." = "Local usage comes from the current Codex profile.";

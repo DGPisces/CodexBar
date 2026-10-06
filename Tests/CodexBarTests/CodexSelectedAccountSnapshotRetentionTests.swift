@@ -48,8 +48,9 @@ extension CodexAccountScopedRefreshTests {
         }
     }
 
-    private func withSelectedAccountRetentionFixture(
+    func withSelectedAccountRetentionFixture(
         sameEmail: Bool,
+        count: Int = 2,
         body: (UsageStore, FileCodexAccountUsageSnapshotStore, [CodexVisibleAccount]) async throws -> Void)
         async throws
     {
@@ -61,7 +62,7 @@ extension CodexAccountScopedRefreshTests {
         settings.accountWidgetsEnabled = false
         settings.codexUsageDataSource = .oauth
         settings.codexCookieSource = .off
-        let saved = try (0..<2).map { index in
+        let saved = try (0..<count).map { index in
             let email = sameEmail ? "shared@example.com" : "account-\(index)@example.com"
             let home = root.appendingPathComponent("home-\(index)", isDirectory: true)
             let workspace = "workspace-\(index)"
@@ -108,6 +109,7 @@ extension CodexAccountScopedRefreshTests {
         })
         let store = self.makeUsageStore(settings: settings, codexAccountUsageSnapshotStore: snapshotStore)
         store._test_widgetSnapshotSaveOverride = { _ in }
+        store._test_codexResetCreditsFetcherOverride = { _ in nil }
         self.installContextualCodexProvider(on: store, sourceLabel: "oauth", kind: .oauth) { _ in
             UsageSnapshot(
                 primary: RateWindow(usedPercent: 42, windowMinutes: 300, resetsAt: nil, resetDescription: nil),
