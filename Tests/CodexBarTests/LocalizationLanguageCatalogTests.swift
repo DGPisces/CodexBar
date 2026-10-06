@@ -636,6 +636,8 @@ struct LocalizationLanguageCatalogTests {
 
         // Brands, protocol examples, pure format strings and accepted Italian cognates.
         let intentionallyUnchanged: Set = [
+            "<1%% %@",
+            "%.0f%% %@",
             "%@ %@",
             "%@: %@",
             "%@h",
