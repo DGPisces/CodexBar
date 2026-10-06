@@ -2198,7 +2198,7 @@
 "Purchased" = "已购买";
 "Perplexity cost tracking is not supported." = "不支持 Perplexity 成本跟踪。";
 "OpenCode Go accounts" = "OpenCode Go 账户";
-"Store multiple OpenCode Go API keys or Cookie headers." = "保存多个 OpenCode Go API keys or Cookie 请求头。";
+"Store multiple OpenCode Go API keys or Cookie headers." = "保存多个 OpenCode Go API 密钥或 Cookie 请求头。";
 "API key or Cookie: …" = "API 密钥或 Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "根据您的 ZoomMate 预算上限显示已用/剩余 额度。";
 "Amp Free" = "Amp Free";
@@ -2354,3 +2354,7 @@
 "Unavailable profile: %@" = "配置文件不可用：%@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "仅读取所选的 %@ 配置文件。绝不会自动选择账户。";
 "Langdock cost usage is not supported." = "不支持 Langdock 费用统计。";
+
+"<1%% %@" = "%@ <1%%";
+
+"%.0f%% %@" = "%2$@ %1$.0f%%";

@@ -588,7 +588,7 @@
 "remove_codex_account_title" = "Xóa tài khoản Codex?";
 "remove" = "Xóa";
 "managed_login_already_running" = "Đăng nhập Codex được quản lý đã chạy. Đợi quá trình hoàn tất trước khi thêm hoặc xác thực lại tài khoản khác.";
-"managed_login_failed" = "Đăng nhập Codex được quản lý không hoàn tất. Xác minh rằng `codex --version` hoạt động trong Terminal. Nếu macOS đã chặn hoặc di chuyển `codex` vào Thùng rác, hãy xóa các bản cài đặt trùng lặp cũ, chạy `npm install -g --include=Optional @openai/codex@latest`, sau đó thử lại.";
+"managed_login_failed" = "Đăng nhập Codex được quản lý không hoàn tất. Xác minh rằng `codex --version` hoạt động trong Terminal. Nếu macOS đã chặn hoặc di chuyển `codex` vào Thùng rác, hãy xóa các bản cài đặt trùng lặp cũ, chạy `npm install -g --include=optional @openai/codex@latest`, sau đó thử lại.";
 "codex_login_output" = "đầu ra đăng nhập codex:";
 "managed_login_missing_email" = "Đăng nhập Codex đã hoàn tất nhưng không có email tài khoản. Hãy thử lại sau khi xác nhận tài khoản đã đăng nhập đầy đủ.";
 "login_success_notification_title" = "%@ đăng nhập thành công";
@@ -2362,3 +2362,7 @@
 "Unavailable profile: %@" = "Hồ sơ không khả dụng: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Chỉ đọc hồ sơ %@ đã chọn. Tài khoản không bao giờ được chọn tự động.";
 "Langdock cost usage is not supported." = "Chức năng theo dõi chi phí sử dụng Langdock chưa được hỗ trợ.";
+
+"<1%% %@" = "<1%% %@";
+
+"%.0f%% %@" = "%.0f%% %@";

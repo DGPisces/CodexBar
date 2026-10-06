@@ -2185,7 +2185,7 @@
 "Purchased" = "已購買";
 "Perplexity cost tracking is not supported." = "不支援 Perplexity 成本追蹤。";
 "OpenCode Go accounts" = "OpenCode Go 帳戶";
-"Store multiple OpenCode Go API keys or Cookie headers." = "保存多個 OpenCode Go API keys or Cookie 請求頭。";
+"Store multiple OpenCode Go API keys or Cookie headers." = "儲存多個 OpenCode Go API 金鑰或 Cookie 標頭。";
 "API key or Cookie: …" = "API 密鑰或 Cookie: …";
 "Shows used/remaining credits against your ZoomMate budget cap." = "根據您的 ZoomMate 預算上限顯示已使用/剩餘 額度。";
 "Amp Free" = "Amp Free";

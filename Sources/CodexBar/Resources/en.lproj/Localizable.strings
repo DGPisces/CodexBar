@@ -2365,3 +2365,7 @@
 "Unavailable profile: %@" = "Unavailable profile: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Read only the selected %@ profile. Accounts are never selected automatically.";
 "Langdock cost usage is not supported." = "Langdock cost usage is not supported.";
+
+"<1%% %@" = "<1%% %@";
+
+"%.0f%% %@" = "%.0f%% %@";

@@ -68,7 +68,11 @@ func W(_ key: String, _ arguments: CVarArg...) -> String {
     {
         value = english.localizedString(forKey: key, value: nil, table: nil)
     }
-    return arguments.isEmpty ? value : String(format: value, arguments: arguments)
+    let language = bundle.bundleURL.deletingPathExtension().lastPathComponent
+    let locale = bundle.bundleURL.pathExtension == "lproj"
+        ? Locale(identifier: language == "ar" ? "ar@numbers=arab" : language)
+        : Locale.current
+    return arguments.isEmpty ? value : String(format: value, locale: locale, arguments: arguments)
 }
 
 extension EnvironmentValues {

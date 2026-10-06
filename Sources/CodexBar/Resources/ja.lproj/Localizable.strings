@@ -2361,3 +2361,7 @@
 "Unavailable profile: %@" = "利用できないプロファイル: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "選択した %@ プロファイルのみを読み取ります。アカウントが自動で選択されることはありません。";
 "Langdock cost usage is not supported." = "Langdock の利用費用の集計はサポートされていません。";
+
+"<1%% %@" = "<1%% %@";
+
+"%.0f%% %@" = "%.0f%% %@";

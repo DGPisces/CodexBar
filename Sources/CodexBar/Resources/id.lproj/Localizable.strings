@@ -2364,3 +2364,7 @@
 "Unavailable profile: %@" = "Profil tidak tersedia: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Hanya baca profil %@ yang dipilih. Akun tidak pernah dipilih secara otomatis.";
 "Langdock cost usage is not supported." = "Pelacakan biaya penggunaan Langdock tidak didukung.";
+
+"<1%% %@" = "<1%% %@";
+
+"%.0f%% %@" = "%.0f%% %@";

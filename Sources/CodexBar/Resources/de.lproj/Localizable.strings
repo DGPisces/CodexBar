@@ -528,7 +528,7 @@
 "quota_warning_weekly" = "wöchentlich";
 "quota_warning_weekly_capitalized" = "Wöchentlich";
 "quota_warning_notification_title" = "%1$@ %2$@ Kontingent niedrig";
-"quota_warning_notification_body" = "%1$@ übrig. Reached your %2$d%% %3$@ warning threshold.";
+"quota_warning_notification_body" = "%1$@ übrig. Die Warnschwelle von %2$d%% für %3$@ wurde erreicht.";
 "quota_warning_notification_body_with_account" = "Konto %1$@. %2$@ übrig. Ihr Warnschwellenwert von %3$d%% %4$@ wurde erreicht.";
 "predictive_pace_warnings_title" = "Vorausschauende Tempo-Warnungen";
 "predictive_pace_warnings_subtitle" = "Warnt für Codex und Claude, wenn die Sitzungs- oder Wochenquote beim aktuellen Tempo vor dem Zurücksetzen aufgebraucht sein könnte.";
@@ -2361,3 +2361,7 @@
 "Unavailable profile: %@" = "Nicht verfügbares Profil: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Nur das ausgewählte %@-Profil lesen. Konten werden nie automatisch ausgewählt.";
 "Langdock cost usage is not supported." = "Die Kostenerfassung für Langdock wird nicht unterstützt.";
+
+"<1%% %@" = "<1%% %@";
+
+"%.0f%% %@" = "%.0f%% %@";

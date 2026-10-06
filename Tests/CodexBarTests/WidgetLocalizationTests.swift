@@ -1,9 +1,41 @@
+import CodexBarCore
 import Foundation
 import Testing
 @testable import CodexBar
 @testable import CodexBarWidget
 
 struct WidgetLocalizationTests {
+    @Test
+    func `Arabic widget formats numeric arguments using its own resource locale`() {
+        WidgetLocalizationOverride.$language.withValue("ar") {
+            #expect(W("%dd", 12).contains("١٢"))
+        }
+    }
+
+    @Test
+    func `widget period keys remain translatable independently of the app language`() throws {
+        let snapshot = CostUsageTokenSnapshot(
+            sessionTokens: nil,
+            sessionCostUSD: 1,
+            last30DaysTokens: nil,
+            last30DaysCostUSD: 2,
+            historyLabel: "This month",
+            daily: [],
+            updatedAt: Date(timeIntervalSince1970: 1))
+        let summary = try CodexBarLocalizationOverride.$appLanguage.withValue("fa") {
+            try #require(UsageStore.widgetTokenUsageSummary(from: snapshot, provider: .mistral))
+        }
+        #expect(summary.last30DaysLabel == "This month")
+        WidgetLocalizationOverride.$language.withValue("en") {
+            #expect(CompactMetricFormatter.costMetricLabel(summary.last30DaysLabel, provider: .mistral) ==
+                "This month cost")
+        }
+        WidgetLocalizationOverride.$language.withValue("fa") {
+            #expect(CompactMetricFormatter.costMetricLabel(summary.last30DaysLabel, provider: .mistral) ==
+                W("%@ cost", W("This month")))
+        }
+    }
+
     @Test
     func `widget resources resolve prose and formatted labels in every supported language`() throws {
         let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent()

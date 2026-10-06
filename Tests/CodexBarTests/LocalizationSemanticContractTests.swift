@@ -4,6 +4,15 @@ import Testing
 @testable import CodexBarCore
 
 struct LocalizationSemanticContractTests {
+    @Test(arguments: AppLanguage.allCases.filter { $0 != .system })
+    func `login and recovery translations preserve executable commands`(language: AppLanguage) {
+        #expect(L("vertex_ai_login_instructions", language: language.rawValue)
+            .contains("gcloud auth application-default login"))
+        let recovery = L("managed_login_failed", language: language.rawValue)
+        #expect(recovery.contains("codex --version"))
+        #expect(recovery.contains("npm install -g --include=optional @openai/codex@latest"))
+    }
+
     private static let shortcutHelp = "These shortcuts work while the provider switcher menu is open. "
         + "Use ctrl, alt, shift and cmd with a letter, digit, left or right; use none to disable an action."
 
