@@ -57,6 +57,14 @@ extension UsageStore {
             onRefresh: onRefresh)
     }
 
+    func refreshCodexFromSettingsHeader(allowDisabled: Bool = false) async {
+        if let overview = self.codexAccountUsageOverview(onRefresh: { _ in }) {
+            await self.refreshCodexAccountsForSettings(
+                Set(overview.rows.map(\.id)), allowDisabled: allowDisabled)
+        }
+        await self.refreshCodexAccountScopedState(allowDisabled: allowDisabled)
+    }
+
     func refreshCodexAccountsForSettings(_ accountIDs: Set<String>, allowDisabled: Bool = false) async {
         guard !accountIDs.isEmpty, !self.shouldUseAmbientCodexPATForUsage(),
               self.codexSettingsRefreshingAccountIDs.isEmpty,

@@ -191,4 +191,26 @@ extension CodexAccountScopedRefreshTests {
             #expect(overview.rows.first { $0.id == accounts[0].id }?.error == nil)
         }
     }
+
+    @Test
+    func `settings header refresh batches siblings and preserves dashboard enrichment for followed account`() async throws {
+        try await self.withSelectedAccountRetentionFixture(sameEmail: true) { store, _, accounts in
+            store.settings.openAIWebAccessEnabled = true
+            store.settings.codexCookieSource = .auto
+            let recorder = OverviewFetchRecorder()
+            self.installOverviewProvider(on: store, accounts: accounts, recorder: recorder)
+
+            var dashboardCalled = false
+            store._test_openAIDashboardLoaderOverride = { accountEmail, _, _, _ in
+                dashboardCalled = true
+                return self.dashboard(email: accounts[0].email, creditsRemaining: 42, usedPercent: 10)
+            }
+            defer { store._test_openAIDashboardLoaderOverride = nil }
+
+            await store.refreshCodexFromSettingsHeader(allowDisabled: true)
+            let fetched = await recorder.workspaceIDs
+            #expect(Set(fetched) == Set(accounts.compactMap(\.workspaceAccountID)))
+            #expect(dashboardCalled)
+        }
+    }
 }
