@@ -76,6 +76,24 @@ medians. Reload includes SQLite decoding and session projection, not UI startup.
 | Larger | Single-file append | 291.1 ms | 278.4 ms | -4.4% |
 | Larger | Cache reload / session projection | 542.8 ms | 556.7 ms | +2.6% |
 
+A second complete comparison after the full suite ended reversed the binary
+order (feature, then baseline). It produced the following medians:
+
+| Corpus | Path | Baseline | Feature | Change |
+| --- | --- | ---: | ---: | ---: |
+| Smaller | Cold scan | 201.1 ms | 190.4 ms | -5.3% |
+| Smaller | Unchanged refresh | 55.8 ms | 55.9 ms | +0.2% |
+| Smaller | Single-file append | 29.3 ms | 28.5 ms | -2.6% |
+| Larger | Cold scan | 1,958.2 ms | 2,200.7 ms | +12.4% |
+| Larger | Unchanged refresh | 610.9 ms | 621.1 ms | +1.7% |
+| Larger | Single-file append | 277.7 ms | 274.8 ms | -1.1% |
+
+The larger cold overhead was 4.5% in the first comparison and 12.4% in the
+repeat, so the first figure alone is insufficient. Warm refresh overhead was
+between -0.1% and +1.7%; cache/session projection retained a few-percent overhead.
+The lower smaller-corpus timings are measurement variation, not a claimed
+speedup. Both complete result sets are retained in the raw proof.
+
 Cold cache and side files grew by 6.5% / 4.5% (4.32 to 4.60 MiB / 49.54 to
 51.80 MiB). All unchanged refreshes processed zero usage rows; append processed
 only the 4 / 6 new requests. Every feature run matched expected timing counts,
