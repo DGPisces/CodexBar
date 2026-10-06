@@ -26,5 +26,6 @@
   "nativeWidgetCompilation": true,
   "nativeWidgetHostDisplay": false,
   "nonEnglishNativeSpeakerReview": false,
-  "nativeSpeakerReviewBoundary": "22 non-English catalogs need semantic review"
+  "nativeSpeakerReviewBoundary": "22 non-English catalogs need semantic review",
+  "reviewFollowupReceipt": "countdown-review-followup.json"
 }

@@ -35,3 +35,11 @@ The twelve production Widget source files also compiled using the native `Bundle
 ## Acceptance boundary
 
 The machine checks validate resource contracts and covered runtime behavior. They do not certify every translation's meaning or style. The 22 non-English catalogs still need native-speaker review. Maintainer approval and merging this supplement and the upstream PR remain separate steps.
+
+## Indonesian countdown review follow-up
+
+The [parent PR review](https://github.com/steipete/CodexBar/pull/4223#issuecomment-5965412527) identified three Indonesian countdown entries that render a day component with `j`, the hour abbreviation. These entries were missed in the initial supplement. They now use the explicit day word `hari`.
+
+The regression invokes the production provider-detail formatter on both primary and secondary z.ai detail values. It covers day-only, day/hour, and day/minute values, plus three hour/minute controls. The pre-fix run reproduced six failed expectations in the three day-bearing cases. The post-fix `LocalizationSemanticContractTests` and `ZaiMenuCardTests` run passed 12 tests in two suites, and a fresh `make check` returned 0. See the [normalized follow-up receipt](countdown-review-followup.json).
+
+The earlier 143-group full-suite acceptance belongs to the earlier source revision. This catalog-only follow-up and its new regression received focused verification and repository checks; the full suite was not rerun. The parent PR's head remains unchanged until its author integrates the supplement.
