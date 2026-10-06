@@ -2329,3 +2329,7 @@
 "Unavailable profile: %@" = "사용할 수 없는 프로필: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "선택한 %@ 프로필만 읽습니다. 계정은 자동으로 선택되지 않습니다.";
 "Langdock cost usage is not supported." = "Langdock 사용 비용 추적은 지원되지 않습니다.";
+
+"<1%% %@" = "<1%% %@";
+
+"%.0f%% %@" = "%.0f%% %@";

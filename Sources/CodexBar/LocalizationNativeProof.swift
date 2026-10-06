@@ -80,7 +80,7 @@ enum LocalizationNativeProof {
                     backing: .buffered,
                     defer: false)
                 window.title = "CodexBar · \(L("section_alerts")) · isolated runtime proof"
-                window.contentView = NSHostingView(rootView: content)
+                window.contentView = NSHostingView(rootView: content.codexBarLocalized())
                 window.center()
                 window.makeKeyAndOrderFront(nil)
                 self.window = window
@@ -109,7 +109,9 @@ enum LocalizationNativeProof {
                 backing: .buffered,
                 defer: false)
             window.title = L("Provider Switcher Shortcuts")
-            window.contentView = NSHostingView(rootView: ProviderSwitcherShortcutEditor(settings: settings))
+            window
+                .contentView = NSHostingView(rootView: ProviderSwitcherShortcutEditor(settings: settings)
+                    .codexBarLocalized())
             window.center()
             window.makeKeyAndOrderFront(nil)
             self.shortcutWindow = window

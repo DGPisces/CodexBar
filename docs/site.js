@@ -1,4 +1,5 @@
 import { localeCatalog, localeMessages } from "./site-locales.mjs";
+import { normalizeLocale } from "./site-language.mjs";
 
 const root = document.documentElement;
 let activeMessages = localeMessages.en;
@@ -406,33 +407,12 @@ const supportedLanguages = new Set(languages.map((language) => language.id));
 const rtlLanguages = new Set(
   localeCatalog.filter((language) => language.direction === "rtl").map((language) => language.code),
 );
-const localeAliases = {
-  "zh-cn": "zh-CN",
-  "zh-hans": "zh-CN",
-  "zh-hant": "zh-TW",
-  "zh-hk": "zh-TW",
-  "zh-tw": "zh-TW",
-  ja: "ja-JP",
-  pt: "pt-BR",
-  "pt-br": "pt-BR",
-};
 const languageStorageKey = "codexbar-language";
 const languagePicker = document.querySelector("#language-picker");
 const languageTrigger = document.querySelector("#language-picker-trigger");
 const languageMenu = document.querySelector("#language-picker-menu");
 const languageList = document.querySelector("#language-picker-list");
 const languageShort = document.querySelector("[data-lang-short]");
-
-function normalizeLocale(value) {
-  if (!value) return null;
-  const lower = value.toLowerCase();
-  if (localeAliases[lower]) return localeAliases[lower];
-  return (
-    languages.find(
-      (language) => language.id.toLowerCase() === lower || lower.startsWith(`${language.id.toLowerCase()}-`),
-    )?.id || null
-  );
-}
 
 function selectedLocale() {
   try {

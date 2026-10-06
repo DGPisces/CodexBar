@@ -436,7 +436,7 @@
 "overview_choose_providers" = "تا %@ ارائه دهنده را انتخاب کنید";
 "remove_account_message" = "حذف %@ از CodexBar؟ مدیریت Codex خانه آن حذف خواهد شد.";
 "version_format" = "نسخه %@";
-"vertex_ai_login_instructions" = "برای پیگیری Vertex AI استفاده، با Google Cloud.\n\n1 احراز هویت کنید. ترمینال باز\n2. اجرا: gcloud auth application-default-login\n3. دستورالعمل های مرورگر را دنبال کنید تا in\n4 را امضا کنید. پروژه ات را تنظیم کن: gcloud config set project PROJECT_ID\n\nOpen Terminal را همین حالا؟";
+"vertex_ai_login_instructions" = "برای پیگیری Vertex AI استفاده، با Google Cloud.\n\n1 احراز هویت کنید. ترمینال باز\n2. اجرا: gcloud auth application-default login\n3. دستورالعمل های مرورگر را دنبال کنید تا in\n4 را امضا کنید. پروژه ات را تنظیم کن: gcloud config set project PROJECT_ID\n\nOpen Terminal را همین حالا؟";
 "workspaceID is set but only opencode, opencodego, and deepgram support workspaceID." = "workspaceID فعال است اما فقط opencode، opencodego و deepgram از workspaceID پشتیبانی می کنند.";
 "© 2026 Peter Steinberger. MIT License." = "© ۲۰۲۶ پیتر استاینبرگر. MIT مجوز.";
 
@@ -2365,3 +2365,7 @@
 "Unavailable profile: %@" = "نمایه در دسترس نیست: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "فقط نمایهٔ انتخاب‌شدهٔ %@ خوانده می‌شود. حساب‌ها هرگز به‌طور خودکار انتخاب نمی‌شوند.";
 "Langdock cost usage is not supported." = "ردیابی هزینه‌های استفاده از Langdock پشتیبانی نمی‌شود.";
+
+"<1%% %@" = "<1%% %@";
+
+"%.0f%% %@" = "%.0f%% %@";

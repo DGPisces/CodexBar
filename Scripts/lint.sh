@@ -121,12 +121,14 @@ check_shell_scripts() {
 }
 
 check_app_locales() {
+  node --test "${ROOT_DIR}/Scripts/test_localization_formats.mjs"
   node "${ROOT_DIR}/Scripts/check-app-locales.mjs" --test
   node "${ROOT_DIR}/Scripts/check-app-locales.mjs"
   node "${ROOT_DIR}/Scripts/sync-widget-locales.mjs" --check
 }
 
 check_site_locales() {
+  node --test "${ROOT_DIR}/Scripts/test_site_language.mjs"
   node --test "${ROOT_DIR}/Scripts/test_social_card.mjs"
   node "${ROOT_DIR}/Scripts/check-site-locales.mjs"
   node --check "${ROOT_DIR}/docs/site.js"
@@ -178,6 +180,7 @@ run_swiftlint() {
 
 collect_javascript_files() {
   JAVASCRIPT_FILES=("${ROOT_DIR}/docs/site.js")
+  JAVASCRIPT_FILES+=("${ROOT_DIR}/docs/site-language.mjs")
   local file
   for file in "${ROOT_DIR}"/Scripts/*.mjs "${ROOT_DIR}"/Sources/CodexBarCore/Resources/Plugins/*.js \
     "${ROOT_DIR}"/Sources/CodexBarCore/Resources/Plugins/*.ts

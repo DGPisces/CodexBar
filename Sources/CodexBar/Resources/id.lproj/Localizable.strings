@@ -2030,9 +2030,9 @@
 "gsk_..." = "gsk_...";
 "https://openrouter.ai/api/v1" = "https://openrouter.ai/api/v1";
 "https://resource.openai.azure.com" = "https://resource.openai.azure.com";
-"in %@d" = "di %@j";
-"in %@d %@h" = "di %1$@j %2$@j";
-"in %@d %@m" = "di %1$@j %2$@m";
+"in %@d" = "di %@ hari";
+"in %@d %@h" = "di %1$@ hari %2$@j";
+"in %@d %@m" = "di %1$@ hari %2$@m";
 "in %@h" = "di %@j";
 "in %@h %@m" = "di %1$@j %2$@m";
 "in %@m" = "di %@m";
@@ -2364,3 +2364,7 @@
 "Unavailable profile: %@" = "Profil tidak tersedia: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Hanya baca profil %@ yang dipilih. Akun tidak pernah dipilih secara otomatis.";
 "Langdock cost usage is not supported." = "Pelacakan biaya penggunaan Langdock tidak didukung.";
+
+"<1%% %@" = "<1%% %@";
+
+"%.0f%% %@" = "%.0f%% %@";

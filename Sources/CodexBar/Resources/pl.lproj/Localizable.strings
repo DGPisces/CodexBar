@@ -2364,3 +2364,7 @@
 "Unavailable profile: %@" = "Niedostępny profil: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Odczytuj tylko wybrany profil %@. Konta nigdy nie są wybierane automatycznie.";
 "Langdock cost usage is not supported." = "Śledzenie kosztów Langdock nie jest obsługiwane.";
+
+"<1%% %@" = "<1%% %@";
+
+"%.0f%% %@" = "%.0f%% %@";

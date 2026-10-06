@@ -2361,3 +2361,7 @@
 "Unavailable profile: %@" = "Профіль недоступний: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Читати лише вибраний профіль %@. Облікові записи ніколи не вибираються автоматично.";
 "Langdock cost usage is not supported." = "Відстеження витрат на використання Langdock не підтримується.";
+
+"<1%% %@" = "<1%% %@";
+
+"%.0f%% %@" = "%.0f%% %@";

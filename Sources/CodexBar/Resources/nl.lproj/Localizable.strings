@@ -450,7 +450,7 @@
 "overview_choose_providers" = "Kies maximaal %@ providers";
 "remove_account_message" = "%@ verwijderen uit CodexBar? Het beheerde Codex-huis wordt verwijderd.";
 "version_format" = "Versie %@";
-"vertex_ai_login_instructions" = "Om het gebruik van Vertex AI bij te houden, authenticeert u zich met Google Cloud.\n\n1. Open Terminal\n2. Uitvoeren: gcloud auth applicatie-standaard login\n3. Volg de browserprompts om in te loggen\n4. Stel uw project in: gcloud config set project PROJECT_ID\n\nTerminal nu openen?";
+"vertex_ai_login_instructions" = "Om het gebruik van Vertex AI bij te houden, authenticeert u zich met Google Cloud.\n\n1. Open Terminal\n2. Uitvoeren: gcloud auth application-default login\n3. Volg de browserprompts om in te loggen\n4. Stel uw project in: gcloud config set project PROJECT_ID\n\nTerminal nu openen?";
 "workspaceID is set but only opencode, opencodego, and deepgram support workspaceID." = "workspaceID is ingesteld, maar alleen opencode, opencodego en deepgram ondersteunen workspaceID.";
 "© 2026 Peter Steinberger. MIT License." = "© 2026 Peter Steinberger. MIT-licentie.";
 
@@ -592,7 +592,7 @@
 "remove_codex_account_title" = "Codex-account verwijderen?";
 "remove" = "Verwijderen";
 "managed_login_already_running" = "Er is al een beheerde Codex-aanmelding actief. Wacht tot het klaar is voordat u een ander account toevoegt of opnieuw verifieert.";
-"managed_login_failed" = "Beheerde Codex-aanmelding is niet voltooid. Controleer of `codex --version` werkt in Terminal. Als macOS `codex` naar de prullenbak heeft geblokkeerd of verplaatst, verwijdert u verouderde dubbele installaties, voert u `npm install -g --include=optioneel @openai/codex@latest` uit en probeert u het vervolgens opnieuw.";
+"managed_login_failed" = "Beheerde Codex-aanmelding is niet voltooid. Controleer of `codex --version` werkt in Terminal. Als macOS `codex` naar de prullenbak heeft geblokkeerd of verplaatst, verwijdert u verouderde dubbele installaties, voert u `npm install -g --include=optional @openai/codex@latest` uit en probeert u het vervolgens opnieuw.";
 "codex_login_output" = "codex login-uitvoer:";
 "managed_login_missing_email" = "Codex-aanmelding voltooid, maar er was geen account-e-mailadres beschikbaar. Probeer het opnieuw nadat u heeft bevestigd dat het account volledig is aangemeld.";
 "login_success_notification_title" = "%@ inloggen succesvol";
@@ -2360,3 +2360,7 @@
 "Unavailable profile: %@" = "Profiel niet beschikbaar: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Lees alleen het geselecteerde %@-profiel. Accounts worden nooit automatisch geselecteerd.";
 "Langdock cost usage is not supported." = "Het bijhouden van de kosten van Langdock wordt niet ondersteund.";
+
+"<1%% %@" = "<1%% %@";
+
+"%.0f%% %@" = "%.0f%% %@";
