@@ -416,7 +416,6 @@ extension UsageStore {
         default: "Today"
         }
         let defaultMonthLabel = snapshot.historyDays == 1 ? "Today" : "\(snapshot.historyDays)d"
-        // The widget follows its own language preference; retain lookup keys in the shared snapshot.
         let monthLabel = snapshot.historyLabel ?? defaultMonthLabel
         let estimateSuffix = provider == .codex ? " API est. · not billed" : ""
         return WidgetSnapshot.TokenUsageSummary(
