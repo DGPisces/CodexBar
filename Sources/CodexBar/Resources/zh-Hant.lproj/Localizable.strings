@@ -1683,3 +1683,10 @@
 "Browser profile" = "瀏覽器設定檔";
 "Unavailable profile: %@" = "無法使用的設定檔：%@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "僅讀取所選的 %@ 設定檔。絕不會自動選擇帳號。";
+
+// Completed Codex turn timing.
+"Turn output: %@ tok/s" = "整輪輸出：%@ tok/s";
+"First token: %@ s" = "首 token：%@ 秒";
+"Timed turns: %@" = "計時輪數：%@";
+"spend_turn_performance_help" = "整輪輸出包含推理、工具執行和等待時間，不能代表模型生成速度。首 token 是第一枚模型 token 的延遲中位數，可能屬於推理。僅統計成功且計時完整的輪次。";
+"First-token samples: %@ / %@" = "首 token 樣本：%@ / %@";

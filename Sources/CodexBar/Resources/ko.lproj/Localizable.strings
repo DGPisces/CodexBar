@@ -1621,3 +1621,10 @@
 "Browser profile" = "브라우저 프로필";
 "Unavailable profile: %@" = "사용할 수 없는 프로필: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "선택한 %@ 프로필만 읽습니다. 계정은 자동으로 선택되지 않습니다.";
+
+// Completed Codex turn timing.
+"Turn output: %@ tok/s" = "Turn output: %@ tok/s";
+"First token: %@ s" = "First token: %@ s";
+"Timed turns: %@" = "Timed turns: %@";
+"spend_turn_performance_help" = "Turn output includes reasoning, tools and waits. It is not model generation speed. First token is the median time to the first model token, which may be reasoning. Only complete, successfully timed turns are included.";
+"First-token samples: %@ / %@" = "First-token samples: %@ / %@";

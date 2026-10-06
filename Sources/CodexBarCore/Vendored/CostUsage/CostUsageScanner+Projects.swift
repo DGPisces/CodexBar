@@ -82,7 +82,8 @@ extension CostUsageScanner {
                 modelBreakdowns: Self.codexProjectModelBreakdowns(from: report.data) ?? [],
                 projectPath: projectPath,
                 projectName: projectPath.map { Self.codexProjectName(path: $0) },
-                title: file.usage.codexSession?.title)
+                title: file.usage.codexSession?.title,
+                turnPerformanceSamples: Self.codexTurnPerformanceSamples(usage: file.usage, range: range))
             session.workingDirectory = file.usage.projectPath
             return session
         }

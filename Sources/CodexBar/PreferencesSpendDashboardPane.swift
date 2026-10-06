@@ -1318,7 +1318,7 @@ private struct SpendDailyLedgerRow: View {
     }
 }
 
-private struct SpendSessionRows: View {
+struct SpendSessionRows: View {
     let group: SpendDashboardModel.CurrencyGroup
     let hidePersonalInfo: Bool
     @State private var showsAllRows = false
@@ -1352,11 +1352,16 @@ private struct SpendSessionRows: View {
                             .help(subtitle)
                     }
                     Spacer()
-                    Text(spendDashboardMetricText(
-                        cost: row.totalCost,
-                        tokens: row.totalTokens,
-                        currencyCode: self.group.currencyCode))
-                        .monospacedDigit()
+                    VStack(alignment: .trailing, spacing: 3) {
+                        Text(spendDashboardMetricText(
+                            cost: row.totalCost,
+                            tokens: row.totalTokens,
+                            currencyCode: self.group.currencyCode))
+                            .monospacedDigit()
+                        if let performance = row.turnPerformance {
+                            SpendSessionPerformanceView(summary: performance)
+                        }
+                    }
                 }
                 .padding(.vertical, 9)
             }

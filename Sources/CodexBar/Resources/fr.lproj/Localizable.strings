@@ -1651,3 +1651,10 @@
 "Browser profile" = "Profil du navigateur";
 "Unavailable profile: %@" = "Profil indisponible : %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Lire uniquement le profil %@ sélectionné. Les comptes ne sont jamais sélectionnés automatiquement.";
+
+// Completed Codex turn timing.
+"Turn output: %@ tok/s" = "Turn output: %@ tok/s";
+"First token: %@ s" = "First token: %@ s";
+"Timed turns: %@" = "Timed turns: %@";
+"spend_turn_performance_help" = "Turn output includes reasoning, tools and waits. It is not model generation speed. First token is the median time to the first model token, which may be reasoning. Only complete, successfully timed turns are included.";
+"First-token samples: %@ / %@" = "First-token samples: %@ / %@";

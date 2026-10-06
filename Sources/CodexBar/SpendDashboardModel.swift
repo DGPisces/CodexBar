@@ -335,6 +335,7 @@ struct SpendDashboardModel: Equatable, Sendable {
         let totalTokens: Int?
         let totalCost: Double?
         let modelName: String?
+        var turnPerformance: CostUsageTurnPerformanceSummary?
     }
 
     struct HourlyPoint: Identifiable, Equatable, Sendable {
@@ -1475,7 +1476,12 @@ struct SpendDashboardModel: Equatable, Sendable {
                     lastActivity: session.lastActivity,
                     totalTokens: session.totalTokens,
                     totalCost: session.costUSD.map { $0 * summary.costMultiplier },
-                    modelName: modelName)
+                    modelName: modelName,
+                    // Provider-specific by design: only the native Codex ledger has validated turn timing.
+                    turnPerformance: summary.input.provider == .codex && summary.input.sourceKind == .native
+                        ? CostUsageTurnPerformanceSummary(samples: session.turnPerformanceSamples.filter {
+                            bounds.contains(calendar.startOfDay(for: $0.completedAt))
+                        }) : nil)
             }
         }
         .sorted(by: Self.sessionOrder)
