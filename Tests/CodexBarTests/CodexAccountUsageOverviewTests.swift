@@ -193,7 +193,7 @@ extension CodexAccountScopedRefreshTests {
     }
 
     @Test
-    func `settings header refresh batches siblings and preserves dashboard enrichment for followed account`() async throws {
+    func `settings header refresh preserves followed account dashboard enrichment`() async throws {
         try await self.withSelectedAccountRetentionFixture(sameEmail: true) { store, _, accounts in
             store.settings.openAIWebAccessEnabled = true
             store.settings.codexCookieSource = .auto
@@ -201,7 +201,7 @@ extension CodexAccountScopedRefreshTests {
             self.installOverviewProvider(on: store, accounts: accounts, recorder: recorder)
 
             var dashboardCalled = false
-            store._test_openAIDashboardLoaderOverride = { accountEmail, _, _, _ in
+            store._test_openAIDashboardLoaderOverride = { _, _, _, _ in
                 dashboardCalled = true
                 return self.dashboard(email: accounts[0].email, creditsRemaining: 42, usedPercent: 10)
             }
