@@ -222,12 +222,14 @@ package.targets.append(.executableTarget(name: "TokenSpeedReleaseProbe", depende
 Build each independently using `swift build -c release --product
 TokenSpeedReleaseProbe -j 2 -Xswiftc -enable-testing`; add `-Xswiftc
 -DTURN_PERF_FEATURE` for the feature adapter. Set
-`CODEXBAR_PERFORMANCE_BENCHMARK_OUTPUT` when running the produced binary.
+`CODEXBAR_TOKEN_SPEED_BENCHMARK_OUTPUT` when running the archived standalone
+adapter binary (it predates the newer test-benchmark environment name).
 No test-only flag changes the scanner execution path. Restore the temporary
 manifest afterward, and never copy build products between worktrees.
 
 The existing opt-in Swift test benchmark uses the same fixture through
-`CostUsageTurnPerformanceBenchmarkTests`. Optional component rendering uses
+`CostUsageTurnPerformanceBenchmarkTests`, with
+`CODEXBAR_PERFORMANCE_BENCHMARK_OUTPUT`. Optional component rendering uses
 `CODEXBAR_PERFORMANCE_UI_PROOF_DIR` and `CODEXBAR_PERFORMANCE_UI_PROOF_WIDTH`
 with `SpendSessionPerformanceTests`. The native-history proof requires a private
 directory with `sessions/` and independently prepared `expected.json`, supplied

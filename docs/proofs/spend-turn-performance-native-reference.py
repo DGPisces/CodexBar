@@ -153,4 +153,3 @@ audit["matches_frozen_reference"] = True
 (root / "reference-audit.json").write_text(json.dumps(audit, indent=2, sort_keys=True) + "\n")
 (root / "reference-recomputed.json").write_text(json.dumps(samples, indent=2) + "\n")
 print(json.dumps(audit, sort_keys=True))
-
