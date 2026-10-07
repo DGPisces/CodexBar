@@ -105,7 +105,7 @@ struct MenuBarPane: View {
                 SettingsMenuPicker(
                     selection: self.$settings.switcherRowsOption,
                     options: MenuBarSettingsMenuOptions.switcherRows,
-                    label: { Text(L("switcher_rows_title")) },
+                    label: { SettingsRowLabel(L("switcher_rows_title")) },
                     optionLabel: { option in
                         Text(option.label)
                     })
@@ -122,7 +122,7 @@ struct MenuBarPane: View {
                     optionLabel: { source in
                         Text(source.label)
                     })
-                    .disabled(!self.settings.mergeIcons || self.isStackedStyleActive)
+                    .disabled(!self.settings.mergeIcons || self.mergedIconPresentation.effectiveStyle == .stacked)
 
                 self.overviewProviderRow
                     .disabled(!self.settings.mergeIcons)
@@ -134,7 +134,8 @@ struct MenuBarPane: View {
                 Toggle(isOn: self.$settings.randomBlinkEnabled) {
                     SettingsRowLabel(L("surprise_me_title"), subtitle: L("surprise_me_subtitle"))
                 }
-                .disabled(self.isStackedStyleActive)
+                // Brand icons (including stacked rows, which require them) never draw blink frames.
+                .disabled(self.settings.menuBarShowsBrandIconWithPercent)
             } header: {
                 Text(L("section_animation"))
             }
@@ -224,10 +225,6 @@ struct MenuBarPane: View {
 
     private var mergedIconPresentation: MergedIconPresentation {
         self.settings.mergedIconPresentation(activeProviders: self.store.enabledFirstPartyProvidersForDisplay())
-    }
-
-    private var isStackedStyleActive: Bool {
-        self.mergedIconPresentation.stackedProviders != nil
     }
 
     private func stackedRowProviderPicker(

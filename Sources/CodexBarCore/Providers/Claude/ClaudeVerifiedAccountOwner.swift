@@ -25,6 +25,8 @@ extension ClaudeUsageSnapshot {
             opus: self.opus,
             extraRateWindows: self.extraRateWindows,
             providerCost: self.providerCost,
+            resetCredits: self.resetCredits,
+            cloudCredits: self.cloudCredits,
             updatedAt: self.updatedAt,
             accountEmail: self.accountEmail,
             accountOrganization: self.accountOrganization,

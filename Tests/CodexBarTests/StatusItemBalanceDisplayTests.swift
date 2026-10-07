@@ -942,6 +942,27 @@ struct StatusItemBalanceDisplayTests {
 
 extension StatusItemBalanceDisplayTests {
     @Test
+    func `merged selection shows the balance only plugin in legacy and stored layouts`() throws {
+        let settings = self.makeSettings(suiteName: #function, provider: .lithosai)
+        settings.menuBarDisplayMode = .percent
+        let (store, controller) = self.makeStoreAndController(settings: settings)
+        defer { controller.releaseStatusItemsForTesting() }
+        let snapshot = try UsageSnapshot(
+            primary: nil,
+            secondary: nil,
+            details: [ProviderDetailSection(title: "Billing", rows: [.init(label: "Balance", value: "$2.57")])],
+            updatedAt: Date())
+        store._setSnapshotForTesting(snapshot, provider: .lithosai)
+        let selected = controller.primaryProviderForUnifiedIcon()
+        #expect(selected == .lithosai)
+        #expect(controller.menuBarDisplayText(for: selected, snapshot: snapshot) == "$2.57")
+        let data = controller.menuBarLayoutRenderData(provider: selected, snapshot: snapshot, warningFlash: false)
+        #expect(data.balance == "$2.57")
+        #expect(data.automaticText == "$2.57")
+        #expect(data.automatic == nil)
+    }
+
+    @Test
     func `Codex direct layout lanes suppress exhausted windows after reset in status item and preview`() {
         let settings = self.makeSettings(
             suiteName: "StatusItemBalanceDisplayTests-codex-direct-lane-expired",
@@ -1448,11 +1469,18 @@ extension StatusItemBalanceDisplayTests {
         }
     }
 
-    @Test
-    func `stored Poe icon and percent layout shows point balance in status item and preview`() {
+    @Test(arguments: [
+        (UsageProvider.poe, "Balance: 512 points", "512 points"),
+        (UsageProvider.typesafe, "Balance: $4.98", "$4.98"),
+    ])
+    func `stored balance-only icon and percent layout shows balance in status item and preview`(
+        provider: UsageProvider,
+        loginMethod: String,
+        balance: String)
+    {
         let settings = self.makeSettings(
-            suiteName: "StatusItemBalanceDisplayTests-poe-layout-balance",
-            provider: .poe)
+            suiteName: "StatusItemBalanceDisplayTests-\(provider.rawValue)-layout-balance",
+            provider: provider)
         let layout = MenuBarLayout(lines: [[.icon, .percent(window: .automatic)]])
         settings.setMenuBarLayout(layout, for: nil)
         let (store, controller) = self.makeStoreAndController(settings: settings)
@@ -1462,24 +1490,24 @@ extension StatusItemBalanceDisplayTests {
             secondary: nil,
             updatedAt: Date(),
             identity: ProviderIdentitySnapshot(
-                providerID: .poe,
+                providerID: provider.instanceID,
                 accountEmail: nil,
                 accountOrganization: nil,
-                loginMethod: "Balance: 512 points"))
+                loginMethod: loginMethod))
 
-        store._setSnapshotForTesting(snapshot, provider: .poe)
-        store._setErrorForTesting(nil, provider: .poe)
+        store._setSnapshotForTesting(snapshot, provider: provider)
+        store._setErrorForTesting(nil, provider: provider)
 
         let statusItemData = controller.menuBarLayoutRenderData(
-            provider: .poe,
+            provider: provider,
             snapshot: snapshot,
             warningFlash: false)
         let previewData = MenuBarLayoutPreview(
             layout: layout,
-            provider: .poe,
+            provider: provider,
             settings: settings,
             store: store)
-            .liveData(provider: .poe, snapshot: snapshot)
+            .liveData(provider: provider, snapshot: snapshot)
 
         for data in [statusItemData, previewData] {
             let rendered = MenuBarLayoutRenderer().render(
@@ -1496,8 +1524,8 @@ extension StatusItemBalanceDisplayTests {
                     now: Date()))
 
             #expect(data.automatic == nil)
-            #expect(data.automaticText == "512 points")
-            #expect(rendered.attributedTitle.string.hasSuffix("512 points"))
+            #expect(data.automaticText == balance)
+            #expect(rendered.attributedTitle.string.hasSuffix(balance))
         }
     }
 
