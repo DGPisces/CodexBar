@@ -93,6 +93,10 @@ Usage source picker:
 - In the segmented layout, selecting an account refreshes its card while the menu stays open. Delayed results stay
   scoped to that selection. An open chart submenu or highlighted menu command can defer the update until the submenu
   closes or the highlight clears.
+- Saved account readings are independent of account-widget visibility. Refreshing a selected account preserves
+  valid sibling readings, their original ages, errors, and credits in memory and across restart. Removed accounts
+  and rows whose ownership no longer matches the current account list are pruned; refresh failures only invalidate
+  the affected account's reading.
 - Reusing OpenCode OAuth enables remote account quota, not OpenCode session token/cost ingestion. See
   [OpenCode with Codex or OpenAI](opencode.md#using-opencode-with-codex-or-openai) for the current history boundary.
 
@@ -104,6 +108,10 @@ emails require the UUID. The app and CLI share the same preservation and workspa
 live credentials are saved before an owner-only atomic replacement, and detected changes to either
 auth file abort the replacement. A nonblocking process lock serializes participating account writers
 and is released automatically after a crash. External Codex processes do not share that lock.
+Preservation also checks legacy email-only destinations and rechecks saved authentication before
+replacing or deleting a managed destination. Read failures or conflicting credentials abort the promotion.
+Refreshed copies are read back before their fingerprints are committed, and every preserved copy is checked
+again immediately before the live replacement. External writers can still race after the final read.
 
 CLI promotion reads local files only and never requests Keychain access or starts login. It leaves
 the app's display selection and running Codex processes alone; `CODEX_HOME` selects the live destination.
@@ -412,7 +420,7 @@ the local result and returns a nonzero exit code. See [CLI host reporting](cli.m
   still scan local history. Faster provider refreshes still update quota/status. The scanner's default 60-second
   debounce is a separate internal limit, bypassed by forced scans and catch-up passes; it is not the app's refresh cadence.
 - Usage & Spend catch-up remains inactive after a no-progress or error pause until you choose **Refresh** in the dashboard toolbar or catch-up panel. Opening the dashboard or receiving background updates does not retry those terminal pauses. Low-power and thermal pauses can still recover automatically; this retry policy does not change cached history or token accounting.
-- Menu cost catch-up discards an overlapping refresh queued before a no-progress or error pause, preventing an immediate retry. A later normal or manual refresh can still start a fresh attempt; successful completion still honors queued refreshes for newly discovered history.
+- Menu cost catch-up keeps user stops and no-progress/error pauses across scheduled refreshes. Choose **Refresh** to retry after the worker stops. Successful completion still honors queued refreshes for newly discovered history; low-power and thermal pauses can recover automatically.
 - Automatic Codex catch-up scheduling in both usage and Spend Dashboard honors the app’s 30-minute Low Power Mode minimum after each pass. Explicit acceleration remains immediate, and physical low-power/thermal pauses retain their own retry policy. The setting applies when the next delay is computed; an already pending sleep is not replanned.
 - Automatic catch-up reports thermal pressure when serious heat and Low Power Mode coexist. Both constraints keep the existing 60-second pause before rechecking resource state.
 - Automatic catch-up starts without an assumed prior scan delay and continues cheap discovery pages within a two-second burst, capped at eight passes. Each pass receives the remaining scan time, checks normal window readiness, and can publish validated totals before the next sleep. The subsequent duty-cycle delay accounts for the whole burst, excluding waits on the shared account/provider queue. Returning to automatic mode counts only the in-flight accelerated pass toward its next delay. App Low Power Mode still floors each delay, and physical low-power/thermal pauses, no-progress detection, cancellation, and complete-history publication rules still apply.
@@ -486,6 +494,11 @@ invalid home is omitted; it never falls back to ambient `~/.codex` or to the glo
 These account rows intentionally exclude pi and OMP sessions because their history is machine-local rather than owned
 by one Codex account. The normal Codex cost menu and CLI scan continue to include supported pi-compatible history. The
 dashboard labels its values as local estimates and keeps currencies separate.
+
+## Local storage footprint
+
+Storage scans reuse top-level component paths within each scan. Symbolic links stay excluded, and path aliases
+and unnormalized roots retain their normalization fallback; directory totals and component names are unchanged.
 
 ## Key files
 - Web: `Sources/CodexBarCore/OpenAIWeb/*`

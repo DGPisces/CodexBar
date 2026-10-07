@@ -22,6 +22,10 @@ extension CodexAccountScopedRefreshTests {
             #expect(retained.snapshot?.primary == sibling.snapshot?.primary)
             #expect(retained.error == sibling.error)
             #expect(retained.credits?.remaining == sibling.credits?.remaining)
+            let restarted = self.makeUsageStore(settings: store.settings, codexAccountUsageSnapshotStore: snapshotStore)
+            #expect(restarted.codexAccountSnapshots.count == 2)
+            #expect(restarted.codexAccountSnapshots.first { $0.id == sibling.id }?.snapshot?.updatedAt
+                == sibling.snapshot?.updatedAt)
             let reloaded = snapshotStore.load(for: accounts)
             #expect(reloaded.count == 2)
             #expect(reloaded.first { $0.id == sibling.id }?.snapshot?.updatedAt == sibling.snapshot?.updatedAt)
@@ -45,6 +49,28 @@ extension CodexAccountScopedRefreshTests {
 
             #expect(store.codexAccountSnapshots.map(\.id) == [accounts[0].id])
             #expect(snapshotStore.load(for: accounts).map(\.id) == [accounts[0].id])
+        }
+    }
+
+    @Test(arguments: [false, true])
+    func `selected account failure leaves sibling cache intact`(transportFailure: Bool) async throws {
+        try await self.withSelectedAccountRetentionFixture(sameEmail: true) { store, snapshotStore, accounts in
+            let sibling = try #require(store.codexAccountSnapshots.first { $0.id == accounts[1].id })
+            self.installContextualCodexProvider(on: store, sourceLabel: "oauth", kind: .oauth) { _ in
+                if transportFailure { throw URLError(.notConnectedToInternet) }
+                throw CodexOAuthFetchError.unauthorized
+            }
+
+            await store.refreshProvider(.codex, allowDisabled: true)
+            await store.widgetSnapshotPersistTask?.value
+
+            let retained = try #require(store.codexAccountSnapshots.first { $0.id == sibling.id })
+            #expect(retained.snapshot?.updatedAt == sibling.snapshot?.updatedAt)
+            #expect(retained.error == sibling.error)
+            #expect(retained.credits?.remaining == sibling.credits?.remaining)
+            #expect(store.codexAccountSnapshots.contains { $0.id == accounts[0].id } == transportFailure)
+            #expect(snapshotStore.load(for: accounts).first { $0.id == sibling.id }?.snapshot?.updatedAt
+                == sibling.snapshot?.updatedAt)
         }
     }
 
