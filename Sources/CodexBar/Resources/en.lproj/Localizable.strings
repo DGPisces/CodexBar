@@ -1655,3 +1655,7 @@
 "Browser profile" = "Browser profile";
 "Unavailable profile: %@" = "Unavailable profile: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Read only the selected %@ profile. Accounts are never selected automatically.";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "Tint menu bar by provider color";
+"Tint brand icon and percent tokens with each provider's accent color." = "Tint brand icon and percent tokens with each provider's accent color.";

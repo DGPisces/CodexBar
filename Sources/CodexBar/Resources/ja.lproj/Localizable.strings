@@ -1652,3 +1652,7 @@
 "Browser profile" = "ブラウザープロファイル";
 "Unavailable profile: %@" = "利用できないプロファイル: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "選択した %@ プロファイルのみを読み取ります。アカウントが自動で選択されることはありません。";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "メニューバーをプロバイダーの色で着色";
+"Tint brand icon and percent tokens with each provider's accent color." = "ブランドアイコンとパーセントトークンを各プロバイダーのアクセントカラーで着色します。";

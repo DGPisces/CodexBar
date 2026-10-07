@@ -1651,3 +1651,7 @@
 "Browser profile" = "Webbläsarprofil";
 "Unavailable profile: %@" = "Profilen är inte tillgänglig: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Läs endast den valda %@-profilen. Konton väljs aldrig automatiskt.";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "Färga menyraden med leverantörens färg";
+"Tint brand icon and percent tokens with each provider's accent color." = "Färga varumärkesikonen och procenttoken med varje leverantörs accentfärg.";

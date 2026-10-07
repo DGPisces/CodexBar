@@ -1656,3 +1656,7 @@
 "Browser profile" = "โปรไฟล์เบราว์เซอร์";
 "Unavailable profile: %@" = "โปรไฟล์ไม่พร้อมใช้งาน: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "อ่านเฉพาะโปรไฟล์ %@ ที่เลือกเท่านั้น ระบบจะไม่เลือกบัญชีโดยอัตโนมัติ";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "ย้อมสีแถบเมนูตามสีของผู้ให้บริการ";
+"Tint brand icon and percent tokens with each provider's accent color." = "ย้อมสีไอคอนแบรนด์และโทเค็นเปอร์เซ็นต์ด้วยสีเน้นของผู้ให้บริการแต่ละราย";

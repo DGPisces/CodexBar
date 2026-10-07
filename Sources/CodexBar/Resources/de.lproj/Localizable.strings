@@ -1652,3 +1652,7 @@
 "Browser profile" = "Browserprofil";
 "Unavailable profile: %@" = "Nicht verfügbares Profil: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Nur das ausgewählte %@-Profil lesen. Konten werden nie automatisch ausgewählt.";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "Menüleiste nach Anbieterfarbe einfärben";
+"Tint brand icon and percent tokens with each provider's accent color." = "Markensymbol und Prozent-Tokens mit der Akzentfarbe jedes Anbieters einfärben.";

@@ -1653,3 +1653,7 @@
 "Browser profile" = "Профиль браузера";
 "Unavailable profile: %@" = "Профиль недоступен: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Читать только выбранный профиль %@. Аккаунты никогда не выбираются автоматически.";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "Окрашивать строку меню в цвет провайдера";
+"Tint brand icon and percent tokens with each provider's accent color." = "Окрашивать значок бренда и токены процентов в акцентный цвет каждого провайдера.";

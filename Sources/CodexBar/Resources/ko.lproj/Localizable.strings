@@ -1621,3 +1621,7 @@
 "Browser profile" = "브라우저 프로필";
 "Unavailable profile: %@" = "사용할 수 없는 프로필: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "선택한 %@ 프로필만 읽습니다. 계정은 자동으로 선택되지 않습니다.";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "메뉴 막대를 제공자 색상으로 표시";
+"Tint brand icon and percent tokens with each provider's accent color." = "브랜드 아이콘과 백분율 토큰을 각 제공자의 강조 색상으로 표시합니다.";

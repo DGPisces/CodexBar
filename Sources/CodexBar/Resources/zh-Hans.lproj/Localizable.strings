@@ -1666,3 +1666,7 @@
 "Browser profile" = "浏览器配置文件";
 "Unavailable profile: %@" = "配置文件不可用：%@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "仅读取所选的 %@ 配置文件。绝不会自动选择账户。";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "按服务商颜色渲染菜单栏";
+"Tint brand icon and percent tokens with each provider's accent color." = "使用各服务商的强调色渲染品牌图标和百分比标记。";

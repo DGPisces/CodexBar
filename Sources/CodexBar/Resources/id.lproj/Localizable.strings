@@ -1655,3 +1655,7 @@
 "Browser profile" = "Profil browser";
 "Unavailable profile: %@" = "Profil tidak tersedia: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Hanya baca profil %@ yang dipilih. Akun tidak pernah dipilih secara otomatis.";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "Warnai bilah menu dengan warna penyedia";
+"Tint brand icon and percent tokens with each provider's accent color." = "Warnai ikon merek dan token persentase dengan warna aksen setiap penyedia.";

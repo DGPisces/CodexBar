@@ -1656,3 +1656,7 @@
 "Browser profile" = "نمایهٔ مرورگر";
 "Unavailable profile: %@" = "نمایه در دسترس نیست: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "فقط نمایهٔ انتخاب‌شدهٔ %@ خوانده می‌شود. حساب‌ها هرگز به‌طور خودکار انتخاب نمی‌شوند.";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "رنگ‌آمیزی نوار منو با رنگ ارائه‌دهنده";
+"Tint brand icon and percent tokens with each provider's accent color." = "رنگ‌آمیزی نماد نشان تجاری و نشانه‌های درصد با رنگ تأکید هر ارائه‌دهنده.";

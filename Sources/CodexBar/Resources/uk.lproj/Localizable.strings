@@ -1652,3 +1652,7 @@
 "Browser profile" = "Профіль браузера";
 "Unavailable profile: %@" = "Профіль недоступний: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Читати лише вибраний профіль %@. Облікові записи ніколи не вибираються автоматично.";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "Тонувати рядок меню кольором провайдера";
+"Tint brand icon and percent tokens with each provider's accent color." = "Тонувати значок бренду та токени відсотків акцентним кольором кожного провайдера.";

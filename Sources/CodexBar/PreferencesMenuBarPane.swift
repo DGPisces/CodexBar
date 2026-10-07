@@ -54,6 +54,13 @@ struct MenuBarPane: View {
                         subtitle: paceColorSubtitle)
                 }
                 .disabled(self.settings.menuBarIconStyle != .iconAndPercent)
+
+                Toggle(isOn: self.$settings.menuBarColorByProvider) {
+                    SettingsRowLabel(
+                        L("Tint menu bar by provider color"),
+                        subtitle: L("Tint brand icon and percent tokens with each provider's accent color."))
+                }
+                .disabled(self.settings.menuBarIconStyle != .iconAndPercent)
             } header: {
                 Text(L("section_icon"))
             }

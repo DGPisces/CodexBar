@@ -1654,3 +1654,7 @@
 "Browser profile" = "Tarayıcı profili";
 "Unavailable profile: %@" = "Profil kullanılamıyor: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Yalnızca seçilen %@ profilini oku. Hesaplar asla otomatik seçilmez.";
+
+/* Provider menu bar color */
+"Tint menu bar by provider color" = "Menü çubuğunu sağlayıcı rengiyle renklendir";
+"Tint brand icon and percent tokens with each provider's accent color." = "Marka simgesini ve yüzde belirteçlerini her sağlayıcının vurgu rengiyle renklendir.";
