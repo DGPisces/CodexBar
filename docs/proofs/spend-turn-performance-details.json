@@ -7,7 +7,7 @@
     "expected_timed_turns": 41,
     "fresh_matches_reference": true,
     "real_usage_values": "withheld",
-    "scan_wall_ms": 2598.596875,
+    "scan_wall_ms": 2566.462542,
     "source": "copied native Codex JSONL, independent Python join"
   },
   "benchmark_source": "synthetic; debug build; shared host; absolute timings, not baseline comparison",
@@ -15,8 +15,8 @@
     "normal": {
       "files": 24,
       "turns": 960,
-      "summary_ms_median": 1.722708,
-      "summary_ms_max": 1.96275,
+      "summary_ms_median": 1.712708,
+      "summary_ms_max": 2.442167,
       "warm_usage_rows_processed": [
         0
       ],
@@ -27,8 +27,8 @@
     "large": {
       "files": 96,
       "turns": 7680,
-      "summary_ms_median": 13.09425,
-      "summary_ms_max": 30.478708,
+      "summary_ms_median": 13.905083,
+      "summary_ms_max": 17.05175,
       "warm_usage_rows_processed": [
         0
       ],
@@ -39,32 +39,65 @@
   },
   "native_window_interaction": "unverified; desktop app selection timed out",
   "component_render": "production rows and details; synthetic inputs; en and zh-Hans; light and dark; 460 points",
-  "focused_tests": {
-    "tests": 28,
-    "suites": 4,
-    "passed": true
+  "pre_merge_validation": {
+    "full_regression": {
+      "command": "./Scripts/test.sh --direct-workers 4",
+      "passed": true,
+      "selected_selections": 1572,
+      "selected_groups": 143,
+      "first_pass_successful_groups": 141,
+      "first_pass_failed_groups": 2,
+      "full_group_retries": 2,
+      "recovered_groups": 2,
+      "timed_out_groups": 0,
+      "total_seconds": 618.4,
+      "first_pass_issues": [
+        "OpenAISubscriptionMetadataTests: WebKit fixture wait timed out",
+        "UsageStorePlanUtilizationTests: generic weekly history persistence expectation"
+      ],
+      "assertions": "unmodified"
+    },
+    "focused_tests": {
+      "tests": 28,
+      "suites": 4,
+      "passed": true
+    },
+    "static_checks": {
+      "command": "make check",
+      "passed": true,
+      "swift_files": 2821,
+      "violations": 0
+    }
   },
-  "full_regression": {
-    "command": "./Scripts/test.sh --direct-workers 4",
+  "upstream_base": "03a51bdcf",
+  "parser_revision": 11,
+  "parser_hash": "e1088fb29c221187",
+  "focused_tests": {
+    "tests": 167,
+    "suites": 12,
     "passed": true,
-    "selected_selections": 1572,
-    "selected_groups": 143,
-    "first_pass_successful_groups": 141,
-    "first_pass_failed_groups": 2,
-    "full_group_retries": 2,
-    "recovered_groups": 2,
-    "timed_out_groups": 0,
-    "total_seconds": 618.4,
-    "first_pass_issues": [
-      "OpenAISubscriptionMetadataTests: WebKit fixture wait timed out",
-      "UsageStorePlanUtilizationTests: generic weekly history persistence expectation"
-    ],
-    "assertions": "unmodified"
+    "native_proof_input_supplied": true
   },
   "static_checks": {
     "command": "make check",
     "passed": true,
-    "swift_files": 2821,
+    "swift_files": 2848,
     "violations": 0
+  },
+  "full_regression": {
+    "command": "./Scripts/test.sh --direct-workers 4",
+    "passed": true,
+    "execution_mode": "direct",
+    "workers": 4,
+    "selected_selections": 1591,
+    "selected_groups": 144,
+    "verified_runtime_methods": 14050,
+    "first_pass_successful_groups": 144,
+    "first_pass_failed_groups": 0,
+    "full_group_retries": 0,
+    "recovered_groups": 0,
+    "timed_out_groups": 0,
+    "total_seconds": 339.0,
+    "assertions": "unmodified"
   }
 }

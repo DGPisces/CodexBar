@@ -302,7 +302,7 @@ struct CostUsageTurnPerformanceTests {
         }
     }
 
-    @Test(arguments: [8, 9])
+    @Test(arguments: [8, 9, 10])
     func `older caches backfill timing under a byte budget without changing ledger rows`(_ revision: Int) throws {
         try Self.withFixture { env, day, objects in
             var contextual = objects

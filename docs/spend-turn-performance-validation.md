@@ -10,7 +10,7 @@ read_when:
 Validated on arm64 macOS 27 with Swift 6.4. Upstream baseline:
 `ab32496d3c1f861981aa1a19aee2f933204f9bb9`. Feature production code:
 `22fdcb88e8d77a03c9d8447f889012247d4bb483`.
-The original validation used parser revision 9. The advanced details use parser revision 10; the current generated parser hash is checked by `make check`.
+The original validation used parser revision 9. The advanced details use parser revision 11 after merging main at `03a51bdcf`; the current generated parser hash is checked by `make check`.
 
 ## Metric contract
 
@@ -55,8 +55,8 @@ Model-first-token may be reasoning and does not establish first visible answer
 latency. Claude and OpenCodex rows remain without timing when their source does
 not provide the validated native completion/usage contract.
 
-Parser revision 10 uses existing bounded migration and retained-pricing logic.
-Revision 8 and 9 cache fixtures verify that authoritative ledger rows survive
+Parser revision 11 uses existing bounded migration and retained-pricing logic.
+Revision 8, 9 and 10 cache fixtures verify that authoritative ledger rows survive
 backfill. No new background poll, account probe or external dependency is added.
 
 ## UI evidence and runtime boundary
@@ -233,14 +233,13 @@ with `SpendSessionPerformanceTests`. The native-history proof requires a private
 directory with `sessions/` and independently prepared `expected.json`, supplied
 through `CODEXBAR_PERFORMANCE_NATIVE_PROOF_DIR`.
 
-## Advanced-details validation (2026-10-07)
+## Advanced-details validation before upstream merge (2026-10-07)
 
 The advanced-details receipt is separate from earlier release comparisons:
 [redacted receipt](proofs/spend-turn-performance-details.json). Twenty-eight
 focused tests in four suites passed, including plain and escaped JSON keys/values,
 Foundation fallback, conflicting/missing effort, native-only completion-date
-filtering, percentile thresholds, input-weighted cache ratios and revision 8/9
-backfill preserving authoritative ledger rows. The production fetcher and reopened
+filtering, percentile thresholds, input-weighted cache ratios and revision 8/9 backfill preserving authoritative ledger rows. The production fetcher and reopened
 cache matched the independent extended reference for 41 turns in six copied native
 files; no real usage values or identities are published.
 
@@ -255,11 +254,20 @@ failures suppressed. This is a retry-assisted pass, not a clean first-pass run.
 Advanced-detail strings are translated in English, Simplified Chinese and Italian;
 the other synchronized catalogs currently use English fallback for those strings.
 
-The synthetic debug benchmark ran three trials each for 24 sessions / 960 turns
-and 96 sessions / 7,680 turns. Advanced summary construction medians were 1.7 ms
-and 13.1 ms respectively; the larger maximum was 30.5 ms. Every unchanged refresh
-reprocessed zero usage rows. These are absolute timings on a shared host, not a
-release comparison, app responsiveness measurement or memory-leak proof.
+After merging main at `03a51bdcf`, 167 focused tests in 12 suites passed, with
+private native input supplied; the fresh/reopened reference still matched all 41
+turns. `make check` passed with 2,848 Swift files and zero violations. Parser
+revision 11 retains the newer mirror deduplication and shared report projections;
+revision 8/9/10 backfill and both upstream/current-PR hash migrations are covered.
+The complete repository-supported merged regression passed all 144 groups /
+1,591 selections first attempt (339.0 seconds), with zero failures, retries or
+timeouts; the direct runtime verified 14,050 methods against discovery.
+
+The merged synthetic debug benchmark ran three trials each for 24 sessions / 960
+turns and 96 sessions / 7,680 turns. Advanced summary construction medians were
+1.7 ms and 13.9 ms respectively; the larger maximum was 17.1 ms. Every unchanged
+refresh reprocessed zero usage rows. These are absolute timings on a shared host,
+not a release comparison, app responsiveness measurement or memory-leak proof.
 
 ![Synthetic production performance details](screenshots/spend-turn-performance-details-synthetic.png)
 
