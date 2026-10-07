@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ProviderColor: Sendable, Equatable {
+public struct ProviderColor: Sendable, Equatable, Hashable {
     public let red: Double
     public let green: Double
     public let blue: Double

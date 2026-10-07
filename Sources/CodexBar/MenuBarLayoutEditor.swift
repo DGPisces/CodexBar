@@ -897,6 +897,7 @@ struct MenuBarLayoutPreview: View {
             ?? self.representativeData(provider: provider)
         let icon = ProviderBrandIcon.image(for: provider)
         let minute = Date(timeIntervalSince1970: floor(Date().timeIntervalSince1970 / 60) * 60)
+        let appearanceName = NSApp.effectiveAppearance.bestMatch(from: [.darkAqua, .aqua])?.rawValue ?? "preview"
         let rendered = self.renderer.render(
             layout: self.layout,
             data: data,
@@ -906,11 +907,12 @@ struct MenuBarLayoutPreview: View {
                 highContrast: self.settings.menuBarHighContrastOnInactiveDisplays,
                 showUsed: self.settings.usageBarsShowUsed,
                 conditionals: self.settings.menuBarLayoutConditionals,
-                appearanceName: "preview",
+                appearanceName: appearanceName,
                 isDebugApp: false,
                 now: minute,
                 verticalAdjustment: self.settings.menuBarLayoutVerticalAdjustment,
-                colorPace: self.settings.menuBarColorPace))
+                colorPace: self.settings.menuBarColorPace,
+                colorByProvider: self.settings.menuBarColorByProvider))
         MenuBarLayoutPreviewText(rendered: rendered)
     }
 

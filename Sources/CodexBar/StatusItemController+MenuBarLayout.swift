@@ -148,6 +148,36 @@ extension StatusItemController {
             options: options)
     }
 
+    private func isStatusItemHighlighted(for provider: UsageProvider, button: NSButton?) -> Bool {
+        if let button = button as? NSStatusBarButton, button.isHighlighted {
+            return true
+        }
+        if let statusItem = self.statusItems[provider.instanceID],
+           let button = statusItem.button,
+           button.isHighlighted
+        {
+            return true
+        }
+        if self.shouldMergeIcons,
+           let button = self.statusItem.button,
+           button.isHighlighted
+        {
+            return true
+        }
+        if let menu = self.providerMenus[provider.instanceID],
+           self.openMenus[ObjectIdentifier(menu)] != nil
+        {
+            return true
+        }
+        if self.shouldMergeIcons,
+           let menu = self.mergedMenu,
+           self.openMenus[ObjectIdentifier(menu)] != nil
+        {
+            return true
+        }
+        return false
+    }
+
     private func menuBarLayoutRenderOptions(
         for provider: UsageProvider,
         button: NSButton?,
@@ -164,9 +194,11 @@ extension StatusItemController {
             appearanceName: appearanceName,
             isDebugApp: Self.isDebugApp(bundleIdentifier: Bundle.main.bundleIdentifier),
             isStale: self.store.isStale(provider: provider),
+            isHighlighted: self.isStatusItemHighlighted(for: provider, button: button),
             now: now,
             verticalAdjustment: self.settings.menuBarLayoutVerticalAdjustment,
             colorPace: self.settings.menuBarColorPace,
+            colorByProvider: self.settings.menuBarColorByProvider,
             forceStackedStyle: forceStackedStyle)
     }
 
@@ -425,5 +457,19 @@ extension StatusItemController {
         // AppKit exposes no content-inset API on NSStatusBarButton. Explicit item length is the actual
         // status-item padding mechanism: tight removes most edge space; regular keeps the native breathing room.
         return rendered.statusItemWidth(gap: gap)
+    }
+
+    func refreshStatusItemContentForColorMode() {
+        guard self.settings.menuBarColorByProvider,
+              self.settings.menuBarIconStyle == .iconAndPercent
+        else { return }
+
+        if self.shouldMergeIcons {
+            _ = self.applyIcon(phase: nil)
+        } else {
+            for provider in self.store.enabledFirstPartyProvidersForDisplay() {
+                _ = self.applyIcon(for: provider, phase: nil)
+            }
+        }
     }
 }
