@@ -1665,3 +1665,5 @@
 "Models for this day" = "Modelos deste día";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Preme nunha barra para explorar. O menú inferior mostra os importes exactos.";
+
+"update_available_notification_body" = "Preme para abrir a configuración de actualización e instalar a nova versión.";

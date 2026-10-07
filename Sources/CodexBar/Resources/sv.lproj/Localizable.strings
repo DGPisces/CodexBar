@@ -1665,3 +1665,5 @@
 "Models for this day" = "Modeller för denna dag";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Klicka på en stapel för detaljer. Menyn nedan visar exakta belopp.";
+
+"update_available_notification_body" = "Klicka för att öppna uppdateringsinställningarna och installera den nya versionen.";

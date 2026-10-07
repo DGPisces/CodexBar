@@ -2,6 +2,8 @@
 
 ## 0.73.1 — Unreleased
 
+- Homebrew updates: notify once when automatic checks find a newer tap version, remember submitted notices across restarts, and open Settings → About when the notification is clicked.
+
 ## 0.73.0 — 2026-10-07
 
 ### Highlights

@@ -9,6 +9,8 @@ read_when:
 
 Homebrew is for the UI app via Cask. When installed via Homebrew, CodexBar disables Sparkle, checks `Casks/codexbar.rb` in the tap for a newer version, and offers a one-click update that runs `brew upgrade --cask steipete/tap/codexbar`. Users are only prompted once the tap cask is bumped.
 
+Automatic checks also submit a silent macOS notification when a newer tap version is found. Clicking it opens Settings → About to review and install the update. A successfully submitted version is remembered locally across restarts; newer versions can notify again. Denied permissions or failed submissions remain retryable on a later check. Manual checks show their result in About without an extra notification. Starting installation or disabling automatic checks invalidates pending update notices. System notification settings still control whether a banner is displayed.
+
 ## In-app updates
 - Automatic checks read the tap on launch and daily; turning them off still permits manual checks in About. Checking never installs anything.
 - Detection follows the `Caskroom/codexbar/<version>/CodexBar.app` artifact link under `/opt/homebrew` or `/usr/local`, or a legacy app inside its cask directory. An unrelated copy of the app does not inherit Homebrew ownership. If multiple prefixes claim the same app, Sparkle remains disabled and the helper refuses to choose an owner; resolve the duplicate installation in Terminal.

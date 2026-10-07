@@ -1666,3 +1666,5 @@
 "Models for this day" = "この日のモデル";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "棒をクリックして詳しく確認できます。下のメニューで正確な金額を確認できます。";
+
+"update_available_notification_body" = "クリックしてアップデート設定を開き、新しいバージョンをインストールします。";

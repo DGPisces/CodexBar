@@ -27,10 +27,13 @@ struct HomebrewUpdaterControllerTests {
         var upgradeWait: CheckedContinuation<Void, Never>?
         var suspendUpgrade = false
         var relaunchCount = 0
+        var notificationVersions: [String] = []
+        var notificationIsCurrent: (@MainActor () -> Bool)?
+        var notificationCompletion: (@MainActor (Bool) -> Void)?
 
-        func makeController() -> HomebrewUpdaterController {
+        func makeController(savedAutoCheck: Bool = false) -> HomebrewUpdaterController {
             HomebrewUpdaterController(
-                savedAutoCheck: false,
+                savedAutoCheck: savedAutoCheck,
                 dependencies: HomebrewUpdaterController.Dependencies(
                     installedVersion: { self.installedVersion },
                     fetchCaskSource: { @MainActor in
@@ -46,8 +49,74 @@ struct HomebrewUpdaterControllerTests {
                         if let version = self.versionAfterUpgrade { self.installedVersion = version }
                     },
                     relaunch: { self.relaunchCount += 1 }),
+                notifier: HomebrewUpdateNotifier(dependencies: .init(
+                    lastSubmittedVersion: { nil },
+                    saveSubmittedVersion: { _ in },
+                    post: { version, isCurrent, completion in
+                        self.notificationVersions.append(version)
+                        self.notificationIsCurrent = isCurrent
+                        self.notificationCompletion = completion
+                    },
+                    remove: { _ in })),
                 startScheduledChecks: false)
         }
+    }
+
+    @Test
+    func `automatic checks announce newer releases while manual checks stay in the page`() async {
+        let fixture = Fixture()
+        let controller = fixture.makeController(savedAutoCheck: true)
+        await controller.performCheck()
+        #expect(fixture.notificationVersions.isEmpty)
+        await controller.performCheck(source: .automatic)
+        #expect(fixture.notificationVersions == ["0.66.0"])
+    }
+
+    @Test
+    func `disabled automatic checks and up to date versions do not notify`() async {
+        let fixture = Fixture()
+        let disabled = fixture.makeController()
+        await disabled.performCheck(source: .automatic)
+        #expect(fixture.notificationVersions.isEmpty)
+        fixture.installedVersion = "0.66.0"
+        let current = fixture.makeController(savedAutoCheck: true)
+        await current.performCheck(source: .automatic)
+        #expect(fixture.notificationVersions.isEmpty)
+    }
+
+    @Test
+    func `failed background checks do not announce a previously found version`() async {
+        let fixture = Fixture()
+        let controller = fixture.makeController(savedAutoCheck: true)
+        await controller.performCheck()
+        fixture.fetchError = HomebrewUpdateError.invalidCaskResponse
+        await controller.performCheck(source: .automatic)
+        #expect(fixture.notificationVersions.isEmpty)
+        #expect(controller.updateStatus.availableVersion == "0.66.0")
+    }
+
+    @Test
+    func `disabling checks invalidates an update notice awaiting submission`() async {
+        let fixture = Fixture()
+        let controller = fixture.makeController(savedAutoCheck: true)
+        await controller.performCheck(source: .automatic)
+        #expect(fixture.notificationIsCurrent?() == true)
+        controller.automaticallyChecksForUpdates = false
+        #expect(fixture.notificationIsCurrent?() == false)
+        fixture.notificationCompletion?(false)
+    }
+
+    @Test
+    func `starting an upgrade invalidates an update notice even when the upgrade fails`() async {
+        let fixture = Fixture()
+        let controller = fixture.makeController(savedAutoCheck: true)
+        await controller.performCheck(source: .automatic)
+        #expect(fixture.notificationIsCurrent?() == true)
+        fixture.upgradeError = HomebrewUpdateError.brewNotFound
+        await controller.performInstall()
+        #expect(fixture.notificationIsCurrent?() == false)
+        #expect(controller.updateStatus.availableVersion == "0.66.0")
+        fixture.notificationCompletion?(false)
     }
 
     @Test
