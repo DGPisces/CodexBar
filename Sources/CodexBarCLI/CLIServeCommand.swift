@@ -47,6 +47,7 @@ enum CLIServeRoute: Equatable {
     case webUI
     case providerIcon(name: String)
     case health
+    case accounts(id: String?)
     case usage(provider: String?)
     case cost(provider: String?)
     case dashboardSnapshot(provider: String?, detail: String?)
@@ -75,6 +76,12 @@ enum CLIServeRouter {
             return .providerIcon(name: String(path.dropFirst("/icons/".count).dropLast(".svg".count)))
         case "/health":
             return .health
+        case "/accounts":
+            return .accounts(id: nil)
+        case let path where path.hasPrefix("/accounts/"):
+            let id = String(path.dropFirst("/accounts/".count))
+            guard !id.isEmpty, !id.contains("/") else { throw CLIServeRouteError.notFound }
+            return .accounts(id: id)
         case "/usage":
             return .usage(provider: normalizedProvider)
         case "/cost":
@@ -129,7 +136,7 @@ struct ServeRuntime {
     /// setting. An explicit `--identity redacted` hides email local parts from every
     /// authorized dashboard client and ignores the app setting.
     let dashboardIdentityMode: DashboardIdentityMode?
-    /// True for non-loopback binds: every data route (`/usage`, `/cost`,
+    /// True for non-loopback binds: every data route (`/accounts`, `/usage`, `/cost`,
     /// `/dashboard/v1/snapshot`) then requires the bearer token, so account data
     /// is never exposed to the network unauthenticated. `/` and `/health` stay open.
     /// Resolved once at startup from the bind host.
@@ -880,10 +887,14 @@ extension CodexBarCLI {
                 queryItems: request.queryItems)
         } catch CLIServeRouteError.methodNotAllowed {
             let response = Self.serveError(status: .methodNotAllowed, message: "method not allowed")
-            return request.path.hasPrefix("/dashboard/v1/") ? Self.addingNoStore(response) : response
+            let noStore = request.path == "/accounts" || request.path.hasPrefix("/accounts/") ||
+                request.path.hasPrefix("/dashboard/v1/")
+            return noStore ? Self.addingNoStore(response) : response
         } catch {
             let response = Self.serveError(status: .notFound, message: "not found")
-            return request.path.hasPrefix("/dashboard/v1/") ? Self.addingNoStore(response) : response
+            let noStore = request.path == "/accounts" || request.path.hasPrefix("/accounts/") ||
+                request.path.hasPrefix("/dashboard/v1/")
+            return noStore ? Self.addingNoStore(response) : response
         }
 
         switch route {
@@ -894,6 +905,8 @@ extension CodexBarCLI {
                 ?? Self.serveError(status: .notFound, message: "not found")
         case .health:
             return Self.serveHealthResponse(version: runtime.healthVersion)
+        case let .accounts(id):
+            return Self.serveAccountsRoute(request, id: id, runtime: runtime)
         case let .usage(provider):
             // On non-loopback binds every data route requires the bearer token,
             // checked before any cache access so unauthenticated requests can
