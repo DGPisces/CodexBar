@@ -42,6 +42,39 @@ struct SpendActivitySeries {
     let rangeStart: Date
     let today: Date
     let calendar: Calendar
+    private let dates: [Date?]
+    let visibleIndices: [Int]
+    let coveredDayCount: Int
+
+    init(
+        daily: [Int],
+        isCovered: [Bool],
+        isScanned: [Bool],
+        start: Date,
+        rangeStart: Date,
+        today: Date,
+        calendar: Calendar,
+        dates: [Date?]? = nil)
+    {
+        self.daily = daily
+        self.isCovered = isCovered
+        self.isScanned = isScanned
+        self.start = start
+        self.rangeStart = rangeStart
+        self.today = today
+        self.calendar = calendar
+        // Canvas drawing, tooltips and accessibility all visit the same days on every update.
+        // Keep calendar arithmetic in the data snapshot, including midnight DST normalization.
+        let dates = dates ?? daily.indices.map { index in
+            calendar.date(byAdding: .day, value: index, to: start).map { calendar.startOfDay(for: $0) }
+        }
+        self.dates = dates
+        let visible = dates.indices.filter { index in
+            dates[index].map { rangeStart...today ~= $0 } ?? false
+        }
+        self.visibleIndices = visible
+        self.coveredDayCount = visible.count(where: { isCovered[$0] })
+    }
 
     static func make(
         from points: [SpendDashboardModel.TokenActivityPoint],
@@ -79,11 +112,12 @@ struct SpendActivitySeries {
         var daily = [Int](repeating: 0, count: cellCount)
         var isCovered = [Bool](repeating: false, count: cellCount)
         var isScanned = [Bool](repeating: false, count: cellCount)
+        let dates = (0..<cellCount).map { index in
+            calendar.date(byAdding: .day, value: index, to: start).map { calendar.startOfDay(for: $0) }
+        }
         for index in 0..<cellCount {
             // Midnight DST transitions can leave the aligned start at 01:00. Match the day keys above.
-            guard let date = calendar.date(byAdding: .day, value: index, to: start)
-                .map({ calendar.startOfDay(for: $0) }),
-                rangeStart...today ~= date
+            guard let date = dates[index], rangeStart...today ~= date
             else {
                 continue
             }
@@ -99,11 +133,13 @@ struct SpendActivitySeries {
             start: start,
             rangeStart: rangeStart,
             today: today,
-            calendar: calendar)
+            calendar: calendar,
+            dates: dates)
     }
 
     func date(at index: Int) -> Date? {
-        self.calendar.date(byAdding: .day, value: index, to: self.start)
+        if self.dates.indices.contains(index) { return self.dates[index] }
+        return self.calendar.date(byAdding: .day, value: index, to: self.start)
             .map { self.calendar.startOfDay(for: $0) }
     }
 
@@ -112,11 +148,7 @@ struct SpendActivitySeries {
     }
 
     var visibleDayCount: Int {
-        self.daily.indices.filter(self.isVisible).count
-    }
-
-    var coveredDayCount: Int {
-        self.daily.indices.count(where: { self.isVisible($0) && self.isCovered[$0] })
+        self.visibleIndices.count
     }
 
     var hasUnknownCoverage: Bool {
@@ -291,15 +323,34 @@ enum SpendActivityGridNavigation {
 }
 
 enum SpendActivityDateFormatting {
+    private struct Context: Hashable {
+        let calendar: Calendar
+        let locale: Locale
+        let timeZone: TimeZone
+    }
+
+    private static let formatterLock = NSLock()
+    private nonisolated(unsafe) static var formatters: [Context: DateFormatter] = [:]
+
     static func mediumDateString(_ date: Date, calendar: Calendar? = nil, locale: Locale? = nil) -> String {
-        let formatter = DateFormatter()
-        formatter.locale = locale ?? codexBarLocalizedResourceLocale()
-        formatter.calendar = calendar ?? Calendar.current
-        if let calendar, let timeZone = calendar.timeZone as TimeZone? {
-            formatter.timeZone = timeZone
+        let context = Context(
+            calendar: calendar ?? .current,
+            locale: locale ?? codexBarLocalizedResourceLocale(),
+            timeZone: calendar?.timeZone ?? NSTimeZone.default)
+        let formatter = self.formatterLock.withLock {
+            if let formatter = self.formatters[context] { return formatter }
+            let formatter = DateFormatter()
+            formatter.locale = context.locale
+            formatter.calendar = context.calendar
+            formatter.timeZone = context.timeZone
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            // Bound retained contexts when users change language or reporting time zone.
+            if self.formatters.count >= 16 { self.formatters.removeAll(keepingCapacity: true) }
+            self.formatters[context] = formatter
+            return formatter
         }
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
+        // Published formatters are immutable; DateFormatter supports concurrent string formatting.
         return formatter.string(from: date)
     }
 }
@@ -344,7 +395,6 @@ struct SpendActivityHeatmapView: View {
         let coverageText = spendDashboardCoverageText(
             covered: self.series.coveredDayCount,
             requested: self.series.visibleDayCount)
-        let weekly = self.series.weeklyActivity()
         let heading = self.heading(hasActivity: hasActivity, totalTokens: totalTokens, coverageText: coverageText)
         VStack(alignment: .leading, spacing: 8) {
             ViewThatFits(in: .horizontal) {
@@ -368,6 +418,7 @@ struct SpendActivityHeatmapView: View {
                         onSelectDay: self.onSelectDay)
                     self.dailyLegend
                 case .weekly:
+                    let weekly = self.series.weeklyActivity()
                     SpendActivityWeekGrid(
                         series: self.series,
                         activity: weekly,
@@ -376,6 +427,7 @@ struct SpendActivityHeatmapView: View {
                         L("Each column = 1 week"),
                         showsUnavailable: weekly.isCovered.contains(false))
                 case .cumulative:
+                    let weekly = self.series.weeklyActivity()
                     SpendActivityWeekGrid(
                         series: self.series,
                         activity: weekly.cumulative(),
@@ -543,7 +595,7 @@ private struct SpendActivityDailyGrid: View {
             .accessibilityLabel(L("Token activity"))
             .accessibilityValue(self.accessibilityValue)
             .accessibilityChildren {
-                ForEach(self.series.daily.indices.filter(self.series.isVisible), id: \.self) { index in
+                ForEach(self.series.visibleIndices, id: \.self) { index in
                     if let date = self.series.date(at: index) {
                         Text(self.accessibilityDescription(at: index, date: date))
                     }
