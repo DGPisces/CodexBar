@@ -37,7 +37,63 @@
       ]
     }
   },
-  "native_window_interaction": "unverified; desktop app selection timed out",
+  "native_window_interaction": {
+    "passed": true,
+    "source_commit": "d66ac3e9cc37eb4a1e8f46b143aec35f8887ec31",
+    "binary_sha256": "310d986bf7d433cf42eae40f32ef8b5d84e02fba7e12f5812d7627e48f58742f",
+    "build": "debug; ad-hoc; build timestamp 2026-10-07T14:54:00Z",
+    "source": "isolated synthetic JSONL; one session; 24 usage rows; no copied credentials",
+    "window_size_points": [
+      800,
+      568
+    ],
+    "checks": [
+      "range24",
+      "collapse",
+      "expand",
+      "today12",
+      "clear24",
+      "yesterday12",
+      "clear24"
+    ],
+    "expected_turns": {
+      "seven_days": 24,
+      "today": 12,
+      "yesterday": 12
+    },
+    "reference_matches": true,
+    "screenshots": "installed window, synthetic inputs, no host desktop",
+    "fixed_issue": "chart selected day did not scope session performance samples",
+    "independent_synthetic_reference": {
+      "seven_days": {
+        "turns": 24,
+        "median_first_token_ms": 845.0,
+        "median_duration_ms": 15750.0,
+        "whole_turn_output_tps": 16.825396825396826,
+        "p95_first_token_ms": 1160,
+        "p95_duration_ms": 21000,
+        "cache_input_fraction": 0.775
+      },
+      "today": {
+        "turns": 12,
+        "median_first_token_ms": 1025.0,
+        "median_duration_ms": 18750.0,
+        "whole_turn_output_tps": 17.333333333333332,
+        "p95_first_token_ms": null,
+        "p95_duration_ms": null,
+        "cache_input_fraction": 0.775
+      },
+      "yesterday": {
+        "turns": 12,
+        "median_first_token_ms": 665.0,
+        "median_duration_ms": 12750.0,
+        "whole_turn_output_tps": 16.07843137254902,
+        "p95_first_token_ms": null,
+        "p95_duration_ms": null,
+        "cache_input_fraction": 0.775
+      }
+    }
+  },
   "component_render": "production rows and details; synthetic inputs; en and zh-Hans; light and dark; 460 points",
   "pre_merge_validation": {
     "full_regression": {
@@ -72,32 +128,115 @@
   "upstream_base": "03a51bdcf",
   "parser_revision": 11,
   "parser_hash": "e1088fb29c221187",
+  "bounded_interaction": {
+    "synthetic": true,
+    "source_commit": "d66ac3e9cc37eb4a1e8f46b143aec35f8887ec31",
+    "expand_collapse_pairs": 20,
+    "date_picker_filter_clear_cycles": 3,
+    "scroll_operations": 12,
+    "duration_seconds": 95.995,
+    "all_state_assertions_passed": true,
+    "limits": "bounded synthetic UI smoke on shared host; not a latency benchmark or memory-leak guarantee",
+    "main_thread_watchdog": {
+      "initial_ms": [
+        485,
+        275,
+        1641,
+        472
+      ],
+      "later_ms": [
+        189,
+        189
+      ],
+      "context": "debug build, shared host, full regression concurrently active; no baseline attribution"
+    },
+    "warm_window_reopening": {
+      "reopen_cycles": 3,
+      "state_matches": true,
+      "watchdog_events": [
+        "main thread hang (activity=unknown durationMs=274)",
+        "main thread hang (activity=unknown durationMs=384)"
+      ],
+      "context": "warm debug process after full regression; shared host, no paired baseline"
+    },
+    "rss_samples_kib": {
+      "interaction_min": 129632,
+      "interaction_max": 204768,
+      "interaction_last": 193680,
+      "later_idle": 42816,
+      "interpretation": "sampled RSS on shared host; compression/caching affect it; not leak evidence"
+    }
+  },
+  "before_selected_day_fix_validation": {
+    "focused_tests": {
+      "tests": 167,
+      "suites": 12,
+      "passed": true,
+      "native_proof_input_supplied": true
+    },
+    "static_checks": {
+      "command": "make check",
+      "passed": true,
+      "swift_files": 2848,
+      "violations": 0
+    },
+    "full_regression": {
+      "command": "./Scripts/test.sh --direct-workers 4",
+      "passed": true,
+      "execution_mode": "direct",
+      "workers": 4,
+      "selected_selections": 1591,
+      "selected_groups": 144,
+      "verified_runtime_methods": 14050,
+      "first_pass_successful_groups": 144,
+      "first_pass_failed_groups": 0,
+      "full_group_retries": 0,
+      "recovered_groups": 0,
+      "timed_out_groups": 0,
+      "total_seconds": 339.0,
+      "assertions": "unmodified"
+    }
+  },
   "focused_tests": {
-    "tests": 167,
-    "suites": 12,
     "passed": true,
-    "native_proof_input_supplied": true
+    "tests": 52,
+    "suites": 2,
+    "source_commit": "d66ac3e9cc37eb4a1e8f46b143aec35f8887ec31"
   },
   "static_checks": {
-    "command": "make check",
     "passed": true,
+    "command": "make check",
     "swift_files": 2848,
-    "violations": 0
+    "violations": 0,
+    "source_commit": "d66ac3e9cc37eb4a1e8f46b143aec35f8887ec31"
   },
   "full_regression": {
     "command": "./Scripts/test.sh --direct-workers 4",
+    "source_commit": "d66ac3e9cc37eb4a1e8f46b143aec35f8887ec31",
     "passed": true,
+    "exit_code": 0,
     "execution_mode": "direct",
     "workers": 4,
     "selected_selections": 1591,
     "selected_groups": 144,
-    "verified_runtime_methods": 14050,
-    "first_pass_successful_groups": 144,
-    "first_pass_failed_groups": 0,
-    "full_group_retries": 0,
-    "recovered_groups": 0,
-    "timed_out_groups": 0,
-    "total_seconds": 339.0,
-    "assertions": "unmodified"
+    "verified_runtime_methods": 14051,
+    "first_pass_successful_groups": 142,
+    "first_pass_failed_groups": 2,
+    "full_group_retries": 1,
+    "isolated_selection_retries": 12,
+    "recovered_groups": 2,
+    "timed_out_groups": 1,
+    "total_seconds": 1013.3,
+    "assertions": "unmodified; no failures suppressed",
+    "first_pass_issues": [
+      "OpenAISubscriptionMetadataTests.test_concurrentCapturePublishesStatusAndBodyFromOnlyTheLatestRequest: timed out waiting for WebKit fixture; fresh whole-group retry passed",
+      "CostUsageStore group reached 180-second aggregate limit during scale proof after read-work suite; all 12 isolated selections passed"
+    ]
+  },
+  "webkit_follow_up": {
+    "passed": true,
+    "tests": 7,
+    "command": "./Scripts/test_fast.sh --skip-build --filter OpenAISubscriptionMetadataTests",
+    "note": "separate confirmation after full suite; no assertion changes"
   }
 }

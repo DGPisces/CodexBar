@@ -7,9 +7,10 @@ read_when:
 
 # Spend session turn performance validation
 
-Validated on arm64 macOS 27 with Swift 6.4. Upstream baseline:
-`ab32496d3c1f861981aa1a19aee2f933204f9bb9`. Feature production code:
-`22fdcb88e8d77a03c9d8447f889012247d4bb483`.
+Validated on arm64 macOS 27 with Swift 6.4. Current installed-window code:
+`d66ac3e9cc37eb4a1e8f46b143aec35f8887ec31`. The historical release comparison
+used upstream baseline `ab32496d3c1f861981aa1a19aee2f933204f9bb9` and feature
+production code `22fdcb88e8d77a03c9d8447f889012247d4bb483`.
 The original validation used parser revision 9. The advanced details use parser revision 11 after merging main at `03a51bdcf`; the current generated parser hash is checked by `make check`.
 
 ## Metric contract
@@ -75,12 +76,9 @@ The follow-up application copy uses a separate bundle identity, isolated home,
 configuration and app-group team, disabled Keychain/cookie access, and a failing
 provider CLI stub. No credentials or account configuration were copied.
 
-**Installed-window behavior and sustained interactive operation remain pending.**
-An earlier computer-use attempt reported a locked Mac and requested manual unlock; no
-native-window/date-picker/responsiveness success is claimed. Component images,
-packaging smoke checks and production fetcher receipts do not establish that
-behavior. A private reference expects 36 timed turns for today and 41 for the
-last seven days, ready for the actual window check once desktop access works.
+Those earlier artifacts did not establish installed-window behavior. The current
+synthetic native-window checks and their bounded runtime limits are recorded in
+[Installed-window verification](#installed-window-verification-2026-10-07) below.
 
 ## Follow-up date-filter review
 
@@ -113,7 +111,8 @@ The existing English/Chinese, light/dark and narrow-width component renders were
 visually reviewed again. Native application selection repeatedly timed out in
 the desktop tool, while Finder remained accessible. Process startup and an idle
 main-thread sample do not establish window interaction or responsiveness; that
-proof gate remains open. No new installed-window success is claimed.
+was the evidence boundary for that earlier revision. Current native-window evidence
+is recorded separately below.
 
 ## Release benchmark
 
@@ -205,8 +204,8 @@ tests. Private reference output must stay private.
 English, Simplified/Traditional Chinese and Italian captions are translated;
 other catalogs currently use English fallback. Completely missing or
 unrecognizable log records cannot establish sample completeness from the
-available protocol. App-level interaction and sustained responsiveness still
-require native-window verification.
+available protocol. Current installed-window checks are recorded separately below; they do not
+establish long-term operation or release-mode responsiveness.
 
 ## Reproduction
 
@@ -273,7 +272,76 @@ not a release comparison, app responsiveness measurement or memory-leak proof.
 
 ![Synthetic production performance details](screenshots/spend-turn-performance-details-synthetic.png)
 
-The screenshot is a production-component render with synthetic values, not an
-installed-window screenshot. Desktop app selection timed out, so this revision
-still has no verified installed-window expand/collapse or sustained responsiveness
-proof. Do not substitute startup/signature checks for that interaction gate.
+The screenshot above is a production-component render with synthetic values.
+The installed-window evidence for the final code revision is separate below.
+
+
+## Installed-window verification (2026-10-07)
+
+The installed application was rebuilt in debug mode with ad-hoc signing from
+`d66ac3e9cc37eb4a1e8f46b143aec35f8887ec31`, with a clean tracked working tree.
+Executable SHA-256:
+`310d986bf7d433cf42eae40f32ef8b5d84e02fba7e12f5812d7627e48f58742f`.
+Its separate bundle identity, home, defaults, config and app-group team contain
+only a synthetic Codex session. Both `CODEX_HOME` and `CODEX_SQLITE_HOME` point
+into that profile; Keychain access, cookies, automatic updates and real CLI
+probes are disabled. The runtime cache contained exactly that one source and
+24 usage rows. No real account configuration or credentials were copied.
+
+The real Usage & Spend window was operated through System Events after explicit
+user authorization. It exposed a day-scoping bug: selecting a chart day updated
+model details but retained the full range's performance samples. The final code
+also intersects native timing samples with the selected completion day. Session
+billing totals retain the existing range accounting; no usage is moved between
+billing dates. A regression covers today, yesterday, cleared selection and an
+empty selected day, including sample thresholds and model/cache detail summaries.
+
+| Selection | Turns | Median model first token | Whole-turn output | Median duration |
+| --- | ---: | ---: | ---: | ---: |
+| Seven days / cleared | 24 | 0.8 s | 16.8 tok/s | 15.8 s |
+| Today | 12 | 1.0 s | 17.3 tok/s | 18.8 s |
+| Yesterday | 12 | 0.7 s | 16.1 tok/s | 12.8 s |
+
+Each selection matched the independent synthetic reference. Seven days displayed
+P95 duration 21.0 s, P95 first token 1.2 s, speed quartiles 16.0–17.3 tok/s and
+77.5% cached input. Each single day displayed the insufficient-sample P95 labels
+and six turns per model/effort group. Clearing restored 24 turns. Details remained
+readable within the actual 800-by-568-point window and scrollable viewport.
+
+![Installed expanded window, synthetic data](screenshots/spend-turn-performance-native-window-expanded-synthetic.png)
+
+[Collapsed window](screenshots/spend-turn-performance-native-window-collapsed-synthetic.png) ·
+[Today](screenshots/spend-turn-performance-native-window-today-synthetic.png) ·
+[Yesterday](screenshots/spend-turn-performance-native-window-yesterday-synthetic.png)
+
+These are captures of the installed window, with synthetic values clearly labeled
+inside the window, rather than component renders. No host desktop or real usage
+is included.
+
+A further 96.0-second interaction smoke completed 20 expand/collapse pairs,
+three real date-picker/filter/clear cycles and 12 scroll operations; all state
+assertions passed without process exit or automation timeout. The app returned
+to idle afterward. This is bounded debug-build evidence on a shared host during
+full-suite execution, not a release latency benchmark or long-term leak proof.
+The main-thread watchdog recorded initial launch/window delays of 485, 275,
+1,641 and 472 ms and two later 189 ms delays. These observations do not attribute
+a regression to this feature and are not a claim of zero stalls.
+
+After that full suite ended, three close/reopen cycles retained the correct
+session state. The watchdog recorded two additional warm-window delays of 274
+and 384 ms; these should not be described as a stall-free UI. Their cause and
+release-mode significance are not established by this debug smoke.
+
+The final selected-day fix passed 52 focused tests in two suites and `make check`
+with 2,848 Swift files and zero violations. A fresh complete supported four-worker
+regression exited 0: 144 groups / 1,591 selections, with 14,051 runtime methods
+verified against discovery (1,013.3 seconds). This was a retry-assisted pass:
+142 groups passed first attempt, the WebKit metadata fixture group recovered on
+one fresh group retry, and a cost-store group reached the 180-second aggregate
+limit before its 12 selections passed separately. Assertions were not changed
+or failures suppressed. Earlier full-suite receipts above belong to their stated
+revisions. See the [exact receipt](proofs/spend-turn-performance-details.json).
+
+A separate post-suite confirmation of `OpenAISubscriptionMetadataTests` passed
+all seven XCTest cases without retry. This does not erase the full-run first-pass
+fixture timeout recorded above.
