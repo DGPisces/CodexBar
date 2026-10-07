@@ -1468,6 +1468,8 @@
 
 "Cumulative" = "누적";
 "Token activity" = "토큰 활동";
+"Earlier activity" = "이전 활동";
+"More recent activity" = "최근 활동";
 "View" = "보기";
 "in the last year" = "지난 1년";
 "No activity in the last 12 months" = "지난 12개월 동안 활동 없음";
@@ -2333,3 +2335,17 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "기록된 지출";
+"Highest recorded spend" = "기록된 최대 지출";
+"Previous day" = "이전 날짜";
+"Next day" = "다음 날짜";
+"Click to isolate a source. Click again to show all." = "클릭하면 이 소스만 표시됩니다. 다시 클릭하면 모두 표시됩니다.";
+"Recorded hourly spend" = "기록된 시간별 지출";
+"Highest spend" = "최대 지출";
+"Models for this day" = "이 날짜의 모델";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "막대를 클릭해 자세히 살펴보세요. 아래 메뉴에서 정확한 금액을 확인할 수 있습니다.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "여러 ClinePass API 키를 저장합니다. 선택한 키는 설정된 API 키와 cline auth 세션보다 우선합니다.";

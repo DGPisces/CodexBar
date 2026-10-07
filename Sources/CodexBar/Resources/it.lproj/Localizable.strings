@@ -1502,6 +1502,8 @@
 
 "Cumulative" = "Cumulativo";
 "Token activity" = "Attività token";
+"Earlier activity" = "Attività precedente";
+"More recent activity" = "Attività più recente";
 "View" = "Vista";
 "in the last year" = "nell'ultimo anno";
 "No activity in the last 12 months" = "Nessuna attività negli ultimi 12 mesi";
@@ -2369,3 +2371,17 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Spesa registrata";
+"Highest recorded spend" = "Spesa registrata più alta";
+"Previous day" = "Giorno precedente";
+"Next day" = "Giorno successivo";
+"Click to isolate a source. Click again to show all." = "Fai clic per isolare una fonte. Fai clic di nuovo per mostrarle tutte.";
+"Recorded hourly spend" = "Spesa oraria registrata";
+"Highest spend" = "Spesa massima";
+"Models for this day" = "Modelli di questo giorno";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Fai clic su una barra per esplorare. Il menu sotto mostra gli importi esatti.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Memorizza più chiavi API ClinePass. La chiave selezionata ha la precedenza sulla chiave API configurata e sulla sessione cline auth.";

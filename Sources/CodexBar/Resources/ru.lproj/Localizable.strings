@@ -1500,6 +1500,8 @@
 
 "Cumulative" = "Накопительно";
 "Token activity" = "Активность токенов";
+"Earlier activity" = "Ранние записи";
+"More recent activity" = "Недавние записи";
 "View" = "Вид";
 "in the last year" = "за последний год";
 "No activity in the last 12 months" = "Нет активности за последние 12 месяцев";
@@ -2366,3 +2368,17 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Учтённые расходы";
+"Highest recorded spend" = "Максимальные учтённые расходы";
+"Previous day" = "Предыдущий день";
+"Next day" = "Следующий день";
+"Click to isolate a source. Click again to show all." = "Нажмите для просмотра одного источника. Нажмите снова для просмотра всех.";
+"Recorded hourly spend" = "Записанные почасовые расходы";
+"Highest spend" = "Максимальные расходы";
+"Models for this day" = "Модели за этот день";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Нажмите на столбец для просмотра деталей. Точные суммы доступны в меню ниже.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Сохраните несколько API-ключей ClinePass. Выбранный ключ имеет приоритет над настроенным API-ключом и сеансом cline auth.";

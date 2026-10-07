@@ -1502,6 +1502,8 @@
 
 "Cumulative" = "Kumulatif";
 "Token activity" = "Aktivitas token";
+"Earlier activity" = "Aktivitas sebelumnya";
+"More recent activity" = "Aktivitas lebih baru";
 "View" = "Tampilan";
 "in the last year" = "dalam setahun terakhir";
 "No activity in the last 12 months" = "Tidak ada aktivitas dalam 12 bulan terakhir";
@@ -2368,3 +2370,17 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Pengeluaran tercatat";
+"Highest recorded spend" = "Pengeluaran tercatat tertinggi";
+"Previous day" = "Hari sebelumnya";
+"Next day" = "Hari berikutnya";
+"Click to isolate a source. Click again to show all." = "Klik untuk menampilkan satu sumber. Klik lagi untuk menampilkan semua.";
+"Recorded hourly spend" = "Pengeluaran per jam tercatat";
+"Highest spend" = "Pengeluaran tertinggi";
+"Models for this day" = "Model untuk hari ini";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Klik batang untuk menelusuri. Gunakan menu di bawah untuk melihat jumlah tepat.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Simpan beberapa kunci API ClinePass. Kunci yang dipilih menggantikan kunci API yang dikonfigurasi dan sesi cline auth.";
