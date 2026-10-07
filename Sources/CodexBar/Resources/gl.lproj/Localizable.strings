@@ -1494,6 +1494,8 @@
 
 "Cumulative" = "Acumulado";
 "Token activity" = "Actividade de tokens";
+"Earlier activity" = "Actividade anterior";
+"More recent activity" = "Actividade máis recente";
 "View" = "Vista";
 "in the last year" = "no último ano";
 "No activity in the last 12 months" = "Sen actividade nos últimos 12 meses";
@@ -1662,3 +1664,15 @@
 
 "Local usage" = "Local usage";
 "Local usage comes from the current Codex profile." = "Local usage comes from the current Codex profile.";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Gasto rexistrado";
+"Highest recorded spend" = "Maior gasto rexistrado";
+"Previous day" = "Día anterior";
+"Next day" = "Día seguinte";
+"Click to isolate a source. Click again to show all." = "Preme para illar unha fonte. Preme de novo para mostrar todas.";
+"Recorded hourly spend" = "Gasto por hora rexistrado";
+"Highest spend" = "Gasto máximo";
+"Models for this day" = "Modelos deste día";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Preme nunha barra para explorar. O menú inferior mostra os importes exactos.";
