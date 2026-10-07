@@ -94,6 +94,8 @@ preview, and keeps the signed percentages. Zero and unavailable pace stay neutra
 It colors **Session pace**, **Weekly pace**, and **Auto pace** in the layout editor. Enabling it does not add tokens,
 rewrite stored layouts, or migrate legacy display modes. Existing installs stay monochrome until the option is enabled.
 
+Enable **Tint menu bar by provider color** under **Menu Bar → Icon** to tint the provider brand icon and percentage tokens with each provider's accent color. The option defaults off, keeping the existing monochrome template rendering. When enabled, tinting applies to fresh, unhighlighted status items that satisfy minimum contrast (2.0:1) against the active menu bar appearance. Stale items, highlighted items (active menu open), high-contrast mode, or low-contrast colors cleanly fall back to standard monochrome rendering. Pace tokens retain their green and red delta colors.
+
 Balance uses the same provider amount as the menu card: Codex credits, OpenRouter remaining credits, MiMo,
 DeepSeek, DeepInfra, Moonshot, Poe points, Hypercredits, LithosAI prepaid balance, Atlas Cloud and Vercel available balances, or OpenCode Go's
 Zen balance. DevPass shows remaining billing-cycle credits (a plan allowance); Mistral shows monthly API spend.
