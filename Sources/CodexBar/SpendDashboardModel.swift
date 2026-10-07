@@ -662,7 +662,11 @@ struct SpendDashboardModel: Equatable, Sendable {
             coverageAccumulator: coverage,
             provenance: provenance,
             meteredCost: hasMeteredCostAmount ? metered : nil,
-            sessions: Self.sessionRows(summaries: summaries, bounds: bounds, calendar: calendar),
+            sessions: Self.sessionRows(
+                summaries: summaries,
+                bounds: bounds,
+                calendar: calendar,
+                selectedDay: selectedDay),
             overflowModelCount: overflowCount,
             selectedDay: selectedDay,
             hourlyPoints: hourlyPoints,
@@ -1464,7 +1468,8 @@ struct SpendDashboardModel: Equatable, Sendable {
     static func sessionRows(
         summaries: [InputSummary],
         bounds: ClosedRange<Date>,
-        calendar: Calendar) -> [SessionRow]
+        calendar: Calendar,
+        selectedDay: Date? = nil) -> [SessionRow]
     {
         let rows = summaries.flatMap { summary -> [SessionRow] in
             summary.input.snapshot.sessions.compactMap { session -> SessionRow? in
@@ -1472,7 +1477,9 @@ struct SpendDashboardModel: Equatable, Sendable {
                 // Provider-specific by design: only the native Codex ledger has validated turn timing.
                 let performanceSamples = summary.input.provider == .codex && summary.input.sourceKind == .native
                     ? session.turnPerformanceSamples.filter {
-                        bounds.contains(calendar.startOfDay(for: $0.completedAt))
+                        let completionDay = calendar.startOfDay(for: $0.completedAt)
+                        return bounds.contains(completionDay) &&
+                            (selectedDay == nil || completionDay == selectedDay)
                     } : []
                 guard bounds.contains(day) || !performanceSamples.isEmpty else { return nil }
                 let modelName = session.modelBreakdowns.max {

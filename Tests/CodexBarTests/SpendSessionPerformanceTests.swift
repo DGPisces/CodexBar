@@ -41,6 +41,44 @@ struct SpendSessionPerformanceTests {
     }
 
     @Test
+    func `selected chart day scopes native performance and clearing restores range statistics`() throws {
+        let now = try #require(CostUsageScanner.dateFromTimestamp("2026-05-10T12:00:00Z"))
+        let samples = try (0..<24).map { index in
+            try #require(CostUsageTurnPerformanceSample(
+                completedAt: now.addingTimeInterval(index < 12 ? -86400 : 0),
+                outputTokens: 150 + index * 10,
+                durationMilliseconds: 10000 + index * 500,
+                firstTokenMilliseconds: 500 + index * 30,
+                model: index.isMultiple(of: 2) ? "gpt-5.4" : "gpt-5",
+                reasoningEffort: index.isMultiple(of: 2) ? "high" : "low",
+                inputTokens: 1000,
+                cachedInputTokens: 700 + (index % 4) * 50))
+        }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = try #require(TimeZone(secondsFromGMT: 0))
+        for selectedDay in [now, now.addingTimeInterval(-86400), nil] {
+            let group = try Self.group(now: now, samples: samples, requestedDays: 7, selectedDay: selectedDay)
+            let row = try #require(group.sessions.first)
+            let summary = try #require(row.turnPerformance)
+            let expected = selectedDay.map { day in
+                samples.filter { calendar.isDate($0.completedAt, inSameDayAs: day) }
+            } ?? samples
+            #expect(summary == CostUsageTurnPerformanceSummary(samples: expected))
+            #expect(summary.sampleCount == (selectedDay == nil ? 24 : 12))
+            #expect(row.totalTokens == 3500)
+            #expect(row.totalCost == 0.03)
+            CodexBarLocalizationOverride.$appLanguage.withValue("en") {
+                let lines = spendSessionPerformanceDetailLines(summary)
+                #expect(lines.contains(selectedDay == nil
+                        ? "P95 turn duration: 21.0 s" : "P95 turn duration: 12 / 20 samples"))
+            }
+        }
+        let emptyDay = try Self.group(
+            now: now, samples: samples, requestedDays: 7, selectedDay: now.addingTimeInterval(-172_800))
+        #expect(emptyDay.sessions.first?.turnPerformance == nil)
+    }
+
+    @Test
     func `completion day keeps native timing when file activity is outside the selected day`() throws {
         let now = try #require(CostUsageScanner.dateFromTimestamp("2026-05-10T12:00:00Z"))
         let sample = try #require(CostUsageTurnPerformanceSample(
@@ -175,7 +213,9 @@ struct SpendSessionPerformanceTests {
         samples: [CostUsageTurnPerformanceSample],
         provider: UsageProvider = .codex,
         source: SpendDashboardModel.SourceKind = .native,
-        lastActivity: Date? = nil) throws
+        lastActivity: Date? = nil,
+        requestedDays: Int = 1,
+        selectedDay: Date? = nil) throws
         -> SpendDashboardModel.CurrencyGroup
     {
         let sessions = [CostUsageSessionBreakdown(
@@ -215,9 +255,10 @@ struct SpendSessionPerformanceTests {
                 displayName: "Codex",
                 snapshot: snapshot,
                 sourceKind: source)],
-            requestedDays: 1,
+            requestedDays: requestedDays,
             now: now,
-            calendar: calendar)
+            calendar: calendar,
+            selectedDay: selectedDay)
         return try #require(model.groups.first)
     }
 }
