@@ -1660,5 +1660,22 @@
 "Turn output: %@ tok/s" = "Turn output: %@ tok/s";
 "First token: %@ s" = "First token: %@ s";
 "Timed turns: %@" = "Timed turns: %@";
-"spend_turn_performance_help" = "Turn output includes reasoning, tools and waits. It is not model generation speed. First token is the median time to the first model token, which may be reasoning. Only complete, successfully timed turns are included.";
+"spend_turn_performance_help" = "Turn output includes reasoning, tools and waits. It is not model generation speed. First token is the median time to the first model token, which may be reasoning. Only complete, successfully timed turns are included. Turn duration is the median elapsed time of complete turns.";
 "First-token samples: %@ / %@" = "First-token samples: %@ / %@";
+"Turn duration: %@ s" = "Turn duration: %@ s";
+
+// Completed-turn performance details.
+"Performance details" = "Performance details";
+"Observed turns; workload and tools affect these results." = "Observed turns; workload and tools affect these results.";
+"By model and reasoning effort" = "By model and reasoning effort";
+"Unknown model" = "Unknown model";
+"Unknown reasoning effort" = "Unknown reasoning effort";
+"Model first token may be reasoning, before visible answer text." = "Model first token may be reasoning, before visible answer text.";
+"P95 first token: %@ s" = "P95 first token: %@ s";
+"P95 first token: %@ / 20 samples" = "P95 first token: %@ / 20 samples";
+"P95 turn duration: %@ s" = "P95 turn duration: %@ s";
+"P95 turn duration: %@ / 20 samples" = "P95 turn duration: %@ / 20 samples";
+"Middle 50%% of turns: %@–%@ tok/s" = "Middle 50%% of turns: %@–%@ tok/s";
+"Speed range needs 4 completed turns." = "Speed range needs 4 completed turns.";
+"Cached input: %@%% (%@ / %@ turns)" = "Cached input: %@%% (%@ / %@ turns)";
+"Cached input: unavailable" = "Cached input: unavailable";

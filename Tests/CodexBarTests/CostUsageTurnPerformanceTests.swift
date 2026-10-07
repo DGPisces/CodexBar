@@ -302,21 +302,27 @@ struct CostUsageTurnPerformanceTests {
         }
     }
 
-    @Test
-    func `revision eight caches backfill timing under a byte budget without changing ledger rows`() throws {
+    @Test(arguments: [8, 9])
+    func `older caches backfill timing under a byte budget without changing ledger rows`(_ revision: Int) throws {
         try Self.withFixture { env, day, objects in
+            var contextual = objects
+            contextual.insert([
+                "type": "turn_context", "timestamp": env.isoString(for: day),
+                "payload": ["turn_id": "turn-0", "effort": "high"],
+            ], at: 2)
             let url = try Self.write(
                 env: env,
                 day: day,
-                objects: objects)
+                objects: contextual)
             let expected = Self.samples(
                 env: env,
                 day: day)
             #expect(expected.count == 1)
+            #expect(expected.first?.reasoningEffort == "high")
             var old = CostUsageStoreAccess.read(cacheRoot: env.cacheRoot)
             var usage = try #require(old.files[url.path])
             let rows = usage.codexRows
-            usage.codexParserRevision = 8
+            usage.codexParserRevision = revision
             usage.codexRequestLedgerState?.turnPerformance = nil
             old.files[url.path] = usage
             #expect(!CostUsageStoreAccess.replace(cacheRoot: env.cacheRoot, cache: old).catchUpRequired)
@@ -374,6 +380,7 @@ struct CostUsageTurnPerformanceTests {
         let summary = try #require(CostUsageTurnPerformanceSummary(samples: [one, two]))
         #expect(summary.outputTokensPerSecond == 20)
         #expect(summary.medianFirstTokenMilliseconds == 500)
+        #expect(summary.medianDurationMilliseconds == 5000)
         #expect(summary.firstTokenSampleCount == 2)
         #expect(CostUsageTurnPerformanceSummary(samples: []) == nil)
         let huge = try #require(CostUsageTurnPerformanceSample(
@@ -381,6 +388,89 @@ struct CostUsageTurnPerformanceTests {
             outputTokens: Int.max,
             durationMilliseconds: Int.max))
         #expect(CostUsageTurnPerformanceSummary(samples: [huge, huge]) == nil)
+    }
+
+    @Test
+    func `turn duration is the median rather than the mean or an individual turn`() throws {
+        let samples = try [9000, 1000, 2000].map { duration in
+            try #require(CostUsageTurnPerformanceSample(
+                completedAt: Date(timeIntervalSince1970: 1000),
+                outputTokens: 100,
+                durationMilliseconds: duration))
+        }
+        let summary = try #require(CostUsageTurnPerformanceSummary(samples: samples))
+        #expect(summary.medianDurationMilliseconds == 2000)
+        #expect(summary.outputTokensPerSecond == 25)
+        #expect(summary.medianFirstTokenMilliseconds == nil)
+        let huge = try #require(CostUsageTurnPerformanceSample(
+            completedAt: Date(timeIntervalSince1970: 1000),
+            outputTokens: 0,
+            durationMilliseconds: Int.max))
+        #expect(CostUsageTurnPerformanceSummary(samples: [huge])?.medianDurationMilliseconds == Double(Int.max))
+    }
+
+    @Test(arguments: ["plain", "escapedKey", "escapedValue", "fallback"])
+    func `turn context effort is joined to owned requests and persists in cache`(_ encoding: String) throws {
+        try Self.withFixture { env, day, objects in
+            var changed = objects
+            let context: [String: Any] = [
+                "type": "turn_context", "timestamp": env.isoString(for: day),
+                "payload": ["turn_id": "turn-0", "model": "gpt-5.4", "effort": "high"],
+            ]
+            changed.insert(context, at: 2)
+            let url = try Self.write(env: env, day: day, objects: changed)
+            if encoding != "plain" {
+                let text = try String(contentsOf: url, encoding: .utf8)
+                let (original, escaped) = switch encoding {
+                case "escapedKey": ("\"effort\"", "\"\\u0065ffort\"")
+                case "escapedValue": ("\"high\"", "\"h\\u0069gh\"")
+                default: ("\"type\"", "\"\\u0074ype\"")
+                }
+                try text.replacingOccurrences(of: original, with: escaped)
+                    .write(to: url, atomically: true, encoding: .utf8)
+            }
+            let samples = Self.samples(env: env, day: day)
+            let sample = try #require(samples.first)
+            #expect(sample.model == "gpt-5.4")
+            #expect(sample.reasoningEffort == "high")
+            #expect(sample.inputTokens == 200)
+            #expect(sample.cachedInputTokens == 0)
+            #expect(Self.samples(env: env, day: day) == samples)
+        }
+    }
+
+    @Test
+    func `other turn effort is not inherited and mixed response models are unattributed`() throws {
+        try Self.withFixture { env, day, objects in
+            var changed = objects
+            changed.insert([
+                "type": "turn_context", "timestamp": env.isoString(for: day),
+                "payload": ["turn_id": "other-turn", "model": "gpt-5.4", "effort": "high"],
+            ], at: 1)
+            let lastRequest = try #require(changed.lastIndex { $0["type"] as? String == "token_usage_record" })
+            var payload = try #require(changed[lastRequest]["payload"] as? [String: Any])
+            payload["model"] = "gpt-5"
+            changed[lastRequest]["payload"] = payload
+            _ = try Self.write(env: env, day: day, objects: changed)
+            let sample = try #require(Self.samples(env: env, day: day).first)
+            #expect(sample.model == nil)
+            #expect(sample.reasoningEffort == nil)
+        }
+    }
+
+    @Test(arguments: ["low", ""])
+    func `conflicting effort within a turn is not assigned to either group`(_ changedEffort: String) throws {
+        try Self.withFixture { env, day, objects in
+            var changed = objects
+            for effort in [changedEffort, "high"] {
+                changed.insert([
+                    "type": "turn_context", "timestamp": env.isoString(for: day),
+                    "payload": ["turn_id": "turn-0", "effort": effort],
+                ], at: 2)
+            }
+            _ = try Self.write(env: env, day: day, objects: changed)
+            #expect(Self.samples(env: env, day: day).first?.reasoningEffort == nil)
+        }
     }
 
     private static func withFixture(

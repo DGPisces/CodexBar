@@ -47,7 +47,11 @@ struct CostUsageTurnPerformanceNativeProofTests {
                 completedAt: completedAt,
                 outputTokens: outputTokens,
                 durationMilliseconds: duration,
-                firstTokenMilliseconds: row["first_token_ms"] as? Int))
+                firstTokenMilliseconds: row["first_token_ms"] as? Int,
+                model: row["model"] as? String,
+                reasoningEffort: row["effort"] as? String,
+                inputTokens: row["input_tokens"] as? Int,
+                cachedInputTokens: row["cached_input_tokens"] as? Int))
         }.sorted { $0.completedAt < $1.completedAt }
         #expect(actual == reference)
         let cached = try #require(await CostUsageFetcher.loadCachedCodexTokenSnapshot(

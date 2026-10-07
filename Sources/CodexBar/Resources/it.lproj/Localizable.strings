@@ -1660,5 +1660,22 @@
 "Turn output: %@ tok/s" = "Output del turno: %@ tok/s";
 "First token: %@ s" = "Primo token: %@ s";
 "Timed turns: %@" = "Turni con tempi validi: %@";
-"spend_turn_performance_help" = "La velocità dell'intero turno include ragionamento, strumenti e attese. Non indica la velocità di generazione del modello. Il primo token è la latenza mediana fino al primo token del modello, che può appartenere al ragionamento. Sono inclusi solo i turni riusciti con tempi completi.";
+"spend_turn_performance_help" = "La velocità dell'intero turno include ragionamento, strumenti e attese. Non indica la velocità di generazione del modello. Il primo token è la latenza mediana fino al primo token del modello, che può appartenere al ragionamento. Sono inclusi solo i turni riusciti con tempi completi. La durata del turno è la mediana dei tempi dei turni completi.";
 "First-token samples: %@ / %@" = "Campioni del primo token: %@ / %@";
+"Turn duration: %@ s" = "Durata del turno: %@ s";
+
+// Completed-turn performance details.
+"Performance details" = "Dettagli delle prestazioni";
+"Observed turns; workload and tools affect these results." = "Turni osservati; il carico di lavoro e gli strumenti influenzano questi risultati.";
+"By model and reasoning effort" = "Per modello e intensità del ragionamento";
+"Unknown model" = "Modello sconosciuto o misto";
+"Unknown reasoning effort" = "Intensità del ragionamento sconosciuta o mista";
+"Model first token may be reasoning, before visible answer text." = "Il primo token del modello può appartenere al ragionamento, prima della risposta visibile.";
+"P95 first token: %@ s" = "Primo token P95: %@ s";
+"P95 first token: %@ / 20 samples" = "Primo token P95: %@ / 20 campioni";
+"P95 turn duration: %@ s" = "Durata del turno P95: %@ s";
+"P95 turn duration: %@ / 20 samples" = "Durata del turno P95: %@ / 20 campioni";
+"Middle 50%% of turns: %@–%@ tok/s" = "50%% centrale dei turni: %@–%@ tok/s";
+"Speed range needs 4 completed turns." = "L’intervallo di velocità richiede 4 turni completati.";
+"Cached input: %@%% (%@ / %@ turns)" = "Token di input in cache: %@%% (%@ / %@ turni)";
+"Cached input: unavailable" = "Token di input in cache: non disponibili";

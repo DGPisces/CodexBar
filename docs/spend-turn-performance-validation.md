@@ -10,13 +10,13 @@ read_when:
 Validated on arm64 macOS 27 with Swift 6.4. Upstream baseline:
 `ab32496d3c1f861981aa1a19aee2f933204f9bb9`. Feature production code:
 `22fdcb88e8d77a03c9d8447f889012247d4bb483`.
-Parser revision: 9; parser hash: `de14dd5f901910bc`.
+The original validation used parser revision 9. The advanced details use parser revision 10; the current generated parser hash is checked by `make check`.
 
 ## Metric contract
 
 Native Codex session rows show total valid output tokens divided by total valid
-turn duration, median available first-token latency, and the number of timed
-turns. Output includes reasoning tokens already contained in output. Duration
+turn duration, median available first-token latency, and median completed-turn
+duration. The number of timed turns remains in the tooltip and expanded details. Output includes reasoning tokens already contained in output. Duration
 includes tools, retries, network and waiting; this is whole-turn throughput.
 Session summaries can combine models and tool-heavy turns and are not a model
 streaming benchmark. Samples belong to their completion day.
@@ -28,6 +28,36 @@ latency observation. Billing behavior is unchanged. Compatible predecessor
 ledger rows and saved pricing survive bounded timing backfill, including the
 current upstream parser hash. Upstream's retained-report pricing migration still
 clears the affected older report payload while keeping the ledger/checkpoints.
+
+## Advanced details
+
+Each native Codex session has a collapsed **Performance details** disclosure.
+Details retain the selected completion-day range and include:
+
+- P95 model-first-token and completed-turn duration using nearest-rank percentiles.
+  Each metric needs at least 20 valid observations of its own; missing TTFT does
+  not reduce the duration sample count. Twenty is a display threshold, not a
+  statistical confidence guarantee.
+- The middle 50% of per-turn output rates (nearest-rank P25–P75), after at least
+  four completed turns. Different tasks and tool use can explain this spread.
+- Cached-input tokens divided by total input tokens in eligible completed turns,
+  with the cache sample coverage. Native Codex input already includes cached input;
+  ratios are input-weighted, not averages of request percentages. Zero input and
+  overflowing or invalid counters do not produce a ratio.
+- Model and reasoning-effort groups, with timed-turn and available-TTFT counts,
+  weighted whole-turn throughput and median latencies. Missing/mixed attribution
+  remains unknown; these observations do not rank model capabilities.
+
+Effort comes from the owning `turn_context.payload.effort`, joined by turn ID.
+It is never inherited from another turn. Conflicting or cleared effort within
+one turn is unavailable. A turn using multiple response models is unattributed.
+Model-first-token may be reasoning and does not establish first visible answer
+latency. Claude and OpenCodex rows remain without timing when their source does
+not provide the validated native completion/usage contract.
+
+Parser revision 10 uses existing bounded migration and retained-pricing logic.
+Revision 8 and 9 cache fixtures verify that authoritative ledger rows survive
+backfill. No new background poll, account probe or external dependency is added.
 
 ## UI evidence and runtime boundary
 
@@ -192,7 +222,7 @@ package.targets.append(.executableTarget(name: "TokenSpeedReleaseProbe", depende
 Build each independently using `swift build -c release --product
 TokenSpeedReleaseProbe -j 2 -Xswiftc -enable-testing`; add `-Xswiftc
 -DTURN_PERF_FEATURE` for the feature adapter. Set
-`CODEXBAR_TOKEN_SPEED_BENCHMARK_OUTPUT` when running the produced binary.
+`CODEXBAR_PERFORMANCE_BENCHMARK_OUTPUT` when running the produced binary.
 No test-only flag changes the scanner execution path. Restore the temporary
 manifest afterward, and never copy build products between worktrees.
 
@@ -202,3 +232,38 @@ The existing opt-in Swift test benchmark uses the same fixture through
 with `SpendSessionPerformanceTests`. The native-history proof requires a private
 directory with `sessions/` and independently prepared `expected.json`, supplied
 through `CODEXBAR_PERFORMANCE_NATIVE_PROOF_DIR`.
+
+## Advanced-details validation (2026-10-07)
+
+The advanced-details receipt is separate from earlier release comparisons:
+[redacted receipt](proofs/spend-turn-performance-details.json). Twenty-eight
+focused tests in four suites passed, including plain and escaped JSON keys/values,
+Foundation fallback, conflicting/missing effort, native-only completion-date
+filtering, percentile thresholds, input-weighted cache ratios and revision 8/9
+backfill preserving authoritative ledger rows. The production fetcher and reopened
+cache matched the independent extended reference for 41 turns in six copied native
+files; no real usage values or identities are published.
+
+Current static checks passed (`make check`, 2,821 Swift files, zero violations).
+The complete supported `./Scripts/test.sh --direct-workers 4` invocation exited
+successfully: all 143 groups / 1,572 selections passed, with 141 groups passing
+first attempt and two recovering on the runner's fresh-process retry (618.4 s;
+zero group timeouts). The initial issues were an unrelated WebKit fixture wait
+in `OpenAISubscriptionMetadataTests` and a generic weekly-history persistence
+expectation in `UsageStorePlanUtilizationTests`. No assertions were changed or
+failures suppressed. This is a retry-assisted pass, not a clean first-pass run.
+Advanced-detail strings are translated in English, Simplified Chinese and Italian;
+the other synchronized catalogs currently use English fallback for those strings.
+
+The synthetic debug benchmark ran three trials each for 24 sessions / 960 turns
+and 96 sessions / 7,680 turns. Advanced summary construction medians were 1.7 ms
+and 13.1 ms respectively; the larger maximum was 30.5 ms. Every unchanged refresh
+reprocessed zero usage rows. These are absolute timings on a shared host, not a
+release comparison, app responsiveness measurement or memory-leak proof.
+
+![Synthetic production performance details](screenshots/spend-turn-performance-details-synthetic.png)
+
+The screenshot is a production-component render with synthetic values, not an
+installed-window screenshot. Desktop app selection timed out, so this revision
+still has no verified installed-window expand/collapse or sustained responsiveness
+proof. Do not substitute startup/signature checks for that interaction gate.

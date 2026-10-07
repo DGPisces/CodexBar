@@ -6,6 +6,16 @@ extension CostUsageScanner {
         var reportedOutputTokens: Int?
         var hasRejectedUsage: Bool?
         var completion: CodexTurnPerformanceCompletion?
+        var reasoningEffort: String?
+        var hasConflictingEffort: Bool?
+
+        mutating func observeReasoningEffort(_ raw: String?) {
+            let effort = CostUsageScanner.codexModelEvidence(raw)
+            if let previous = self.reasoningEffort, previous != effort {
+                self.hasConflictingEffort = true
+            }
+            self.reasoningEffort = effort
+        }
     }
 
     struct CodexInvalidRequestUsage: Codable, Equatable {
@@ -64,6 +74,10 @@ extension CostUsageScanner {
         guard let states = usage.codexRequestLedgerState?.turnPerformance, !states.isEmpty else { return [] }
         struct Output {
             var tokens = 0
+            var input = 0
+            var cached = 0
+            var validCache = true
+            var models: Set<String> = []
             var firstTimestamp: Int64 = .max
             var lastTimestamp: Int64 = .min
             var valid = true
@@ -74,6 +88,13 @@ extension CostUsageScanner {
             var output = outputs[turnID] ?? Output()
             let sum = output.tokens.addingReportingOverflow(row.output)
             output.tokens = sum.partialValue
+            let inputSum = output.input.addingReportingOverflow(row.input)
+            let cacheSum = output.cached.addingReportingOverflow(row.cached)
+            output.input = inputSum.partialValue
+            output.cached = cacheSum.partialValue
+            output.validCache = output.validCache && !inputSum.overflow && !cacheSum.overflow
+                && row.input >= 0 && row.cached >= 0 && row.cached <= row.input
+            output.models.insert(row.rawModel ?? row.model)
             output.valid = output.valid && !sum.overflow && row.output >= 0
                 && row.timestampUnixMs != nil
             if let timestamp = row.timestampUnixMs {
@@ -104,7 +125,12 @@ extension CostUsageScanner {
                 completedAt: completedAt,
                 outputTokens: output.tokens,
                 durationMilliseconds: duration,
-                firstTokenMilliseconds: completion.firstTokenMilliseconds)
+                firstTokenMilliseconds: completion.firstTokenMilliseconds,
+                model: output.models.count == 1 && output.models.first != CostUsagePricing.codexUnattributedModel
+                    ? output.models.first : nil,
+                reasoningEffort: state.hasConflictingEffort == true ? nil : state.reasoningEffort,
+                inputTokens: output.validCache ? output.input : nil,
+                cachedInputTokens: output.validCache ? output.cached : nil)
         }
     }
 }

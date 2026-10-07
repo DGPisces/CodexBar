@@ -33,6 +33,7 @@ struct SpendSessionPerformanceTests {
             if provider == .codex, source == .native {
                 #expect(row.turnPerformance?.sampleCount == 1)
                 #expect(row.turnPerformance?.outputTokensPerSecond == 100)
+                #expect(row.turnPerformance?.medianDurationMilliseconds == 1000)
             } else {
                 #expect(row.turnPerformance == nil)
             }
@@ -46,6 +47,10 @@ struct SpendSessionPerformanceTests {
             completedAt: now,
             outputTokens: 100,
             durationMilliseconds: 1000))
+        let outsideWindow = try #require(CostUsageTurnPerformanceSample(
+            completedAt: now.addingTimeInterval(-86400),
+            outputTokens: 100,
+            durationMilliseconds: 9000))
         for (provider, source) in [
             (UsageProvider.codex, SpendDashboardModel.SourceKind.native),
             (.claude, .native),
@@ -53,12 +58,18 @@ struct SpendSessionPerformanceTests {
         ] {
             let group = try Self.group(
                 now: now,
-                samples: [sample],
+                samples: [sample, outsideWindow],
                 provider: provider,
                 source: source,
                 lastActivity: now.addingTimeInterval(86400))
             if provider == .codex, source == .native {
-                #expect(group.sessions.first?.turnPerformance?.sampleCount == 1)
+                #expect(group.sessions.count == 1)
+                let row = try #require(group.sessions.first)
+                #expect(row.turnPerformance?.sampleCount == 1)
+                #expect(row.turnPerformance?.outputTokensPerSecond == 100)
+                #expect(row.turnPerformance?.medianDurationMilliseconds == 1000)
+                #expect(row.totalTokens == 3500)
+                #expect(row.totalCost == 0.03)
             } else {
                 #expect(group.sessions.isEmpty)
             }
@@ -73,10 +84,27 @@ struct SpendSessionPerformanceTests {
             durationMilliseconds: 10000))
         let summary = try #require(CostUsageTurnPerformanceSummary(samples: [sample]))
         CodexBarLocalizationOverride.$appLanguage.withValue("en") {
-            #expect(spendSessionPerformanceText(summary) == "Turn output: 2.0 tok/s · Timed turns: 1")
+            #expect(spendSessionPerformanceText(summary) == "Turn output: 2.0 tok/s · Turn duration: 10.0 s")
         }
         CodexBarLocalizationOverride.$appLanguage.withValue("zh-Hans") {
-            #expect(spendSessionPerformanceText(summary) == "整轮输出：2.0 tok/s · 计时轮数：1")
+            #expect(spendSessionPerformanceText(summary) == "整轮输出：2.0 tok/s · 每轮耗时：10.0 秒")
+        }
+    }
+
+    @Test
+    func `details explain missing samples and model TTFT semantics`() throws {
+        let sample = try #require(CostUsageTurnPerformanceSample(
+            completedAt: Date(),
+            outputTokens: 100,
+            durationMilliseconds: 1000,
+            inputTokens: 100,
+            cachedInputTokens: 80))
+        let summary = try #require(CostUsageTurnPerformanceSummary(samples: [sample]))
+        CodexBarLocalizationOverride.$appLanguage.withValue("en") {
+            let lines = spendSessionPerformanceDetailLines(summary)
+            #expect(lines.contains("P95 first token: 0 / 20 samples"))
+            #expect(lines.contains("P95 turn duration: 1 / 20 samples"))
+            #expect(lines.contains("Cached input: 80.0% (1 / 1 turns)"))
         }
     }
 
@@ -95,10 +123,15 @@ struct SpendSessionPerformanceTests {
             completedAt: now,
             outputTokens: 500,
             durationMilliseconds: 10000,
-            firstTokenMilliseconds: 800))
+            firstTokenMilliseconds: 800,
+            model: "gpt-5.4",
+            reasoningEffort: "high",
+            inputTokens: 1000,
+            cachedInputTokens: 800))
         let group = try Self.group(
             now: now,
             samples: [sample, sample, sample])
+        let detailSummary = try #require(CostUsageTurnPerformanceSummary(samples: Array(repeating: sample, count: 20)))
         for language in ["en", "zh-Hans"] {
             for dark in [false, true] {
                 try CodexBarLocalizationOverride.$appLanguage.withValue(language) {
@@ -115,6 +148,8 @@ struct SpendSessionPerformanceTests {
                         SpendSessionRows(
                             group: group,
                             hidePersonalInfo: true)
+                        Divider()
+                        SpendSessionPerformanceDetailsView(summary: detailSummary)
                     }
                     .padding(20).frame(width: width)
                     .background(dark ? Color(

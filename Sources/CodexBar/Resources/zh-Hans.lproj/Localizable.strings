@@ -1671,5 +1671,22 @@
 "Turn output: %@ tok/s" = "整轮输出：%@ tok/s";
 "First token: %@ s" = "首 token：%@ 秒";
 "Timed turns: %@" = "计时轮数：%@";
-"spend_turn_performance_help" = "整轮输出包含推理、工具执行和等待时间，不能代表模型生成速度。首 token 是第一枚模型 token 的延迟中位数，可能属于推理。仅统计成功且计时完整的轮次。";
+"spend_turn_performance_help" = "整轮输出包含推理、工具执行和等待时间，不能代表模型生成速度。首 token 是第一枚模型 token 的延迟中位数，可能属于推理。仅统计成功且计时完整的轮次。 每轮耗时是完整轮次耗时的中位数。";
 "First-token samples: %@ / %@" = "首 token 样本：%@ / %@";
+"Turn duration: %@ s" = "每轮耗时：%@ 秒";
+
+// Completed-turn performance details.
+"Performance details" = "性能详情";
+"Observed turns; workload and tools affect these results." = "实际完成轮次的统计；任务内容和工具耗时会影响结果。";
+"By model and reasoning effort" = "按模型与推理档位对比";
+"Unknown model" = "模型未知或混用";
+"Unknown reasoning effort" = "推理档位未知或混用";
+"Model first token may be reasoning, before visible answer text." = "模型首 token 可能是推理内容，早于可见回答。";
+"P95 first token: %@ s" = "P95 首 token：%@ 秒";
+"P95 first token: %@ / 20 samples" = "P95 首 token：%@ / 20 个样本（不足）";
+"P95 turn duration: %@ s" = "P95 每轮耗时：%@ 秒";
+"P95 turn duration: %@ / 20 samples" = "P95 每轮耗时：%@ / 20 个样本（不足）";
+"Middle 50%% of turns: %@–%@ tok/s" = "中间 50%% 轮次的速度：%@–%@ tok/s";
+"Speed range needs 4 completed turns." = "速度范围至少需要 4 个完成轮次。";
+"Cached input: %@%% (%@ / %@ turns)" = "缓存输入：%@%%（%@ / %@ 轮）";
+"Cached input: unavailable" = "缓存输入：暂无有效数据";

@@ -1341,23 +1341,25 @@ struct SpendSessionRows: View {
                         .foregroundStyle(.tertiary)
                         .frame(width: 26, alignment: .leading)
                     SpendProviderIcon(provider: row.provider, sourceKind: .native)
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(identity.name)
-                            .lineLimit(1)
-                            .help(identity.name)
-                        Text(subtitle)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(1)
-                            .help(subtitle)
-                    }
-                    Spacer()
-                    VStack(alignment: .trailing, spacing: 3) {
-                        Text(spendDashboardMetricText(
-                            cost: row.totalCost,
-                            tokens: row.totalTokens,
-                            currencyCode: self.group.currencyCode))
-                            .monospacedDigit()
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack(alignment: .top, spacing: 10) {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(identity.name)
+                                    .lineLimit(1)
+                                    .help(identity.name)
+                                Text(subtitle)
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(1)
+                                    .help(subtitle)
+                            }
+                            Spacer()
+                            Text(spendDashboardMetricText(
+                                cost: row.totalCost,
+                                tokens: row.totalTokens,
+                                currencyCode: self.group.currencyCode))
+                                .monospacedDigit()
+                        }
                         if let performance = row.turnPerformance {
                             SpendSessionPerformanceView(summary: performance)
                         }

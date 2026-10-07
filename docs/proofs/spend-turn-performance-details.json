@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-07",
+  "scope": "native Codex completed-turn details",
+  "native_history": {
+    "actual_timed_turns": 41,
+    "cached_matches_fresh": true,
+    "expected_timed_turns": 41,
+    "fresh_matches_reference": true,
+    "real_usage_values": "withheld",
+    "scan_wall_ms": 2598.596875,
+    "source": "copied native Codex JSONL, independent Python join"
+  },
+  "benchmark_source": "synthetic; debug build; shared host; absolute timings, not baseline comparison",
+  "benchmark": {
+    "normal": {
+      "files": 24,
+      "turns": 960,
+      "summary_ms_median": 1.722708,
+      "summary_ms_max": 1.96275,
+      "warm_usage_rows_processed": [
+        0
+      ],
+      "append_usage_rows_processed": [
+        4
+      ]
+    },
+    "large": {
+      "files": 96,
+      "turns": 7680,
+      "summary_ms_median": 13.09425,
+      "summary_ms_max": 30.478708,
+      "warm_usage_rows_processed": [
+        0
+      ],
+      "append_usage_rows_processed": [
+        6
+      ]
+    }
+  },
+  "native_window_interaction": "unverified; desktop app selection timed out",
+  "component_render": "production rows and details; synthetic inputs; en and zh-Hans; light and dark; 460 points",
+  "focused_tests": {
+    "tests": 28,
+    "suites": 4,
+    "passed": true
+  },
+  "full_regression": {
+    "command": "./Scripts/test.sh --direct-workers 4",
+    "passed": true,
+    "selected_selections": 1572,
+    "selected_groups": 143,
+    "first_pass_successful_groups": 141,
+    "first_pass_failed_groups": 2,
+    "full_group_retries": 2,
+    "recovered_groups": 2,
+    "timed_out_groups": 0,
+    "total_seconds": 618.4,
+    "first_pass_issues": [
+      "OpenAISubscriptionMetadataTests: WebKit fixture wait timed out",
+      "UsageStorePlanUtilizationTests: generic weekly history persistence expectation"
+    ],
+    "assertions": "unmodified"
+  },
+  "static_checks": {
+    "command": "make check",
+    "passed": true,
+    "swift_files": 2821,
+    "violations": 0
+  }
+}

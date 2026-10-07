@@ -46,6 +46,8 @@ for path in sorted((root / "sessions").rglob("*.jsonl")):
     owner = None
     execution = None
     active = None
+    current_model = None
+    turn_models = {}
     responses = set()
     turns = {}
     for line in path.open():
@@ -74,7 +76,16 @@ for path in sorted((root / "sessions").rglob("*.jsonl")):
         if not turn:
             continue
         state = turns.setdefault(turn, {"rows": [], "raw_rows": [], "reported": None,
-                                       "raw_reported": None, "invalid": False, "completion": None})
+                                       "raw_reported": None, "invalid": False, "completion": None,
+                                       "models": set(), "input": 0, "cached": 0, "effort": None, "conflict": False})
+        if kind == "turn_context":
+            if isinstance(payload.get("model"), str):
+                current_model = evidence(payload["model"])
+            turn_models[turn] = current_model
+            effort = evidence(payload.get("effort"))
+            if state["effort"] and state["effort"] != effort:
+                state["conflict"] = True
+            state["effort"] = effort
         if kind == "event_msg" and payload.get("type") == "task_complete":
             state["completion"] = (obj["timestamp"], when, payload)
         elif kind == "token_usage_record":
@@ -100,6 +111,9 @@ for path in sorted((root / "sessions").rglob("*.jsonl")):
                 continue
             responses.add(response)
             state["rows"].append((when, request[1]))
+            state["input"] += request[0]
+            state["cached"] += request[2]
+            state["models"].add(evidence(payload.get("model")) or turn_models.get(turn) or "unknown")
             turn_total = counters(payload.get("turn_token_usage"))
             state["reported"] = turn_total[1] if at_least(turn_total, request) else None
     for turn, state in turns.items():
@@ -124,6 +138,9 @@ for path in sorted((root / "sessions").rglob("*.jsonl")):
             if state["invalid"]:
                 audit["rejected_candidate_turns"] += 1
         if not state["invalid"] and complete(state["rows"], state["reported"]):
+            candidate.update(model=next(iter(state["models"])) if len(state["models"]) == 1 and "unknown" not in state["models"] else None,
+                             effort=None if state["conflict"] else state["effort"],
+                             input_tokens=state["input"], cached_input_tokens=state["cached"])
             samples.append(candidate)
 
 order = lambda row: (row["completed_at"], row["session_id"], row["turn_id"])

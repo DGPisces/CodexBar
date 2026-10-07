@@ -7,7 +7,8 @@ import Testing
 struct CostUsageTurnPerformanceBenchmarkTests {
     @Test
     func `measure cold warm incremental and persisted session projections`() throws {
-        guard let output = ProcessInfo.processInfo.environment["CODEXBAR_TOKEN_SPEED_BENCHMARK_OUTPUT"] else { return }
+        guard let output = ProcessInfo.processInfo.environment["CODEXBAR_PERFORMANCE_BENCHMARK_OUTPUT"]
+            ?? ProcessInfo.processInfo.environment["CODEXBAR_TOKEN_SPEED_BENCHMARK_OUTPUT"] else { return }
         var results: [[String: Any]] = []
         for (name, files, turns, requests) in [("normal", 24, 40, 4), ("large", 96, 80, 6)] {
             for trial in 0..<3 {
@@ -83,6 +84,11 @@ struct CostUsageTurnPerformanceBenchmarkTests {
                         range: range,
                         modelsDevCatalog: ModelsDevCatalog(providers: [:]))
                     let reloadMS = Self.milliseconds(since: reloadStart)
+                    let summaryStart = ContinuousClock.now
+                    let summaries = sessions
+                        .compactMap { CostUsageTurnPerformanceSummary(samples: $0.turnPerformanceSamples) }
+                    let summaryMS = Self.milliseconds(since: summaryStart)
+                    #expect(summaries.count == files)
                     #expect(sessions.count == files)
                     let timedTurns = sessions.reduce(0) { $0 + $1.turnPerformanceSamples.count }
                     #expect(timedTurns == files * turns + (mode == "append" ? 1 : 0))
@@ -103,6 +109,7 @@ struct CostUsageTurnPerformanceBenchmarkTests {
                         "timed_turns": timedTurns,
                         "scan_ms": scanMS,
                         "reload_ms": reloadMS,
+                        "summary_ms": summaryMS,
                         "cache_bytes": bytes,
                         "file_scans": recorder.snapshot().codexFileScanAttempts,
                         "usage_rows_processed": recorder.snapshot().usageRowsProcessed,

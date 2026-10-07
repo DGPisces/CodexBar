@@ -3427,6 +3427,7 @@ enum CostUsageScanner {
         let cwd: String?
         let title: String?
         var turnID: String?
+        var reasoningEffort: String?
     }
 
     struct CodexTokenCountRecord: Codable, Equatable {
@@ -3506,6 +3507,7 @@ enum CostUsageScanner {
     private static let codexJSONFieldInputTokens = Array("input_tokens".utf8)
     private static let codexJSONFieldLastTokenUsage = Array("last_token_usage".utf8)
     private static let codexJSONFieldModel = Array("model".utf8)
+    private static let codexJSONFieldEffort = Array("effort".utf8)
     private static let codexJSONFieldModelName = Array("model_name".utf8)
     private static let codexJSONFieldOutputTokens = Array("output_tokens".utf8)
     private static let codexJSONFieldOrdinal = Array("ordinal".utf8)
@@ -3646,7 +3648,15 @@ enum CostUsageScanner {
                         ?? string(Self.codexJSONFieldCurrentWorkingDirectoryCamel, in: payload),
                     title: string(Self.codexJSONFieldTitle, in: payload)
                         ?? string(Self.codexJSONFieldName, in: payload),
-                    turnID: payload.flatMap { Self.codexTurnID(from: buffer, in: $0) }))
+                    turnID: payload.flatMap { Self.codexTurnID(from: buffer, in: $0) },
+                    reasoningEffort: payload.flatMap {
+                        Self.extractJSONByteStringField(
+                            Self.codexJSONFieldEffort,
+                            from: buffer,
+                            in: $0,
+                            atDepth: 1,
+                            allowingEscapedKeys: true)
+                    }))
             case "inter_agent_communication_metadata":
                 guard let payload,
                       let triggerTurn = Self.extractJSONByteBoolField(
@@ -3716,7 +3726,8 @@ enum CostUsageScanner {
                     ?? payload["current_working_directory"] as? String
                     ?? payload["currentWorkingDirectory"] as? String,
                 title: payload["title"] as? String ?? payload["name"] as? String,
-                turnID: Self.codexTurnID(from: payload)))
+                turnID: Self.codexTurnID(from: payload),
+                reasoningEffort: payload["effort"] as? String))
         case "event_msg":
             if payload["type"] as? String == "task_started" {
                 return .taskStarted(turnID: Self.codexTurnID(from: payload))
@@ -4776,6 +4787,12 @@ enum CostUsageScanner {
                 }
                 if let turnID = metadata.turnID, let model = Self.codexModelEvidence(currentModel) {
                     requestLedger.turnModels[turnID] = model
+                }
+                if !suppressUnownedCopiedPrefix, let turnID = metadata.turnID {
+                    if requestLedger.turnPerformance == nil { requestLedger.turnPerformance = [:] }
+                    var performance = requestLedger.turnPerformance?[turnID] ?? CodexTurnPerformanceState()
+                    performance.observeReasoningEffort(metadata.reasoningEffort)
+                    requestLedger.turnPerformance?[turnID] = performance
                 }
             case .interAgentCommunication:
                 break
