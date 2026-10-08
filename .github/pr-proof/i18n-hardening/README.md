@@ -24,7 +24,7 @@ Original failures remain in the retained local logs. This evidence does not clai
 
 The screenshot uses the freshly built full App through its existing DEBUG isolation entry point. The displayed editor is the production shortcut editor in Arabic, with the production language/direction modifier. Settings and accounts use fixture stores, provider discovery is disabled, and Keychain access is disabled.
 
-![Arabic shortcut editor](ar-shortcuts.png)
+![Arabic shortcut editor](https://raw.githubusercontent.com/DGPisces/CodexBar/a8f154f2182608926d687b0c6fa7b43aa52029c6/.github/pr-proof/i18n-hardening/ar-shortcuts.png)
 
 [Environment receipts](environment-receipts.json) record six languages and both the production modifier and explicit reference environments. [Notification receipt](notification-delivery.json) records a Chinese credential fixture returned by macOS's delivered-notification query on macOS 27.0.1. Temporary test-app notification permission was restored to its initial disabled state. The original local artifacts are retained; the published receipt replaces its absolute bundle path, and account, usage, token, and monetary data are withheld.
 
