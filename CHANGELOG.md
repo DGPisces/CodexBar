@@ -4,6 +4,7 @@
 
 ### Added
 
+- Omarchy: offer optional session, weekly, and pace labels, per-model caps, and a provider-count preference while preserving the compact two-provider default (#3794). Thanks @jsonMartin!
 - Menu bar: optionally follow the frontmost Codex, Claude, Cursor, or Antigravity app in the collapsed merged icon, preserving menu and account selection (#3961, #780). Thanks @gamithasam and @matthewlloyd!
 - CLI: discover saved token and managed Codex accounts through read-only `/accounts` endpoints, with stable provider-scoped IDs, privacy-aware labels, and no usage refresh or credential export (#4326). Thanks @zieglar!
 - Menu bar: add an opt-in Color by provider toggle across existing icon styles and stacked rows, with monochrome contrast and menu-tracking fallbacks (#4321). Thanks @aronchick!
