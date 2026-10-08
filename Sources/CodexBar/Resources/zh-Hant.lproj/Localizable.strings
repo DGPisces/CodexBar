@@ -629,8 +629,6 @@
 "merged_icon_style_stacked" = "堆疊";
 "merge_icon_stacked_top_provider_title" = "上排";
 "merge_icon_stacked_bottom_provider_title" = "下排";
-"show_most_used_provider_title" = "顯示使用量最高的提供者";
-"show_most_used_provider_subtitle" = "選單列會自動顯示最接近用量上限的提供者。";
 "display_mode_title" = "顯示模式";
 "display_mode_subtitle" = "選擇選單列要顯示的內容（進度會比較目前用量和時間進度）。";
 "show_quota_warning_markers_title" = "顯示配額提醒標記";
@@ -1590,7 +1588,6 @@
 "Independent chat" = "獨立聊天";
 "Independent chats" = "獨立聊天";
 "Chat %d" = "聊天 %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1697,5 +1694,10 @@
 "Models for this day" = "查看當天模型";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "點擊長條逐層查看，下方選單可查詢詳細金額。";
+"merged_icon_source_title" = "合併圖示來源";
+"merged_icon_source_subtitle" = "選擇摺疊後的合併圖示顯示哪個服務提供者。";
+"merged_icon_source_current_selection" = "目前選取";
+"merged_icon_source_highest_usage" = "最高用量";
+"merged_icon_source_frontmost_app" = "最前景的服務提供者 App";
 /* Provider menu bar color */
 "Color by provider" = "依服務商著色";
