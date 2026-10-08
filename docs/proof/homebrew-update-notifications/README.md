@@ -24,6 +24,8 @@ On `54ada0fe3`, the follow-up `make check` passed with zero violations in 2,848 
 
 After synchronizing with main at `08eb56931`, the archived native captures and their source-identity report still attest `54ada0fe3`. The notification sender, delegate, updater, app entry, and settings controller are unchanged; main changes only the About pane's Website destination among the six receipt-listed files. Verify these archived receipts against their recorded source revision. Fresh captures should use a newly built bundle and a receipt from that same revision.
 
+The integrated production revision `1607c1a18` passed `make check` with zero violations in 2,871 Swift files. Its complete inventory-verified regression covered 14,174 methods and all 1,607 selections: 145/145 groups passed on their first attempt, with zero failed groups, retries, or timeouts. The [main synchronization validation receipt](main-sync-validation.json) records these results separately from the archived native captures.
+
 ### Captured results
 
 These receipts are partial native evidence from October 8, 2026. Delivery, deduplication, and saved disabled-check behavior are observed; native notification-click proof remains outstanding.
