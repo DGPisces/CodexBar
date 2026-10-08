@@ -2402,10 +2402,9 @@
 "Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "複数の ClinePass API キーを保存します。選択したキーは、設定済みの API キーと cline auth セッションよりも優先されます。";
 
 "X API cost history is not available." = "X API の費用履歴は利用できません。";
-
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "auth_token と ct0 を含む console.x.com の Cookie ヘッダーを貼り付けてください。";
-
 "Open X Developer Console" = "X 開発者コンソールを開く";
+"update_available_notification_body" = "クリックしてアップデート設定を開き、新しいバージョンをインストールします。";
 // Structured session performance layout.
 "spend_performance_first_token" = "最初のトークン";
 "spend_performance_output" = "ターンの出力";

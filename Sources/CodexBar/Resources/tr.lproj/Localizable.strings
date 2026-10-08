@@ -2405,10 +2405,9 @@
 "Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Birden fazla ClinePass API anahtarı kaydedin. Seçilen anahtar, yapılandırılmış API anahtarından ve cline auth oturumundan önceliklidir.";
 
 "X API cost history is not available." = "X API maliyet geçmişi kullanılamıyor.";
-
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "auth_token ve ct0 içeren bir console.x.com Cookie başlığı yapıştırın.";
-
 "Open X Developer Console" = "X Geliştirici Konsolunu Aç";
+"update_available_notification_body" = "Güncelleme ayarlarını açmak ve yeni sürümü yüklemek için tıklayın.";
 // Structured session performance layout.
 "spend_performance_first_token" = "İlk token";
 "spend_performance_output" = "Konuşma turu çıktısı";

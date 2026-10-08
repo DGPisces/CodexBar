@@ -2403,10 +2403,9 @@
 "Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Lưu nhiều khóa API ClinePass. Khóa được chọn được ưu tiên hơn khóa API đã cấu hình và phiên cline auth.";
 
 "X API cost history is not available." = "Không có lịch sử chi phí X API.";
-
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Dán tiêu đề Cookie từ console.x.com có chứa auth_token và ct0.";
-
 "Open X Developer Console" = "Mở bảng điều khiển nhà phát triển X";
+"update_available_notification_body" = "Nhấp để mở cài đặt cập nhật và cài đặt phiên bản mới.";
 // Structured session performance layout.
 "spend_performance_first_token" = "Token đầu tiên";
 "spend_performance_output" = "Đầu ra mỗi lượt";

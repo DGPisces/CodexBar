@@ -2406,10 +2406,9 @@
 "Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session.";
 
 "X API cost history is not available." = "X API cost history is not available.";
-
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Paste a console.x.com Cookie header containing auth_token and ct0.";
-
 "Open X Developer Console" = "Open X Developer Console";
+"update_available_notification_body" = "Click to open update settings and install the new version.";
 // Structured session performance layout.
 "spend_performance_first_token" = "First token";
 "spend_performance_output" = "Turn output";

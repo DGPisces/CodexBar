@@ -2380,10 +2380,9 @@
 "Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "儲存多個 ClinePass API 金鑰。所選金鑰優先於已設定的 API 金鑰和 cline auth 工作階段。";
 
 "X API cost history is not available." = "X API 費用歷史無法使用。";
-
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "貼上包含 auth_token 和 ct0 的 console.x.com Cookie 標頭。";
-
 "Open X Developer Console" = "開啟 X 開發者主控台";
+"update_available_notification_body" = "點擊開啟更新設定並安裝新版本。";
 // Structured session performance layout.
 "spend_performance_first_token" = "首 token";
 "spend_performance_output" = "整輪輸出";
