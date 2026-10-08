@@ -636,8 +636,6 @@
 "merged_icon_style_stacked" = "مكدّس";
 "merge_icon_stacked_top_provider_title" = "الصف العلوي";
 "merge_icon_stacked_bottom_provider_title" = "الصف السفلي";
-"show_most_used_provider_title" = "عرض المزود الأكثر استخداما";
-"show_most_used_provider_subtitle" = "شريط القوائم يعرض تلقائيا مزود الخدمة الأقرب إلى حد السعر.";
 "display_mode_title" = "وضع العرض";
 "display_mode_subtitle" = "اختر ما تريد عرضه في شريط القائمة (Pace يظهر الاستخدام مقابل المتوقع).";
 "show_quota_warning_markers_title" = "عرض علامات التحذير من الحصص";
@@ -1563,7 +1561,6 @@
 "Independent chat" = "محادثة مستقلة";
 "Independent chats" = "محادثات مستقلة";
 "Chat %d" = "محادثة %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1659,6 +1656,17 @@
 "Unavailable profile: %@" = "ملف التعريف غير متاح: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "قراءة ملف تعريف %@ المحدد فقط. لا يتم اختيار الحسابات تلقائيًا مطلقًا.";
 
+"All accounts" = "All accounts";
+"Refresh all accounts" = "Refresh all accounts";
+"CodexBar follows" = "CodexBar follows";
+"%@ accounts" = "%@ accounts";
+"Refreshes up to %@ accounts at a time." = "Refreshes up to %@ accounts at a time.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Each account has its own limits. Viewing usage does not switch accounts.";
+"Local usage is shared across accounts on this Mac." = "Local usage is shared across accounts on this Mac.";
+
+"Local usage" = "Local usage";
+"Local usage comes from the current Codex profile." = "Local usage comes from the current Codex profile.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "الإنفاق المسجل";
 "Highest recorded spend" = "أعلى إنفاق مسجل";
@@ -1672,3 +1680,10 @@
 "Click a bar to explore. Use the menu below for exact amounts." = "انقر على عمود لاستكشاف البيانات. استخدم القائمة أدناه لعرض المبالغ الدقيقة.";
 
 "update_available_notification_body" = "انقر لفتح إعدادات التحديث وتثبيت الإصدار الجديد.";
+"merged_icon_source_title" = "مصدر الأيقونة المدمجة";
+"merged_icon_source_subtitle" = "اختر المزوّد الذي تعرضه الأيقونة المدمجة عند طيّها.";
+"merged_icon_source_current_selection" = "التحديد الحالي";
+"merged_icon_source_highest_usage" = "أعلى استخدام";
+"merged_icon_source_frontmost_app" = "تطبيق المزوّد في المقدمة";
+/* Provider menu bar color */
+"Color by provider" = "تلوين حسب المزوّد";

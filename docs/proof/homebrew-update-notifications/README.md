@@ -22,6 +22,8 @@ The [validation receipt](validation-receipt.json) records passing code checks, 5
 
 On `54ada0fe3`, the follow-up `make check` passed with zero violations in 2,848 files, and the focused notification plus synchronized cost-row regression selection passed 61 tests in nine suites. The existing maintainer continuation in the PR body also records a complete 144/144-group regression on that revision; that reported run is kept separate from the directly observed local results.
 
+After synchronizing with main at `08eb56931`, the archived native captures and their source-identity report still attest `54ada0fe3`. The notification sender, delegate, updater, app entry, and settings controller are unchanged; main changes only the About pane's Website destination among the six receipt-listed files. Verify these archived receipts against their recorded source revision. Fresh captures should use a newly built bundle and a receipt from that same revision.
+
 ### Captured results
 
 These receipts are partial native evidence from October 8, 2026. Delivery, deduplication, and saved disabled-check behavior are observed; native notification-click proof remains outstanding.

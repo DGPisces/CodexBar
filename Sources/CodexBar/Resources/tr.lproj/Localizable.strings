@@ -636,8 +636,6 @@
 "merged_icon_style_stacked" = "Yığılmış";
 "merge_icon_stacked_top_provider_title" = "Üst satır";
 "merge_icon_stacked_bottom_provider_title" = "Alt satır";
-"show_most_used_provider_title" = "En çok kullanılan sağlayıcıyı göster";
-"show_most_used_provider_subtitle" = "Menü çubuğu, kota sınırına en yakın sağlayıcıyı otomatik olarak gösterir.";
 "display_mode_title" = "Görünüm modu";
 "display_mode_subtitle" = "Menü çubuğunda ne gösterileceğini seçin (Tempo, kullanımı beklentiyle karşılaştırır).";
 "show_quota_warning_markers_title" = "Kota uyarı işaretlerini göster";
@@ -1561,7 +1559,6 @@
 "Independent chat" = "Bağımsız sohbet";
 "Independent chats" = "Bağımsız sohbetler";
 "Chat %d" = "Sohbet %d";
-"Projects" = "Projeler";
 "Plan metered" = "Plan kotasıyla ölçülen";
 "List-price equivalent" = "Liste fiyatı karşılığı";
 "Metered and list-price" = "Ölçümlü ve liste fiyatı";
@@ -1657,6 +1654,17 @@
 "Unavailable profile: %@" = "Profil kullanılamıyor: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Yalnızca seçilen %@ profilini oku. Hesaplar asla otomatik seçilmez.";
 
+"All accounts" = "All accounts";
+"Refresh all accounts" = "Refresh all accounts";
+"CodexBar follows" = "CodexBar follows";
+"%@ accounts" = "%@ accounts";
+"Refreshes up to %@ accounts at a time." = "Refreshes up to %@ accounts at a time.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Each account has its own limits. Viewing usage does not switch accounts.";
+"Local usage is shared across accounts on this Mac." = "Local usage is shared across accounts on this Mac.";
+
+"Local usage" = "Local usage";
+"Local usage comes from the current Codex profile." = "Local usage comes from the current Codex profile.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Kaydedilen harcama";
 "Highest recorded spend" = "En yüksek kaydedilen harcama";
@@ -1670,3 +1678,10 @@
 "Click a bar to explore. Use the menu below for exact amounts." = "Ayrıntılar için bir çubuğa tıklayın. Kesin tutarlar için aşağıdaki menüyü kullanın.";
 
 "update_available_notification_body" = "Güncelleme ayarlarını açmak ve yeni sürümü yüklemek için tıklayın.";
+"merged_icon_source_title" = "Birleşik simge kaynağı";
+"merged_icon_source_subtitle" = "Daraltılmış birleşik simgede gösterilecek sağlayıcıyı seçin.";
+"merged_icon_source_current_selection" = "Geçerli seçim";
+"merged_icon_source_highest_usage" = "En yüksek kullanım";
+"merged_icon_source_frontmost_app" = "Öndeki sağlayıcı uygulaması";
+/* Provider menu bar color */
+"Color by provider" = "Sağlayıcıya göre renk";

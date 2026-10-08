@@ -629,8 +629,6 @@
 "merged_icon_style_stacked" = "Staplad";
 "merge_icon_stacked_top_provider_title" = "Övre raden";
 "merge_icon_stacked_bottom_provider_title" = "Nedre raden";
-"show_most_used_provider_title" = "Visa mest använda leverantör";
-"show_most_used_provider_subtitle" = "Menyraden visar automatiskt leverantören som ligger närmast sin gräns.";
 "display_mode_title" = "Visningsläge";
 "display_mode_subtitle" = "Välj vad som ska visas i menyraden (takt visar användning mot förväntat).";
 "show_quota_warning_markers_title" = "Visa kvotvarningsmarkörer";
@@ -1558,7 +1556,6 @@
 "Independent chat" = "Fristående chatt";
 "Independent chats" = "Fristående chattar";
 "Chat %d" = "Chatt %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1654,6 +1651,17 @@
 "Unavailable profile: %@" = "Profilen är inte tillgänglig: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Läs endast den valda %@-profilen. Konton väljs aldrig automatiskt.";
 
+"All accounts" = "All accounts";
+"Refresh all accounts" = "Refresh all accounts";
+"CodexBar follows" = "CodexBar follows";
+"%@ accounts" = "%@ accounts";
+"Refreshes up to %@ accounts at a time." = "Refreshes up to %@ accounts at a time.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Each account has its own limits. Viewing usage does not switch accounts.";
+"Local usage is shared across accounts on this Mac." = "Local usage is shared across accounts on this Mac.";
+
+"Local usage" = "Local usage";
+"Local usage comes from the current Codex profile." = "Local usage comes from the current Codex profile.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Registrerade utgifter";
 "Highest recorded spend" = "Högsta registrerade utgifter";
@@ -1667,3 +1675,10 @@
 "Click a bar to explore. Use the menu below for exact amounts." = "Klicka på en stapel för detaljer. Menyn nedan visar exakta belopp.";
 
 "update_available_notification_body" = "Klicka för att öppna uppdateringsinställningarna och installera den nya versionen.";
+"merged_icon_source_title" = "Källa för kombinerad ikon";
+"merged_icon_source_subtitle" = "Välj vilken leverantör den hopfällda kombinerade ikonen visar.";
+"merged_icon_source_current_selection" = "Aktuellt val";
+"merged_icon_source_highest_usage" = "Högsta användning";
+"merged_icon_source_frontmost_app" = "Leverantörsapp i förgrunden";
+/* Provider menu bar color */
+"Color by provider" = "Färg per leverantör";

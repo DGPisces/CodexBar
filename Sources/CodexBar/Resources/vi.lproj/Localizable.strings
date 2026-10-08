@@ -626,8 +626,6 @@
 "merged_icon_style_stacked" = "Xếp chồng";
 "merge_icon_stacked_top_provider_title" = "Dòng trên";
 "merge_icon_stacked_bottom_provider_title" = "Dòng dưới";
-"show_most_used_provider_title" = "Hiển thị Nhà cung cấp";
-"show_most_used_provider_subtitle" = "thanh menu được sử dụng nhiều nhất tự động hiển thị Nhà cung cấp gần nhất với giới hạn tốc độ của nó.";
 "display_mode_title" = "Chế độ hiển thị";
 "display_mode_subtitle" = "Chọn nội dung sẽ hiển thị trong thanh menu (Tốc độ hiển thị Mức sử dụng so với dự kiến).";
 "show_quota_warning_markers_title" = "Hiển thị Hạn mức dấu cảnh báo";
@@ -1560,7 +1558,6 @@
 "Independent chat" = "Cuộc trò chuyện độc lập";
 "Independent chats" = "Các cuộc trò chuyện độc lập";
 "Chat %d" = "Cuộc trò chuyện %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1656,6 +1653,17 @@
 "Unavailable profile: %@" = "Hồ sơ không khả dụng: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Chỉ đọc hồ sơ %@ đã chọn. Tài khoản không bao giờ được chọn tự động.";
 
+"All accounts" = "All accounts";
+"Refresh all accounts" = "Refresh all accounts";
+"CodexBar follows" = "CodexBar follows";
+"%@ accounts" = "%@ accounts";
+"Refreshes up to %@ accounts at a time." = "Refreshes up to %@ accounts at a time.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Each account has its own limits. Viewing usage does not switch accounts.";
+"Local usage is shared across accounts on this Mac." = "Local usage is shared across accounts on this Mac.";
+
+"Local usage" = "Local usage";
+"Local usage comes from the current Codex profile." = "Local usage comes from the current Codex profile.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Chi tiêu đã ghi nhận";
 "Highest recorded spend" = "Chi tiêu đã ghi nhận cao nhất";
@@ -1669,3 +1677,10 @@
 "Click a bar to explore. Use the menu below for exact amounts." = "Nhấp vào cột để khám phá. Dùng menu bên dưới để xem số tiền chính xác.";
 
 "update_available_notification_body" = "Nhấp để mở cài đặt cập nhật và cài đặt phiên bản mới.";
+"merged_icon_source_title" = "Nguồn biểu tượng kết hợp";
+"merged_icon_source_subtitle" = "Chọn nhà cung cấp hiển thị trên biểu tượng kết hợp khi thu gọn.";
+"merged_icon_source_current_selection" = "Lựa chọn hiện tại";
+"merged_icon_source_highest_usage" = "Mức sử dụng cao nhất";
+"merged_icon_source_frontmost_app" = "Ứng dụng nhà cung cấp ở phía trước";
+/* Provider menu bar color */
+"Color by provider" = "Màu theo nhà cung cấp";
