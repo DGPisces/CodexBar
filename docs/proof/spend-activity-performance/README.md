@@ -5,6 +5,10 @@ Captured on 2026-10-08 from a freshly built macOS settings bundle using the prod
 This is a running full settings window, not an isolated heatmap or copied helper benchmark.
 No video was recorded. The artifacts contain only synthetic data, relative source paths, and aggregate counters.
 
+The 2026-10-08 synchronization with main (`f8b75cf2a`) preserves the heatmap and app entry source byte for byte;
+the committed verifier still passes. It also imports upstream provider and spend-trend changes. This capture
+documents the pinned build above; it does not claim runtime validation of those newer upstream changes.
+
 The route is `SettingsWindowController` → `PreferencesView` → `SpendDashboardPane` →
 `UsageStore.sharedSpendDashboardController` → `SpendActivityHeatmapView`. The fixture reuses the repository's
 existing full-settings launcher with four synthetic sources and explicit annual token-history coverage.
