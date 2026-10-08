@@ -5,6 +5,7 @@
 ### Added
 
 - Homebrew updates: notify once when automatic checks find a newer tap version, remember submitted notices across restarts, and open Settings → About when the notification is clicked (#4327). Thanks @Yuxin-Qiao!
+- Usage & Spend: show native Codex session turn throughput, first-token latency, and duration with optional performance details, while preserving cost ranks and billing totals (#4304). Thanks @Yuxin-Qiao!
 - Codex: show saved accounts with their own cached usage, errors, and privacy labels in settings, with individual or all-account refresh controls that preserve the followed and System accounts (#4310). Thanks @Yuxin-Qiao!
 - Omarchy: offer optional session, weekly, and pace labels, per-model caps, and a provider-count preference while preserving the compact two-provider default (#3794). Thanks @jsonMartin!
 - Menu bar: optionally follow the frontmost Codex, Claude, Cursor, or Antigravity app in the collapsed merged icon, preserving menu and account selection (#3961, #780). Thanks @gamithasam and @matthewlloyd!
@@ -18,6 +19,7 @@
 
 ### Fixed
 
+- Usage & Spend: reduce annual token activity update work by reusing calendar dates, coverage, and localized date formatters without changing chart output (#4328). Thanks @Yuxin-Qiao!
 - Notion AI: recover usage for a configured workspace when large workspace/member lists exceed the plugin response limit, and explain how to configure a workspace when needed (#4341). Thanks @optemism!
 - Codex: ignore commented-out usage endpoint overrides, so disabled proxies cannot shadow active configuration or the default endpoint (#4330). Thanks @lishouxian!
 - Usage & Spend: keep date inspection inside recorded chart buckets, wrap scoped source legends, and retain recorded zero-dollar sources and amounts (#4329). Thanks @Yuxin-Qiao!

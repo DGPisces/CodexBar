@@ -1683,6 +1683,18 @@
 "Unavailable profile: %@" = "無法使用的設定檔：%@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "僅讀取所選的 %@ 設定檔。絕不會自動選擇帳號。";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "整輪輸出包含推理、工具執行和等待時間，不能代表模型生成速度。首 token 是第一枚模型 token 的延遲中位數，可能屬於推理。僅統計成功且計時完整的輪次。 每輪耗時是完整輪次耗時的中位數。";
+"First-token samples: %@ / %@" = "首 token 樣本：%@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Performance details";
+"Observed turns; workload and tools affect these results." = "Observed turns; workload and tools affect these results.";
+"By model and reasoning effort" = "By model and reasoning effort";
+"Unknown model" = "Unknown model";
+"Unknown reasoning effort" = "Unknown reasoning effort";
+"Model first token may be reasoning, before visible answer text." = "Model first token may be reasoning, before visible answer text.";
+"Speed range needs 4 completed turns." = "Speed range needs 4 completed turns.";
 "All accounts" = "All accounts";
 "Refresh all accounts" = "Refresh all accounts";
 "CodexBar follows" = "CodexBar follows";
@@ -1690,7 +1702,6 @@
 "Refreshes up to %@ accounts at a time." = "Refreshes up to %@ accounts at a time.";
 "Each account has its own limits. Viewing usage does not switch accounts." = "Each account has its own limits. Viewing usage does not switch accounts.";
 "Local usage is shared across accounts on this Mac." = "Local usage is shared across accounts on this Mac.";
-
 "Local usage" = "Local usage";
 "Local usage comes from the current Codex profile." = "Local usage comes from the current Codex profile.";
 
@@ -1707,6 +1718,27 @@
 "Click a bar to explore. Use the menu below for exact amounts." = "點擊長條逐層查看，下方選單可查詢詳細金額。";
 
 "update_available_notification_body" = "點擊開啟更新設定並安裝新版本。";
+// Structured session performance layout.
+"spend_performance_first_token" = "First token";
+"spend_performance_output" = "Turn output";
+"spend_performance_duration" = "Turn duration";
+"spend_performance_turn_count" = "%@ timed turns";
+"spend_performance_turns" = "Turns";
+"spend_performance_model_effort" = "Model / effort";
+"spend_performance_p95_first_token" = "P95 first token";
+"spend_performance_p95_duration" = "P95 turn duration";
+"spend_performance_speed_range" = "Turn speed range";
+"spend_performance_cached_input" = "Cached input";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 samples · insufficient";
+"spend_performance_coverage" = "%@ / %@ turns with cache data";
+"spend_performance_p95_help" = "95% of observed turns were at or below this value. At least 20 valid samples are required for each metric.";
+"spend_performance_speed_range_help" = "Middle 50% of per-turn output rates (P25–P75). Tasks, reasoning, tools and waits affect this range.";
+"spend_performance_cache_help" = "Cached input divided by total input across eligible turns. Weighted by input tokens, with sample coverage shown.";
+"spend_performance_metric_help" = "About these observations";
 "merged_icon_source_title" = "合併圖示來源";
 "merged_icon_source_subtitle" = "選擇摺疊後的合併圖示顯示哪個服務提供者。";
 "merged_icon_source_current_selection" = "目前選取";

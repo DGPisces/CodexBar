@@ -1655,6 +1655,18 @@
 "Unavailable profile: %@" = "Perfil no disponible: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Llegeix només el perfil de %@ seleccionat. Els comptes no se seleccionen mai automàticament.";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "Turn output includes reasoning, tools and waits. It is not model generation speed. First token is the median time to the first model token, which may be reasoning. Only complete, successfully timed turns are included. Turn duration is the median elapsed time of complete turns.";
+"First-token samples: %@ / %@" = "First-token samples: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Performance details";
+"Observed turns; workload and tools affect these results." = "Observed turns; workload and tools affect these results.";
+"By model and reasoning effort" = "By model and reasoning effort";
+"Unknown model" = "Unknown model";
+"Unknown reasoning effort" = "Unknown reasoning effort";
+"Model first token may be reasoning, before visible answer text." = "Model first token may be reasoning, before visible answer text.";
+"Speed range needs 4 completed turns." = "Speed range needs 4 completed turns.";
 "All accounts" = "All accounts";
 "Refresh all accounts" = "Refresh all accounts";
 "CodexBar follows" = "CodexBar follows";
@@ -1662,7 +1674,6 @@
 "Refreshes up to %@ accounts at a time." = "Refreshes up to %@ accounts at a time.";
 "Each account has its own limits. Viewing usage does not switch accounts." = "Each account has its own limits. Viewing usage does not switch accounts.";
 "Local usage is shared across accounts on this Mac." = "Local usage is shared across accounts on this Mac.";
-
 "Local usage" = "Local usage";
 "Local usage comes from the current Codex profile." = "Local usage comes from the current Codex profile.";
 
@@ -1679,6 +1690,27 @@
 "Click a bar to explore. Use the menu below for exact amounts." = "Fes clic en una barra per explorar. Consulta els imports exactes al menú inferior.";
 
 "update_available_notification_body" = "Fes clic per obrir la configuració d’actualització i instal·lar la versió nova.";
+// Structured session performance layout.
+"spend_performance_first_token" = "First token";
+"spend_performance_output" = "Turn output";
+"spend_performance_duration" = "Turn duration";
+"spend_performance_turn_count" = "%@ timed turns";
+"spend_performance_turns" = "Turns";
+"spend_performance_model_effort" = "Model / effort";
+"spend_performance_p95_first_token" = "P95 first token";
+"spend_performance_p95_duration" = "P95 turn duration";
+"spend_performance_speed_range" = "Turn speed range";
+"spend_performance_cached_input" = "Cached input";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 samples · insufficient";
+"spend_performance_coverage" = "%@ / %@ turns with cache data";
+"spend_performance_p95_help" = "95% of observed turns were at or below this value. At least 20 valid samples are required for each metric.";
+"spend_performance_speed_range_help" = "Middle 50% of per-turn output rates (P25–P75). Tasks, reasoning, tools and waits affect this range.";
+"spend_performance_cache_help" = "Cached input divided by total input across eligible turns. Weighted by input tokens, with sample coverage shown.";
+"spend_performance_metric_help" = "About these observations";
 "merged_icon_source_title" = "Origen de la icona combinada";
 "merged_icon_source_subtitle" = "Trieu quin proveïdor mostra la icona combinada quan està plegada.";
 "merged_icon_source_current_selection" = "Selecció actual";
