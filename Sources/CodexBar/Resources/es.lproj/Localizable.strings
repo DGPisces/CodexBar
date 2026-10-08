@@ -617,8 +617,6 @@
 "merged_icon_style_stacked" = "Apilado";
 "merge_icon_stacked_top_provider_title" = "Fila superior";
 "merge_icon_stacked_bottom_provider_title" = "Fila inferior";
-"show_most_used_provider_title" = "Mostrar el proveedor más usado";
-"show_most_used_provider_subtitle" = "La barra de menús muestra automáticamente el proveedor más cercano a su límite.";
 "display_mode_title" = "Modo de visualización";
 "display_mode_subtitle" = "Elige qué mostrar en la barra de menús (Ritmo muestra el uso frente al previsto).";
 "show_quota_warning_markers_title" = "Mostrar marcadores de aviso de cuota";
@@ -1558,7 +1556,6 @@
 "Independent chat" = "Chat independiente";
 "Independent chats" = "Chats independientes";
 "Chat %d" = "Chat %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1653,6 +1650,17 @@
 "Unavailable profile: %@" = "Perfil no disponible: %@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Leer solo el perfil de %@ seleccionado. Las cuentas nunca se seleccionan automáticamente.";
 
+"All accounts" = "All accounts";
+"Refresh all accounts" = "Refresh all accounts";
+"CodexBar follows" = "CodexBar follows";
+"%@ accounts" = "%@ accounts";
+"Refreshes up to %@ accounts at a time." = "Refreshes up to %@ accounts at a time.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Each account has its own limits. Viewing usage does not switch accounts.";
+"Local usage is shared across accounts on this Mac." = "Local usage is shared across accounts on this Mac.";
+
+"Local usage" = "Local usage";
+"Local usage comes from the current Codex profile." = "Local usage comes from the current Codex profile.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Gasto registrado";
 "Highest recorded spend" = "Mayor gasto registrado";
@@ -1664,3 +1672,10 @@
 "Models for this day" = "Modelos de este día";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Haz clic en una barra para explorar. Consulta los importes exactos en el menú inferior.";
+"merged_icon_source_title" = "Origen del icono combinado";
+"merged_icon_source_subtitle" = "Elige qué proveedor muestra el icono combinado cuando está contraído.";
+"merged_icon_source_current_selection" = "Selección actual";
+"merged_icon_source_highest_usage" = "Mayor uso";
+"merged_icon_source_frontmost_app" = "Aplicación del proveedor en primer plano";
+/* Provider menu bar color */
+"Color by provider" = "Color por proveedor";
