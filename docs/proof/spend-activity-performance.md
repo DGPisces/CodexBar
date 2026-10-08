@@ -50,7 +50,11 @@ use the cached series. The 40 model/appearance/formatting tests also passed, inc
 five calendars, three zones, concurrent formatters and midnight DST normalization.
 
 These production-component captures use synthetic data and do not replace the installed application.
-No packaged-app interaction or ProMotion frame-rate claim is made.
+The additional [full settings runtime diagnostics](spend-activity-performance/README.md) exercise a freshly
+built settings bundle at `f7a9968e3c4ebf8e958ebb86627f4b2ff10287fe` through scrolling, date inspection,
+mode changes, day selection, refresh and time-zone changes. They include the diagnostic call-site patch,
+source/executable hashes, a native action transcript and machine-verifiable runtime counters. No video
+was recorded; no ProMotion frame-rate claim is made.
 
 Before:
 
