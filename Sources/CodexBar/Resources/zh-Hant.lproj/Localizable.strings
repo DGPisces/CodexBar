@@ -1717,6 +1717,7 @@
 
 "Click a bar to explore. Use the menu below for exact amounts." = "點擊長條逐層查看，下方選單可查詢詳細金額。";
 
+"update_available_notification_body" = "點擊開啟更新設定並安裝新版本。";
 // Structured session performance layout.
 "spend_performance_first_token" = "First token";
 "spend_performance_output" = "Turn output";

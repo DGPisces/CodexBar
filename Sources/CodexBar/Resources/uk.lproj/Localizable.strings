@@ -1686,6 +1686,7 @@
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Натисніть на стовпчик для перегляду деталей. Точні суми доступні в меню нижче.";
 
+"update_available_notification_body" = "Натисніть, щоб відкрити налаштування оновлення та встановити нову версію.";
 // Structured session performance layout.
 "spend_performance_first_token" = "First token";
 "spend_performance_output" = "Turn output";

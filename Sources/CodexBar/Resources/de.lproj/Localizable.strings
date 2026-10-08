@@ -1686,6 +1686,7 @@
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Klicke auf einen Balken für Details. Das Menü unten zeigt genaue Beträge.";
 
+"update_available_notification_body" = "Klicken Sie, um die Update-Einstellungen zu öffnen und die neue Version zu installieren.";
 // Structured session performance layout.
 "spend_performance_first_token" = "First token";
 "spend_performance_output" = "Turn output";

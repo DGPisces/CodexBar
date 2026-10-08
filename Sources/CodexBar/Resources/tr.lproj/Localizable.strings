@@ -1688,6 +1688,7 @@
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Ayrıntılar için bir çubuğa tıklayın. Kesin tutarlar için aşağıdaki menüyü kullanın.";
 
+"update_available_notification_body" = "Güncelleme ayarlarını açmak ve yeni sürümü yüklemek için tıklayın.";
 // Structured session performance layout.
 "spend_performance_first_token" = "First token";
 "spend_performance_output" = "Turn output";

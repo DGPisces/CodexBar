@@ -1689,6 +1689,7 @@
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Click a bar to explore. Use the menu below for exact amounts.";
 
+"update_available_notification_body" = "Click to open update settings and install the new version.";
 // Structured session performance layout.
 "spend_performance_first_token" = "First token";
 "spend_performance_output" = "Turn output";

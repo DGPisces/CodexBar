@@ -1689,6 +1689,7 @@
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Fes clic en una barra per explorar. Consulta els imports exactes al menú inferior.";
 
+"update_available_notification_body" = "Fes clic per obrir la configuració d’actualització i instal·lar la versió nova.";
 // Structured session performance layout.
 "spend_performance_first_token" = "First token";
 "spend_performance_output" = "Turn output";

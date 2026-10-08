@@ -1700,6 +1700,7 @@
 
 "Click a bar to explore. Use the menu below for exact amounts." = "点击柱形逐层查看，下方菜单可查询具体金额。";
 
+"update_available_notification_body" = "点击打开更新设置并安装新版本。";
 // Structured session performance layout.
 "spend_performance_first_token" = "首 token";
 "spend_performance_output" = "整轮速度";

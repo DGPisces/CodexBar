@@ -1687,6 +1687,7 @@
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Нажмите на столбец для просмотра деталей. Точные суммы доступны в меню ниже.";
 
+"update_available_notification_body" = "Нажмите, чтобы открыть настройки обновления и установить новую версию.";
 // Structured session performance layout.
 "spend_performance_first_token" = "First token";
 "spend_performance_output" = "Turn output";

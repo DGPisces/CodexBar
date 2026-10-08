@@ -4,6 +4,7 @@
 
 ### Added
 
+- Homebrew updates: notify once when automatic checks find a newer tap version, remember submitted notices across restarts, and open Settings → About when the notification is clicked (#4327). Thanks @Yuxin-Qiao!
 - Usage & Spend: show native Codex session turn throughput, first-token latency, and duration with optional performance details, while preserving cost ranks and billing totals (#4304). Thanks @Yuxin-Qiao!
 - Codex: show saved accounts with their own cached usage, errors, and privacy labels in settings, with individual or all-account refresh controls that preserve the followed and System accounts (#4310). Thanks @Yuxin-Qiao!
 - Omarchy: offer optional session, weekly, and pace labels, per-model caps, and a provider-count preference while preserving the compact two-provider default (#3794). Thanks @jsonMartin!

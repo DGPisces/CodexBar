@@ -1690,6 +1690,7 @@
 
 "Click a bar to explore. Use the menu below for exact amounts." = "انقر على عمود لاستكشاف البيانات. استخدم القائمة أدناه لعرض المبالغ الدقيقة.";
 
+"update_available_notification_body" = "انقر لفتح إعدادات التحديث وتثبيت الإصدار الجديد.";
 // Structured session performance layout.
 "spend_performance_first_token" = "First token";
 "spend_performance_output" = "Turn output";

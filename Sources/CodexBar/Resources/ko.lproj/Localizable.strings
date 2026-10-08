@@ -1655,6 +1655,7 @@
 
 "Click a bar to explore. Use the menu below for exact amounts." = "막대를 클릭해 자세히 살펴보세요. 아래 메뉴에서 정확한 금액을 확인할 수 있습니다.";
 
+"update_available_notification_body" = "클릭하여 업데이트 설정을 열고 새 버전을 설치하세요.";
 // Structured session performance layout.
 "spend_performance_first_token" = "First token";
 "spend_performance_output" = "Turn output";

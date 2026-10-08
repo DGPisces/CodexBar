@@ -1689,6 +1689,7 @@
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Klik batang untuk menelusuri. Gunakan menu di bawah untuk melihat jumlah tepat.";
 
+"update_available_notification_body" = "Klik untuk membuka pengaturan pembaruan dan menginstal versi baru.";
 // Structured session performance layout.
 "spend_performance_first_token" = "First token";
 "spend_performance_output" = "Turn output";
