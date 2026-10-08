@@ -123,7 +123,7 @@ Transport is **plain HTTP**. There is no TLS in `codexbar serve`, which means:
 
 - The bearer token crosses the network **in cleartext on every request**. Anyone who can observe the path (same Wi-Fi, ARP spoofing, a compromised switch, your ISP on a routed path) can capture the token and replay it until the server restarts with a new one.
 - The response bodies — plan labels, usage percentages, cost figures, and account emails — cross the network in cleartext too. On non-loopback binds, pass `--identity redacted` to hide email local parts unless clients need full identity. Pin the flag rather than relying on the app's privacy setting, which a later GUI change can flip back.
-- Because non-loopback binds gate `/usage`, `/cost`, and `/dashboard/v1/snapshot` behind the same token, a passive observer sees your account data but an active client without the token gets `401` on every data route. Only the account-free static UI at `/` and `/health` are unauthenticated off-loopback.
+- Because non-loopback binds gate `/accounts`, `/accounts/<id>`, `/usage`, `/cost`, and `/dashboard/v1/snapshot` behind the same token, a passive observer sees your account data but an active client without the token gets `401` on every data route. Only the account-free static UI at `/` and `/health` are unauthenticated off-loopback.
 
 Deployments, from safest to least safe:
 
@@ -164,6 +164,49 @@ Content-Type: application/json; charset=utf-8
 
 {"error":"unauthorized"}
 ```
+
+## Account discovery
+
+`GET /accounts` returns a separate, metadata-only inventory. It includes configured provider token
+accounts and saved managed Codex accounts, including disabled providers. It does not enumerate system
+auth, profile homes, or external account integrations. `GET /accounts/<id>` returns exactly one list
+entry. IDs are stable opaque strings scoped to their source and provider; clients must URL-encode
+them and must not parse their format.
+
+```json
+{
+  "schemaVersion": 1,
+  "accounts": [
+    {
+      "id": "<opaque-id>",
+      "provider": "codex",
+      "source": "codex-managed",
+      "label": "Example Workspace",
+      "active": true,
+      "identity": { "accountEmail": "user@example.com" }
+    }
+  ]
+}
+```
+
+`source` is `codex-managed` or `token-account`. Token accounts omit `identity`; managed Codex accounts
+can include `identity.accountEmail`. `active` reflects the configured selection within that provider
+and source, not credential validity, provider enablement, or the system Codex account.
+An empty inventory returns `accounts: []`; an unknown ID returns `404` with
+`{"error":"account not found"}`. Unreadable or unsupported stores return a generic `500` error
+without exposing paths or silently returning an incomplete inventory.
+
+These endpoints share the non-loopback bearer gate used by `/usage` and `/cost`; authorization runs
+before storage is read. All account responses, including errors, carry `Cache-Control: no-store`.
+Each request reads current config and managed-account metadata without collecting usage, accessing
+managed credential files, migrating storage, or changing selections. Tokens, cookies, private paths,
+credential fingerprints, and provider-internal account/workspace identifiers are excluded.
+
+The existing `--identity full|redacted` setting applies. With no flag, `serve` follows the app's
+**Hide personal information** setting per request. Redacted discovery replaces all arbitrary labels
+with generic account placeholders and email local parts with `redacted`, retaining email domains.
+IDs stay the same in both modes. This inventory is separate from dashboard account rows, which may
+also include saved usage and adapter errors.
 
 ## Serve semantics
 

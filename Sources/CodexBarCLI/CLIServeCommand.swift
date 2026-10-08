@@ -41,8 +41,8 @@ struct ServeOptions: CommanderParsable {
 
     @Option(
         name: .long("identity"),
-        help: "Dashboard identity detail: full or redacted. Expanded accounts are private by default; " +
-            "ordinary snapshots follow the app privacy setting.")
+        help: "Account identity detail: full or redacted. Expanded snapshots are private by default; " +
+            "ordinary snapshots and account discovery follow the app privacy setting.")
     var identity: String?
 }
 
@@ -50,6 +50,7 @@ enum CLIServeRoute: Equatable {
     case webUI
     case providerIcon(name: String)
     case health
+    case accounts(id: String?)
     case usage(provider: String?)
     case cost(provider: String?)
     case dashboardSnapshot(provider: String?, detail: String?)
@@ -78,6 +79,12 @@ enum CLIServeRouter {
             return .providerIcon(name: String(path.dropFirst("/icons/".count).dropLast(".svg".count)))
         case "/health":
             return .health
+        case "/accounts":
+            return .accounts(id: nil)
+        case let path where path.hasPrefix("/accounts/"):
+            let id = String(path.dropFirst("/accounts/".count))
+            guard !id.isEmpty, !id.contains("/") else { throw CLIServeRouteError.notFound }
+            return .accounts(id: id)
         case "/usage":
             return .usage(provider: normalizedProvider)
         case "/cost":
@@ -133,7 +140,7 @@ struct ServeRuntime {
     /// parts from authorized dashboard clients and ignores the app setting.
     let dashboardIdentityMode: DashboardIdentityMode?
     let dashboardAllAccounts: Bool
-    /// True for non-loopback binds: every data route (`/usage`, `/cost`,
+    /// True for non-loopback binds: every data route (`/accounts`, `/usage`, `/cost`,
     /// `/dashboard/v1/snapshot`) then requires the bearer token, so account data
     /// is never exposed to the network unauthenticated. `/` and `/health` stay open.
     /// Resolved once at startup from the bind host.
@@ -883,6 +890,8 @@ extension CodexBarCLI {
             startedAt: startedAt,
             requestTimeout: runtime.requestTimeout)
         let route: CLIServeRoute
+        let noStore = request.path == "/accounts" || request.path.hasPrefix("/accounts/") ||
+            request.path.hasPrefix("/dashboard/v1/")
         do {
             route = try CLIServeRouter.route(
                 method: request.method,
@@ -890,10 +899,10 @@ extension CodexBarCLI {
                 queryItems: request.queryItems)
         } catch CLIServeRouteError.methodNotAllowed {
             let response = Self.serveError(status: .methodNotAllowed, message: "method not allowed")
-            return request.path.hasPrefix("/dashboard/v1/") ? Self.addingNoStore(response) : response
+            return noStore ? Self.addingNoStore(response) : response
         } catch {
             let response = Self.serveError(status: .notFound, message: "not found")
-            return request.path.hasPrefix("/dashboard/v1/") ? Self.addingNoStore(response) : response
+            return noStore ? Self.addingNoStore(response) : response
         }
 
         switch route {
@@ -904,6 +913,8 @@ extension CodexBarCLI {
                 ?? Self.serveError(status: .notFound, message: "not found")
         case .health:
             return Self.serveHealthResponse(version: runtime.healthVersion)
+        case let .accounts(id):
+            return Self.serveAccountsRoute(request, id: id, runtime: runtime)
         case let .usage(provider):
             // On non-loopback binds every data route requires the bearer token,
             // checked before any cache access so unauthenticated requests can
@@ -1625,7 +1636,7 @@ extension CodexBarCLI {
         self.serveJSON(ServeHealthPayload(status: "ok", version: version))
     }
 
-    /// The data routes (`/usage`, `/cost`, `/dashboard/v1/snapshot`) carry account
+    /// The data routes (`/accounts`, `/usage`, `/cost`, `/dashboard/v1/snapshot`) carry account
     /// data; keep every response on them out of shared HTTP caches. Idempotent:
     /// responses that already declare a Cache-Control policy (e.g. 401s) pass
     /// through unchanged.
@@ -1653,7 +1664,7 @@ extension CodexBarCLI {
             ])
     }
 
-    private static func serveJSON(
+    static func serveJSON(
         _ payload: some Encodable,
         status: CLIHTTPStatus = .ok,
         extraHeaders: [(String, String)] = [],
@@ -1667,7 +1678,7 @@ extension CodexBarCLI {
             usageCacheKeys: usageCacheKeys)
     }
 
-    private static func serveError(status: CLIHTTPStatus, message: String) -> CLILocalHTTPResponse {
+    static func serveError(status: CLIHTTPStatus, message: String) -> CLILocalHTTPResponse {
         self.serveJSON(ServeErrorPayload(error: message), status: status)
     }
 }

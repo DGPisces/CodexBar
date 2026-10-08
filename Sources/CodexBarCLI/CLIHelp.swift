@@ -242,19 +242,25 @@ extension CodexBarCLI {
           Transport is plain HTTP: the token crosses the network in cleartext on every
           request. A non-loopback --host therefore requires both a dashboard token and
           --allow-plain-http, which records that you accept that trade-off. On a
-          non-loopback host the token also gates /usage and /cost (account data);
+          non-loopback host the token also gates /accounts, /usage, and /cost (account data);
           / and /health are always open. Use a TLS-terminating reverse proxy for anything
           beyond a trusted network segment.
-          Ordinary snapshot identity follows the app privacy setting unless --identity is set.
+          Ordinary snapshots and /accounts discovery follow the app's Hide personal information
+          setting unless --identity is set. Redacted discovery hides arbitrary labels and email local parts.
           --all-accounts includes visible Codex profiles and configured token accounts
           in dashboard snapshots only, with neutral labels and no identity by default.
           --identity full explicitly includes account identities, labels and error details;
           --identity redacted keeps email domains but hides labels and error details.
           /usage keeps its existing Codex enumeration.
 
+          Account IDs are stable opaque identifiers; clients must not parse their internal format.
+          Account discovery reads metadata only and never returns credentials or refreshes usage.
+
         Endpoints:
           GET /                    Built-in web dashboard
           GET /health
+          GET /accounts             Discover CodexBar-managed accounts
+          GET /accounts/<id>        Fetch one account by opaque ID
           GET /usage
           GET /usage?provider=claude
           GET /usage?provider=all
@@ -268,6 +274,7 @@ extension CodexBarCLI {
           CODEXBAR_DASHBOARD_TOKEN=YOUR_TOKEN codexbar serve
           CODEXBAR_DASHBOARD_TOKEN=... codexbar serve --host 0.0.0.0 --allow-plain-http
           curl http://127.0.0.1:8080/usage?provider=all
+          curl http://127.0.0.1:8080/accounts
           curl -H "Authorization: Bearer $CODEXBAR_DASHBOARD_TOKEN" \\
             http://127.0.0.1:8080/dashboard/v1/snapshot
         """
