@@ -313,6 +313,11 @@ extension SettingsStore {
         set { self.setDefault(\.menuBarColorPace, newValue, key: "menuBarColorPace") }
     }
 
+    var menuBarColorByProvider: Bool {
+        get { self.defaultsState.menuBarColorByProvider }
+        set { self.setDefault(\.menuBarColorByProvider, newValue, key: "menuBarColorByProvider") }
+    }
+
     var menuBarHighContrastOnInactiveDisplays: Bool {
         get { self.defaultsState.menuBarHighContrastOnInactiveDisplays }
         set { self.setDefault(
