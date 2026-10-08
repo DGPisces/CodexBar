@@ -135,9 +135,9 @@ struct CLIServeRouterTests {
         #expect(
             try CLIServeRouter.route(
                 method: "GET",
-                path: "/accounts/token-account:aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                path: "/accounts/token-account:claude:aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
                 queryItems: [:]) ==
-                .accounts(id: "token-account:aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"))
+                .accounts(id: "token-account:claude:aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"))
         #expect(try CLIServeRouter.route(method: "GET", path: "/usage", queryItems: [:]) == .usage(provider: nil))
         #expect(
             try CLIServeRouter.route(

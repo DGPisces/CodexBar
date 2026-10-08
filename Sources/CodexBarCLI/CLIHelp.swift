@@ -245,7 +245,8 @@ extension CodexBarCLI {
           non-loopback host the token also gates /accounts, /usage, and /cost (account data);
           / and /health are always open. Use a TLS-terminating reverse proxy for anything
           beyond a trusted network segment.
-          Account identity defaults to full account emails. --identity redacted hides
+          Account identity follows the app's Hide personal information setting unless pinned.
+          --identity full includes account emails. --identity redacted hides arbitrary discovery labels and
           email local parts and is recommended whenever responses cross a network.
 
           Account IDs are stable opaque identifiers; clients must not parse their internal format.

@@ -23,6 +23,8 @@ enum CLIServeAccountDiscovery {
     private static let schemaVersion = 1
     private static let managedCodexSource = "codex-managed"
     private static let tokenAccountSource = "token-account"
+    /// Provider-specific by design: only Codex has a managed-home metadata store.
+    private static let managedCodexProvider = UsageProvider.codex
 
     static func makePayload(
         config: CodexBarConfig,
@@ -48,11 +50,11 @@ enum CLIServeAccountDiscovery {
     {
         if let requestedID {
             guard let account = payload.accounts.first(where: { $0.id == requestedID }) else {
-                return self.errorResponse(status: .notFound, message: "account not found")
+                return CodexBarCLI.serveError(status: .notFound, message: "account not found")
             }
-            return self.jsonResponse(account)
+            return CodexBarCLI.serveJSON(account)
         }
-        return self.jsonResponse(payload)
+        return CodexBarCLI.serveJSON(payload)
     }
 
     private static func tokenAccounts(
@@ -67,7 +69,7 @@ enum CLIServeAccountDiscovery {
                     source: self.tokenAccountSource,
                     opaqueID: account.id.uuidString.lowercased())
                 return CLIServeAccountPayload(
-                    id: self.wireID(identity),
+                    id: "\(identity.source):\(providerConfig.id.rawValue):\(identity.opaqueID)",
                     provider: providerConfig.id.rawValue,
                     source: identity.source,
                     label: self.presentedLabel(account.label, accountID: identity.opaqueID, mode: identityMode),
@@ -83,25 +85,22 @@ enum CLIServeAccountDiscovery {
         accounts: [ManagedCodexAccount],
         identityMode: DashboardIdentityMode) -> [CLIServeAccountPayload]
     {
-        let activeSource = config.providerConfig(for: UsageProvider.codex.instanceID)?.codexActiveSource ?? .liveSystem
+        let activeSource = config.providerConfig(for: self.managedCodexProvider.instanceID)?
+            .codexActiveSource ?? .liveSystem
         return accounts.map { account in
             let identity = ProviderAccountIdentity(
                 source: self.managedCodexSource,
                 opaqueID: account.id.uuidString.lowercased())
-            let email = self.presentedEmail(account.email, mode: identityMode)
+            let email = DashboardSnapshotBuilder.dashboardEmail(account.email, mode: identityMode)
             let rawLabel = account.workspaceLabel ?? account.email
             return CLIServeAccountPayload(
-                id: self.wireID(identity),
-                provider: UsageProvider.codex.rawValue,
+                id: "\(identity.source):\(identity.opaqueID)",
+                provider: self.managedCodexProvider.rawValue,
                 source: identity.source,
                 label: self.presentedLabel(rawLabel, accountID: identity.opaqueID, mode: identityMode),
                 active: activeSource == .managedAccount(id: account.id),
                 identity: identityMode == .none ? nil : CLIServeAccountIdentityPayload(accountEmail: email))
         }
-    }
-
-    private static func wireID(_ identity: ProviderAccountIdentity) -> String {
-        "\(identity.source):\(identity.opaqueID)"
     }
 
     private static func presentedLabel(
@@ -117,40 +116,6 @@ enum CLIServeAccountDiscovery {
         guard mode != .none else { return label.contains("@") ? "Account \(accountID)" : label }
         return label
     }
-
-    private static func presentedEmail(_ raw: String?, mode: DashboardIdentityMode) -> String? {
-        guard mode != .none,
-              let email = raw?.trimmingCharacters(in: .whitespacesAndNewlines),
-              !email.isEmpty
-        else {
-            return nil
-        }
-        guard mode == .redacted else { return email }
-        guard let at = email.lastIndex(of: "@"), at != email.startIndex else { return "redacted" }
-        let domain = email[at...]
-        guard !domain.dropFirst().isEmpty else { return "redacted" }
-        return "redacted\(domain)"
-    }
-
-    private static func jsonResponse(_ value: some Encodable) -> CLILocalHTTPResponse {
-        do {
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = [.sortedKeys]
-            return try CLILocalHTTPResponse(status: .ok, body: encoder.encode(value))
-        } catch {
-            return self.errorResponse(status: .internalServerError, message: "could not encode accounts")
-        }
-    }
-
-    static func errorResponse(status: CLIHTTPStatus, message: String) -> CLILocalHTTPResponse {
-        let body = (try? JSONEncoder().encode(CLIServeAccountErrorPayload(error: message)))
-            ?? Data(#"{"error":"account request failed"}"#.utf8)
-        return CLILocalHTTPResponse(status: status, body: body)
-    }
-}
-
-private struct CLIServeAccountErrorPayload: Encodable {
-    let error: String
 }
 
 extension CodexBarCLI {
@@ -165,10 +130,10 @@ extension CodexBarCLI {
         let config: CodexBarConfig
         let managedAccounts: [ManagedCodexAccount]
         do {
-            config = try self.loadServeConfigSnapshot(configStore: runtime.configStore).config
+            config = try runtime.configStore.load() ?? CodexBarConfig.makeDefault()
             managedAccounts = try FileManagedCodexAccountStore().loadAccountMetadata().accounts
         } catch {
-            return self.addingNoStore(CLIServeAccountDiscovery.errorResponse(
+            return self.addingNoStore(self.serveError(
                 status: .internalServerError,
                 message: "could not load accounts"))
         }

@@ -56,14 +56,37 @@ struct CLIServeAccountsTests {
         #expect(payload.accounts.count == 4)
         #expect(payload.accounts.map(\.provider) == ["claude", "claude", "codex", "openai"])
         #expect(payload.accounts.map(\.id) == [
-            "token-account:\(firstClaudeID.uuidString.lowercased())",
-            "token-account:\(secondClaudeID.uuidString.lowercased())",
+            "token-account:claude:\(firstClaudeID.uuidString.lowercased())",
+            "token-account:claude:\(secondClaudeID.uuidString.lowercased())",
             "codex-managed:\(managedID.uuidString.lowercased())",
-            "token-account:\(openAIID.uuidString.lowercased())",
+            "token-account:openai:\(openAIID.uuidString.lowercased())",
         ])
         #expect(payload.accounts.map(\.active) == [false, true, true, true])
         #expect(payload.accounts[2].label == "Example Workspace")
         #expect(payload.accounts[2].identity?.accountEmail == "managed@example.com")
+    }
+
+    @Test
+    func `token account ids remain distinct across providers sharing a stored uuid`() throws {
+        let sharedID = UUID()
+        let token = Self.tokenAccount(id: sharedID, label: "Shared label", token: "synthetic-token")
+        let config = CodexBarConfig(providers: [UsageProvider.claude, .openai].map { provider in
+            ProviderConfig(
+                id: provider.instanceID,
+                tokenAccounts: ProviderTokenAccountData(version: 1, accounts: [token], activeIndex: 0))
+        })
+        let full = CLIServeAccountDiscovery.makePayload(
+            config: config, managedCodexAccounts: [], identityMode: .full)
+        let redacted = CLIServeAccountDiscovery.makePayload(
+            config: config, managedCodexAccounts: [], identityMode: .redacted)
+
+        #expect(Set(full.accounts.map(\.id)).count == 2)
+        #expect(full.accounts.map(\.id) == redacted.accounts.map(\.id))
+        for account in full.accounts {
+            let response = CLIServeAccountDiscovery.response(payload: full, requestedID: account.id)
+            let object = try #require(JSONSerialization.jsonObject(with: response.body) as? [String: Any])
+            #expect(object["provider"] as? String == account.provider)
+        }
     }
 
     @Test
@@ -167,13 +190,13 @@ struct CLIServeAccountsTests {
             managedCodexAccounts: [managed],
             identityMode: .full)
 
-        #expect(redacted.accounts.first { $0.id == "token-account:\(tokenID.uuidString.lowercased())" }?.label
+        #expect(redacted.accounts.first { $0.id == "token-account:claude:\(tokenID.uuidString.lowercased())" }?.label
             == "Account \(tokenID.uuidString.lowercased())")
         #expect(redacted.accounts.first { $0.id == "codex-managed:\(managedID.uuidString.lowercased())" }?.label
             == "Account \(managedID.uuidString.lowercased())")
         #expect(!redacted.accounts
             .contains { $0.label.contains("Alice Smith") || $0.label.contains("Personal Workspace") })
-        #expect(full.accounts.first { $0.id == "token-account:\(tokenID.uuidString.lowercased())" }?
+        #expect(full.accounts.first { $0.id == "token-account:claude:\(tokenID.uuidString.lowercased())" }?
             .label == "Alice Smith")
         #expect(full.accounts.first { $0.id == "codex-managed:\(managedID.uuidString.lowercased())" }?
             .label == "Personal Workspace")
@@ -194,7 +217,7 @@ struct CLIServeAccountsTests {
             config: config,
             managedCodexAccounts: [],
             identityMode: .full)
-        let wireID = "token-account:\(accountID.uuidString.lowercased())"
+        let wireID = "token-account:claude:\(accountID.uuidString.lowercased())"
 
         let found = CLIServeAccountDiscovery.response(payload: payload, requestedID: wireID)
         #expect(found.status == .ok)

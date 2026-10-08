@@ -372,7 +372,7 @@ struct CLIServeRawHTTPTests {
                         lastUsed: nil)],
                     activeIndex: 0)),
         ])
-        let wireID = "token-account:\(accountID.uuidString.lowercased())"
+        let wireID = "token-account:claude:\(accountID.uuidString.lowercased())"
         try await Self.withServeRuntime(token: nil, config: config, body: { port in
             let list = try await Self.rawExchange(
                 port: port,
@@ -449,6 +449,28 @@ struct CLIServeRawHTTPTests {
             // /health carries no account data and stays open for liveness probes.
             #expect(health.statusLine == "HTTP/1.1 200 OK")
         })
+    }
+
+    @Test
+    func `account authentication precedes config reads and errors do not expose storage details`() async throws {
+        try await Self.withServeRuntime(
+            token: "secret", bindHost: "0.0.0.0", rawConfigJSON: "{not json", body: { port in
+                for path in ["/accounts", "/accounts/unknown"] {
+                    let denied = try await Self.rawExchange(
+                        port: port,
+                        request: "GET \(path) HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n")
+                    #expect(denied.statusLine == "HTTP/1.1 401 Unauthorized")
+                    #expect(denied.headerValue("Cache-Control") == "no-store")
+
+                    let allowed = try await Self.rawExchange(
+                        port: port,
+                        request: "GET \(path) HTTP/1.1\r\nHost: 127.0.0.1\r\n"
+                            + "Authorization: Bearer secret\r\n\r\n")
+                    #expect(allowed.statusLine == "HTTP/1.1 500 Internal Server Error")
+                    #expect(allowed.headerValue("Cache-Control") == "no-store")
+                    #expect(allowed.body == #"{"error":"could not load accounts"}"#)
+                }
+            })
     }
 
     @Test
