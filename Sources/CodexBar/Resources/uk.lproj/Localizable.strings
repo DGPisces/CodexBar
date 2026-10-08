@@ -630,8 +630,6 @@
 "merged_icon_style_stacked" = "Стос";
 "merge_icon_stacked_top_provider_title" = "Верхній рядок";
 "merge_icon_stacked_bottom_provider_title" = "Нижній рядок";
-"show_most_used_provider_title" = "Показати постачальника, який найчастіше використовується";
-"show_most_used_provider_subtitle" = "Рядок меню автоматично показує постачальника, який найближче до ліміту.";
 "display_mode_title" = "Режим відображення";
 "display_mode_subtitle" = "Виберіть, що відображати на панелі меню (Pace показує використання порівняно з очікуваним).";
 "show_quota_warning_markers_title" = "Показати маркери попередження про квоти";
@@ -1559,7 +1557,6 @@
 "Independent chat" = "Окремий чат";
 "Independent chats" = "Окремі чати";
 "Chat %d" = "Чат %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1677,3 +1674,10 @@
 "Models for this day" = "Моделі за цей день";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Натисніть на стовпчик для перегляду деталей. Точні суми доступні в меню нижче.";
+"merged_icon_source_title" = "Джерело об’єднаної іконки";
+"merged_icon_source_subtitle" = "Виберіть провайдера для згорнутої об’єднаної іконки.";
+"merged_icon_source_current_selection" = "Поточний вибір";
+"merged_icon_source_highest_usage" = "Найбільше використання";
+"merged_icon_source_frontmost_app" = "Застосунок провайдера на передньому плані";
+/* Provider menu bar color */
+"Color by provider" = "Колір за провайдером";

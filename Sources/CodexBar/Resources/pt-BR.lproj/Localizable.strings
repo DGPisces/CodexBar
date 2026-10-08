@@ -627,8 +627,6 @@
 "merged_icon_style_stacked" = "Empilhado";
 "merge_icon_stacked_top_provider_title" = "Linha superior";
 "merge_icon_stacked_bottom_provider_title" = "Linha inferior";
-"show_most_used_provider_title" = "Mostrar provedor mais usado";
-"show_most_used_provider_subtitle" = "A barra de menus mostra automaticamente o provedor mais próximo do limite de taxa.";
 "display_mode_title" = "Modo de exibição";
 "display_mode_subtitle" = "Escolha o que mostrar na barra de menus (Ritmo mostra uso vs. esperado).";
 "show_quota_warning_markers_title" = "Mostrar marcadores de alerta de cota";
@@ -1560,7 +1558,6 @@
 "Independent chat" = "Conversa independente";
 "Independent chats" = "Conversas independentes";
 "Chat %d" = "Conversa %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1677,3 +1674,10 @@
 "Models for this day" = "Modelos deste dia";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Clique em uma barra para explorar. O menu abaixo mostra os valores exatos.";
+"merged_icon_source_title" = "Origem do ícone combinado";
+"merged_icon_source_subtitle" = "Escolha qual provedor o ícone combinado recolhido exibe.";
+"merged_icon_source_current_selection" = "Seleção atual";
+"merged_icon_source_highest_usage" = "Maior uso";
+"merged_icon_source_frontmost_app" = "App do provedor em primeiro plano";
+/* Provider menu bar color */
+"Color by provider" = "Cor por provedor";

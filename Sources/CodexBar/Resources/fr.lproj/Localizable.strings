@@ -630,8 +630,6 @@
 "merged_icon_style_stacked" = "Empilé";
 "merge_icon_stacked_top_provider_title" = "Ligne du haut";
 "merge_icon_stacked_bottom_provider_title" = "Ligne du bas";
-"show_most_used_provider_title" = "Afficher le fournisseur le plus utilisé";
-"show_most_used_provider_subtitle" = "La barre de menu affiche automatiquement le fournisseur le plus proche de sa limite de débit.";
 "display_mode_title" = "Mode d'affichage";
 "display_mode_subtitle" = "Choisissez ce que vous voulez afficher dans la barre de menu (Pace affiche l'utilisation par rapport à celle attendue).";
 "show_quota_warning_markers_title" = "Afficher les marqueurs d'avertissement de quota";
@@ -1559,7 +1557,6 @@
 "Independent chat" = "Discussion indépendante";
 "Independent chats" = "Discussions indépendantes";
 "Chat %d" = "Discussion %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1676,3 +1673,10 @@
 "Models for this day" = "Modèles de ce jour";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Cliquez sur une barre pour explorer. Le menu ci-dessous affiche les montants exacts.";
+"merged_icon_source_title" = "Source de l’icône combinée";
+"merged_icon_source_subtitle" = "Choisissez le fournisseur affiché par l’icône combinée réduite.";
+"merged_icon_source_current_selection" = "Sélection actuelle";
+"merged_icon_source_highest_usage" = "Utilisation la plus élevée";
+"merged_icon_source_frontmost_app" = "Application du fournisseur au premier plan";
+/* Provider menu bar color */
+"Color by provider" = "Couleur par fournisseur";

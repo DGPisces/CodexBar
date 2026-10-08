@@ -613,8 +613,6 @@
 "merged_icon_style_stacked" = "Apilat";
 "merge_icon_stacked_top_provider_title" = "Fila superior";
 "merge_icon_stacked_bottom_provider_title" = "Fila inferior";
-"show_most_used_provider_title" = "Mostreu el proveïdor més utilitzat";
-"show_most_used_provider_subtitle" = "La barra de menús mostra automàticament el proveïdor més a prop del seu límit.";
 "display_mode_title" = "Mode de visualització";
 "display_mode_subtitle" = "Trieu què es mostra a la barra de menús (Ritme mostra l'ús respecte al previst).";
 "show_quota_warning_markers_title" = "Mostreu els marcadors d'avís de quota";
@@ -1679,3 +1677,10 @@
 "Models for this day" = "Models per aquest dia";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Fes clic en una barra per explorar. Consulta els imports exactes al menú inferior.";
+"merged_icon_source_title" = "Origen de la icona combinada";
+"merged_icon_source_subtitle" = "Trieu quin proveïdor mostra la icona combinada quan està plegada.";
+"merged_icon_source_current_selection" = "Selecció actual";
+"merged_icon_source_highest_usage" = "Ús més alt";
+"merged_icon_source_frontmost_app" = "Aplicació del proveïdor en primer pla";
+/* Provider menu bar color */
+"Color by provider" = "Color per proveïdor";
