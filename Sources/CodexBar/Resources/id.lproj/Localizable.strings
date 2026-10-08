@@ -1561,7 +1561,6 @@
 "Independent chat" = "Obrolan mandiri";
 "Independent chats" = "Obrolan mandiri";
 "Chat %d" = "Obrolan %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1672,3 +1671,5 @@
 "merged_icon_source_current_selection" = "Pilihan saat ini";
 "merged_icon_source_highest_usage" = "Penggunaan tertinggi";
 "merged_icon_source_frontmost_app" = "Aplikasi penyedia di depan";
+/* Provider menu bar color */
+"Color by provider" = "Warna menurut penyedia";

@@ -1559,7 +1559,6 @@
 "Independent chat" = "Bağımsız sohbet";
 "Independent chats" = "Bağımsız sohbetler";
 "Chat %d" = "Sohbet %d";
-"Projects" = "Projeler";
 "Plan metered" = "Plan kotasıyla ölçülen";
 "List-price equivalent" = "Liste fiyatı karşılığı";
 "Metered and list-price" = "Ölçümlü ve liste fiyatı";
@@ -1671,3 +1670,5 @@
 "merged_icon_source_current_selection" = "Geçerli seçim";
 "merged_icon_source_highest_usage" = "En yüksek kullanım";
 "merged_icon_source_frontmost_app" = "Öndeki sağlayıcı uygulaması";
+/* Provider menu bar color */
+"Color by provider" = "Sağlayıcıya göre renk";

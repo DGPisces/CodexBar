@@ -1527,7 +1527,6 @@
 "Independent chat" = "독립 채팅";
 "Independent chats" = "독립 채팅";
 "Chat %d" = "채팅 %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1638,3 +1637,5 @@
 "merged_icon_source_current_selection" = "현재 선택";
 "merged_icon_source_highest_usage" = "사용량이 가장 높음";
 "merged_icon_source_frontmost_app" = "전면의 공급자 앱";
+/* Provider menu bar color */
+"Color by provider" = "제공업체별 색상";

@@ -1561,7 +1561,6 @@
 "Independent chat" = "گفتگوی مستقل";
 "Independent chats" = "گفتگوهای مستقل";
 "Chat %d" = "گفتگو %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1673,3 +1672,5 @@
 "merged_icon_source_current_selection" = "انتخاب فعلی";
 "merged_icon_source_highest_usage" = "بیشترین استفاده";
 "merged_icon_source_frontmost_app" = "برنامه ارائه‌دهنده در پیش‌زمینه";
+/* Provider menu bar color */
+"Color by provider" = "رنگ بر اساس ارائه‌دهنده";

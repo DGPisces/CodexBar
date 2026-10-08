@@ -1561,7 +1561,6 @@
 "Independent chat" = "แชทอิสระ";
 "Independent chats" = "แชทอิสระ";
 "Chat %d" = "แชท %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1673,3 +1672,5 @@
 "merged_icon_source_current_selection" = "ตัวเลือกปัจจุบัน";
 "merged_icon_source_highest_usage" = "การใช้งานสูงสุด";
 "merged_icon_source_frontmost_app" = "แอปผู้ให้บริการที่อยู่ด้านหน้า";
+/* Provider menu bar color */
+"Color by provider" = "สีตามผู้ให้บริการ";

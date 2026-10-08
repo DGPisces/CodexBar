@@ -43,6 +43,7 @@ Usage source picker:
   the explicit OAuth path delegates recovery to the Codex CLI, which owns that file. If the CLI is unavailable,
   the OAuth error is surfaced instead of mutating the shared file.
 - Calls `GET https://chatgpt.com/backend-api/wham/usage` (default) with `Authorization: Bearer <token>`.
+- A `chatgpt_base_url` setting in `$CODEX_HOME/config.toml` (default `~/.codex/config.toml`) overrides the usage endpoint. Lines beginning with `#`, including indented comments, are ignored; a commented override cannot shadow an active setting later in the file. Trailing inline comments remain supported.
 - The app reads reset-credit inventory once per refresh with a best-effort
   `GET https://chatgpt.com/backend-api/wham/rate-limit-reset-credits` using the same account-scoped OAuth context;
   the CLI requests it only when optional credits are included.
@@ -136,6 +137,21 @@ It does not renew expired credentials or enable unscoped fallback for managed wo
 use the affected row's **Reauthenticate** action or ordinary `codex login` scoped to that managed home
 and intended workspace. A future CLI renewal command needs staged login and identity/workspace
 validation before committing; `promote` is not a renewal workaround. See [CLI details](cli.md#managed-codex-accounts-macos).
+
+### Local account discovery
+
+`codexbar serve` exposes saved managed Codex accounts through `GET /accounts` and
+`GET /accounts/<id>`, alongside configured provider token accounts. Discovery reads the existing
+managed-account metadata only: it never opens managed homes, reads `auth.json`, migrates storage,
+refreshes usage, or switches accounts. System and advanced profile-home accounts are not included.
+The `active` flag means selected in CodexBar, not necessarily the system Codex identity.
+
+IDs remain stable across identity modes; treat them as opaque lookup keys. Without an explicit
+`--identity`, discovery follows the app's **Hide personal information** setting per request.
+Redacted mode replaces arbitrary labels with account placeholders and hides email local parts.
+Credentials, private paths, fingerprints, and provider-internal workspace IDs are never exported.
+See the [account discovery HTTP contract](dashboard-api.md#account-discovery) for authentication,
+response fields, and errors.
 
 ### Advanced profile-home accounts
 - Managed Codex accounts remain the default multi-account path.

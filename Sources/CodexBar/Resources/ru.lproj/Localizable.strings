@@ -1559,7 +1559,6 @@
 "Independent chat" = "Отдельный чат";
 "Independent chats" = "Отдельные чаты";
 "Chat %d" = "Чат %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1670,3 +1669,5 @@
 "merged_icon_source_current_selection" = "Текущий выбор";
 "merged_icon_source_highest_usage" = "Наибольшее использование";
 "merged_icon_source_frontmost_app" = "Приложение провайдера на переднем плане";
+/* Provider menu bar color */
+"Color by provider" = "Цвет по провайдеру";

@@ -102,6 +102,10 @@ preview, and keeps the signed percentages. Zero and unavailable pace stay neutra
 It colors **Session pace**, **Weekly pace**, and **Auto pace** in the layout editor. Enabling it does not add tokens,
 rewrite stored layouts, or migrate legacy display modes. Existing installs stay monochrome until the option is enabled.
 
+Enable **Color by provider** under **Menu Bar → Icon** to tint each provider slot with its accent color, including custom accents. This single toggle defaults off and works with Critters, Meter bars, and Icon & percent, including stacked provider rows; it never changes the saved layout or the Brand/Monochrome artwork used in Usage & Spend. Pace tokens keep their independent green/red colors and VoiceOver keeps the same spoken labels.
+
+Provider color falls back to monochrome while a menu is open, data is stale, system Increase Contrast is enabled, or the inactive-display contrast option is enabled. Color returns immediately when the menu closes. Accents must meet a 2:1 contrast threshold against conservative reference backgrounds (25% sRGB gray in dark appearance, 85% in light appearance); this is not a WCAG text-conformance claim or wallpaper sampling. Unsupported or low-contrast accents use the system template rendering. The layout preview follows its own light/dark and accessibility environment.
+
 Balance uses the same provider amount as the menu card: Codex credits, OpenRouter remaining credits, MiMo,
 DeepSeek, DeepInfra, Moonshot, Poe points, Hypercredits, LithosAI prepaid balance, Atlas Cloud and Vercel available balances, or OpenCode Go's
 Zen balance. DevPass shows remaining billing-cycle credits (a plan allowance); Mistral shows monthly API spend.

@@ -1557,7 +1557,6 @@
 "Independent chat" = "Conversa independente";
 "Independent chats" = "Conversas independentes";
 "Chat %d" = "Conversa %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1668,3 +1667,5 @@
 "merged_icon_source_current_selection" = "Selección actual";
 "merged_icon_source_highest_usage" = "Maior uso";
 "merged_icon_source_frontmost_app" = "Aplicación do provedor en primeiro plano";
+/* Provider menu bar color */
+"Color by provider" = "Cor por provedor";

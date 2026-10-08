@@ -1558,7 +1558,6 @@
 "Independent chat" = "Cuộc trò chuyện độc lập";
 "Independent chats" = "Các cuộc trò chuyện độc lập";
 "Chat %d" = "Cuộc trò chuyện %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1670,3 +1669,5 @@
 "merged_icon_source_current_selection" = "Lựa chọn hiện tại";
 "merged_icon_source_highest_usage" = "Mức sử dụng cao nhất";
 "merged_icon_source_frontmost_app" = "Ứng dụng nhà cung cấp ở phía trước";
+/* Provider menu bar color */
+"Color by provider" = "Màu theo nhà cung cấp";

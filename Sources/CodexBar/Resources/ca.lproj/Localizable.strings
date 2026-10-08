@@ -1671,3 +1671,5 @@
 "merged_icon_source_current_selection" = "Selecció actual";
 "merged_icon_source_highest_usage" = "Ús més alt";
 "merged_icon_source_frontmost_app" = "Aplicació del proveïdor en primer pla";
+/* Provider menu bar color */
+"Color by provider" = "Color per proveïdor";

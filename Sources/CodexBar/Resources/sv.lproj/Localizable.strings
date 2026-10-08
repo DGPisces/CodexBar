@@ -1556,7 +1556,6 @@
 "Independent chat" = "Fristående chatt";
 "Independent chats" = "Fristående chattar";
 "Chat %d" = "Chatt %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1668,3 +1667,5 @@
 "merged_icon_source_current_selection" = "Aktuellt val";
 "merged_icon_source_highest_usage" = "Högsta användning";
 "merged_icon_source_frontmost_app" = "Leverantörsapp i förgrunden";
+/* Provider menu bar color */
+"Color by provider" = "Färg per leverantör";

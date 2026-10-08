@@ -1367,7 +1367,6 @@
 "Independent chats" = "独立聊天";
 "Independent chat" = "独立聊天";
 "Chat %d" = "聊天 %d";
-"Projects" = "项目";
 "Plan metered" = "套餐计量";
 "List-price equivalent" = "目录价等值";
 "Metered and list-price" = "计量与目录价";
@@ -1683,3 +1682,5 @@
 "merged_icon_source_current_selection" = "当前选择";
 "merged_icon_source_highest_usage" = "最高用量";
 "merged_icon_source_frontmost_app" = "最前台的服务提供方应用";
+/* Provider menu bar color */
+"Color by provider" = "按服务商着色";
