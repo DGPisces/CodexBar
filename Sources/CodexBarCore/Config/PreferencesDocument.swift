@@ -26,6 +26,7 @@ public struct PreferencesDocument: Codable, Sendable {
         "confettiOnWeeklyLimitResetsEnabled", "limitResetNotificationsEnabled", "menuBarShowsHighestUsage",
         "showOptionalCreditsAndExtraUsage", "providerChangelogLinksEnabled", "providersSortedAlphabetically",
         "refreshAllProvidersOnMenuOpen", "mergeIcons", "mergeIconsStacked", "switcherShowsIcons",
+        "menuBarColorByProvider",
     ])
     private static let stringChoices: [String: [String]] = [
         "refreshFrequency": [

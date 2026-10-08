@@ -1669,3 +1669,5 @@
 "Models for this day" = "Models for this day";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Click a bar to explore. Use the menu below for exact amounts.";
+/* Provider menu bar color */
+"Color by provider" = "Color by provider";

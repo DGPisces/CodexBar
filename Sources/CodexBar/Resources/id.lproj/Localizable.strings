@@ -1669,3 +1669,5 @@
 "Models for this day" = "Model untuk hari ini";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Klik batang untuk menelusuri. Gunakan menu di bawah untuk melihat jumlah tepat.";
+/* Provider menu bar color */
+"Color by provider" = "Warna menurut penyedia";

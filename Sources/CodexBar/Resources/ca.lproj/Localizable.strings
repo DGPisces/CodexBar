@@ -1668,3 +1668,5 @@
 "Models for this day" = "Models per aquest dia";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Fes clic en una barra per explorar. Consulta els imports exactes al menú inferior.";
+/* Provider menu bar color */
+"Color by provider" = "Color per proveïdor";
