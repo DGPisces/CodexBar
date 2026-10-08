@@ -1468,6 +1468,8 @@
 
 "Cumulative" = "누적";
 "Token activity" = "토큰 활동";
+"Earlier activity" = "이전 활동";
+"More recent activity" = "최근 활동";
 "View" = "보기";
 "in the last year" = "지난 1년";
 "No activity in the last 12 months" = "지난 12개월 동안 활동 없음";
@@ -1532,9 +1534,9 @@
 "List-price equivalent" = "정가 상당";
 "Metered and list-price" = "측정된 사용량 및 정가와 동일";
 "List-price equivalent — not a billing receipt." = "정가에 해당하며 청구 영수증이 아닙니다.";
-"Priced" = "유료 사용량";
+"Priced" = "가격 정보가 있는 사용량";
 "Unpriced" = "가격이 책정되지 않은 사용량";
-"Unmetered" = "무제한 사용량";
+"Unmetered" = "측정되지 않은 사용량";
 "Estimated" = "추정";
 "Other models" = "다른 모델";
 "Include OpenCodex usage logs" = "OpenCodex 사용 로그 포함";
@@ -1667,7 +1669,7 @@
 "API organization ID" = "API 조직 ID";
 "API version" = "API 버전";
 "AWS Cost Explorer pricing" = "AWS Cost Explorer 가격";
-"AWS charges $0.01 per Cost Explorer request against the primary billing view. A refresh can make multiple requests, and CloudWatch activity can add charges. The displayed monthly budget does not cap AWS billing." = "AWS는 기본 청구 보기에 대해 Cost Explorer 요청당 0.01달러를 청구합니다. 새로 고침으로 여러 요청을 할 수 있으며 CloudWatch 활동으로 인해 요금이 추가될 수 있습니다. 표시된 월예산에는 AWS 청구 금액이 포함되지 않습니다.";
+"AWS charges $0.01 per Cost Explorer request against the primary billing view. A refresh can make multiple requests, and CloudWatch activity can add charges. The displayed monthly budget does not cap AWS billing." = "AWS는 기본 청구 뷰에 대한 Cost Explorer 요청당 $0.01를 청구합니다. 새로고침 시 여러 요청이 발생할 수 있으며 CloudWatch 활동에도 요금이 부과될 수 있습니다. 표시된 월 예산은 AWS 청구액의 상한을 설정하지 않습니다.";
 "AWS profile" = "AWS 구성 프로필";
 "AWS region. Can also be set with AWS_REGION. In profile mode, leave blank to use the profile's region." = "AWS 지역. AWS_REGION로도 설정할 수 있습니다. 프로필 모드에서 프로필 지역을 사용하려면 공백으로 남겨두세요.";
 "Access keys" = "인증 액세스 키";
@@ -1792,7 +1794,7 @@
 "Metric" = "지표";
 "Monitoring adds AWS charges" = "모니터링을 통해 AWS 요금이 추가됩니다.";
 "Monthly credit limit" = "월간 사용량 크레딧 한도";
-"Most usable account" = "가장 많이 사용되는 계정";
+"Most usable account" = "사용 가능량이 가장 많은 계정";
 "My AI subscriptions · all time" = "내 AI 구독 · 전체 기록";
 "My AI subscriptions · last %d days" = "내 AI 구독 · 지난 %d 일";
 "NaN Builders" = "NaN Builders";
@@ -1900,8 +1902,8 @@
 "Reset: %@" = "재설정: %@";
 "Resets every 5 hours" = "5시간마다 재설정";
 "Resets in" = "다음 시간에 재설정됩니다.";
-"Runs out" = "할당량가 부족합니다";
-"Runs out in" = "할당량가 부족합니다.";
+"Runs out" = "예상 소진 시점";
+"Runs out in" = "소진까지 남은 시간";
 "SUBSCRIPTIONS" = "구독";
 "Save" = "저장";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "도트파일에 대한 표시 및 알림 기본 설정을 저장하세요. 계정, 자격 증명, 로그인, 로컬 경로 및 동의는 이 Mac에 유지됩니다.";
@@ -1976,7 +1978,7 @@
 "a1.small-equivalent hours" = "a1.small-등가 시간";
 "after reset" = "재설정 후";
 "all" = "모두";
-"ark-... or AKLT..." = "방주-... 또는 AKLT...";
+"ark-... or AKLT..." = "ark-... 또는 AKLT...";
 "budget spent" = "할당량 예산이 고갈되었습니다";
 "cb_..." = "cb_...";
 "claude auth login exited with status %d." = "claude auth login가 %d 상태로 종료되었습니다.";
@@ -2308,7 +2310,7 @@
 "Subscription credits available" = "구독 크레딧 사용 가능";
 "Total credits available" = "총 크레딧 사용 가능";
 "Used this cycle" = "이 사이클을 사용함";
-"Bank cap" = "은행 한도";
+"Bank cap" = "누적 크레딧 한도";
 "Next refill" = "다음 리필";
 "Gateway" = "게이트웨이";
 "Routed" = "라우팅됨";
@@ -2333,3 +2335,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "기록된 지출";
+"Highest recorded spend" = "기록된 최대 지출";
+"Previous day" = "이전 날짜";
+"Next day" = "다음 날짜";
+"Click to isolate a source. Click again to show all." = "클릭하면 이 소스만 표시됩니다. 다시 클릭하면 모두 표시됩니다.";
+"Recorded hourly spend" = "기록된 시간별 지출";
+"Highest spend" = "최대 지출";
+"Models for this day" = "이 날짜의 모델";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "막대를 클릭해 자세히 살펴보세요. 아래 메뉴에서 정확한 금액을 확인할 수 있습니다.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "여러 ClinePass API 키를 저장합니다. 선택한 키는 구성된 API 키와 cline auth 세션보다 우선합니다.";
+
+"X API cost history is not available." = "X API 비용 기록을 사용할 수 없습니다.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "auth_token과 ct0이 포함된 console.x.com의 Cookie 헤더를 붙여넣으세요.";
+
+"Open X Developer Console" = "X 개발자 콘솔 열기";

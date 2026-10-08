@@ -114,7 +114,12 @@ export function protectedLiteralErrors(key, value, english) {
     "npm install -g --include=optional @openai/codex@latest",
     "kilo.access",
   ];
-  return literals
+  const technicalTokens = [
+    ...english.matchAll(/`([^`]+)`/g),
+    ...english.matchAll(/\b((?:[A-Za-z][A-Za-z0-9_-]*[-_]|[A-Z]{3,}))(?=\.{3}|…)/g),
+    ...english.matchAll(/\b([A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+)\b/g),
+  ].map((match) => match[1]);
+  return [...new Set([...literals, ...technicalTokens])]
     .filter((literal) => english.includes(literal) && !value.includes(literal))
     .map((literal) => `${key}: changed command or configuration literal ${literal}`);
 }

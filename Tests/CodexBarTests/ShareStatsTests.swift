@@ -426,7 +426,7 @@ struct ShareStatsTests {
             let outputDirectory = URL(fileURLWithPath: outputPath, isDirectory: true)
             try FileManager.default.createDirectory(at: outputDirectory, withIntermediateDirectories: true)
             try png.write(to: outputDirectory.appendingPathComponent("share-stats.png"), options: .atomic)
-            for language in ["zh-Hans", "de", "ar"] {
+            for language in ["de", "fr", "es", "zh-Hans", "ja", "ar"] {
                 try CodexBarLocalizationOverride.$appLanguage.withValue(language) {
                     let localizedPNG = try #require(ShareStatsRenderer.pngData(for: payload))
                     try localizedPNG.write(to: outputDirectory.appendingPathComponent(

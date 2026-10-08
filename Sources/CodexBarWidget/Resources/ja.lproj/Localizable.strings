@@ -129,8 +129,8 @@
 "Resets in %@" = "%@ 後にリセット";
 "Reviews" = "レビュー";
 "Rolling" = "ローリング";
-"Runs out" = "クォータ がなくなりました";
-"Runs out in" = "クォータ がなくなります";
+"Runs out" = "使い切る見込み";
+"Runs out in" = "使い切るまで";
 "Savings" = "貯蓄";
 "Search hourly" = "1時間ごとに検索";
 "Secondary budget" = "二次予算";
@@ -142,10 +142,10 @@
 "Select the provider to display." = "表示するプロバイダーを選択します。";
 "Session" = "セッション";
 "Session (5-hour)" = "セッション（5時間）";
-"Session and weekly usage with credits and costs." = "クレジット のセッションと週ごとの使用量とコスト。";
+"Session and weekly usage with credits and costs." = "セッションと週間の使用量、クレジット、費用を表示します。";
 "Shared pool" = "共有プール";
 "Sonnet" = "Sonnet";
-"Spend" = "支出する";
+"Spend" = "支出";
 "Standard" = "標準";
 "Status" = "ステータス";
 "Subscription" = "定期購入";
@@ -183,8 +183,8 @@
 "antigravity-cli-usage" = "antigravity-cli-usage";
 "antigravity-cli-version" = "antigravity-cli-version";
 "budget spent" = "クォータ 予算を使い果たしました";
-"conserving" = "クォータの保存";
-"full" = "フル クォータ が利用可能";
+"conserving" = "節約ペース";
+"full" = "全枠が利用可能";
 "left" = "残り";
 "now" = "今";
 "on pace" = "計画されたペースでの使用";

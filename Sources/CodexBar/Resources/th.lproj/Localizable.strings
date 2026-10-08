@@ -79,7 +79,7 @@
 "Average (\\(label1) + \\(label2))" = "เฉลี่ย (\\(label1) + \\(label2))";
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "เฉลี่ย (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "หลีกเลี่ยงข้อความแจ้ง Keychain";
-"Balance" = "สมดุล";
+"Balance" = "ยอดคงเหลือ";
 "Cloud credits" = "เครดิตคลาวด์";
 "Expired" = "หมดอายุแล้ว";
 "Battery Saver" = "ประหยัดแบตเตอรี่";
@@ -215,7 +215,7 @@
 "MCP details" = "รายละเอียด MCP";
 "Managed Codex accounts unavailable" = "บัญชี Codex ที่มีการจัดการไม่พร้อมใช้งาน";
 "Managed account storage is unreadable. Live account access is still available, " = "พื้นที่เก็บข้อมูลของบัญชีที่มีการจัดการไม่สามารถอ่านได้ การเข้าถึงบัญชีจริงยังคงมีอยู่  ";
-"Manual" = "ด้วยมือ";
+"Manual" = "ด้วยตนเอง";
 "May your tokens never run out—keep agent limits in view." = "ขอให้โทเค็นของคุณไม่มีวันหมด ให้คํานึงถึงขีดจํากัดของเจ้าหน้าที่";
 "Menu bar" = "แถบเมนู";
 "Menu bar auto-shows the provider closest to its rate limit." = "แถบเมนูจะแสดงผู้ให้บริการที่ใกล้เคียงกับขีดจํากัดอัตรามากที่สุดโดยอัตโนมัติ";
@@ -281,7 +281,7 @@
 "Picker" = "หยิบ";
 "Picker subtitle" = "คําบรรยาย Picker";
 "Placeholder" = "ตัวยึดตําแหน่ง";
-"Plan" = "วางแผน";
+"Plan" = "แผนบริการ";
 "Plan Usage" = "การใช้งานแผน";
 "Play full-screen confetti when weekly usage resets." = "เล่นลูกปาแบบเต็มหน้าจอเมื่อรีเซ็ตการใช้งานรายสัปดาห์";
 "Polls OpenAI/Claude status pages and Google Workspace for " = "โพล OpenAI/Claude หน้าสถานะและพื้นที่ทํางาน Google สําหรับ  ";
@@ -970,7 +970,7 @@
 "requests" = "คําขอ";
 "Latest" = "ล่าสุด";
 "Monthly" = "รายเดือน";
-"Sonnet" = "โคลง";
+"Sonnet" = "Sonnet";
 "Overages" = "ส่วนเกิน";
 "Overage" = "ส่วนเกิน";
 "Activity" = "กิจกรรม";
@@ -1502,6 +1502,8 @@
 
 "Cumulative" = "สะสม";
 "Token activity" = "กิจกรรมโทเทน";
+"Earlier activity" = "กิจกรรมก่อนหน้า";
+"More recent activity" = "กิจกรรมล่าสุด";
 "View" = "มุมมอง";
 "in the last year" = "ในปีที่ผ่านมา";
 "No activity in the last 12 months" = "ไม่มีกิจกรรมในช่วง 12 เดือนที่ผ่านมา";
@@ -1566,8 +1568,8 @@
 "List-price equivalent" = "รายการราคาเทียบเท่า";
 "Metered and list-price" = "การใช้งานแบบมิเตอร์และราคาที่เทียบเท่ากัน";
 "List-price equivalent — not a billing receipt." = "ราคาปลีกที่เทียบเท่า — ไม่ใช่ใบเสร็จรับเงิน";
-"Priced" = "การใช้งานตามราคา";
-"Unpriced" = "การใช้งานที่ไม่สมราคา";
+"Priced" = "การใช้งานที่มีข้อมูลราคา";
+"Unpriced" = "การใช้งานที่ไม่มีข้อมูลราคา";
 "Unmetered" = "การใช้งานที่ไม่มีการตรวจวัด";
 "Estimated" = "ประมาณ";
 "Other models" = "รุ่นอื่นๆ";
@@ -1667,7 +1669,7 @@
 "%@ — add credits at %@" = "%1$@ — เพิ่ม เครดิต ที่ %2$@";
 "%@, selected" = "เลือก %@ แล้ว";
 "%@-day limit" = "ขีดจำกัด %@ วัน";
-"%@-hour limit" = "%@ ต่อชั่วโมง";
+"%@-hour limit" = "ขีดจำกัดในช่วง %@ ชั่วโมง";
 "%@-minute limit" = "ขีดจำกัด %@ นาที";
 "%@: %@ · coverage %@" = "%1$@: %2$@ · ความคุ้มครอง %3$@";
 "%@: unsupported" = "%@: ไม่รองรับ";
@@ -1710,7 +1712,7 @@
 "Account %@" = "บัญชี %@";
 "Account Added" = "เพิ่มบัญชีแล้ว";
 "Account Usage" = "การใช้บัญชี";
-"Account slug" = "ตัวระบุบัญชี (ตัวบุ้ง)";
+"Account slug" = "ตัวระบุบัญชี (slug)";
 "Account switched; restart the Codex background server manually." = "บัญชีถูกเปลี่ยน; รีสตาร์ทเซิร์ฟเวอร์พื้นหลัง Codex ด้วยตนเอง";
 "Allow reading Claude Code's credentials" = "อนุญาตให้อ่านข้อมูลรับรองของ Claude Code";
 "Amp CLI" = "Amp CLI";
@@ -1828,7 +1830,7 @@
 "Metric" = "เมตริก";
 "Monitoring adds AWS charges" = "การตรวจสอบจะเพิ่มค่าบริการ AWS";
 "Monthly credit limit" = "ขีดจำกัดการใช้งานรายเดือน เครดิต";
-"Most usable account" = "บัญชีที่ใช้งานมากที่สุด";
+"Most usable account" = "บัญชีที่พร้อมใช้งานมากที่สุด";
 "My AI subscriptions · all time" = "การสมัครสมาชิก AI ของฉัน · ประวัติทั้งหมด";
 "My AI subscriptions · last %d days" = "การสมัครสมาชิก AI ของฉัน · วัน %d ที่ผ่านมา";
 "NaN Builders" = "NaN Builders";
@@ -1872,7 +1874,7 @@
 "OpenAI-compatible v1" = "รองรับ OpenAI v1";
 "OpenCode API key" = "คีย์ OpenCode API";
 "Optional additional key for account Activity. Only needed to use a separate Management API key from the one in the required API key field above." = "รหัสเพิ่มเติมเพิ่มเติมสำหรับกิจกรรมบัญชี จำเป็นต้องใช้คีย์การจัดการ API แยกต่างหากจากคีย์ในฟิลด์คีย์ API ที่จำเป็นด้านบนเท่านั้น";
-"Optional for automatic auth. Use a slug, URL, or internal org-... / org_... ID. Manual auth may need the x-cog-org-id header from a successful Devin quota request." = "ตัวเลือกสำหรับการตรวจสอบสิทธิ์อัตโนมัติ ใช้กระสุน URL หรือภายใน org-... / org_... ID การตรวจสอบสิทธิ์ด้วยตนเองอาจต้องใช้ส่วนหัว x-cog-org-id จากคำขอ Devin โควต้า ที่สำเร็จ";
+"Optional for automatic auth. Use a slug, URL, or internal org-... / org_... ID. Manual auth may need the x-cog-org-id header from a successful Devin quota request." = "ตัวเลือกสำหรับการตรวจสอบสิทธิ์อัตโนมัติ ใช้slug URL หรือภายใน org-... / org_... ID การตรวจสอบสิทธิ์ด้วยตนเองอาจต้องใช้ส่วนหัว x-cog-org-id จากคำขอ Devin โควต้า ที่สำเร็จ";
 "Optional gk-org-id header value. Or set GITKRAKEN_ORG_ID." = "ค่าส่วนหัว gk-org-id เสริม หรือตั้งค่า GITKRAKEN_ORG_ID";
 "Optional when the API key can access one account; CodexBar discovers it automatically. For multiple accounts, find the slug in the app.fireworks.ai home account switcher or run firectl whoami." = "เป็นทางเลือกเมื่อคีย์ API สามารถเข้าถึงบัญชีเดียวได้ CodexBar ค้นพบมันโดยอัตโนมัติ สำหรับหลายบัญชี ให้ค้นหา Slug ในตัวสลับบัญชีที่บ้าน app.fireworks.ai หรือเรียกใช้ firectl whoami";
 "Optional. Defaults to the first Business or Enterprise workspace on the account." = "ไม่จำเป็น. ตั้งค่าเริ่มต้นเป็นพื้นที่ทำงาน Business หรือ Enterprise แรกในบัญชี";
@@ -1936,8 +1938,8 @@
 "Reset: %@" = "รีเซ็ต: %@";
 "Resets every 5 hours" = "รีเซ็ตทุกๆ 5 ชั่วโมง";
 "Resets in" = "รีเซ็ตเข้า";
-"Runs out" = "โควต้า หมด";
-"Runs out in" = "โควต้า วิ่งเข้า";
+"Runs out" = "คาดว่าจะหมด";
+"Runs out in" = "เวลาที่เหลือก่อนหมด";
 "SUBSCRIPTIONS" = "การสมัครสมาชิก";
 "Save" = "บันทึก";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "บันทึกการตั้งค่าการแสดงผลและการแจ้งเตือนสำหรับ dotfiles ของคุณ บัญชี ข้อมูลประจำตัว การเข้าสู่ระบบ เส้นทางในเครื่อง และความยินยอมจะยังคงอยู่ใน Mac เครื่องนี้";
@@ -2093,7 +2095,7 @@
 "v0_..." = "v0_...";
 "Open v0 API keys" = "เปิดคีย์ v0 API";
 "Scope" = "ขอบเขต";
-"Optional project ID or slug. Leave blank for the default v0 scope." = "โปรเจ็กต์เสริม ID หรือทาก เว้นว่างไว้สำหรับขอบเขต v0 เริ่มต้น";
+"Optional project ID or slug. Leave blank for the default v0 scope." = "ID โปรเจ็กต์หรือ slug (ไม่บังคับ) เว้นว่างไว้เพื่อใช้ขอบเขตเริ่มต้นของ v0";
 "project-slug" = "project-slug";
 "Monthly budget" = "งบประมาณรายเดือน";
 "ClawRouter spend is reported by its usage API." = "การใช้จ่ายของ ClawRouter ถูกรายงานตามการใช้งาน API";
@@ -2110,7 +2112,7 @@
 "Flash Lite" = "Flash Lite";
 "Window" = "หน้าต่างการใช้งาน";
 "Token plan credits usage." = "โทเค็น วางแผนการใช้งาน เครดิต";
-"API keys" = "ปุ่ม API";
+"API keys" = "คีย์ API";
 "Store multiple OpenRouter API keys." = "เก็บคีย์ OpenRouter API หลายอัน";
 "Credit balance from OpenRouter API" = "ยอดคงเหลือ เครดิต จาก OpenRouter API";
 "GitHub accounts" = "บัญชี GitHub";
@@ -2133,7 +2135,7 @@
 "Chutes cost history is not available from CodexBar." = "ไม่มีประวัติต้นทุน Chutes จาก CodexBar";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "เก็บไว้ใน ~/.codexbar/config.json วางคีย์ Chutes API";
 "chutes key..." = "คีย์ API ของ Chutes...";
-"Spend" = "ใช้จ่าย";
+"Spend" = "ค่าใช้จ่าย";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "การใช้จ่าย Fireworks มาจากสรุปการเรียกเก็บเงิน API ไม่มีการติดตามประวัติต้นทุน";
 "Doubao API-key accounts" = "บัญชีคีย์ Doubao API";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "ร้านค้าที่มีป้ายกำกับว่าคีย์ Ark API ไม่รองรับคู่ AK/SK และโปรไฟล์ arkcli ที่นี่";
@@ -2169,7 +2171,7 @@
 "Store multiple IBM Bob API keys." = "เก็บคีย์ IBM Bob API หลายอัน";
 "Monthly Bobcoins" = "Bobcoins รายเดือน";
 "Bobcoin usage from the IBM Bob API." = "การใช้งาน Bobcoin จาก IBM Bob API";
-"Shared pool" = "สระว่ายน้ำรวม";
+"Shared pool" = "โควตาที่ใช้ร่วมกัน";
 "GitKraken cost history is not available." = "ไม่มีประวัติต้นทุน GitKraken";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "การใช้จ่ายรายวันของ xAI ต้องใช้คีย์การจัดการ API และทีม ID ยอดชำระล่วงหน้าไม่ถือเป็นการใช้จ่าย";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "เก็บไว้ใน ~/.codexbar/config.json สร้างอันหนึ่งที่ console.x.ai ภายใต้การตั้งค่า > คีย์การจัดการ ไม่ยอมรับคีย์การอนุมาน API";
@@ -2218,7 +2220,7 @@
 "Manus cost summary is not supported." = "ไม่รองรับการสรุปต้นทุน Manus";
 "Store multiple Manus session_id cookies." = "เก็บ Manus session_id cookies หลายรายการ";
 "session_id=…" = "session_id=…";
-"Raycast AI credits are a monthly allowance, not a cost history." = "Raycast AI เครดิต เป็นค่าใช้จ่ายรายเดือน ไม่ใช่ประวัติค่าใช้จ่าย";
+"Raycast AI credits are a monthly allowance, not a cost history." = "เครดิต Raycast AI เป็นโควตาที่จัดสรรให้ในแต่ละเดือน ไม่ใช่ประวัติค่าใช้จ่าย";
 "Paste the Cookie header from a www.raycast.com/settings request. It must contain __raycast_session." = "วางส่วนหัว Cookie จากคำขอ www.raycast.com/settings จะต้องมี __raycast_session";
 "__raycast_session=…; csrf_token=…" = "__raycast_session=…; csrf_token=…";
 "Open Raycast Account" = "เปิดบัญชี Raycast";
@@ -2333,7 +2335,7 @@
 "Renews" = "ต่ออายุ";
 "Orb" = "ลูกโลก";
 "Individual" = "รายบุคคล";
-"Today spend" = "วันนี้ใช้จ่าย";
+"Today spend" = "ค่าใช้จ่ายวันนี้";
 "Usage billing" = "การเรียกเก็บเงินการใช้งาน";
 "Period resets" = "รีเซ็ตระยะเวลา";
 "Cached input" = "อินพุตแคช";
@@ -2344,7 +2346,7 @@
 "Subscription credits available" = "สมัครสมาชิก เครดิต ได้แล้ว";
 "Total credits available" = "มี เครดิต ทั้งหมด";
 "Used this cycle" = "ใช้รอบนี้ครับ";
-"Bank cap" = "ฝาธนาคาร";
+"Bank cap" = "ขีดจำกัดเครดิตสะสม";
 "Next refill" = "ต่อไปเติมเงิน";
 "Gateway" = "เกตเวย์";
 "Routed" = "กำหนดเส้นทาง";
@@ -2369,3 +2371,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "ค่าใช้จ่ายที่บันทึกไว้";
+"Highest recorded spend" = "ค่าใช้จ่ายที่บันทึกไว้สูงสุด";
+"Previous day" = "วันก่อนหน้า";
+"Next day" = "วันถัดไป";
+"Click to isolate a source. Click again to show all." = "คลิกเพื่อดูแหล่งเดียว คลิกอีกครั้งเพื่อดูทั้งหมด";
+"Recorded hourly spend" = "ค่าใช้จ่ายรายชั่วโมงที่บันทึกไว้";
+"Highest spend" = "ค่าใช้จ่ายสูงสุด";
+"Models for this day" = "โมเดลของวันนี้";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "คลิกแท่งกราฟเพื่อดูรายละเอียด ใช้เมนูด้านล่างเพื่อดูจำนวนเงินที่แน่นอน";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "จัดเก็บคีย์ API ของ ClinePass หลายคีย์ คีย์ที่เลือกจะมีลำดับความสำคัญเหนือคีย์ API ที่ตั้งค่าไว้และเซสชัน cline auth";
+
+"X API cost history is not available." = "ไม่สามารถดูประวัติค่าใช้จ่ายของ X API ได้";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "วางส่วนหัว Cookie จาก console.x.com ที่มี auth_token และ ct0";
+
+"Open X Developer Console" = "เปิดคอนโซลนักพัฒนา X";

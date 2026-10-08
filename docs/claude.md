@@ -13,6 +13,15 @@ The **Plan Usage** submenu includes recorded remaining-quota burndown above util
 using the same Session, Weekly, and Sonnet labels. See [recorded quota burndown](widgets/burndown-proof.md)
 for capture-age semantics and the existing history retention/privacy behavior.
 
+OAuth history uses a stable account/profile identity after two stable credential observations corroborate that
+binding. External token rotations therefore continue the same history after the new credential is corroborated.
+Saved token-scoped fragments with matching verified bindings migrate into that account's history on a successful
+sample. Unbound fragments, obsolete bindings, and other accounts stay separate; correcting a conflicting binding
+preserves its ambiguous old fragment without attributing it to the newly confirmed account. If that fragment was
+already merged, the affected account bucket is preserved but hidden, and fresh samples start a new account scope.
+This quarantine survives empty responses and restarts. Explicit OAuth tokens without Claude Code account evidence
+remain credential-scoped.
+
 Claude supports three usage data paths plus local cost usage. The main provider pipeline uses runtime-specific
 automatic selection, but the codebase still has multiple active Claude `.auto` decision sites while the refactor is
 pending. For the exact current-state parity contract, see
@@ -106,6 +115,9 @@ the cookie import.
   - `Never prompt`: never attempts interactive Claude OAuth Keychain prompts.
   - `Only on user action` (default): interactive prompts are reserved for user-initiated repair flows.
   - `Always allow prompts`: allows interactive prompts in both user and background flows.
+- Explicit Refresh can repair Claude OAuth Keychain access when direct-read consent is enabled and the policy
+  allows user prompts. Ordinary OAuth fetches remain noninteractive, including with `Always allow prompts`;
+  that policy still governs the existing delegated refresh and experimental reader paths.
 - This setting only affects Claude OAuth Keychain prompting behavior; it does not switch your Claude usage source.
 - The policy also applies to the experimental `/usr/bin/security` reader and delegated OAuth refresh through
   `claude`: background operations that can prompt require `Always allow prompts`.
@@ -142,6 +154,8 @@ the cookie import.
   after a rejected cache write, the next refresh first clears the stale persistent entry, then reuses and persists
   an unexpired in-memory credential even after 30 minutes once that cleanup succeeds. Extended reuse requires
   evidence of that exact failed write and its original consent; an unrelated invalidation cannot authorize it.
+  Rejected writes during CodexBar-owned token refresh retain the same recovery, bound to the refreshed credential;
+  a delayed older write cannot replace a newer credential's recovery.
   This does not discover an external login or enable additional background reads of Claude Code's Keychain item.
 - For the default CLI profile, expired cached or file credentials can adopt a fresh CLI Keychain token after file fallback, even when its fingerprint was already observed during an earlier repair. Existing direct-read consent, prompt policy, cooldown, one-minute freshness-check throttle, and noninteractive-read checks still apply. Custom profiles are not recovered from the unscoped global item, and CLI credentials are never rewritten by this synchronization. Background recovery still requires the Always allow prompts policy; the default Only on user action policy requires an explicit Refresh.
 - Credential selection does not rank unrelated sources by the largest `expiresAt`: expiry establishes validity,
@@ -207,6 +221,23 @@ the cookie import.
   (`default_claude_max_5x` / `default_claude_max_20x`), it is surfaced in the label as "Max 5x" / "Max 20x".
 
 ## Web API (cookies)
+- Optional subscription dates come from `GET /api/organizations/{org_id}/subscription_details` on `claude.ai`,
+  using an existing manual or cached session cookie. They do not come from the quota response or OAuth expiry.
+  `next_charge_at` / `next_charge_date` supply renewal; `plan_ending_at` / `plan_ending_before` supply paid-access
+  expiration and take precedence over renewal. Calendar-only dates stay calendar-only when displayed.
+- The menu and Settings preview reuse the shared subscription row. Missing, unavailable, or unrecognized billing
+  data does not invent a date or fail usage. CLI JSON exposes `subscriptionRenewsAt` / `subscriptionExpiresAt`
+  and a corresponding `...IsDateOnly: true` when the server only supplies a calendar date.
+- OAuth enrichment additionally verifies the OAuth profile's account and organization against the cookie session
+  before and after billing. OAuth credentials alone cannot fetch these dates. No cookie discovery, credential
+  repair, sign-in, or new Keychain access is performed for billing; cookie source Off disables it.
+- App and CLI use the same provider fetch and normal account-scoped publication. Billing has a separate two-second
+  total budget after quota succeeds; expiry, errors, or a changed verified owner leave successful quota intact.
+  No delayed billing task writes back into an already published snapshot, and dates are not carried across refreshes.
+- Availability is determined by the authenticated billing response, not the Pro/Max/Team/Enterprise plan label.
+  The fixtures cover the reported subscription schema, including cancellation and absent dates; they do not
+  establish that every plan or organization role can access this endpoint. Team/Enterprise billing access and
+  live cancelled subscriptions remain unverified. Quota resets and Extra usage balances are independent.
 - Session quota warnings ignore a weekly quota promoted into the primary field when the five-hour payload is missing. Existing session warning history stays tied to its account, and weekly warnings continue independently.
 - Preferences → Providers → Claude → Cookie source (Automatic or Manual).
 - Manual mode accepts a `Cookie:` header from a claude.ai request.
@@ -249,7 +280,7 @@ the cookie import.
   - Session + weekly + model-specific percent used.
   - A missing session measurement does not render as 100% remaining. Measured weekly and extra windows stay visible; when only a synthetic session placeholder exists, menus and plain CLI output report that limits are unavailable. Raw JSON retains the placeholder for diagnostics.
   - Daily Routines extra window when returned by the usage API.
-  - Extra usage spend/limit (if enabled).
+  - Extra usage spend/limit (if enabled). Compact Overview keeps this section when no measured quota bars exist, including Enterprise accounts with unavailable limits.
   - Remaining Usage credits balance (if enabled).
   - Account email + inferred plan.
   - Limit Reset Credits (see below).
@@ -277,6 +308,10 @@ the cookie import.
     does not report saved reset credits, and optional Web enrichment never adds Web credits to another source,
     even when the account matches. The menu replaces the generic details row with one shared reset-credit section.
     CodexBar never redeems a reset; use Claude on the web or Claude Desktop.
+
+Enterprise spend details depend on the selected source. Auto stops at the first successful OAuth/CLI/Web result;
+it does not import a missing monthly spend cap from a different session. Select **Web API (cookies)** for
+browser-only billing details, and enable **Show credits and extra usage** to display them.
 
 ## Cloud-session credits
 
@@ -410,9 +445,9 @@ Model-scoped weekly-window proof (synthetic data, no real accounts or credential
 - Runs `claude` in a PTY session (`ClaudeCLISession`).
 - The bundled watchdog is discovered only in the running executable's resolved app bundle; launching through a CLI symlink preserves that association.
 - Default behavior: exit after each probe; Debug → "Keep CLI sessions alive" keeps it running between probes.
-- Both PTY probes and the non-PTY `/usage` fallback pass `--settings '{"remoteControlAtStartup":false}'` to disable Remote Control startup for the probe process. This process-local override leaves the user's saved settings unchanged; Claude's managed-settings policy still applies.
+- Both PTY probes and the non-PTY `/usage` fallback pass `--settings '{"remoteControlAtStartup":false,"disableAllHooks":true}'` to disable Remote Control startup and user hooks for the probe process. This process-local override leaves the user's saved settings unchanged; Claude's managed-settings policy still applies.
 - Both launches use `--strict-mcp-config` to skip the user's configured MCP servers. Saved nonessential-traffic restrictions remain in force.
-- A PTY timeout or usage-loading failure can trigger the non-PTY `/usage` fallback. Cancellation and rate limits stop the probe; a subscription-only notice from the fallback takes precedence over the original PTY failure.
+- A PTY timeout or usage-loading failure can trigger the non-PTY `/usage` fallback. Cancellation and rate limits stop the probe; a subscription-only notice from the fallback takes precedence over the original PTY failure. An insights-only report is not evidence that the account lacks quotas: it preserves the original PTY failure, which is also logged before fallback.
 - Transient CLI timeouts and loading stalls preserve availability already established for that account, so a later
   Auto refresh can retry CLI instead of stopping at missing OAuth credentials. They do not establish availability
   for a previously unverified account; the existing Keychain and prompt policies still apply.
@@ -447,7 +482,8 @@ Model-scoped weekly-window proof (synthetic data, no real accounts or credential
   - Surfaces CLI errors (e.g. token expired) directly.
   - Some Education and organization-managed subscriptions return only a subscription notice, with no numeric
     session or weekly quota fields. CodexBar reports those limits as unavailable, keeps local cost/token history
-    visible, and never derives quota percentages from spend or token totals.
+    visible, and never derives quota percentages from spend or token totals. Logs and diagnostics classify this as
+    a configuration issue and recommend checking the provider source/settings, rather than re-authenticating.
 
 ## Cost usage (local log scan)
 - Source roots:

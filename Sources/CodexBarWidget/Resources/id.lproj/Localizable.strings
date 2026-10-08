@@ -119,7 +119,7 @@
 "Purchased" = "Dibeli";
 "Quota" = "Kuota";
 "Ran out" = "Kuota habis";
-"Rate limit" = "Batas tarif";
+"Rate limit" = "Batas frekuensi permintaan";
 "Refill" = "Isi ulang";
 "Remaining budget compared with an ideal steady burn rate." = "Anggaran yang tersisa dibandingkan dengan tingkat pembakaran stabil yang ideal.";
 "Requests" = "Permintaan";
@@ -129,8 +129,8 @@
 "Resets in %@" = "Reset dalam %@";
 "Reviews" = "Ulasan";
 "Rolling" = "Bergulir";
-"Runs out" = "Kuota habis";
-"Runs out in" = "Kuota habis";
+"Runs out" = "Perkiraan habis";
+"Runs out in" = "Habis dalam";
 "Savings" = "Tabungan";
 "Search hourly" = "Cari per jam";
 "Secondary budget" = "Anggaran sekunder";
@@ -143,9 +143,9 @@
 "Session" = "Sesi";
 "Session (5-hour)" = "Sesi (5 jam)";
 "Session and weekly usage with credits and costs." = "Sesi dan penggunaan mingguan dengan Kredit dan biaya.";
-"Shared pool" = "Kolam renang bersama";
+"Shared pool" = "Kuota bersama";
 "Sonnet" = "Sonnet";
-"Spend" = "Menghabiskan";
+"Spend" = "Pengeluaran";
 "Standard" = "Standar";
 "Status" = "Status";
 "Subscription" = "Berlangganan";

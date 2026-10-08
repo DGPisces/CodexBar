@@ -1499,6 +1499,8 @@
 
 "Cumulative" = "累計";
 "Token activity" = "トークンアクティビティ";
+"Earlier activity" = "以前の記録";
+"More recent activity" = "最近の記録";
 "View" = "表示";
 "in the last year" = "過去1年";
 "No activity in the last 12 months" = "過去12か月にアクティビティなし";
@@ -1674,7 +1676,7 @@
 "%@d %@h" = "%1$@日 %2$@時間";
 "%@h %@m" = "%1$@時間 %2$@分";
 "%@m" = "%@分";
-"%d CONNECTED" = "%d 接続されました";
+"%d CONNECTED" = "接続済み：%d 件";
 "%d DAYS" = "%d 日";
 "%d days" = "%d 日";
 "%d more accounts ready" = "%d より多くのアカウントの準備ができました";
@@ -1725,7 +1727,7 @@
 "Automatically imports the app.devin.ai session from Chromium browsers." = "Chromium ブラウザから app.devin.ai セッションを自動的にインポートします。";
 "Automatically imports the browser session cookie." = "ブラウザセッション cookie を自動的にインポートします。";
 "Automatically signs in using your ZoomMate session cookies from Chrome." = "Chrome からの ZoomMate セッション cookies を使用して自動的にサインインします。";
-"BY USAGE" = "用途別ランキング";
+"BY USAGE" = "使用量順";
 "Bailian CLI" = "Bailian CLI";
 "Bearer eyJ..." = "Bearer eyJ...";
 "Bearer token" = "Bearer 認証 トークン";
@@ -1868,7 +1870,7 @@
 "OpenAI-compatible v1" = "OpenAI 互換 v1";
 "OpenCode API key" = "OpenCode API キー";
 "Optional additional key for account Activity. Only needed to use a separate Management API key from the one in the required API key field above." = "アカウントアクティビティのオプションの追加キー。上記の必須 API キー フィールドのキーとは別の管理 API キーを使用する場合にのみ必要です。";
-"Optional for automatic auth. Use a slug, URL, or internal org-... / org_... ID. Manual auth may need the x-cog-org-id header from a successful Devin quota request." = "自動認証の場合はオプションです。スラグ、URL、または内部組織... / org_... ID を使用します。手動認証には、成功した Devin クォータ リクエストの x-cog-org-id ヘッダーが必要になる場合があります。";
+"Optional for automatic auth. Use a slug, URL, or internal org-... / org_... ID. Manual auth may need the x-cog-org-id header from a successful Devin quota request." = "自動認証では省略できます。slug、URL、または org-... / org_... 形式の内部 ID を使用します。手動認証では、成功した Devin クォータリクエストの x-cog-org-id ヘッダーが必要になる場合があります。";
 "Optional gk-org-id header value. Or set GITKRAKEN_ORG_ID." = "オプションの gk-org-id ヘッダー値。または、GITKRAKEN_ORG_ID を設定します。";
 "Optional when the API key can access one account; CodexBar discovers it automatically. For multiple accounts, find the slug in the app.fireworks.ai home account switcher or run firectl whoami." = "API キーが 1 つのアカウントにアクセスできる場合はオプションです。 CodexBar は自動的に検出します。複数のアカウントの場合は、app.fireworks.ai ホーム アカウント スイッチャーでスラッグを見つけるか、firectl whoami を実行します。";
 "Optional. Defaults to the first Business or Enterprise workspace on the account." = "オプション。デフォルトは、アカウントの最初の Business または Enterprise ワークスペースです。";
@@ -1910,8 +1912,8 @@
 "Profile name" = "構成プロファイル名";
 "Provider %@" = "プロバイダー %@";
 "Provider + Metric" = "プロバイダー + 指標";
-"Provider Switcher Shortcuts" = "プロバイダースイッチャーのショートカット";
-"Provider Switcher Shortcuts…" = "プロバイダースイッチャーのショートカット…";
+"Provider Switcher Shortcuts" = "プロバイダー切り替えのショートカット";
+"Provider Switcher Shortcuts…" = "プロバイダー切り替えのショートカット…";
 "Provider service status: %@" = "プロバイダーのサービスステータス: %@";
 "Quota estimated from local usage history" = "クォータ ローカルの使用履歴から推定";
 "Quota from the selected dev.meta.ai browser team" = "選択された dev.meta.ai ブラウザー チームの クォータ";
@@ -1932,8 +1934,8 @@
 "Reset: %@" = "リセット: %@";
 "Resets every 5 hours" = "5時間ごとにリセットされる";
 "Resets in" = "でリセットします";
-"Runs out" = "クォータ がなくなりました";
-"Runs out in" = "クォータ がなくなります";
+"Runs out" = "使い切る見込み";
+"Runs out in" = "使い切るまで";
 "SUBSCRIPTIONS" = "定期購入";
 "Save" = "保存";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "ドットファイルの表示と通知の設定を保存します。アカウント、資格情報、ログイン、ローカル パス、および同意はこの Mac 上に残ります。";
@@ -1947,7 +1949,7 @@
 "Select the provider to display in the widget." = "ウィジェットに表示するプロバイダーを選択します。";
 "Select the provider to display." = "表示するプロバイダーを選択します。";
 "Session (5-hour)" = "セッション（5時間）";
-"Session and weekly usage with credits and costs." = "クレジット のセッションと週ごとの使用量とコスト。";
+"Session and weekly usage with credits and costs." = "セッションと週間の使用量、クレジット、費用を表示します。";
 "Settings unavailable." = "設定が利用できません。";
 "Show account card when only one account is available" = "利用可能なアカウントが 1 つだけの場合にアカウント カードを表示する";
 "Show model-specific weekly usage in widgets" = "モデル固有の週ごとの使用量をウィジェットに表示";
@@ -1955,7 +1957,7 @@
 "Shows model-specific Claude quotas, such as Fable, in desktop widgets." = "デスクトップ ウィジェットに、Fable などのモデル固有の Claude クォータ を表示します。";
 "Shows the hidden accounts" = "隠しアカウントを表示します";
 "Shows usage and lets you switch accounts through `cswap`. Credentials stay managed by claude-swap; CodexBar never reads them." = "使用状況を表示し、`cswap` を通じてアカウントを切り替えることができます。資格情報は claude-swap によって管理されます。 CodexBar はそれらを決して読みません。";
-"Stay Awake" = "起きていてください";
+"Stay Awake" = "スリープを防ぐ";
 "Stored in the CodexBar config file. Reads monthly budget and routed usage from /v1/usage." = "CodexBar 構成ファイルに保存されます。 /v1/usage から月次予算とルーティングされた使用量を読み取ります。";
 "Stored in ~/.codexbar/config.json. OPENAI_ADMIN_KEY is required for organization usage; legacy/user keys only get a best-effort balance fallback." = "~/.codexbar/config.json に保存されます。 OPENAI_ADMIN_KEY は組織で使用する場合に必要です。レガシー/ユーザーキーは、ベストエフォート型バランスのフォールバックのみを取得します。";
 "Stored in ~/.codexbar/config.json. You can also provide FACTORY_API_KEY or ~/.factory/.env." = "~/.codexbar/config.json に保存されます。 FACTORY_API_KEY または ~/.factory/.env を指定することもできます。";
@@ -2008,19 +2010,19 @@
 "a1.small-equivalent hours" = "a1.small相当時間";
 "after reset" = "リセット後";
 "all" = "すべて";
-"ark-... or AKLT..." = "アーク...またはAKLT...";
+"ark-... or AKLT..." = "ark-... または AKLT...";
 "budget spent" = "クォータ 予算を使い果たしました";
 "cb_..." = "cb_...";
 "claude auth login exited with status %d." = "claude auth login は %d ステータスで終了しました。";
 "claude-swap executable" = "claude-swap 実行可能ファイル";
 "connected" = "接続された";
-"conserving" = "クォータの保存";
+"conserving" = "節約ペース";
 "cpk-..." = "cpk-...";
 "curl 'https://ai.zoom.us/ai-computer/api/v1/credits/status' -H 'authorization: ...'" = "curl 'https://ai.zoom.us/ai-computer/api/v1/credits/status' -H 'authorization: ...'";
 "default" = "default";
 "e.g. 3000" = "例: 3000";
 "fk-..." = "fk-...";
-"full" = "フル クォータ が利用可能";
+"full" = "全枠が利用可能";
 "fw_..." = "fw_...";
 "github.com" = "github.com";
 "gpt-4o-mini" = "gpt-4o-mini";
@@ -2129,7 +2131,7 @@
 "Chutes cost history is not available from CodexBar." = "Chutes のコスト履歴は、CodexBar からは利用できません。";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "~/.codexbar/config.json に保存されます。 Chutes API キーを貼り付けます。";
 "chutes key..." = "Chutes API キー...";
-"Spend" = "支出する";
+"Spend" = "支出";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Fireworks の支出は、料金概要 API から取得されます。コスト履歴は追跡されません。";
 "Doubao API-key accounts" = "Doubao API-キーアカウント";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "ラベル付きの Ark API キーを保管します。 AK/SK ペアと arkcli プロファイルはここではサポートされていません。";
@@ -2329,7 +2331,7 @@
 "Renews" = "更新します";
 "Orb" = "オーブ";
 "Individual" = "個人";
-"Today spend" = "今日の過ごし方";
+"Today spend" = "今日の支出";
 "Usage billing" = "使用量の請求";
 "Period resets" = "期間のリセット";
 "Cached input" = "キャッシュされた入力";
@@ -2340,7 +2342,7 @@
 "Subscription credits available" = "サブスクリプション クレジット が利用可能です";
 "Total credits available" = "合計 クレジット が利用可能";
 "Used this cycle" = "このサイクルを使用しました";
-"Bank cap" = "銀行の上限";
+"Bank cap" = "蓄積クレジットの上限";
 "Next refill" = "次の詰め替え";
 "Gateway" = "ゲートウェイ";
 "Routed" = "ルーティング済み";
@@ -2365,3 +2367,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "記録済みの支出";
+"Highest recorded spend" = "記録済みの最大支出";
+"Previous day" = "前の日";
+"Next day" = "次の日";
+"Click to isolate a source. Click again to show all." = "クリックでこのソースのみ表示。再クリックで全て表示。";
+"Recorded hourly spend" = "記録された時間別支出";
+"Highest spend" = "最大支出";
+"Models for this day" = "この日のモデル";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "棒をクリックして詳しく確認できます。下のメニューで正確な金額を確認できます。";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "複数の ClinePass API キーを保存します。選択したキーは、設定済みの API キーと cline auth セッションよりも優先されます。";
+
+"X API cost history is not available." = "X API の費用履歴は利用できません。";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "auth_token と ct0 を含む console.x.com の Cookie ヘッダーを貼り付けてください。";
+
+"Open X Developer Console" = "X 開発者コンソールを開く";

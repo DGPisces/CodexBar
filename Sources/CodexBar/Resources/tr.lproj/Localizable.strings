@@ -281,7 +281,7 @@
 "Picker" = "Seçici";
 "Picker subtitle" = "Seçici alt başlığı";
 "Placeholder" = "Yer tutucu";
-"Plan" = "Planı";
+"Plan" = "Plan";
 "Plan Usage" = "Plan kullanımı";
 "Play full-screen confetti when weekly usage resets." = "Haftalık kullanım sıfırlandığında tam ekran konfeti göster.";
 "Polls OpenAI/Claude status pages and Google Workspace for " = "OpenAI/Claude durum sayfalarını ve Google Workspace'i ";
@@ -1500,6 +1500,8 @@
 
 "Cumulative" = "Kümülatif";
 "Token activity" = "Token etkinliği";
+"Earlier activity" = "Önceki etkinlik";
+"More recent activity" = "Daha yeni etkinlik";
 "View" = "Görünüm";
 "in the last year" = "son yılda";
 "No activity in the last 12 months" = "Son 12 ayda etkinlik yok";
@@ -1709,7 +1711,7 @@
 "Account %@" = "Hesap %@";
 "Account Added" = "Hesap Eklendi";
 "Account Usage" = "Hesap Kullanımı";
-"Account slug" = "Hesap tanımlayıcı (bilgi)";
+"Account slug" = "Hesap tanımlayıcı (slug)";
 "Account switched; restart the Codex background server manually." = "Hesap değiştirildi; Codex arka plan sunucusunu manuel olarak yeniden başlatın.";
 "Allow reading Claude Code's credentials" = "Claude Code'nin kimlik bilgilerinin okunmasına izin ver";
 "Amp CLI" = "Amp CLI";
@@ -1871,9 +1873,9 @@
 "OpenAI-compatible v1" = "OpenAI uyumlu v1";
 "OpenCode API key" = "OpenCode API anahtarı";
 "Optional additional key for account Activity. Only needed to use a separate Management API key from the one in the required API key field above." = "Hesap Etkinliği için isteğe bağlı ek anahtar. Yalnızca yukarıda gerekli API anahtar alanında bulunandan ayrı bir Yönetim API anahtarının kullanılması gerekir.";
-"Optional for automatic auth. Use a slug, URL, or internal org-... / org_... ID. Manual auth may need the x-cog-org-id header from a successful Devin quota request." = "Otomatik kimlik doğrulama için isteğe bağlıdır. Bir bilgi notu, URL veya dahili org-... / org_... ID kullanın. Manuel kimlik doğrulama, başarılı bir Devin Kota isteğinden gelen x-cog-org-id başlığına ihtiyaç duyabilir.";
+"Optional for automatic auth. Use a slug, URL, or internal org-... / org_... ID. Manual auth may need the x-cog-org-id header from a successful Devin quota request." = "Otomatik kimlik doğrulama için isteğe bağlıdır. Bir slug, URL veya dahili org-... / org_... ID kullanın. Manuel kimlik doğrulama, başarılı bir Devin Kota isteğinden gelen x-cog-org-id başlığına ihtiyaç duyabilir.";
 "Optional gk-org-id header value. Or set GITKRAKEN_ORG_ID." = "İsteğe bağlı gk-org-id başlık değeri. Veya GITKRAKEN_ORG_ID'yi ayarlayın.";
-"Optional when the API key can access one account; CodexBar discovers it automatically. For multiple accounts, find the slug in the app.fireworks.ai home account switcher or run firectl whoami." = "API anahtarı bir hesaba erişebildiğinde isteğe bağlıdır; CodexBar bunu otomatik olarak keşfeder. Birden fazla hesap için app.fireworks.ai ev hesabı değiştiricide bilgiyi bulun veya firectl whoami'yi çalıştırın.";
+"Optional when the API key can access one account; CodexBar discovers it automatically. For multiple accounts, find the slug in the app.fireworks.ai home account switcher or run firectl whoami." = "API anahtarı bir hesaba erişebildiğinde isteğe bağlıdır; CodexBar bunu otomatik olarak keşfeder. Birden fazla hesap için app.fireworks.ai ev hesabı değiştiricide slug değerini bulun veya firectl whoami'yi çalıştırın.";
 "Optional. Defaults to the first Business or Enterprise workspace on the account." = "İsteğe bağlı. Hesaptaki ilk Business veya Enterprise çalışma alanı varsayılandır.";
 "Optional. Defaults to the hosted ClawRouter service." = "İsteğe bağlı. Barındırılan ClawRouter hizmeti varsayılandır.";
 "Optional. Defaults to the hosted OpenRouter API." = "İsteğe bağlı. Varsayılan olarak barındırılan OpenRouter API'ye ayarlanır.";
@@ -1935,8 +1937,8 @@
 "Reset: %@" = "Sıfırla: %@";
 "Resets every 5 hours" = "Her 5 saatte bir sıfırlanır";
 "Resets in" = "Sıfırlama süresi";
-"Runs out" = "Kota tükeniyor";
-"Runs out in" = "Kota'nin süresi doldu";
+"Runs out" = "Tükenmesi bekleniyor";
+"Runs out in" = "Tükenmesine kalan süre";
 "SUBSCRIPTIONS" = "ABONELİKLER";
 "Save" = "Kaydet";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Nokta dosyalarınız için görüntüleme ve bildirim tercihlerini kaydedin. Hesaplar, kimlik bilgileri, oturum açma bilgileri, yerel yollar ve izinler bu Mac'te kalır.";
@@ -2092,7 +2094,7 @@
 "v0_..." = "v0_...";
 "Open v0 API keys" = "v0 API anahtarlarını açın";
 "Scope" = "Kapsam";
-"Optional project ID or slug. Leave blank for the default v0 scope." = "İsteğe bağlı proje ID veya sümüklü böcek. Varsayılan v0 kapsamı için boş bırakın.";
+"Optional project ID or slug. Leave blank for the default v0 scope." = "İsteğe bağlı proje kimliği veya slug. Varsayılan v0 kapsamı için boş bırakın.";
 "project-slug" = "project-slug";
 "Monthly budget" = "Aylık bütçe";
 "ClawRouter spend is reported by its usage API." = "ClawRouter harcaması, API kullanımına göre raporlanır.";
@@ -2109,7 +2111,7 @@
 "Flash Lite" = "Flash Lite";
 "Window" = "Kullanım penceresi";
 "Token plan credits usage." = "token, Krediler kullanımını planlar.";
-"API keys" = "API tuşları";
+"API keys" = "API anahtarları";
 "Store multiple OpenRouter API keys." = "Birden fazla OpenRouter API anahtarını saklayın.";
 "Credit balance from OpenRouter API" = "OpenRouter API'den Krediler bakiyesi";
 "GitHub accounts" = "GitHub hesapları";
@@ -2168,7 +2170,7 @@
 "Store multiple IBM Bob API keys." = "Birden fazla IBM Bob API anahtarını saklayın.";
 "Monthly Bobcoins" = "Aylık Bobcoinler";
 "Bobcoin usage from the IBM Bob API." = "IBM Bob API'den Bobcoin kullanımı.";
-"Shared pool" = "Ortak havuz";
+"Shared pool" = "Ortak kota";
 "GitKraken cost history is not available." = "GitKraken maliyet geçmişi mevcut değil.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "xAI günlük harcama, bir Yönetim API anahtarı ve ID ekibini gerektirir. Ön ödeme bakiyesi harcama olarak değerlendirilmez.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "~/.codexbar/config.json konumunda saklanır. Ayarlar > Yönetim Anahtarları altında console.x.ai'de bir tane oluşturun; çıkarım API anahtarları kabul edilmez.";
@@ -2332,7 +2334,7 @@
 "Renews" = "Yeniler";
 "Orb" = "Küre";
 "Individual" = "Bireysel";
-"Today spend" = "Bugün harca";
+"Today spend" = "Bugünkü harcama";
 "Usage billing" = "Kullanım faturalandırması";
 "Period resets" = "Dönem sıfırlanır";
 "Cached input" = "Önbelleğe alınmış giriş";
@@ -2343,7 +2345,7 @@
 "Subscription credits available" = "Abonelik Krediler mevcut";
 "Total credits available" = "Toplam Krediler mevcut";
 "Used this cycle" = "Bu döngüyü kullandım";
-"Bank cap" = "Banka kapağı";
+"Bank cap" = "Biriken kredi üst sınırı";
 "Next refill" = "Sonraki dolum";
 "Gateway" = "Ağ Geçidi";
 "Routed" = "Yönlendirildi";
@@ -2368,3 +2370,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Kaydedilen harcama";
+"Highest recorded spend" = "En yüksek kaydedilen harcama";
+"Previous day" = "Önceki gün";
+"Next day" = "Sonraki gün";
+"Click to isolate a source. Click again to show all." = "Tek kaynağı görmek için tıklayın. Tümünü görmek için tekrar tıklayın.";
+"Recorded hourly spend" = "Kaydedilen saatlik harcama";
+"Highest spend" = "En yüksek harcama";
+"Models for this day" = "Bu günün modelleri";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Ayrıntılar için bir çubuğa tıklayın. Kesin tutarlar için aşağıdaki menüyü kullanın.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Birden fazla ClinePass API anahtarı kaydedin. Seçilen anahtar, yapılandırılmış API anahtarından ve cline auth oturumundan önceliklidir.";
+
+"X API cost history is not available." = "X API maliyet geçmişi kullanılamıyor.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "auth_token ve ct0 içeren bir console.x.com Cookie başlığı yapıştırın.";
+
+"Open X Developer Console" = "X Geliştirici Konsolunu Aç";

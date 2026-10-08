@@ -105,7 +105,7 @@
 "Peak %@" = "Đỉnh %@";
 "Personal" = "Cá nhân";
 "Personal budget" = "Ngân sách cá nhân";
-"Plan" = "Kế hoạch";
+"Plan" = "Gói dịch vụ";
 "Plan credits" = "Gói đăng ký Tín dụng";
 "Points" = "Điểm";
 "Premium" = "Cao cấp";
@@ -129,8 +129,8 @@
 "Resets in %@" = "Đặt lại sau %@";
 "Reviews" = "Đánh giá";
 "Rolling" = "Lăn";
-"Runs out" = "Hạn mức hết";
-"Runs out in" = "Hạn mức sắp hết";
+"Runs out" = "Dự kiến hết";
+"Runs out in" = "Hết sau";
 "Savings" = "Tiết kiệm";
 "Search hourly" = "Tìm kiếm hàng giờ";
 "Secondary budget" = "Ngân sách phụ";
@@ -143,9 +143,9 @@
 "Session" = "Phiên";
 "Session (5-hour)" = "Phiên (5 giờ)";
 "Session and weekly usage with credits and costs." = "Phiên và mức sử dụng hàng tuần với Tín dụng và chi phí.";
-"Shared pool" = "Bể bơi chung";
+"Shared pool" = "Hạn mức dùng chung";
 "Sonnet" = "Sonnet";
-"Spend" = "chi tiêu";
+"Spend" = "Chi phí";
 "Standard" = "Tiêu chuẩn";
 "Status" = "Trạng thái";
 "Subscription" = "Đăng ký";

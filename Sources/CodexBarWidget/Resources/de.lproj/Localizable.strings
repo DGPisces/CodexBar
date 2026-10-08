@@ -38,7 +38,7 @@
 "Add-on credits" = "Add-on Credits";
 "Agent" = "Agent";
 "Amp Free" = "Amp Kostenlos";
-"Balance" = "Gleichgewicht";
+"Balance" = "Guthaben";
 "Base" = "Basis";
 "Billing" = "Abrechnung";
 "Billing cycle" = "Abrechnungszyklus";
@@ -105,7 +105,7 @@
 "Peak %@" = "Spitze %@";
 "Personal" = "Persönlich";
 "Personal budget" = "Persönliches Budget";
-"Plan" = "Planen";
+"Plan" = "Tarif";
 "Plan credits" = "Abonnementplan Credits";
 "Points" = "Punkte";
 "Premium" = "Premium";
@@ -129,8 +129,8 @@
 "Resets in %@" = "Zurückgesetzt in %@";
 "Reviews" = "Rezensionen";
 "Rolling" = "Rollen";
-"Runs out" = "Kontingent läuft aus";
-"Runs out in" = "Kontingent läuft aus";
+"Runs out" = "Voraussichtlich erschöpft";
+"Runs out in" = "Erschöpft in";
 "Savings" = "Einsparungen";
 "Search hourly" = "Stündlich suchen";
 "Secondary budget" = "Sekundärbudget";
@@ -143,9 +143,9 @@
 "Session" = "Sitzung";
 "Session (5-hour)" = "Sitzung (5 Stunden)";
 "Session and weekly usage with credits and costs." = "Sitzungs- und wöchentliche Nutzung mit Credits und Kosten.";
-"Shared pool" = "Gemeinschaftspool";
-"Sonnet" = "Sonett";
-"Spend" = "Verbringen";
+"Shared pool" = "Gemeinsames Kontingent";
+"Sonnet" = "Sonnet";
+"Spend" = "Ausgaben";
 "Standard" = "Standard";
 "Status" = "Status";
 "Subscription" = "Abonnement";
@@ -183,8 +183,8 @@
 "antigravity-cli-usage" = "antigravity-cli-usage";
 "antigravity-cli-version" = "antigravity-cli-version";
 "budget spent" = "Kontingent-Budget aufgebraucht";
-"conserving" = "Einsparung Kontingent";
-"full" = "voll Kontingent verfügbar";
+"conserving" = "Kontingent wird geschont";
+"full" = "volles Kontingent verfügbar";
 "left" = "übrig";
 "now" = "jetzt";
 "on pace" = "Nutzung im geplanten Tempo";

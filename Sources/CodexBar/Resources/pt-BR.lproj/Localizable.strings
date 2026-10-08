@@ -231,7 +231,7 @@
 "MCP details" = "Detalhes MCP";
 "Managed Codex accounts unavailable" = "Contas Codex gerenciadas indisponíveis";
 "Managed account storage is unreadable. Live account access is still available, " = "O armazenamento de contas gerenciadas está ilegível. O acesso à conta ativa ainda está disponível, ";
-"Manual" = "Manuais";
+"Manual" = "Manual";
 "May your tokens never run out—keep agent limits in view." = "Que seus tokens nunca acabem — mantenha os limites dos agentes à vista.";
 "Menu bar" = "Barra de menus";
 "Menu bar auto-shows the provider closest to its rate limit." = "A barra de menus mostra automaticamente o provedor mais próximo do limite de taxa.";
@@ -575,7 +575,7 @@
 "tab_providers" = "Provedores";
 "tab_notifications" = "Notificações";
 "tab_menu_bar" = "Barra de menus";
-"tab_menu" = "Cardápio";
+"tab_menu" = "Menu";
 "tab_advanced" = "Avançado";
 "tab_about" = "Sobre";
 "tab_debug" = "Depuração";
@@ -785,7 +785,7 @@
 "metric_pref_tertiary" = "Terciário";
 "metric_pref_extra_usage" = "Uso extra";
 "metric_pref_average" = "Média";
-"metric_mistral_payg" = "Faturamento pré-pago";
+"metric_mistral_payg" = "Faturamento conforme o uso";
 "metric_mistral_monthly_plan" = "Plano de assinatura mensal";
 
 /* Display modes */
@@ -1492,13 +1492,15 @@
 "codex_workspaces_started" = "Iniciada";
 "codex_workspaces_title" = "Espaços de trabalho";
 "codex_workspaces_token_count_accessibility" = "Tokens %@";
-"codex_workspaces_tokens" = "Fichas";
+"codex_workspaces_tokens" = "Tokens";
 "codex_workspaces_top_model" = "Modelo principal";
 "Finish now" = "Concluir agora";
 "Continue in background" = "Continuar em segundo plano";
 
 "Cumulative" = "Acumulado";
 "Token activity" = "Atividade de tokens";
+"Earlier activity" = "Atividade anterior";
+"More recent activity" = "Atividade mais recente";
 "View" = "Visualização";
 "in the last year" = "no último ano";
 "No activity in the last 12 months" = "Sem atividade nos últimos 12 meses";
@@ -1565,7 +1567,7 @@
 "List-price equivalent — not a billing receipt." = "Equivalente ao preço de tabela — não um recibo de cobrança.";
 "Priced" = "Uso com preço";
 "Unpriced" = "Uso sem preço";
-"Unmetered" = "Uso ilimitado";
+"Unmetered" = "Uso não medido";
 "Estimated" = "Estimado";
 "Other models" = "Outros modelos";
 "Include OpenCodex usage logs" = "Incluir logs de uso do OpenCodex";
@@ -1932,8 +1934,8 @@
 "Reset: %@" = "Redefinir: %@";
 "Resets every 5 hours" = "Reinicia a cada 5 horas";
 "Resets in" = "Reinicia em";
-"Runs out" = "Cota acaba";
-"Runs out in" = "Cota acaba em";
+"Runs out" = "Esgotamento previsto";
+"Runs out in" = "Esgota em";
 "SUBSCRIPTIONS" = "ASSINATURAS";
 "Save" = "Salvar";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Salve as preferências de exibição e notificação para seus dotfiles. Contas, credenciais, login, caminhos locais e consentimento permanecem neste Mac.";
@@ -2008,7 +2010,7 @@
 "a1.small-equivalent hours" = "Horas equivalentes a a1.small";
 "after reset" = "depois de redefinir";
 "all" = "tudo";
-"ark-... or AKLT..." = "arca-... ou AKLT...";
+"ark-... or AKLT..." = "ark-... ou AKLT...";
 "budget spent" = "Orçamento Cota esgotado";
 "cb_..." = "cb_...";
 "claude auth login exited with status %d." = "claude auth login saiu com status %d.";
@@ -2129,7 +2131,7 @@
 "Chutes cost history is not available from CodexBar." = "O histórico de custos Chutes não está disponível em CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Armazenado em ~/.codexbar/config.json. Cole uma chave Chutes API.";
 "chutes key..." = "Chave API do Chutes...";
-"Spend" = "Gastar";
+"Spend" = "Gastos";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Os gastos de Fireworks vêm do resumo de faturamento API; o histórico de custos não é rastreado.";
 "Doubao API-key accounts" = "Doubao API-contas-chave";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "Armazene chaves Ark API rotuladas. Pares AK/SK e perfis arkcli não são suportados aqui.";
@@ -2165,7 +2167,7 @@
 "Store multiple IBM Bob API keys." = "Armazene várias chaves IBM Bob API.";
 "Monthly Bobcoins" = "Bobcoins Mensais";
 "Bobcoin usage from the IBM Bob API." = "Uso de Bobcoin do IBM Bob API.";
-"Shared pool" = "Piscina compartilhada";
+"Shared pool" = "Cota compartilhada";
 "GitKraken cost history is not available." = "O histórico de custos GitKraken não está disponível.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "O gasto diário xAI requer uma chave de gerenciamento API e uma equipe ID. O saldo pré-pago não é tratado como gasto.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "Armazenado em ~/.codexbar/config.json. Crie um em console.x.ai em Configurações > Chaves de gerenciamento; chaves de inferência API não são aceitas.";
@@ -2329,7 +2331,7 @@
 "Renews" = "Renova";
 "Orb" = "Orbe";
 "Individual" = "Individual";
-"Today spend" = "Hoje gaste";
+"Today spend" = "Gastos de hoje";
 "Usage billing" = "Faturamento de uso";
 "Period resets" = "Redefinições de período";
 "Cached input" = "Entrada em cache";
@@ -2340,7 +2342,7 @@
 "Subscription credits available" = "Assinatura Créditos disponível";
 "Total credits available" = "Total Créditos disponível";
 "Used this cycle" = "Usei este ciclo";
-"Bank cap" = "Limite do banco";
+"Bank cap" = "Limite de créditos acumulados";
 "Next refill" = "Próxima recarga";
 "Gateway" = "Portal";
 "Routed" = "Roteado";
@@ -2365,3 +2367,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Gasto registrado";
+"Highest recorded spend" = "Maior gasto registrado";
+"Previous day" = "Dia anterior";
+"Next day" = "Próximo dia";
+"Click to isolate a source. Click again to show all." = "Clique para isolar uma fonte. Clique novamente para mostrar todas.";
+"Recorded hourly spend" = "Gastos por hora registrados";
+"Highest spend" = "Maior gasto";
+"Models for this day" = "Modelos deste dia";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Clique em uma barra para explorar. O menu abaixo mostra os valores exatos.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Salve várias chaves de API do ClinePass. A chave selecionada tem prioridade sobre a chave de API configurada e a sessão do cline auth.";
+
+"X API cost history is not available." = "O histórico de custos da X API não está disponível.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "Cole um cabeçalho Cookie de console.x.com contendo auth_token e ct0.";
+
+"Open X Developer Console" = "Abrir o console de desenvolvedores do X";

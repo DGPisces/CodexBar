@@ -79,7 +79,7 @@
 "Average (\\(label1) + \\(label2))" = "المتوسط (\\(label1) + \\(label2))";
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "المتوسط (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "تجنب Keychain الأسئلة";
-"Balance" = "التوازن";
+"Balance" = "الرصيد";
 "Cloud credits" = "رصيد السحابة";
 "Expired" = "منتهية الصلاحية";
 "Battery Saver" = "منقذ البطارية";
@@ -215,7 +215,7 @@
 "MCP details" = "MCP التفاصيل";
 "Managed Codex accounts unavailable" = "الحسابات Codex المدارة غير متاحة";
 "Managed account storage is unreadable. Live account access is still available, " = "تخزين الحساب المدار غير مقروء. الوصول إلى الحساب الحي لا يزال متاحا  ";
-"Manual" = "الدليل";
+"Manual" = "يدوي";
 "May your tokens never run out—keep agent limits in view." = "عسى أن لا تنفد رموزك أبدا—حافظ على حدود الوكلاء في مرآه.";
 "Menu bar" = "شريط القوائم";
 "Menu bar auto-shows the provider closest to its rate limit." = "شريط القوائم يعرض تلقائيا مزود الخدمة الأقرب إلى حد السعر.";
@@ -970,7 +970,7 @@
 "requests" = "الطلبات";
 "Latest" = "أحدث الإصدارات";
 "Monthly" = "شهريا";
-"Sonnet" = "السوناتة";
+"Sonnet" = "Sonnet";
 "Overages" = "الزيادات";
 "Overage" = "التجاوز";
 "Activity" = "النشاط";
@@ -988,7 +988,7 @@
 "Extra usage spent" = "الاستخدام الإضافي المخصص";
 "Credits remaining" = "الاعتمادات المتبقية";
 "Using CLI fallback" = "استخدام CLI الخطة الاحتياطية";
-"Balance updates in near-real time (up to 5 min lag)" = "تحديثات التوازن في الوقت شبه الحقيقي (حتى تأخير 5 دقائق)";
+"Balance updates in near-real time (up to 5 min lag)" = "تحديثات الرصيد في الوقت شبه الحقيقي (حتى تأخير 5 دقائق)";
 "Daily billing data finalizes at 07:00 UTC" = "يتم الانتهاء من بيانات الفوترة اليومية في الساعة 07:00 UTC";
 "%@ of %@ credits left" = "%@ من %@ اعتمادات متبقية";
 "of %@" = "من %@";
@@ -1280,7 +1280,7 @@
 "Timed out waiting for Cursor login. %@" = "انتهى الوقت في انتظار تسجيل الدخول Cursor. %@";
 "Timed out waiting for Cursor login. %@ Last error: %@" = "انتهى الوقت في انتظار تسجيل الدخول Cursor. %@ آخر خطأ: %@";
 "Today requests" = "طلبات اليوم";
-"Total (30d): %@ credits" = "الإجمالي (30d): %@ ساعات معتمدة";
+"Total (30d): %@ credits" = "إجمالي الأرصدة (30 يومًا): %@";
 "Username" = "اسم المستخدم";
 "Uses username + password to login and obtain an Oasis-Token automatically." = "يستخدم اسم المستخدم + كلمة المرور لتسجيل الدخول والحصول تلقائيا على رمز الواحة.";
 "Uses username + password to login and obtain an %@ automatically." = "يستخدم اسم المستخدم + كلمة المرور لتسجيل الدخول والحصول على %@ تلقائيا.";
@@ -1502,6 +1502,8 @@
 
 "Cumulative" = "تراكمي";
 "Token activity" = "نشاط الرموز";
+"Earlier activity" = "نشاط أقدم";
+"More recent activity" = "نشاط أحدث";
 "View" = "عرض";
 "in the last year" = "في العام الماضي";
 "No activity in the last 12 months" = "لا يوجد نشاط في آخر 12 شهرًا";
@@ -1568,7 +1570,7 @@
 "List-price equivalent — not a billing receipt." = "معادل قائمة الأسعار - وليس إيصال الفواتير.";
 "Priced" = "استخدام مسعر";
 "Unpriced" = "استخدام غير مسعر";
-"Unmetered" = "الاستخدام غير المحدود";
+"Unmetered" = "استخدام غير مُقاس";
 "Estimated" = "يقدر";
 "Other models" = "نماذج أخرى";
 "Include OpenCodex usage logs" = "قم بتضمين سجلات استخدام OpenCodex";
@@ -1697,7 +1699,7 @@
 "ALL" = "الكل";
 "ALL-TIME SPEND" = "إجمالي الإنفاق التاريخي";
 "API URL" = "API URL";
-"API est." = "مؤسسة API.";
+"API est." = "تقدير API";
 "API key / Access key ID" = "مفتاح API/مفتاح الوصول ID";
 "API organization ID" = "منظمة API ID";
 "API version" = "نسخة API";
@@ -1710,7 +1712,7 @@
 "Account %@" = "الحساب %@";
 "Account Added" = "تمت إضافة الحساب";
 "Account Usage" = "استخدام الحساب";
-"Account slug" = "معرف الحساب (سبيكة)";
+"Account slug" = "معرّف الحساب (slug)";
 "Account switched; restart the Codex background server manually." = "تم تبديل الحساب؛ أعد تشغيل خادم الخلفية Codex يدويًا.";
 "Allow reading Claude Code's credentials" = "السماح بقراءة بيانات اعتماد Claude Code";
 "Amp CLI" = "Amp CLI";
@@ -1761,7 +1763,7 @@
 "CodexBar Help" = "مساعدة في CodexBar";
 "CodexBar History" = "تاريخ CodexBar";
 "CodexBar Metric" = "CodexBar المؤشر";
-"CodexBar Switcher" = "CodexBar الجلاد";
+"CodexBar Switcher" = "مبدّل CodexBar";
 "CodexBar Usage" = "استخدام CodexBar";
 "Compact widget for credits or cost." = "القطعة المدمجة لالاعتمادات أو التكلفة.";
 "Complete Kiro login in your browser" = "أكمل تسجيل الدخول إلى Kiro في متصفحك";
@@ -1828,7 +1830,7 @@
 "Metric" = "المؤشر";
 "Monitoring adds AWS charges" = "تضيف المراقبة رسوم AWS";
 "Monthly credit limit" = "حد الاستخدام الشهري الاعتمادات";
-"Most usable account" = "الحساب الأكثر استخداما";
+"Most usable account" = "الحساب الأكثر قابلية للاستخدام";
 "My AI subscriptions · all time" = "اشتراكاتي في AI · التاريخ بأكمله";
 "My AI subscriptions · last %d days" = "اشتراكاتي في AI · آخر أيام %d";
 "NaN Builders" = "NaN Builders";
@@ -1872,7 +1874,7 @@
 "OpenAI-compatible v1" = "OpenAI متوافق مع الإصدار 1";
 "OpenCode API key" = "مفتاح OpenCode API";
 "Optional additional key for account Activity. Only needed to use a separate Management API key from the one in the required API key field above." = "مفتاح إضافي اختياري لنشاط الحساب. يلزم فقط استخدام مفتاح إدارة API منفصل عن المفتاح الموجود في حقل مفتاح API المطلوب أعلاه.";
-"Optional for automatic auth. Use a slug, URL, or internal org-... / org_... ID. Manual auth may need the x-cog-org-id header from a successful Devin quota request." = "اختياري للمصادقة التلقائية. استخدم سبيكة ثابتة، URL، أو org-... / org_... ID. قد تحتاج المصادقة اليدوية إلى رأس x-cog-org-id من طلب Devin الحصة الناجح.";
+"Optional for automatic auth. Use a slug, URL, or internal org-... / org_... ID. Manual auth may need the x-cog-org-id header from a successful Devin quota request." = "اختياري للمصادقة التلقائية. استخدم slug، URL، أو org-... / org_... ID. قد تحتاج المصادقة اليدوية إلى رأس x-cog-org-id من طلب Devin الحصة الناجح.";
 "Optional gk-org-id header value. Or set GITKRAKEN_ORG_ID." = "قيمة رأس gk-org-id اختيارية. أو قم بتعيين GITKRAKEN_ORG_ID.";
 "Optional when the API key can access one account; CodexBar discovers it automatically. For multiple accounts, find the slug in the app.fireworks.ai home account switcher or run firectl whoami." = "اختياري عندما يتمكن مفتاح API من الوصول إلى حساب واحد؛ يكتشفها CodexBar تلقائيًا. بالنسبة للحسابات المتعددة، ابحث عن الارتباط الثابت في مبدل الحساب المنزلي app.fireworks.ai أو قم بتشغيل firectl whoami.";
 "Optional. Defaults to the first Business or Enterprise workspace on the account." = "خياري. يتم الإعداد الافتراضي لمساحة العمل Business أو Enterprise الأولى في الحساب.";
@@ -1936,8 +1938,8 @@
 "Reset: %@" = "إعادة الضبط: %@";
 "Resets every 5 hours" = "إعادة تعيين كل 5 ساعات";
 "Resets in" = "إعادة تعيين في";
-"Runs out" = "الحصة ينفد";
-"Runs out in" = "الحصة ينفد";
+"Runs out" = "النفاد المتوقع";
+"Runs out in" = "المدة حتى النفاد";
 "SUBSCRIPTIONS" = "الاشتراكات";
 "Save" = "حفظ";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "حفظ تفضيلات العرض والإشعارات لملفات النقاط الخاصة بك. تظل الحسابات وبيانات الاعتماد وتسجيل الدخول والمسارات المحلية والموافقة موجودة على جهاز Mac هذا.";
@@ -1993,7 +1995,7 @@
 "Usage history will appear after a refresh." = "سيظهر سجل الاستخدام بعد التحديث.";
 "Usage limit" = "حد الاستخدام";
 "Usage limits and reset countdowns for one saved account." = "حدود الاستخدام وإعادة ضبط العد التنازلي لحساب محفوظ واحد.";
-"Usage widget with a provider switcher." = "القطعة الاستخدام مع الجلاد مزود.";
+"Usage widget with a provider switcher." = "أداة لعرض الاستخدام مع مبدّل لموفري الخدمة.";
 "Usage window" = "نافذة الاستخدام";
 "Use a key issued for the selected region. Changing regions leaves the other key unavailable until you switch back or replace it." = "استخدم المفتاح الصادر للمنطقة المحددة. يؤدي تغيير المناطق إلى ترك المفتاح الآخر غير متاح حتى تقوم بالتبديل مرة أخرى أو استبداله.";
 "Use a key issued for the selected region. China also reads BIGMODEL_API_KEY, ZHIPU_API_KEY, GLM_API_KEY, or ~/.coding-relay/glm-api-key." = "استخدم المفتاح الصادر للمنطقة المحددة. تقرأ الصين أيضًا BIGMODEL_API_KEY أو ZHIPU_API_KEY أو GLM_API_KEY أو ~/.coding-relay/glm-api-key.";
@@ -2012,7 +2014,7 @@
 "a1.small-equivalent hours" = "ساعات a1.small المكافئة";
 "after reset" = "بعد إعادة التعيين";
 "all" = "الكل";
-"ark-... or AKLT..." = "ارك-... أو AKLT...";
+"ark-... or AKLT..." = "ark-... أو AKLT...";
 "budget spent" = "تم استنفاد ميزانية الحصة";
 "cb_..." = "cb_...";
 "claude auth login exited with status %d." = "تم الخروج من claude auth login بالحالة %d.";
@@ -2093,7 +2095,7 @@
 "v0_..." = "v0_...";
 "Open v0 API keys" = "افتح مفاتيح v0 API";
 "Scope" = "النطاق";
-"Optional project ID or slug. Leave blank for the default v0 scope." = "مشروع اختياري ID أو سبيكة. اتركه فارغًا لنطاق v0 الافتراضي.";
+"Optional project ID or slug. Leave blank for the default v0 scope." = "مشروع اختياري ID أو slug. اتركه فارغًا لنطاق v0 الافتراضي.";
 "project-slug" = "project-slug";
 "Monthly budget" = "الميزانية الشهرية";
 "ClawRouter spend is reported by its usage API." = "يتم الإبلاغ عن إنفاق ClawRouter من خلال استخدامه API.";
@@ -2133,7 +2135,7 @@
 "Chutes cost history is not available from CodexBar." = "سجل تكلفة Chutes غير متاح من CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "مخزنة في ~/.codexbar/config.json. قم بلصق مفتاح Chutes API.";
 "chutes key..." = "مفتاح API لخدمة Chutes...";
-"Spend" = "انفق";
+"Spend" = "الإنفاق";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "يأتي إنفاق Fireworks من ملخص الفواتير API؛ لا يتم تعقب تاريخ التكلفة.";
 "Doubao API-key accounts" = "Doubao API-حسابات المفاتيح";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "قم بتخزين مفاتيح Ark API التي تحمل علامة. أزواج AK/SK وملفات تعريف arkcli غير مدعومة هنا.";
@@ -2169,7 +2171,7 @@
 "Store multiple IBM Bob API keys." = "قم بتخزين مفاتيح IBM Bob API المتعددة.";
 "Monthly Bobcoins" = "بوبكوينز الشهرية";
 "Bobcoin usage from the IBM Bob API." = "استخدام بوبكوين من IBM Bob API.";
-"Shared pool" = "حمام سباحة مشترك";
+"Shared pool" = "الحصة المشتركة";
 "GitKraken cost history is not available." = "سجل تكلفة GitKraken غير متاح.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "يتطلب الإنفاق اليومي xAI مفتاح إدارة API وفريق ID. لا يتم التعامل مع الرصيد المدفوع مقدمًا على أنه إنفاق.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "مخزنة في ~/.codexbar/config.json. أنشئ واحدًا على console.x.ai ضمن الإعدادات > مفاتيح الإدارة؛ لا يتم قبول مفاتيح الاستدلال API.";
@@ -2318,7 +2320,7 @@
 "Usage summary" = "ملخص الاستخدام";
 "Daily spend" = "الإنفاق اليومي";
 "Cost items" = "بنود التكلفة";
-"Workspace spend · 30d" = "إنفاق مساحة العمل · 30 د";
+"Workspace spend · 30d" = "إنفاق مساحة العمل · 30 يومًا";
 "Daily tokens" = "يوميا الرموز";
 "Daily cost" = "التكلفة اليومية";
 "5h" = "5 ساعات";
@@ -2333,7 +2335,7 @@
 "Renews" = "يجدد";
 "Orb" = "الجرم السماوي";
 "Individual" = "فردي";
-"Today spend" = "قضاء اليوم";
+"Today spend" = "إنفاق اليوم";
 "Usage billing" = "فواتير الاستخدام";
 "Period resets" = "إعادة تعيين الفترة";
 "Cached input" = "المدخلات المخزنة مؤقتا";
@@ -2344,7 +2346,7 @@
 "Subscription credits available" = "الاشتراك الاعتمادات متاح";
 "Total credits available" = "إجمالي الاعتمادات متاح";
 "Used this cycle" = "تستخدم هذه الدورة";
-"Bank cap" = "سقف البنك";
+"Bank cap" = "الحد الأقصى للرصيد المتراكم";
 "Next refill" = "الملء التالي";
 "Gateway" = "بوابة";
 "Routed" = "موجهة";
@@ -2369,3 +2371,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "الإنفاق المسجل";
+"Highest recorded spend" = "أعلى إنفاق مسجل";
+"Previous day" = "اليوم السابق";
+"Next day" = "اليوم التالي";
+"Click to isolate a source. Click again to show all." = "انقر لعرض مصدر واحد. انقر مجددًا لعرض الكل.";
+"Recorded hourly spend" = "الإنفاق المسجل حسب الساعة";
+"Highest spend" = "أعلى إنفاق";
+"Models for this day" = "نماذج هذا اليوم";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "انقر على عمود لاستكشاف البيانات. استخدم القائمة أدناه لعرض المبالغ الدقيقة.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "احفظ عدة مفاتيح API لخدمة ClinePass. يتجاوز المفتاح المحدد مفتاح API المُعدّ وجلسة cline auth.";
+
+"X API cost history is not available." = "سجل تكاليف X API غير متاح.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "الصق ترويسة Cookie من console.x.com تحتوي على auth_token وct0.";
+
+"Open X Developer Console" = "افتح وحدة تحكم مطوري X";

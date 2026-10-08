@@ -77,6 +77,19 @@ test("translated technical command values retain their exact spelling", () => {
   );
 });
 
+test("credential prefixes and environment names remain literal while prose can translate", () => {
+  for (const [english, translated] of [
+    ["ark-... or AKLT...", "arca-... o AKLT..."],
+    ["Use org-... / org_...", "Use organización-... / org_..."],
+    ["ory_session_…=…; csrftoken=…", "ory_sessie_…=…; csrftoken=…"],
+    ["Set PROJECT_ID", "Set ID_PROXECTO"],
+    ["Run `firectl whoami`", "Exécutez `firectl qui`"],
+  ]) {
+    assert.notEqual(protectedLiteralErrors("fixture", translated, english).length, 0, english);
+  }
+  assert.deepEqual(protectedLiteralErrors("fixture", "ark-… ou AKLT…", "ark-... or AKLT..."), []);
+});
+
 test("plural template reordering preserves variable positions", () => {
   const rules = { ...structuredClone(plural.sample), NSStringLocalizedFormatKey: "%#@count@ %#@until@" };
   rules.until = structuredClone(rules.count);

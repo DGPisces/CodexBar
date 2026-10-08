@@ -1498,6 +1498,8 @@
 
 "Cumulative" = "Cumulé";
 "Token activity" = "Activité des tokens";
+"Earlier activity" = "Activité plus ancienne";
+"More recent activity" = "Activité plus récente";
 "View" = "Vue";
 "in the last year" = "sur l'année écoulée";
 "No activity in the last 12 months" = "Aucune activité au cours des 12 derniers mois";
@@ -1554,7 +1556,7 @@
 "90d" = "90d";
 "Input" = "Entrée";
 "Output" = "Sortie";
-"Cache write" = "Écriture en cache jetons";
+"Cache write" = "Écriture dans le cache";
 "Reasoning" = "Raisonnement";
 "Sessions" = "Séances";
 "Projects" = "Projets";
@@ -1564,7 +1566,7 @@
 "List-price equivalent — not a billing receipt." = "Équivalent au prix catalogue – pas un reçu de facturation.";
 "Priced" = "Utilisation tarifée";
 "Unpriced" = "Utilisation sans prix";
-"Unmetered" = "Utilisation illimitée";
+"Unmetered" = "Utilisation non mesurée";
 "Estimated" = "Estimé";
 "Other models" = "Autres modèles";
 "Include OpenCodex usage logs" = "Inclure les journaux d'utilisation d'OpenCodex";
@@ -1674,12 +1676,12 @@
 "%@h %@m" = "%1$@h %2$@min";
 "%@m" = "%@min";
 "%d CONNECTED" = "%d CONNECTÉ";
-"%d DAYS" = "JOURS %d";
+"%d DAYS" = "%d JOURS";
 "%d days" = "Jours %d";
 "%d more accounts ready" = "%d plus de comptes prêts";
 "%d percent" = "%d pourcentage";
 "%d subscriptions" = "%d abonnements";
-"%d-DAY SPEND" = "%d-JOURNÉES DÉPENSES";
+"%d-DAY SPEND" = "DÉPENSES SUR %d JOURS";
 "%d/%d days" = "Jours %1$d/%2$d";
 "%d/%dd" = "%1$d/%2$dj";
 "%d/all" = "%d/tous";
@@ -1767,7 +1769,7 @@
 "Could not start Claude Code login" = "Impossible de démarrer la connexion à Claude Code";
 "Create a key at app.fireworks.ai/settings. The same key authorizes billing reads." = "Créer une clé à app.fireworks.ai/settings. La même clé autorise les lectures de facturation.";
 "Credits + percent" = "Crédits et pourcentage restant";
-"Credits left" = "Crédits restant";
+"Credits left" = "Crédits restants";
 "Cursor-metered" = "Utilisation mesurée dans Cursor";
 "Cursor-metered: %@ (%@)" = "Compteur Cursor : %1$@ (%2$@)";
 "DATA THROUGH %@" = "Données au %@";
@@ -1909,8 +1911,8 @@
 "Profile name" = "Nom du profil de configuration";
 "Provider %@" = "Fournisseur %@";
 "Provider + Metric" = "Fournisseur + Indicateur";
-"Provider Switcher Shortcuts" = "Raccourcis du commutateur de fournisseur";
-"Provider Switcher Shortcuts…" = "Raccourcis du commutateur de fournisseur…";
+"Provider Switcher Shortcuts" = "Raccourcis de changement de fournisseur";
+"Provider Switcher Shortcuts…" = "Raccourcis de changement de fournisseur…";
 "Provider service status: %@" = "Statut du service du fournisseur : %@";
 "Quota estimated from local usage history" = "Quota estimé à partir de l'historique d'utilisation local";
 "Quota from the selected dev.meta.ai browser team" = "Quota de l'équipe de navigateur dev.meta.ai sélectionnée";
@@ -1931,8 +1933,8 @@
 "Reset: %@" = "Réinitialisation : %@";
 "Resets every 5 hours" = "Se réinitialise toutes les 5 heures";
 "Resets in" = "Réinitialise dans";
-"Runs out" = "Le quota est épuisé";
-"Runs out in" = "Le quota est épuisé dans";
+"Runs out" = "Épuisement prévu";
+"Runs out in" = "Épuisement dans";
 "SUBSCRIPTIONS" = "ABONNEMENTS";
 "Save" = "Enregistrer";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Enregistrez les préférences d’affichage et de notification pour vos fichiers dot. Les comptes, informations d'identification, connexion, chemins locaux et consentement restent sur ce Mac.";
@@ -1954,7 +1956,7 @@
 "Shows model-specific Claude quotas, such as Fable, in desktop widgets." = "Affiche les quotas Claude spécifiques au modèle, tels que Fable, dans les widgets du bureau.";
 "Shows the hidden accounts" = "Affiche les comptes cachés";
 "Shows usage and lets you switch accounts through `cswap`. Credentials stay managed by claude-swap; CodexBar never reads them." = "Affiche l'utilisation et vous permet de changer de compte via `cswap`. Les informations d'identification restent gérées par claude-swap ; CodexBar ne les lit jamais.";
-"Stay Awake" = "Restez éveillé";
+"Stay Awake" = "Empêcher la mise en veille";
 "Stored in the CodexBar config file. Reads monthly budget and routed usage from /v1/usage." = "Stocké dans le fichier de configuration CodexBar. Lit le budget mensuel et l'utilisation acheminée à partir de /v1/usage.";
 "Stored in ~/.codexbar/config.json. OPENAI_ADMIN_KEY is required for organization usage; legacy/user keys only get a best-effort balance fallback." = "Stocké dans ~/.codexbar/config.json. OPENAI_ADMIN_KEY est requis pour l’utilisation de l’organisation ; Les clés héritées/utilisateur bénéficient uniquement d’un équilibre de secours au mieux.";
 "Stored in ~/.codexbar/config.json. You can also provide FACTORY_API_KEY or ~/.factory/.env." = "Stocké dans ~/.codexbar/config.json. Vous pouvez également fournir FACTORY_API_KEY ou ~/.factory/.env.";
@@ -2007,7 +2009,7 @@
 "a1.small-equivalent hours" = "Heures équivalentes à a1.small";
 "after reset" = "après réinitialisation";
 "all" = "tout";
-"ark-... or AKLT..." = "arche-... ou AKLT...";
+"ark-... or AKLT..." = "ark-... ou AKLT...";
 "budget spent" = "budget de quota épuisé";
 "cb_..." = "cb_...";
 "claude auth login exited with status %d." = "claude auth login s'est terminé avec le statut %d.";
@@ -2081,7 +2083,7 @@
 "Poe usage history is unavailable." = "L’historique d’utilisation du Poe n’est pas disponible.";
 "Stored in ~/.codexbar/config.json. Get your key from poe.com/api/keys." = "Stocké dans ~/.codexbar/config.json. Obtenez votre clé à partir de poe.com/api/keys.";
 "Billing" = "Facturation";
-"Rate limit" = "Limite de taux";
+"Rate limit" = "Limite de requêtes";
 "Billing and rate-limit data from the v0 Platform API" = "Données de facturation et de limite de débit de la plateforme v0 API";
 "v0 cost history is not available via the Platform API." = "L’historique des coûts v0 n’est pas disponible via la plateforme API.";
 "Stored in ~/.config/codexbar/config.json. Create one in v0 settings or set V0_API_KEY." = "Stocké dans ~/.config/codexbar/config.json. Créez-en un dans les paramètres v0 ou définissez V0_API_KEY.";
@@ -2091,7 +2093,7 @@
 "Optional project ID or slug. Leave blank for the default v0 scope." = "Projet optionnel ID ou slug. Laissez vide pour la portée v0 par défaut.";
 "project-slug" = "project-slug";
 "Monthly budget" = "Budget mensuel";
-"ClawRouter spend is reported by its usage API." = "Les dépenses ClawRouter sont signalées par leur utilisation API.";
+"ClawRouter spend is reported by its usage API." = "Les dépenses de ClawRouter sont fournies par son API d’utilisation.";
 "Vercel AI Gateway cost history is not available." = "L’historique des coûts Vercel AI Gateway n’est pas disponible.";
 "Vercel AI Gateway API key" = "Clé Vercel AI Gateway API";
 "Saved in CodexBar's local config file. Or set AI_GATEWAY_API_KEY." = "Enregistré dans le fichier de configuration local de CodexBar. Ou définissez AI_GATEWAY_API_KEY.";
@@ -2128,9 +2130,9 @@
 "Chutes cost history is not available from CodexBar." = "L’historique des coûts Chutes n’est pas disponible à partir de CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Stocké dans ~/.codexbar/config.json. Collez une clé Chutes API.";
 "chutes key..." = "Clé API Chutes...";
-"Spend" = "Dépenser";
+"Spend" = "Dépenses";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Les dépenses Fireworks proviennent du récapitulatif de facturation API ; l’historique des coûts n’est pas suivi.";
-"Doubao API-key accounts" = "Doubao API-comptes clés";
+"Doubao API-key accounts" = "Comptes avec clé API Doubao";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "Stockez les clés Ark API étiquetées. Les paires AK/SK et les profils arkcli ne sont pas pris en charge ici.";
 "Ark API key" = "Clé Arche API";
 "LithosAI exposes prepaid balance and console spend, not local token cost history." = "LithosAI expose le solde prépayé et les dépenses de la console, et non l'historique des coûts locaux du jetons.";
@@ -2164,7 +2166,7 @@
 "Store multiple IBM Bob API keys." = "Stockez plusieurs clés IBM Bob API.";
 "Monthly Bobcoins" = "Bobcoins mensuels";
 "Bobcoin usage from the IBM Bob API." = "Utilisation du Bobcoin du IBM Bob API.";
-"Shared pool" = "Piscine partagée";
+"Shared pool" = "Quota partagé";
 "GitKraken cost history is not available." = "L’historique des coûts GitKraken n’est pas disponible.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "Les dépenses quotidiennes xAI nécessitent une clé de gestion API et une équipe ID. Le solde prépayé n’est pas traité comme une dépense.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "Stocké dans ~/.codexbar/config.json. Créez-en un sur console.x.ai sous Paramètres > Clés de gestion ; Les clés d'inférence API ne sont pas acceptées.";
@@ -2328,7 +2330,7 @@
 "Renews" = "Renouvelle";
 "Orb" = "Orbe";
 "Individual" = "Individuel";
-"Today spend" = "Aujourd'hui, dépensez";
+"Today spend" = "Dépenses du jour";
 "Usage billing" = "Facturation d'utilisation";
 "Period resets" = "Réinitialisation des périodes";
 "Cached input" = "Entrée en cache";
@@ -2339,7 +2341,7 @@
 "Subscription credits available" = "Abonnement Crédits disponible";
 "Total credits available" = "Total Crédits disponible";
 "Used this cycle" = "Utilisé ce cycle";
-"Bank cap" = "Plafond bancaire";
+"Bank cap" = "Plafond de crédits cumulés";
 "Next refill" = "Prochaine recharge";
 "Gateway" = "Passerelle";
 "Routed" = "Acheminé";
@@ -2364,3 +2366,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Dépenses enregistrées";
+"Highest recorded spend" = "Dépenses enregistrées maximales";
+"Previous day" = "Jour précédent";
+"Next day" = "Jour suivant";
+"Click to isolate a source. Click again to show all." = "Cliquez pour isoler une source. Cliquez à nouveau pour tout afficher.";
+"Recorded hourly spend" = "Dépenses horaires enregistrées";
+"Highest spend" = "Dépense maximale";
+"Models for this day" = "Modèles de ce jour";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Cliquez sur une barre pour explorer. Le menu ci-dessous affiche les montants exacts.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Enregistrez plusieurs clés API ClinePass. La clé sélectionnée remplace la clé API configurée et la session cline auth.";
+
+"X API cost history is not available." = "L’historique des coûts de X API n’est pas disponible.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "Collez un en-tête Cookie de console.x.com contenant auth_token et ct0.";
+
+"Open X Developer Console" = "Ouvrir la console développeur X";

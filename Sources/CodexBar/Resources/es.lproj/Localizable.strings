@@ -230,7 +230,7 @@
 "MCP details" = "Detalles de MCP";
 "Managed Codex accounts unavailable" = "Cuentas gestionadas de Codex no disponibles";
 "Managed account storage is unreadable. Live account access is still available, " = "El almacenamiento de cuentas gestionadas no se puede leer. El acceso a cuentas en vivo sigue disponible, ";
-"Manual" = "manuales";
+"Manual" = "Manual";
 "May your tokens never run out—keep agent limits in view." = "Que tus tokens nunca se agoten: mantén los límites de tus agentes a la vista.";
 "Menu bar" = "Barra de menús";
 "Menu bar auto-shows the provider closest to its rate limit." = "La barra de menús muestra automáticamente el proveedor más cercano a su límite.";
@@ -297,7 +297,7 @@
 "Picker" = "Selector";
 "Picker subtitle" = "Subtítulo del selector";
 "Placeholder" = "Marcador de posición";
-"Plan" = "Planificar";
+"Plan" = "Plan";
 "Plan Usage" = "Uso del plan";
 "Play full-screen confetti when weekly usage resets." = "Mostrar confeti a pantalla completa cuando se reinicia el uso semanal.";
 "Polls OpenAI/Claude status pages and Google Workspace for " = "Consulta las páginas de estado de OpenAI/Claude y Google Workspace para ";
@@ -1497,6 +1497,8 @@
 
 "Cumulative" = "Acumulado";
 "Token activity" = "Actividad de tokens";
+"Earlier activity" = "Actividad anterior";
+"More recent activity" = "Actividad más reciente";
 "View" = "Vista";
 "in the last year" = "en el último año";
 "No activity in the last 12 months" = "Sin actividad en los últimos 12 meses";
@@ -1553,7 +1555,7 @@
 "90d" = "90d";
 "Input" = "Entrada";
 "Output" = "Salida";
-"Cache write" = "Escritura en caché tokens";
+"Cache write" = "Escritura en caché";
 "Reasoning" = "Razonamiento";
 "Sessions" = "Sesiones";
 "Projects" = "Proyectos";
@@ -1678,7 +1680,7 @@
 "%d more accounts ready" = "%d más cuentas listas";
 "%d percent" = "%d por ciento";
 "%d subscriptions" = "%d suscripciones";
-"%d-DAY SPEND" = "%d-DÍA DE GASTO";
+"%d-DAY SPEND" = "GASTO EN %d DÍAS";
 "%d/%d days" = "%1$d/%2$d días";
 "%d/%dd" = "%1$d/%2$dd";
 "%d/all" = "%d/todos";
@@ -1741,7 +1743,7 @@
 "Choose an account" = "Elige una cuenta";
 "Choose the second meter shown in the menu bar icon." = "Elija el segundo medidor que se muestra en el icono de la barra de menú.";
 "ClawRouter key…" = "ClawRouter API llave…";
-"ClawRouter spend" = "Gasto ClawRouter";
+"ClawRouter spend" = "Gasto de ClawRouter";
 "Clear default allowance" = "Borrar la asignación predeterminada Créditos";
 "Codex CLI is not signed in. Run `codex login --device-auth`, then refresh." = "Codex CLI no ha iniciado sesión. Ejecute `codex login --device-auth` y luego actualice.";
 "Codex CLI missing. Install via `npm i -g @openai/codex` (or bun install) and restart." = "Falta Codex CLI. Instale a través de `npm i -g @openai/codex` (o bun install) y reinicie.";
@@ -1766,7 +1768,7 @@
 "Could not start Claude Code login" = "No se pudo iniciar el inicio de sesión en Claude Code";
 "Create a key at app.fireworks.ai/settings. The same key authorizes billing reads." = "Cree una clave en app.fireworks.ai/settings.. La misma clave autoriza las lecturas de facturación.";
 "Credits + percent" = "Créditos y porcentaje restante";
-"Credits left" = "Restante Créditos";
+"Credits left" = "Créditos restantes";
 "Cursor-metered" = "Uso medido en Cursor";
 "Cursor-metered: %@ (%@)" = "Cursor medido: %1$@ (%2$@)";
 "DATA THROUGH %@" = "Datos hasta %@";
@@ -1866,7 +1868,7 @@
 "OpenAI-compatible v1" = "Compatible con OpenAI v1";
 "OpenCode API key" = "Llave OpenCode API";
 "Optional additional key for account Activity. Only needed to use a separate Management API key from the one in the required API key field above." = "Clave adicional opcional para la actividad de la cuenta. Solo es necesario utilizar una clave de administración API separada de la que se encuentra en el campo de clave API requerido arriba.";
-"Optional for automatic auth. Use a slug, URL, or internal org-... / org_... ID. Manual auth may need the x-cog-org-id header from a successful Devin quota request." = "Opcional para autenticación automática. Utilice un slug, URL, u organización interna-.../org_... ID. Es posible que la autenticación manual necesite el encabezado x-cog-org-id de una solicitud Devin Cuota exitosa.";
+"Optional for automatic auth. Use a slug, URL, or internal org-... / org_... ID. Manual auth may need the x-cog-org-id header from a successful Devin quota request." = "Opcional para la autenticación automática. Use un slug, una URL o un ID interno con formato org-... / org_... . La autenticación manual puede requerir la cabecera x-cog-org-id de una solicitud de cuota de Devin que haya tenido éxito.";
 "Optional gk-org-id header value. Or set GITKRAKEN_ORG_ID." = "Valor de encabezado opcional gk-org-id. O configure GITKRAKEN_ORG_ID.";
 "Optional when the API key can access one account; CodexBar discovers it automatically. For multiple accounts, find the slug in the app.fireworks.ai home account switcher or run firectl whoami." = "Opcional cuando la clave API puede acceder a una cuenta; CodexBar lo descubre automáticamente. Para varias cuentas, busque el slug en el conmutador de cuentas de inicio app.fireworks.ai o ejecute firectl whoami.";
 "Optional. Defaults to the first Business or Enterprise workspace on the account." = "Opcional. El valor predeterminado es el primer espacio de trabajo Business o Enterprise de la cuenta.";
@@ -1908,8 +1910,8 @@
 "Profile name" = "Nombre del perfil de configuración";
 "Provider %@" = "Proveedor %@";
 "Provider + Metric" = "Proveedor + Métrica";
-"Provider Switcher Shortcuts" = "Atajos de conmutador de proveedor";
-"Provider Switcher Shortcuts…" = "Atajos de conmutador de proveedor...";
+"Provider Switcher Shortcuts" = "Atajos para cambiar de proveedor";
+"Provider Switcher Shortcuts…" = "Atajos para cambiar de proveedor…";
 "Provider service status: %@" = "Estado del servicio del proveedor: %@";
 "Quota estimated from local usage history" = "Cuota estimado a partir del historial de uso local";
 "Quota from the selected dev.meta.ai browser team" = "Cuota del equipo de navegadores dev.meta.ai seleccionado";
@@ -1930,8 +1932,8 @@
 "Reset: %@" = "Restablecer: %@";
 "Resets every 5 hours" = "Se reinicia cada 5 horas";
 "Resets in" = "Se reinicia en";
-"Runs out" = "Cuota se agota";
-"Runs out in" = "Cuota se agota en";
+"Runs out" = "Agotamiento previsto";
+"Runs out in" = "Se agota en";
 "SUBSCRIPTIONS" = "SUSCRIPCIONES";
 "Save" = "Guardar";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Guarde las preferencias de visualización y notificación para sus archivos de puntos. Las cuentas, las credenciales, los inicios de sesión, las rutas locales y el consentimiento permanecen en esta Mac.";
@@ -1953,7 +1955,7 @@
 "Shows model-specific Claude quotas, such as Fable, in desktop widgets." = "Muestra Claude Cuota específico del modelo, como Fable, en widgets de escritorio.";
 "Shows the hidden accounts" = "Muestra las cuentas ocultas";
 "Shows usage and lets you switch accounts through `cswap`. Credentials stay managed by claude-swap; CodexBar never reads them." = "Muestra el uso y le permite cambiar de cuenta a través de `cswap`. Las credenciales permanecen administradas por claude-swap; CodexBar nunca los lee.";
-"Stay Awake" = "Mantente despierto";
+"Stay Awake" = "Evitar el reposo";
 "Stored in the CodexBar config file. Reads monthly budget and routed usage from /v1/usage." = "Almacenado en el archivo de configuración CodexBar. Lee el presupuesto mensual y el uso enrutado de /v1/usage.";
 "Stored in ~/.codexbar/config.json. OPENAI_ADMIN_KEY is required for organization usage; legacy/user keys only get a best-effort balance fallback." = "Almacenado en ~/.codexbar/config.json. Se requiere OPENAI_ADMIN_KEY para el uso de la organización; Las claves heredadas/de usuario solo obtienen un respaldo de equilibrio de mejor esfuerzo.";
 "Stored in ~/.codexbar/config.json. You can also provide FACTORY_API_KEY or ~/.factory/.env." = "Almacenado en ~/.codexbar/config.json. También puede proporcionar FACTORY_API_KEY o ~/.factory/.env.";
@@ -2006,19 +2008,19 @@
 "a1.small-equivalent hours" = "Horas equivalentes a a1.small";
 "after reset" = "después del reinicio";
 "all" = "todos";
-"ark-... or AKLT..." = "arca-... o AKLT...";
-"budget spent" = "Presupuesto Cuota agotado";
+"ark-... or AKLT..." = "ark-... o AKLT...";
+"budget spent" = "presupuesto de cuota agotado";
 "cb_..." = "cb_...";
 "claude auth login exited with status %d." = "claude auth login salió con el estado %d.";
 "claude-swap executable" = "Ejecutable claude-swap";
 "connected" = "conectado";
-"conserving" = "conservando Cuota";
+"conserving" = "ahorrando cuota";
 "cpk-..." = "cpk-...";
 "curl 'https://ai.zoom.us/ai-computer/api/v1/credits/status' -H 'authorization: ...'" = "curl 'https://ai.zoom.us/ai-computer/api/v1/credits/status' -H 'authorization: ...'";
 "default" = "default";
 "e.g. 3000" = "por ej. 3000";
 "fk-..." = "fk-...";
-"full" = "Cuota completo disponible";
+"full" = "cuota completa disponible";
 "fw_..." = "fw_...";
 "github.com" = "github.com";
 "gpt-4o-mini" = "gpt-4o-mini";
@@ -2046,7 +2048,7 @@
 "sk-admin-..." = "sk-admin-...";
 "sk-ant-admin..." = "sk-ant-admin...";
 "sk-or-v1-..." = "sk-or-v1-...";
-"spent" = "Cuota agotado";
+"spent" = "cuota agotada";
 "under pace" = "uso por debajo del ritmo planificado";
 "us-east-1" = "us-east-1";
 "used" = "usado";
@@ -2080,8 +2082,8 @@
 "Poe usage history is unavailable." = "El historial de uso de Poe no está disponible.";
 "Stored in ~/.codexbar/config.json. Get your key from poe.com/api/keys." = "Almacenado en ~/.codexbar/config.json. Obtenga su clave de poe.com/api/keys.";
 "Billing" = "Facturación";
-"Rate limit" = "Límite de tarifa";
-"Billing and rate-limit data from the v0 Platform API" = "Datos de facturación y límite de tarifa de la Plataforma v0 API";
+"Rate limit" = "Límite de solicitudes";
+"Billing and rate-limit data from the v0 Platform API" = "Datos de facturación y límites de solicitudes de la API de la plataforma v0";
 "v0 cost history is not available via the Platform API." = "El historial de costos de v0 no está disponible a través de la plataforma API.";
 "Stored in ~/.config/codexbar/config.json. Create one in v0 settings or set V0_API_KEY." = "Almacenado en ~/.config/codexbar/config.json. Cree uno en la configuración de v0 o configure V0_API_KEY.";
 "v0_..." = "v0_...";
@@ -2090,7 +2092,7 @@
 "Optional project ID or slug. Leave blank for the default v0 scope." = "Proyecto opcional ID o slug. Déjelo en blanco para el alcance predeterminado v0.";
 "project-slug" = "project-slug";
 "Monthly budget" = "Presupuesto mensual";
-"ClawRouter spend is reported by its usage API." = "El gasto de ClawRouter se informa según su uso API.";
+"ClawRouter spend is reported by its usage API." = "El gasto de ClawRouter se obtiene de su API de uso.";
 "Vercel AI Gateway cost history is not available." = "El historial de costos Vercel AI Gateway no está disponible.";
 "Vercel AI Gateway API key" = "Llave Vercel AI Gateway API";
 "Saved in CodexBar's local config file. Or set AI_GATEWAY_API_KEY." = "Guardado en el archivo de configuración local de CodexBar. O configure AI_GATEWAY_API_KEY.";
@@ -2104,9 +2106,9 @@
 "Flash Lite" = "Flash Lite";
 "Window" = "Ventana de uso";
 "Token plan credits usage." = "tokens planifica el uso de Créditos.";
-"API keys" = "Teclas API";
+"API keys" = "Claves API";
 "Store multiple OpenRouter API keys." = "Almacene varias claves OpenRouter API.";
-"Credit balance from OpenRouter API" = "Balanza Créditos de OpenRouter API";
+"Credit balance from OpenRouter API" = "Saldo de créditos de OpenRouter API";
 "GitHub accounts" = "Cuentas GitHub";
 "Sign in with multiple GitHub accounts via OAuth." = "Inicie sesión con varias cuentas GitHub a través de OAuth.";
 "Paste GitHub token…" = "Pegar GitHub tokens…";
@@ -2127,9 +2129,9 @@
 "Chutes cost history is not available from CodexBar." = "El historial de costos de Chutes no está disponible en CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Almacenado en ~/.codexbar/config.json. Pegue una clave Chutes API.";
 "chutes key..." = "Clave API de Chutes...";
-"Spend" = "gastar";
+"Spend" = "Gasto";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "El gasto de Fireworks proviene del resumen de facturación API; El historial de costos no se rastrea.";
-"Doubao API-key accounts" = "Doubao API-cuentas clave";
+"Doubao API-key accounts" = "Cuentas con clave API de Doubao";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "Guarde las llaves etiquetadas Ark API. Los pares AK/SK y los perfiles arkcli no se admiten aquí.";
 "Ark API key" = "Llave Arca API";
 "LithosAI exposes prepaid balance and console spend, not local token cost history." = "LithosAI expone el saldo prepago y el gasto de la consola, no el historial de costos local de tokens.";
@@ -2163,7 +2165,7 @@
 "Store multiple IBM Bob API keys." = "Almacene varias claves IBM Bob API.";
 "Monthly Bobcoins" = "Bobcoins mensuales";
 "Bobcoin usage from the IBM Bob API." = "Uso de Bobcoins del IBM Bob API.";
-"Shared pool" = "piscina compartida";
+"Shared pool" = "Cuota compartida";
 "GitKraken cost history is not available." = "El historial de costos GitKraken no está disponible.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "El gasto diario de xAI requiere una clave de administración API y un equipo ID. El saldo prepago no se trata como gasto.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "Almacenado en ~/.codexbar/config.json. Cree uno en console.x.ai en Configuración > Claves de administración; No se aceptan claves de inferencia API.";
@@ -2241,7 +2243,7 @@
 "ZeroGPU" = "ZeroGPU";
 "Hugging Face usage comes from the billing API; cost history is not tracked." = "El uso de Hugging Face proviene de la facturación API; El historial de costos no se rastrea.";
 "Create a token at huggingface.co/settings/tokens. Classic read tokens work; fine-grained tokens need the Billing read permission." = "Cree un acceso tokens en huggingface.co/settings/tokens.. Se admite un acceso de lectura clásico tokens. El acceso detallado tokens requiere permiso para leer los datos de facturación.";
-"Credit balance from the Codebuff API" = "Balanza Créditos del Codebuff API";
+"Credit balance from the Codebuff API" = "Saldo de créditos del Codebuff API";
 "Reads governance budgets and rate limits from the Bifrost virtual key quota endpoint." = "Lee los presupuestos de gobernanza y los límites de tasas del punto final de clave virtual Bifrost Cuota.";
 "Bifrost spend is reported by the provider API." = "El gasto de Bifrost lo informa el proveedor API.";
 "Virtual keys" = "claves virtuales";
@@ -2327,7 +2329,7 @@
 "Renews" = "Renueva";
 "Orb" = "orbe";
 "Individual" = "individuo";
-"Today spend" = "hoy gastar";
+"Today spend" = "Gasto de hoy";
 "Usage billing" = "Facturación de uso";
 "Period resets" = "Restablecimientos de período";
 "Cached input" = "Entrada en caché";
@@ -2338,7 +2340,7 @@
 "Subscription credits available" = "Suscripción Créditos disponible";
 "Total credits available" = "Total Créditos disponible";
 "Used this cycle" = "Usé este ciclo";
-"Bank cap" = "tapa del banco";
+"Bank cap" = "Límite de créditos acumulados";
 "Next refill" = "Próxima recarga";
 "Gateway" = "Puerta de enlace";
 "Routed" = "Enrutado";
@@ -2363,3 +2365,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Gasto registrado";
+"Highest recorded spend" = "Mayor gasto registrado";
+"Previous day" = "Día anterior";
+"Next day" = "Día siguiente";
+"Click to isolate a source. Click again to show all." = "Haz clic para aislar una fuente. Haz clic de nuevo para mostrar todas.";
+"Recorded hourly spend" = "Gasto por hora registrado";
+"Highest spend" = "Gasto máximo";
+"Models for this day" = "Modelos de este día";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Haz clic en una barra para explorar. Consulta los importes exactos en el menú inferior.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Guarda varias claves API de ClinePass. La clave seleccionada tiene prioridad sobre la clave API configurada y la sesión de cline auth.";
+
+"X API cost history is not available." = "El historial de costos de X API no está disponible.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "Pega una cabecera Cookie de console.x.com que contenga auth_token y ct0.";
+
+"Open X Developer Console" = "Abrir la consola de desarrolladores de X";

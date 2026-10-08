@@ -84,7 +84,7 @@ extension SettingsStore {
         get { self.defaultsState.launchAtLogin }
         set {
             self.setDefault(\.launchAtLogin, newValue, key: "launchAtLogin")
-            self.updateLoginItem(newValue)
+            LaunchAtLoginManager.setEnabled(newValue)
         }
     }
 
@@ -97,7 +97,7 @@ extension SettingsStore {
         get { self.defaultsState.debugDisableKeychainAccess }
         set {
             self.setDefault(\.debugDisableKeychainAccess, newValue, key: "debugDisableKeychainAccess")
-            if Self.shouldBridgeSharedDefaults(for: self.userDefaults, startupBehavior: self.startupBehavior) {
+            if Self.shouldBridgeSharedDefaults(for: self.userDefaults) {
                 Self.sharedDefaults?.set(newValue, forKey: "debugDisableKeychainAccess")
             }
             self.keychainAccessPolicy.setDisabled(newValue)

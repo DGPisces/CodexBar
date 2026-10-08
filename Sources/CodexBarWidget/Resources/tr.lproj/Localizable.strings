@@ -105,7 +105,7 @@
 "Peak %@" = "Zirve %@";
 "Personal" = "Kişisel";
 "Personal budget" = "Kişisel bütçe";
-"Plan" = "Planı";
+"Plan" = "Plan";
 "Plan credits" = "Abonelik planı Krediler";
 "Points" = "Puanlar";
 "Premium" = "prim";
@@ -129,8 +129,8 @@
 "Resets in %@" = "%@ içinde sıfırlanır";
 "Reviews" = "Yorumlar";
 "Rolling" = "Yuvarlanma";
-"Runs out" = "Kota tükeniyor";
-"Runs out in" = "Kota'nin süresi doldu";
+"Runs out" = "Tükenmesi bekleniyor";
+"Runs out in" = "Tükenmesine kalan süre";
 "Savings" = "Tasarruf";
 "Search hourly" = "Saatlik ara";
 "Secondary budget" = "İkincil bütçe";
@@ -143,7 +143,7 @@
 "Session" = "Oturum";
 "Session (5-hour)" = "Oturum (5 saat)";
 "Session and weekly usage with credits and costs." = "Krediler ile oturum ve haftalık kullanım ve maliyetler.";
-"Shared pool" = "Ortak havuz";
+"Shared pool" = "Ortak kota";
 "Sonnet" = "Sonnet";
 "Spend" = "Harcama";
 "Standard" = "Standart";

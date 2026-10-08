@@ -119,7 +119,7 @@
 "Purchased" = "Comprat";
 "Quota" = "Quota";
 "Ran out" = "S'ha esgotat la quota";
-"Rate limit" = "Límit de tarifa";
+"Rate limit" = "Límit de sol·licituds";
 "Refill" = "Omplir";
 "Remaining budget compared with an ideal steady burn rate." = "Pressupost restant en comparació amb una taxa de combustió constant ideal.";
 "Requests" = "Sol·licituds";
@@ -129,8 +129,8 @@
 "Resets in %@" = "Es reinicia en %@";
 "Reviews" = "Ressenyes";
 "Rolling" = "Rodant";
-"Runs out" = "S'esgota la quota";
-"Runs out in" = "S'esgota la quota";
+"Runs out" = "Esgotament previst";
+"Runs out in" = "S’esgota d’aquí a";
 "Savings" = "Estalvi";
 "Search hourly" = "Cerques per hora";
 "Secondary budget" = "Pressupost secundari";
@@ -143,9 +143,9 @@
 "Session" = "Sessió";
 "Session (5-hour)" = "Sessió (5 hores)";
 "Session and weekly usage with credits and costs." = "Sessió i ús setmanal amb Crèdits i costos.";
-"Shared pool" = "Piscina compartida";
+"Shared pool" = "Quota compartida";
 "Sonnet" = "Sonnet";
-"Spend" = "Gastar";
+"Spend" = "Despesa";
 "Standard" = "Estàndard";
 "Status" = "Estat";
 "Subscription" = "Subscripció";

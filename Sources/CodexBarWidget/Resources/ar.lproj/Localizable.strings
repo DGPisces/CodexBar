@@ -30,7 +30,7 @@
 "5h Window" = "نافذة 5 ساعات";
 "7-day" = "7ي";
 "7-day usage" = "الاستخدام خلال 7 أيام";
-"API est." = "مؤسسة API.";
+"API est." = "تقدير API";
 "Account" = "الحساب";
 "Account Usage" = "استخدام الحساب";
 "Account unavailable" = "الحساب: غير متوفر";
@@ -38,7 +38,7 @@
 "Add-on credits" = "الوظيفة الإضافية الاعتمادات";
 "Agent" = "وكيل";
 "Amp Free" = "Amp مجاني";
-"Balance" = "التوازن";
+"Balance" = "الرصيد";
 "Base" = "قاعدة";
 "Billing" = "الفواتير";
 "Billing cycle" = "دورة الفواتير";
@@ -57,7 +57,7 @@
 "CodexBar Burn Down (Combined)" = "CodexBar الحصة الاحتراق (مشترك)";
 "CodexBar History" = "تاريخ CodexBar";
 "CodexBar Metric" = "CodexBar المؤشر";
-"CodexBar Switcher" = "CodexBar الجلاد";
+"CodexBar Switcher" = "مبدّل CodexBar";
 "CodexBar Usage" = "استخدام CodexBar";
 "Compact widget for credits or cost." = "القطعة المدمجة لالاعتمادات أو التكلفة.";
 "Core 5h" = "الأساسية 5 ساعات";
@@ -129,8 +129,8 @@
 "Resets in %@" = "إعادة التعيين في %@";
 "Reviews" = "التعليقات";
 "Rolling" = "المتداول";
-"Runs out" = "الحصة ينفد";
-"Runs out in" = "الحصة ينفد";
+"Runs out" = "النفاد المتوقع";
+"Runs out in" = "المدة حتى النفاد";
 "Savings" = "الادخار";
 "Search hourly" = "البحث بالساعة";
 "Secondary budget" = "الميزانية الثانوية";
@@ -143,9 +143,9 @@
 "Session" = "الجلسة";
 "Session (5-hour)" = "الجلسة (5 ساعات)";
 "Session and weekly usage with credits and costs." = "الجلسة والاستخدام الأسبوعي مع الاعتمادات والتكاليف.";
-"Shared pool" = "حمام سباحة مشترك";
-"Sonnet" = "السوناتة";
-"Spend" = "انفق";
+"Shared pool" = "الحصة المشتركة";
+"Sonnet" = "Sonnet";
+"Spend" = "الإنفاق";
 "Standard" = "قياسي";
 "Status" = "الحالة";
 "Subscription" = "الاشتراك";
@@ -169,7 +169,7 @@
 "Usage history will appear after a refresh." = "سيظهر سجل الاستخدام بعد التحديث.";
 "Usage limit" = "حد الاستخدام";
 "Usage limits and reset countdowns for one saved account." = "حدود الاستخدام وإعادة ضبط العد التنازلي لحساب محفوظ واحد.";
-"Usage widget with a provider switcher." = "القطعة الاستخدام مع الجلاد مزود.";
+"Usage widget with a provider switcher." = "أداة لعرض الاستخدام مع مبدّل لموفري الخدمة.";
 "Usage window" = "نافذة الاستخدام";
 "Voices" = "أصوات";
 "Weekly" = "الأسبوعي";

@@ -66,8 +66,8 @@
 "API token" = "API-token";
 "API tokens" = "API-tokens";
 "About" = "Over";
-"Account" = "Rekening";
-"Accounts" = "Rekeningen";
+"Account" = "Account";
+"Accounts" = "Accounts";
 "Accounts subtitle" = "Accounts";
 "Active" = "Actief";
 "Add" = "Toevoegen";
@@ -297,7 +297,7 @@
 "Picker" = "Kikker";
 "Picker subtitle" = "Ondertitel kiezen";
 "Placeholder" = "Tijdelijke aanduiding";
-"Plan" = "Plannen";
+"Plan" = "Abonnement";
 "Plan Usage" = "Plangebruik";
 "Play full-screen confetti when weekly usage resets." = "Speel confetti op volledig scherm af wanneer het wekelijkse gebruik wordt gereset.";
 "Polls OpenAI/Claude status pages and Google Workspace for " = "Polls OpenAI/Claude-statuspagina's en Google Workspace voor";
@@ -446,7 +446,7 @@
 "metric_secondary" = "Secundair (%@)";
 "metric_tertiary" = "Tertiair (%@)";
 "multiple_workspaces_found" = "CodexBar heeft meerdere werkruimten gevonden voor %@. Kies de werkruimte die u wilt toevoegen.";
-"ory_session_…=…; csrftoken=…" = "ory_sessie_…=…; csrftoken=…";
+"ory_session_…=…; csrftoken=…" = "ory_session_…=…; csrftoken=…";
 "overview_choose_providers" = "Kies maximaal %@ providers";
 "remove_account_message" = "%@ verwijderen uit CodexBar? Het beheerde Codex-huis wordt verwijderd.";
 "version_format" = "Versie %@";
@@ -531,7 +531,7 @@
 "quota_warning_weekly_capitalized" = "Wekelijks";
 "quota_warning_notification_title" = "%1$@ %2$@ quotum laag";
 "quota_warning_notification_body" = "%1$@ over. Je waarschuwingsdrempel van %2$d%% %3$@ is bereikt.";
-"quota_warning_notification_body_with_account" = "Rekening %1$@. %2$@ over. Je waarschuwingsdrempel van %3$d%% %4$@ is bereikt.";
+"quota_warning_notification_body_with_account" = "Account %1$@. %2$@ over. Je waarschuwingsdrempel van %3$d%% %4$@ is bereikt.";
 "predictive_pace_warnings_title" = "Voorspellende tempowaarschuwingen";
 "predictive_pace_warnings_subtitle" = "Waarschuwt voor Codex en Claude wanneer het sessie- of wekelijkse tempo het quotum vóór de reset kan opgebruiken.";
 "confetti_on_reset_title" = "Confetti bij reset";
@@ -578,7 +578,7 @@
 "tab_providers" = "Aanbieders";
 "tab_notifications" = "Meldingen";
 "tab_menu_bar" = "Menubalk";
-"tab_menu" = "Menukaart";
+"tab_menu" = "Menu";
 "tab_advanced" = "Geavanceerd";
 "tab_about" = "Over";
 "tab_debug" = "Foutopsporing";
@@ -965,7 +965,7 @@
 "Monthly" = "Maandelijks";
 "Sonnet" = "Sonnet";
 "Overages" = "Overschotten";
-"Overage" = "Overschot";
+"Overage" = "Meerverbruik";
 "Activity" = "Activiteit";
 "Copied" = "Gekopieerd";
 "Managed by Homebrew" = "Beheerd door Homebrew";
@@ -1433,7 +1433,7 @@
 "menu_bar_layout_sample_runs_out" = "op vr.";
 "menu_bar_layout_token_icon" = "Pictogram";
 "menu_bar_layout_token_provider" = "Providernaam";
-"menu_bar_layout_token_account" = "Rekening";
+"menu_bar_layout_token_account" = "Account";
 "menu_bar_layout_token_session" = "Sessie %";
 "menu_bar_layout_token_weekly" = "Wekelijks %";
 "menu_bar_layout_token_scoped_weekly" = "Wekelijks per bereik %";
@@ -1498,6 +1498,8 @@
 
 "Cumulative" = "Cumulatief";
 "Token activity" = "Token-activiteit";
+"Earlier activity" = "Eerdere activiteit";
+"More recent activity" = "Recentere activiteit";
 "View" = "Weergave";
 "in the last year" = "in het afgelopen jaar";
 "No activity in the last 12 months" = "Geen activiteit in de afgelopen 12 maanden";
@@ -1564,7 +1566,7 @@
 "List-price equivalent — not a billing receipt." = "Equivalent van catalogusprijs - geen factuurbewijs.";
 "Priced" = "Geprijsd gebruik";
 "Unpriced" = "Ongeprijsd gebruik";
-"Unmetered" = "Onbeperkt gebruik";
+"Unmetered" = "Ongemeten gebruik";
 "Estimated" = "Geschat";
 "Other models" = "Andere modellen";
 "Include OpenCodex usage logs" = "Inclusief OpenCodex-gebruikslogboeken";
@@ -1702,7 +1704,7 @@
 "AWS region. Can also be set with AWS_REGION. In profile mode, leave blank to use the profile's region." = "AWS-regio. Kan ook worden ingesteld met AWS_REGION. Laat in de profielmodus leeg om de regio van het profiel te gebruiken.";
 "Access keys" = "Toegangssleutels voor authenticatie";
 "Access token" = "Toegangstoken";
-"Account %@" = "Rekening %@";
+"Account %@" = "Account %@";
 "Account Added" = "Account toegevoegd";
 "Account Usage" = "Accountgebruik";
 "Account slug" = "Account-ID (slug)";
@@ -1931,8 +1933,8 @@
 "Reset: %@" = "Resetten: %@";
 "Resets every 5 hours" = "Wordt elke 5 uur gereset";
 "Resets in" = "Reset binnen";
-"Runs out" = "Quotum is op";
-"Runs out in" = "Quotum is op";
+"Runs out" = "Verwachte uitputting";
+"Runs out in" = "Uitgeput over";
 "SUBSCRIPTIONS" = "ABONNEMENTEN";
 "Save" = "Opslaan";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Bewaar weergave- en meldingsvoorkeuren voor uw dotfiles. Accounts, inloggegevens, login, lokale paden en toestemming blijven op deze Mac.";
@@ -2081,14 +2083,14 @@
 "Poe usage history is unavailable." = "Poe-gebruiksgeschiedenis is niet beschikbaar.";
 "Stored in ~/.codexbar/config.json. Get your key from poe.com/api/keys." = "Opgeslagen in ~/.codexbar/config.json. Haal uw sleutel op bij poe.com/api/keys.";
 "Billing" = "Facturering";
-"Rate limit" = "Tarieflimiet";
-"Billing and rate-limit data from the v0 Platform API" = "Facturerings- en tarieflimietgegevens van het v0-platform API";
+"Rate limit" = "Verzoeksnelheidslimiet";
+"Billing and rate-limit data from the v0 Platform API" = "Factureringsgegevens en verzoeksnelheidslimieten van de v0 Platform API";
 "v0 cost history is not available via the Platform API." = "De kostengeschiedenis van v0 is niet beschikbaar via het platform API.";
 "Stored in ~/.config/codexbar/config.json. Create one in v0 settings or set V0_API_KEY." = "Opgeslagen in ~/.config/codexbar/config.json. Maak er een in de v0-instellingen of stel V0_API_KEY in.";
 "v0_..." = "v0_...";
 "Open v0 API keys" = "Open v0 API-sleutels";
 "Scope" = "Reikwijdte";
-"Optional project ID or slug. Leave blank for the default v0 scope." = "Optioneel project ID of naaktslak. Laat dit leeg voor de standaard v0-scope.";
+"Optional project ID or slug. Leave blank for the default v0 scope." = "Optionele project-ID of slug. Laat leeg voor het standaardbereik van v0.";
 "project-slug" = "project-slug";
 "Monthly budget" = "Maandelijks budget";
 "ClawRouter spend is reported by its usage API." = "De ClawRouter-uitgaven worden gerapporteerd op basis van het gebruik API.";
@@ -2128,7 +2130,7 @@
 "Chutes cost history is not available from CodexBar." = "De kostengeschiedenis van Chutes is niet beschikbaar via CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Opgeslagen in ~/.codexbar/config.json. Plak een Chutes API-sleutel.";
 "chutes key..." = "Chutes-API-sleutel...";
-"Spend" = "Besteed";
+"Spend" = "Uitgaven";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "De Fireworks-uitgaven komen uit het factuuroverzicht API; de kostengeschiedenis wordt niet bijgehouden.";
 "Doubao API-key accounts" = "Doubao API-key accounts";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "Bewaar gelabelde Ark API-sleutels. AK/SK-paren en arkcli-profielen worden hier niet ondersteund.";
@@ -2164,7 +2166,7 @@
 "Store multiple IBM Bob API keys." = "Bewaar meerdere IBM Bob API-sleutels.";
 "Monthly Bobcoins" = "Maandelijkse bobcoins";
 "Bobcoin usage from the IBM Bob API." = "Bobcoin-gebruik van de IBM Bob API.";
-"Shared pool" = "Gedeeld zwembad";
+"Shared pool" = "Gedeeld quotum";
 "GitKraken cost history is not available." = "GitKraken-kostengeschiedenis is niet beschikbaar.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "Voor de dagelijkse uitgaven voor xAI zijn een Management API-sleutel en team ID vereist. Prepaid-saldo wordt niet als uitgave beschouwd.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "Opgeslagen in ~/.codexbar/config.json. Maak er een aan op console.x.ai onder Instellingen > Beheersleutels; gevolgtrekking API-sleutels worden niet geaccepteerd.";
@@ -2328,7 +2330,7 @@
 "Renews" = "Vernieuwt";
 "Orb" = "Orb";
 "Individual" = "Individueel";
-"Today spend" = "Vandaag besteden";
+"Today spend" = "Uitgaven vandaag";
 "Usage billing" = "Gebruiksfacturering";
 "Period resets" = "Periode opnieuw ingesteld";
 "Cached input" = "Gecachte invoer";
@@ -2339,7 +2341,7 @@
 "Subscription credits available" = "Abonnement Kredieten beschikbaar";
 "Total credits available" = "Totaal Kredieten beschikbaar";
 "Used this cycle" = "Deze cyclus gebruikt";
-"Bank cap" = "Bankkap";
+"Bank cap" = "Limiet voor opgebouwd tegoed";
 "Next refill" = "Volgende vulling";
 "Gateway" = "Poort";
 "Routed" = "Gerouteerd";
@@ -2364,3 +2366,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Geregistreerde uitgaven";
+"Highest recorded spend" = "Hoogste geregistreerde uitgaven";
+"Previous day" = "Vorige dag";
+"Next day" = "Volgende dag";
+"Click to isolate a source. Click again to show all." = "Klik om één bron te tonen. Klik opnieuw om alles te tonen.";
+"Recorded hourly spend" = "Geregistreerde uitgaven per uur";
+"Highest spend" = "Hoogste uitgaven";
+"Models for this day" = "Modellen voor deze dag";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Klik op een balk voor details. Het menu hieronder toont exacte bedragen.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Sla meerdere ClinePass API-sleutels op. De geselecteerde sleutel heeft voorrang op de ingestelde API-sleutel en de cline auth-sessie.";
+
+"X API cost history is not available." = "Kostengeschiedenis voor X API is niet beschikbaar.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "Plak een Cookie-header van console.x.com met auth_token en ct0.";
+
+"Open X Developer Console" = "X-ontwikkelaarsconsole openen";

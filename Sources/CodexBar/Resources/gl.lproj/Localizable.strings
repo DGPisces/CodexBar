@@ -279,7 +279,7 @@
 "Picker" = "Selector";
 "Picker subtitle" = "Subtítulo do selector";
 "Placeholder" = "Texto de marcador";
-"Plan" = "Planificar";
+"Plan" = "Plan";
 "Play full-screen confetti when weekly usage resets." = "Amosar confeti a pantalla completa cando se reinicie o uso semanal.";
 "Polls OpenAI/Claude status pages and Google Workspace for " = "Consulta as páxinas de estado de OpenAI/Claude e Google Workspace para ";
 "Prevents any Keychain access while enabled." = "Evita calquera acceso ao Chaveiro mentres estea activado.";
@@ -431,7 +431,7 @@
 "overview_choose_providers" = "Escolle ata %@ provedores";
 "remove_account_message" = "Queres eliminar %@ de CodexBar? O seu directorio de Codex xestionado eliminarase.";
 "version_format" = "Versión %@";
-"vertex_ai_login_instructions" = "Para facer un seguimento do uso de Vertex AI, autentícate con Google Cloud.\n\n1. Abre o Terminal\n2. Executa: gcloud auth application-default login\n3. Segue as indicacións do navegador para iniciar sesión\n4. Define o teu proxecto: gcloud config set project ID_PROXECTO\n\nQueres abrir o Terminal agora?";
+"vertex_ai_login_instructions" = "Para facer un seguimento do uso de Vertex AI, autentícate con Google Cloud.\n\n1. Abre o Terminal\n2. Executa: gcloud auth application-default login\n3. Segue as indicacións do navegador para iniciar sesión\n4. Define o teu proxecto: gcloud config set project PROJECT_ID\n\nQueres abrir o Terminal agora?";
 "workspaceID is set but only opencode, opencodego, and deepgram support workspaceID." = "workspaceID está definido, pero só opencode, opencodego e deepgram admiten workspaceID.";
 "© 2026 Peter Steinberger. MIT License." = "© 2026 Peter Steinberger. Licenza MIT.";
 
@@ -1498,6 +1498,8 @@
 
 "Cumulative" = "Acumulado";
 "Token activity" = "Actividade de tokens";
+"Earlier activity" = "Actividade anterior";
+"More recent activity" = "Actividade máis recente";
 "View" = "Vista";
 "in the last year" = "no último ano";
 "No activity in the last 12 months" = "Sen actividade nos últimos 12 meses";
@@ -1564,7 +1566,7 @@
 "List-price equivalent — not a billing receipt." = "Equivalente ao prezo de lista: non é un recibo de facturación.";
 "Priced" = "Uso cotizado";
 "Unpriced" = "Uso sen prezo";
-"Unmetered" = "Uso ilimitado";
+"Unmetered" = "Uso non medido";
 "Estimated" = "Estimado";
 "Other models" = "Outros modelos";
 "Include OpenCodex usage logs" = "Incluír rexistros de uso de OpenCodex";
@@ -1931,8 +1933,8 @@
 "Reset: %@" = "Restablecer: %@";
 "Resets every 5 hours" = "Reinicia cada 5 horas";
 "Resets in" = "Restablece en";
-"Runs out" = "Cota esgotarase";
-"Runs out in" = "Cota esgota";
+"Runs out" = "Esgotamento previsto";
+"Runs out in" = "Esgótase en";
 "SUBSCRIPTIONS" = "SUBSCRICIÓNS";
 "Save" = "Gardar";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Garda as preferencias de visualización e notificación para os teus ficheiros de puntos. As contas, as credenciais, o inicio de sesión, as rutas locais e o consentimento permanecen neste Mac.";
@@ -2007,7 +2009,7 @@
 "a1.small-equivalent hours" = "a1.small horas equivalentes";
 "after reset" = "despois do reinicio";
 "all" = "todos";
-"ark-... or AKLT..." = "arca-... ou AKLT...";
+"ark-... or AKLT..." = "ark-... ou AKLT...";
 "budget spent" = "Orzamento Cota esgotado";
 "cb_..." = "cb_...";
 "claude auth login exited with status %d." = "claude auth login saíu co estado %d.";
@@ -2105,7 +2107,7 @@
 "Flash Lite" = "Flash Lite";
 "Window" = "Fiestra de uso";
 "Token plan credits usage." = "Uso do plan tokens Créditos.";
-"API keys" = "Teclas API";
+"API keys" = "Claves API";
 "Store multiple OpenRouter API keys." = "Almacene varias claves OpenRouter API.";
 "Credit balance from OpenRouter API" = "Saldo Créditos de OpenRouter API";
 "GitHub accounts" = "Contas GitHub";
@@ -2128,7 +2130,7 @@
 "Chutes cost history is not available from CodexBar." = "O historial de custos de Chutes non está dispoñible en CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Almacenado en ~/.codexbar/config.json. Pega unha clave Chutes API.";
 "chutes key..." = "Chave API de Chutes...";
-"Spend" = "Gastar";
+"Spend" = "Gasto";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "O gasto Fireworks procede do resumo de facturación API; non se rastrexa o historial de custos.";
 "Doubao API-key accounts" = "Doubao API contas clave";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "Almacene as chaves etiquetadas con Ark API. Os pares AK/SK e os perfís arkcli non son compatibles aquí.";
@@ -2164,7 +2166,7 @@
 "Store multiple IBM Bob API keys." = "Almacene varias claves IBM Bob API.";
 "Monthly Bobcoins" = "Bobcoins mensuais";
 "Bobcoin usage from the IBM Bob API." = "Uso de Bobcoin do IBM Bob API.";
-"Shared pool" = "Piscina compartida";
+"Shared pool" = "Cota compartida";
 "GitKraken cost history is not available." = "O historial de custos GitKraken non está dispoñible.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "O gasto diario de xAI require unha clave de xestión API e un equipo ID. O saldo prepago non se trata como gasto.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "Almacenado en ~/.codexbar/config.json. Crea un en console.x.ai en Configuración > Teclas de xestión; As chaves de inferencia API non se aceptan.";
@@ -2328,7 +2330,7 @@
 "Renews" = "Renova";
 "Orb" = "Orbe";
 "Individual" = "Individual";
-"Today spend" = "Hoxe gasta";
+"Today spend" = "Gasto de hoxe";
 "Usage billing" = "Facturación de uso";
 "Period resets" = "Reinicia o período";
 "Cached input" = "Entrada almacenada en caché";
@@ -2339,7 +2341,7 @@
 "Subscription credits available" = "Subscrición Créditos dispoñible";
 "Total credits available" = "Total Créditos dispoñible";
 "Used this cycle" = "Utilizou este ciclo";
-"Bank cap" = "Capa bancaria";
+"Bank cap" = "Límite de créditos acumulados";
 "Next refill" = "Próxima recarga";
 "Gateway" = "Pasarela";
 "Routed" = "Enrutado";
@@ -2364,3 +2366,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Gasto rexistrado";
+"Highest recorded spend" = "Maior gasto rexistrado";
+"Previous day" = "Día anterior";
+"Next day" = "Día seguinte";
+"Click to isolate a source. Click again to show all." = "Preme para illar unha fonte. Preme de novo para mostrar todas.";
+"Recorded hourly spend" = "Gasto por hora rexistrado";
+"Highest spend" = "Gasto máximo";
+"Models for this day" = "Modelos deste día";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Preme nunha barra para explorar. O menú inferior mostra os importes exactos.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Garda varias claves API de ClinePass. A clave seleccionada ten prioridade sobre a clave API configurada e a sesión de cline auth.";
+
+"X API cost history is not available." = "O historial de custos de X API non está dispoñible.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "Pega unha cabeceira Cookie de console.x.com que conteña auth_token e ct0.";
+
+"Open X Developer Console" = "Abrir a consola de desenvolvedores de X";

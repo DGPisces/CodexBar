@@ -788,7 +788,7 @@
 "metric_pref_tertiary" = "Третинний";
 "metric_pref_extra_usage" = "Додаткове використання";
 "metric_pref_average" = "Середній";
-"metric_mistral_payg" = "Плата за поточний рахунок";
+"metric_mistral_payg" = "Оплата за фактичне використання";
 "metric_mistral_monthly_plan" = "Місячний тарифний план";
 
 /* Display modes */
@@ -963,7 +963,7 @@
 "requests" = "запити";
 "Latest" = "Останній";
 "Monthly" = "Щомісяця";
-"Sonnet" = "Сонет";
+"Sonnet" = "Sonnet";
 "Overages" = "Надлишки";
 "Overage" = "Надлишок";
 "Activity" = "діяльність";
@@ -1498,6 +1498,8 @@
 
 "Cumulative" = "Наростаючим підсумком";
 "Token activity" = "Активність токенів";
+"Earlier activity" = "Раніша активність";
+"More recent activity" = "Новіша активність";
 "View" = "Вигляд";
 "in the last year" = "за останній рік";
 "No activity in the last 12 months" = "Немає активності за останні 12 місяців";
@@ -1562,9 +1564,9 @@
 "List-price equivalent" = "Еквівалент прейскурантної ціни";
 "Metered and list-price" = "Виміряне використання та еквівалент роздрібної ціни";
 "List-price equivalent — not a billing receipt." = "Еквівалент роздрібної ціни — не квитанція про оплату.";
-"Priced" = "Платне використання";
+"Priced" = "Використання з відомою ціною";
 "Unpriced" = "Використання без ціни";
-"Unmetered" = "Безлічне використання";
+"Unmetered" = "Невиміряне використання";
 "Estimated" = "Розрахункова";
 "Other models" = "Інші моделі";
 "Include OpenCodex usage logs" = "Включати журнали використання OpenCodex";
@@ -1932,8 +1934,8 @@
 "Reset: %@" = "Скидання: %@";
 "Resets every 5 hours" = "Скидання кожні 5 годин";
 "Resets in" = "Скидання в";
-"Runs out" = "Квота закінчується";
-"Runs out in" = "Квота закінчується";
+"Runs out" = "Очікуване вичерпання";
+"Runs out in" = "Вичерпається через";
 "SUBSCRIPTIONS" = "ПІДПИСКИ";
 "Save" = "зберегти";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Збережіть налаштування відображення та сповіщень для ваших файлів dot. Облікові записи, облікові дані, логін, локальні шляхи та згода залишаються на цьому Mac.";
@@ -2082,14 +2084,14 @@
 "Poe usage history is unavailable." = "Історія використання Poe недоступна.";
 "Stored in ~/.codexbar/config.json. Get your key from poe.com/api/keys." = "Зберігається в ~/.codexbar/config.json. Отримайте свій ключ із poe.com/api/keys.";
 "Billing" = "Виставлення рахунків";
-"Rate limit" = "Ліміт тарифу";
-"Billing and rate-limit data from the v0 Platform API" = "Дані про виставлення рахунків і тарифні ліміти з платформи v0 API";
+"Rate limit" = "Обмеження частоти запитів";
+"Billing and rate-limit data from the v0 Platform API" = "Дані про оплату й обмеження частоти запитів з API платформи v0";
 "v0 cost history is not available via the Platform API." = "Історія витрат v0 недоступна через платформу API.";
 "Stored in ~/.config/codexbar/config.json. Create one in v0 settings or set V0_API_KEY." = "Зберігається в ~/.config/codexbar/config.json. Створіть його в налаштуваннях v0 або встановіть V0_API_KEY.";
 "v0_..." = "v0_...";
 "Open v0 API keys" = "Відкрийте ключі v0 API";
 "Scope" = "Область застосування";
-"Optional project ID or slug. Leave blank for the default v0 scope." = "Додатковий проект ID або слизень. Залиште поле порожнім для області за замовчуванням v0.";
+"Optional project ID or slug. Leave blank for the default v0 scope." = "Необов’язковий ID проєкту або slug. Залиште порожнім для стандартної області v0.";
 "project-slug" = "project-slug";
 "Monthly budget" = "Місячний бюджет";
 "ClawRouter spend is reported by its usage API." = "Витрати ClawRouter звітуються за його використанням API.";
@@ -2129,7 +2131,7 @@
 "Chutes cost history is not available from CodexBar." = "Історія витрат Chutes недоступна з CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Зберігається в ~/.codexbar/config.json. Вставте ключ Chutes API.";
 "chutes key..." = "Ключ API Chutes...";
-"Spend" = "витрачати";
+"Spend" = "Витрати";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Витрати на Fireworks походять із підсумку платежів API; історія витрат не відслідковується.";
 "Doubao API-key accounts" = "Doubao API-ключові облікові записи";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "Зберігайте ключі Ark API з маркуванням. Пари AK/SK і профілі arkcli тут не підтримуються.";
@@ -2165,7 +2167,7 @@
 "Store multiple IBM Bob API keys." = "Зберігайте кілька ключів IBM Bob API.";
 "Monthly Bobcoins" = "Бобкойни щомісяця";
 "Bobcoin usage from the IBM Bob API." = "Використання Bobcoin від IBM Bob API.";
-"Shared pool" = "Спільний басейн";
+"Shared pool" = "Спільна квота";
 "GitKraken cost history is not available." = "Історія витрат GitKraken недоступна.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "Щоденні витрати xAI потребують ключа керування API і команди ID. Передоплачений баланс не розглядається як витрати.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "Зберігається в ~/.codexbar/config.json. Створіть його на console.x.ai у меню «Параметри» > «Ключі керування»; висновок Ключі API не приймаються.";
@@ -2329,7 +2331,7 @@
 "Renews" = "Відновлює";
 "Orb" = "Orb";
 "Individual" = "Індивідуальний";
-"Today spend" = "Сьогодні витрачати";
+"Today spend" = "Витрати за сьогодні";
 "Usage billing" = "Плата за використання";
 "Period resets" = "Скидання місячних";
 "Cached input" = "Кешований вхід";
@@ -2340,10 +2342,10 @@
 "Subscription credits available" = "Доступна підписка Кредити";
 "Total credits available" = "Усього в наявності Кредити";
 "Used this cycle" = "Використовував цей цикл";
-"Bank cap" = "Банківська шапка";
+"Bank cap" = "Ліміт накопичених кредитів";
 "Next refill" = "Наступна заправка";
 "Gateway" = "Шлюз";
-"Routed" = "Розбитий";
+"Routed" = "Маршрутизовано";
 "Saved" = "Збережено";
 "Avg decision" = "Середнє рішення";
 "%@h" = "%@год";
@@ -2365,3 +2367,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Зафіксовані витрати";
+"Highest recorded spend" = "Найвищі зафіксовані витрати";
+"Previous day" = "Попередній день";
+"Next day" = "Наступний день";
+"Click to isolate a source. Click again to show all." = "Натисніть для перегляду одного джерела. Натисніть знову для перегляду всіх.";
+"Recorded hourly spend" = "Записані погодинні витрати";
+"Highest spend" = "Найбільші витрати";
+"Models for this day" = "Моделі за цей день";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Натисніть на стовпчик для перегляду деталей. Точні суми доступні в меню нижче.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Збережіть кілька API-ключів ClinePass. Вибраний ключ має пріоритет над налаштованим API-ключем і сеансом cline auth.";
+
+"X API cost history is not available." = "Історія витрат X API недоступна.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "Вставте заголовок Cookie з console.x.com, що містить auth_token і ct0.";
+
+"Open X Developer Console" = "Відкрити консоль розробника X";

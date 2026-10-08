@@ -79,7 +79,7 @@
 "Average (\\(label1) + \\(label2))" = "میانگین (\\(label1) + \\(label2))";
 "Average (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))" = "میانگین (\\(metadata.sessionLabel) + \\(metadata.weeklyLabel))";
 "Avoid Keychain prompts" = "از درخواست های Keychain اجتناب کنید";
-"Balance" = "تعادل";
+"Balance" = "موجودی";
 "Cloud credits" = "اعتبار ابری";
 "Expired" = "منقضی شده";
 "Battery Saver" = "باتری سیور";
@@ -215,7 +215,7 @@
 "MCP details" = "جزئیات MCP";
 "Managed Codex accounts unavailable" = "حساب های مدیریت شده Codex در دسترس نیستند";
 "Managed account storage is unreadable. Live account access is still available, " = "ذخیره سازی حساب مدیریت شده قابل خواندن نیست. دسترسی به حساب زنده هنوز در دسترس است  ";
-"Manual" = "دفترچه راهنما";
+"Manual" = "دستی";
 "May your tokens never run out—keep agent limits in view." = "امیدوارم توکن های شما هرگز تمام نشوند—محدودیت های عامل را در نظر داشته باشید.";
 "Menu bar" = "نوار منو";
 "Menu bar auto-shows the provider closest to its rate limit." = "نوار منو به طور خودکار ارائه دهنده ای را نشان می دهد که به محدودیت نرخ خود نزدیک تر است.";
@@ -607,8 +607,8 @@
 "unsafe_managed_home" = "CodexBar از تغییر مسیر خانه مدیریت شده غیرمنتظره خودداری کرد: %@";
 "menu_bar_metric_title" = "معیار نوار منو";
 "menu_bar_metric_subtitle" = "انتخاب کنید کدام پنجره درصد نوار منو را تنظیم کند.";
-"menu_bar_metric_subtitle_deepseek" = "تعادل DeepSeek را در نوار منو نشان می دهد.";
-"menu_bar_metric_subtitle_moonshot" = "تعادل Moonshot / Kimi API را در نوار منو نشان می دهد.";
+"menu_bar_metric_subtitle_deepseek" = "موجودی DeepSeek را در نوار منو نشان می دهد.";
+"menu_bar_metric_subtitle_moonshot" = "موجودی Moonshot / Kimi API را در نوار منو نشان می دهد.";
 "menu_bar_metric_subtitle_mistral" = "هزینه های Mistral API ماه جاری را در نوار منو نشان می دهد.";
 "automatic" = "اتوماتیک";
 "primary_api_key_limit" = "کلید اصلی (API حد کلید)";
@@ -794,7 +794,7 @@
 "metric_pref_tertiary" = "دوره سوم";
 "metric_pref_extra_usage" = "استفاده اضافی";
 "metric_pref_average" = "میانگین";
-"metric_mistral_payg" = "صورتحساب پرداختی";
+"metric_mistral_payg" = "پرداخت بر اساس میزان مصرف";
 "metric_mistral_monthly_plan" = "طرح اشتراک ماهانه";
 
 /* Display modes */
@@ -970,7 +970,7 @@
 "requests" = "درخواست ها";
 "Latest" = "جدیدترین ها";
 "Monthly" = "ماهانه";
-"Sonnet" = "سونت";
+"Sonnet" = "Sonnet";
 "Overages" = "اضافه هزینه ها";
 "Overage" = "اضافه هزینه";
 "Activity" = "فعالیت ها";
@@ -988,7 +988,7 @@
 "Extra usage spent" = "استفاده اضافی صرف شده";
 "Credits remaining" = "اعتبار باقی‌مانده";
 "Using CLI fallback" = "استفاده از CLI پشتیبان";
-"Balance updates in near-real time (up to 5 min lag)" = "به روزرسانی تعادل تقریبا در زمان واقعی (تا ۵ دقیقه تأخیر)";
+"Balance updates in near-real time (up to 5 min lag)" = "به روزرسانی موجودی تقریبا در زمان واقعی (تا ۵ دقیقه تأخیر)";
 "Daily billing data finalizes at 07:00 UTC" = "داده های صورتحساب روزانه در ساعت ۰۷:۰۰ نهایی می شود UTC";
 "%@ of %@ credits left" = "%@ از %@ اعتبار باقی مانده";
 "of %@" = "از %@";
@@ -1006,7 +1006,7 @@
 "Overage credits left" = "اعتبار اضافی باقی‌مانده";
 "Overage cost" = "هزینه اضافی";
 "credits" = "اعتبارات";
-"Zen balance" = "تعادل ذن";
+"Zen balance" = "موجودی Zen";
 "API spend" = "API خرج می کنم";
 "Extra usage" = "استفاده اضافی";
 "Quota usage" = "استفاده از سهمیه";
@@ -1189,7 +1189,7 @@
 "Sorted alphabetically (enabled first) — click to use your custom order" = "مرتب‌شده بر اساس حروف الفبا (فعال‌ها ابتدا) — برای استفاده از ترتیب سفارشی کلیک کنید";
 "Endpoint" = "نقطه پایان";
 "Enterprise host" = "میزبان سازمانی";
-"Extra usage balance: %@" = "تعادل استفاده اضافی: %@";
+"Extra usage balance: %@" = "موجودی استفاده اضافی: %@";
 "Keychain Access Required" = "دسترسی Keychain مورد نیاز است";
 "keychain_prompt_learn_more" = "بیشتر بدانید…";
 "keychain_prompt_privacy_note" = "macOS، نه CodexBar، ورود گذرواژهٔ Mac را مدیریت می‌کند. می‌توانید دسترسی به Keychain را هر زمان از تنظیمات ← پیشرفته غیرفعال کنید.";
@@ -1203,7 +1203,7 @@
 "Open Codebuff Dashboard" = "داشبورد Open Codebuff";
 "Open Command Code Settings" = "تنظیمات باز Command Code";
 "Open Manus" = "Manus باز";
-"Open MiMo Balance" = "تعادل باز MiMo";
+"Open MiMo Balance" = "باز کردن موجودی MiMo";
 "Open Moonshot Console" = "کنسول Moonshot باز";
 "Open Ollama API Keys" = "کلیدهای باز Ollama API";
 "Open llmman" = "باز کردن llmman";
@@ -1502,6 +1502,8 @@
 
 "Cumulative" = "تجمعی";
 "Token activity" = "فعالیت توکن";
+"Earlier activity" = "فعالیت قدیمی‌تر";
+"More recent activity" = "فعالیت جدیدتر";
 "View" = "نمایش";
 "in the last year" = "در سال گذشته";
 "No activity in the last 12 months" = "هیچ فعالیتی در ۱۲ ماه گذشته وجود ندارد";
@@ -1568,7 +1570,7 @@
 "List-price equivalent — not a billing receipt." = "معادل فهرست قیمت - نه رسید صورتحساب.";
 "Priced" = "استفاده با قیمت";
 "Unpriced" = "استفاده بی قیمت";
-"Unmetered" = "استفاده بی اندازه";
+"Unmetered" = "میزان استفاده اندازه‌گیری‌نشده";
 "Estimated" = "برآورد شده است";
 "Other models" = "مدل های دیگر";
 "Include OpenCodex usage logs" = "شامل گزارش های استفاده از OpenCodex";
@@ -1679,12 +1681,12 @@
 "%@h %@m" = "%1$@س %2$@د";
 "%@m" = "%@د";
 "%d CONNECTED" = "%d متصل است";
-"%d DAYS" = "%d DAYS";
+"%d DAYS" = "%d روز";
 "%d days" = "روز %d";
 "%d more accounts ready" = "%d حساب های بیشتر آماده است";
 "%d percent" = "درصد %d";
 "%d subscriptions" = "%d اشتراک";
-"%d-DAY SPEND" = "%d-DAY SPEND";
+"%d-DAY SPEND" = "هزینه در %d روز";
 "%d/%d days" = "روز %1$d/%2$d";
 "%d/%dd" = "%1$d/%2$dروز";
 "%d/all" = "%d/همه";
@@ -1786,7 +1788,7 @@
 "Examples: alt+cmd+2, shift+right. Refresh (cmd+r), Settings (cmd+,) and Quit (cmd+q) are reserved." = "مثال: alt+cmd+2، shift+right. بازخوانی (cmd+r)، تنظیمات (cmd+،) و خروج (cmd+q) رزرو شده است.";
 "Export Preferences…" = "صادرات ترجیحات…";
 "External Codex OAuth sources" = "منابع خارجی Codex OAuth";
-"Extra usage balance" = "تعادل استفاده اضافی";
+"Extra usage balance" = "موجودی استفاده اضافی";
 "Failed to load organizations." = "بارگیری سازمان ها انجام نشد.";
 "Failed to resolve Kilo credentials." = "اعتبارنامه Kilo حل نشد.";
 "Fix the managed account store before importing OpenAI cookies." = "قبل از وارد کردن OpenAI cookies، فروشگاه حساب مدیریت شده را تعمیر کنید.";
@@ -1809,7 +1811,7 @@
 "In General → Refreshing, choose a longer interval or Manual and turn off Refresh when the menu opens. These controls apply to all providers. Manual still allows startup and explicit refreshes. Disable AWS Bedrock to stop its app refreshes." = "در قسمت عمومی ← بازخوانی، یک بازه زمانی طولانی تر یا دستی را انتخاب کنید و با باز شدن منو، Refresh را خاموش کنید. این کنترل ها برای همه ارائه دهندگان اعمال می شود. Manual همچنان اجازه راه‌اندازی و تازه‌سازی صریح را می‌دهد. AWS Bedrock را غیرفعال کنید تا رفرش برنامه آن متوقف شود.";
 "Included AI credits (per seat)" = "شامل AI اعتبارات (در هر صندلی)";
 "Kimi Code API key" = "کلید Kimi Code API";
-"Kimi Code key for the selected region. For China Open Platform balance, use Moonshot / Kimi Open Platform." = "کلید Kimi Code برای منطقه انتخاب شده. برای تعادل پلت فرم باز چین، از پلت فرم باز Moonshot / Kimi استفاده کنید.";
+"Kimi Code key for the selected region. For China Open Platform balance, use Moonshot / Kimi Open Platform." = "کلید Kimi Code برای منطقه انتخاب شده. برای موجودی پلت فرم باز چین، از پلت فرم باز Moonshot / Kimi استفاده کنید.";
 "Kimi Code subscription usage for the selected region. Auto tries your configured API key, then a signed-in Kimi Code CLI credential, then web cookies. China Open Platform balance is a separate provider." = "استفاده از اشتراک Kimi Code برای منطقه انتخابی. خودکار کلید API پیکربندی شده شما را امتحان می‌کند، سپس یک اعتبارنامه Kimi Code CLI وارد شده و سپس وب cookies را امتحان می‌کند. موجودی پلت فرم باز چین یک ارائه دهنده جداگانه است.";
 "LOCAL SNAPSHOT" = "عکس فوری استفاده محلی";
 "LOCAL · AGGREGATE ONLY" = "داده های محلی · فقط آمار انبوه";
@@ -1861,7 +1863,7 @@
 "Open grok.com usage" = "استفاده از grok.com را باز کنید";
 "Open regional API keys" = "کلیدهای منطقه ای API را باز کنید";
 "Open regional console" = "کنسول منطقه ای را باز کنید";
-"Open-platform balance only. Keys are bound to the selected regional host and cannot be sent to the other region." = "فقط تعادل پلت فرم باز. کلیدها به میزبان منطقه ای انتخاب شده متصل هستند و به منطقه دیگر ارسال نمی شوند.";
+"Open-platform balance only. Keys are bound to the selected regional host and cannot be sent to the other region." = "فقط موجودی پلت فرم باز. کلیدها به میزبان منطقه ای انتخاب شده متصل هستند و به منطقه دیگر ارسال نمی شوند.";
 "OpenAI cookies are for %1$@, not %2$@." = "OpenAI cookies برای %1$@ است، نه %2$@.";
 "OpenAI cookies are for %@." = "OpenAI cookies برای %@ است.";
 "OpenAI web battery saver" = "ذخیره‌کننده باتری وب OpenAI";
@@ -1888,9 +1890,9 @@
 "PARTIAL" = "جزئی";
 "Paste Kimi Code API key..." = "کلید Kimi Code API را بچسبانید...";
 "Paste a Cookie header copied from longcat.chat." = "هدر Cookie کپی شده از longcat.chat را جایگذاری کنید.";
-"Paste a cURL capture from the ZoomMate AI credit usage page." = "یک عکس cURL را از صفحه استفاده ZoomMate AI اعتبارات جای‌گذاری کنید.";
+"Paste a cURL capture from the ZoomMate AI credit usage page." = "یک دستور cURL را از صفحه استفاده ZoomMate AI اعتبارات جای‌گذاری کنید.";
 "Paste a cookie header or the kimi-auth token value." = "یک هدر cookie یا مقدار kimi-auth توکن ها جایگذاری کنید.";
-"Paste a full cURL capture from the ZoomMate AI credit usage page. The token expires approximately hourly, so you may need to re-paste periodically." = "یک عکس کامل از cURL را از صفحه استفاده ZoomMate AI اعتبارات جای‌گذاری کنید. توکن ها تقریباً هر ساعت منقضی می‌شود، بنابراین ممکن است لازم باشد به‌صورت دوره‌ای آن را مجدداً جای‌گذاری کنید.";
+"Paste a full cURL capture from the ZoomMate AI credit usage page. The token expires approximately hourly, so you may need to re-paste periodically." = "یک دستور کامل از cURL را از صفحه استفاده ZoomMate AI اعتبارات جای‌گذاری کنید. توکن ها تقریباً هر ساعت منقضی می‌شود، بنابراین ممکن است لازم باشد به‌صورت دوره‌ای آن را مجدداً جای‌گذاری کنید.";
 "Paste a github.com Cookie header. Treat this value like a password." = "یک هدر github.com Cookie جایگذاری کنید. با این مقدار مانند یک رمز عبور رفتار کنید.";
 "Paste an Authorization Bearer token from app.devin.ai." = "یک Authorization Bearer توکن ها از app.devin.ai جای‌گذاری کنید.";
 "Paste the Authorization header value from app.devin.ai." = "مقدار هدر Authorization را از app.devin.ai جای‌گذاری کنید.";
@@ -1936,8 +1938,8 @@
 "Reset: %@" = "تنظیم مجدد: %@";
 "Resets every 5 hours" = "هر 5 ساعت یکبار بازنشانی می شود";
 "Resets in" = "بازنشانی می شود";
-"Runs out" = "سهمیه تمام می شود";
-"Runs out in" = "سهمیه تمام می شود";
+"Runs out" = "پایان پیش‌بینی‌شده سهمیه";
+"Runs out in" = "زمان تا پایان سهمیه";
 "SUBSCRIPTIONS" = "اشتراک ها";
 "Save" = "ذخیره کنید";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "تنظیمات برگزیده نمایش و اعلان را برای dotfiles خود ذخیره کنید. حساب‌ها، اعتبارنامه‌ها، ورود به سیستم، مسیرهای محلی و رضایت در این مک باقی می‌مانند.";
@@ -1961,7 +1963,7 @@
 "Shows usage and lets you switch accounts through `cswap`. Credentials stay managed by claude-swap; CodexBar never reads them." = "استفاده را نشان می دهد و به شما امکان می دهد حساب ها را از طریق `cswap` تغییر دهید. اعتبارنامه ها توسط claude-swap مدیریت می شوند. CodexBar هرگز آنها را نمی خواند.";
 "Stay Awake" = "بیدار بمان";
 "Stored in the CodexBar config file. Reads monthly budget and routed usage from /v1/usage." = "در فایل پیکربندی CodexBar ذخیره می شود. بودجه ماهانه و استفاده مسیریابی شده را از /v1/usage می خواند.";
-"Stored in ~/.codexbar/config.json. OPENAI_ADMIN_KEY is required for organization usage; legacy/user keys only get a best-effort balance fallback." = "ذخیره شده در ~/.codexbar/config.json. OPENAI_ADMIN_KEY برای استفاده سازمان مورد نیاز است. کلیدهای قدیمی/کاربر فقط یک تعادل با بهترین تلاش را دریافت می کنند.";
+"Stored in ~/.codexbar/config.json. OPENAI_ADMIN_KEY is required for organization usage; legacy/user keys only get a best-effort balance fallback." = "ذخیره شده در ~/.codexbar/config.json. OPENAI_ADMIN_KEY برای استفاده سازمان مورد نیاز است. کلیدهای قدیمی/کاربر فقط یک موجودی با بهترین تلاش را دریافت می کنند.";
 "Stored in ~/.codexbar/config.json. You can also provide FACTORY_API_KEY or ~/.factory/.env." = "ذخیره شده در ~/.codexbar/config.json. همچنین می توانید FACTORY_API_KEY یا ~/.factory/.env را ارائه دهید.";
 "Stored in ~/.codexbar/config.json. You can also set AMP_API_KEY." = "ذخیره شده در ~/.codexbar/config.json. همچنین می توانید AMP_API_KEY را تنظیم کنید.";
 "SuperGrok OAuth" = "SuperGrok OAuth";
@@ -2133,7 +2135,7 @@
 "Chutes cost history is not available from CodexBar." = "تاریخچه هزینه Chutes از CodexBar در دسترس نیست.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "ذخیره شده در ~/.codexbar/config.json. یک کلید Chutes API جایگذاری کنید.";
 "chutes key..." = "کلید API سرویس Chutes...";
-"Spend" = "خرج کن";
+"Spend" = "هزینه";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "خرج Fireworks از خلاصه صورتحساب API حاصل می شود. تاریخچه هزینه ردیابی نمی شود";
 "Doubao API-key accounts" = "حساب‌های کلیدی Doubao API";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "کلیدهای دارای برچسب Ark API را ذخیره کنید. جفت‌های AK/SK و پروفایل‌های arkcli در اینجا پشتیبانی نمی‌شوند.";
@@ -2169,7 +2171,7 @@
 "Store multiple IBM Bob API keys." = "چندین کلید IBM Bob API را ذخیره کنید.";
 "Monthly Bobcoins" = "باب کوین ماهانه";
 "Bobcoin usage from the IBM Bob API." = "استفاده از باب کوین از IBM Bob API.";
-"Shared pool" = "استخر مشترک";
+"Shared pool" = "سهمیه مشترک";
 "GitKraken cost history is not available." = "تاریخچه هزینه GitKraken در دسترس نیست.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "هزینه روزانه xAI به کلید مدیریت API و تیم ID نیاز دارد. موجودی از پیش پرداخت شده به عنوان خرج تلقی نمی شود.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "ذخیره شده در ~/.codexbar/config.json. یکی را در console.x.ai در زیر تنظیمات > کلیدهای مدیریت ایجاد کنید. کلیدهای استنتاج API پذیرفته نمی شوند.";
@@ -2258,7 +2260,7 @@
 "Bifrost gateway base URL, e.g. your company's self-hosted Bifrost host." = "پایه دروازه Bifrost URL، به عنوان مثال. میزبان Bifrost خود میزبان شرکت شما.";
 "https://bifrost.example.com" = "https://bifrost.example.com";
 "Store multiple Ollama Cookie headers or session values." = "چندین سرصفحه یا مقادیر جلسه Ollama Cookie را ذخیره کنید.";
-"Cookie header or bare session value" = "هدر Cookie یا مقدار جلسه خالی";
+"Cookie header or bare session value" = "سرآیند Cookie یا مقدار نشست بدون سرآیند";
 "Antigravity OAuth credentials JSON" = "Antigravity OAuth اعتبارنامه JSON";
 "Gemini Models" = "مدل های Gemini";
 "Claude and GPT" = "Claude و GPT";
@@ -2277,7 +2279,7 @@
 "Read the user's last 30 days of tokens and logged requests by model." = "30 روز گذشته کاربر توکن ها و درخواست‌های ثبت‌شده بر اساس مدل را بخوانید.";
 "Big model credits from the Qoder usage dashboard." = "مدل بزرگ اعتبارات از داشبورد استفاده Qoder.";
 "Qoder cost summary is not supported." = "خلاصه هزینه Qoder پشتیبانی نمی شود.";
-"Cookie: …\n\nor paste a cURL capture from the Qoder usage page" = "Cookie: …\n\nor یک عکس cURL را از صفحه استفاده Qoder بچسبانید";
+"Cookie: …\n\nor paste a cURL capture from the Qoder usage page" = "Cookie: …\n\nor یک دستور cURL را از صفحه استفاده Qoder بچسبانید";
 "Store multiple Qoder Cookie headers." = "چندین هدر Qoder Cookie را ذخیره کنید.";
 "Kimi accounts" = "حساب های Kimi";
 "Store labeled web accounts for the selected region. Each uses its own cookie." = "حساب های وب دارای برچسب را برای منطقه انتخابی ذخیره کنید. هر کدام از cookie خود استفاده می کنند.";
@@ -2333,7 +2335,7 @@
 "Renews" = "تجدید می کند";
 "Orb" = "گوی";
 "Individual" = "فردی";
-"Today spend" = "امروز خرج کن";
+"Today spend" = "هزینه امروز";
 "Usage billing" = "صورتحساب استفاده";
 "Period resets" = "بازنشانی دوره";
 "Cached input" = "ورودی حافظه پنهان";
@@ -2344,7 +2346,7 @@
 "Subscription credits available" = "اشتراک اعتبارات موجود است";
 "Total credits available" = "مجموع اعتبارات موجود است";
 "Used this cycle" = "از این چرخه استفاده کرد";
-"Bank cap" = "سقف بانکی";
+"Bank cap" = "سقف اعتبار انباشته";
 "Next refill" = "دوباره پر کردن بعدی";
 "Gateway" = "دروازه";
 "Routed" = "مسیریابی شده است";
@@ -2369,3 +2371,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "هزینه ثبت‌شده";
+"Highest recorded spend" = "بیشترین هزینه ثبت‌شده";
+"Previous day" = "روز قبل";
+"Next day" = "روز بعد";
+"Click to isolate a source. Click again to show all." = "برای نمایش یک منبع کلیک کنید. برای نمایش همه دوباره کلیک کنید.";
+"Recorded hourly spend" = "هزینه ساعتی ثبت‌شده";
+"Highest spend" = "بیشترین هزینه";
+"Models for this day" = "مدل‌های این روز";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "برای مشاهده جزئیات روی ستون کلیک کنید. مبلغ دقیق را در منوی زیر ببینید.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "چند کلید API برای ClinePass ذخیره کنید. کلید انتخاب‌شده بر کلید API پیکربندی‌شده و نشست cline auth اولویت دارد.";
+
+"X API cost history is not available." = "تاریخچه هزینه‌های X API در دسترس نیست.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "سرآیند Cookie از console.x.com شامل auth_token و ct0 را جای‌گذاری کنید.";
+
+"Open X Developer Console" = "باز کردن کنسول توسعه‌دهندگان X";

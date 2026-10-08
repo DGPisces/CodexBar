@@ -1,23 +1,10 @@
 import CodexBarCore
 import Foundation
-import OSLog
 import SwiftUI
 import WidgetKit
 
 /// Widget catalogs are generated from the app catalogs by sync-widget-locales.mjs.
 enum WidgetLocalization {
-    #if DEBUG
-    private static let logBundleResolution: Void = {
-        let bundle = resourceBundle
-        let isMain = bundle === Bundle.main
-        let identifier = bundle.bundleIdentifier ?? "none"
-        let preferred = Bundle.preferredLocalizations(from: bundle.localizations).first ?? "en"
-        Logger(subsystem: "com.steipete.codexbar.localization", category: "widget-bundle")
-            .info(
-                "main=\(isMain) bundle=\(identifier, privacy: .public) language=\(preferred, privacy: .public)")
-    }()
-    #endif
-
     static let resourceBundle: Bundle = {
         #if SWIFT_PACKAGE
         return .module
@@ -27,9 +14,6 @@ enum WidgetLocalization {
     }()
 
     static var currentBundle: Bundle {
-        #if DEBUG
-        _ = self.logBundleResolution
-        #endif
         #if SWIFT_PACKAGE
         let defaultLanguage = TestProcessSafety.isRunning ? "en" : ""
         #else

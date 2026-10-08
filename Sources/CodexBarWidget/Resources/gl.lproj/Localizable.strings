@@ -105,7 +105,7 @@
 "Peak %@" = "Pico %@";
 "Personal" = "Persoal";
 "Personal budget" = "Orzamento persoal";
-"Plan" = "Planificar";
+"Plan" = "Plan";
 "Plan credits" = "Plan de subscrición Créditos";
 "Points" = "Puntos";
 "Premium" = "Premium";
@@ -129,8 +129,8 @@
 "Resets in %@" = "Restablécese en %@";
 "Reviews" = "Recensións";
 "Rolling" = "Rolando";
-"Runs out" = "Cota esgotarase";
-"Runs out in" = "Cota esgota";
+"Runs out" = "Esgotamento previsto";
+"Runs out in" = "Esgótase en";
 "Savings" = "Aforro";
 "Search hourly" = "Buscas por hora";
 "Secondary budget" = "Orzamento secundario";
@@ -143,9 +143,9 @@
 "Session" = "Sesión";
 "Session (5-hour)" = "Sesión (5 horas)";
 "Session and weekly usage with credits and costs." = "Sesión e uso semanal con Créditos e custos.";
-"Shared pool" = "Piscina compartida";
+"Shared pool" = "Cota compartida";
 "Sonnet" = "Sonnet";
-"Spend" = "Gastar";
+"Spend" = "Gasto";
 "Standard" = "Estándar";
 "Status" = "Estado";
 "Subscription" = "Subscrición";

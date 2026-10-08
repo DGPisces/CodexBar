@@ -771,7 +771,7 @@
 "metric_pref_tertiary" = "Terciari";
 "metric_pref_extra_usage" = "Ús addicional";
 "metric_pref_average" = "Mitjana";
-"metric_mistral_payg" = "Facturació de pagament";
+"metric_mistral_payg" = "Facturació per ús";
 "metric_mistral_monthly_plan" = "Pla de subscripció mensual";
 
 /* Display modes */
@@ -1505,6 +1505,8 @@
 
 "Cumulative" = "Acumulat";
 "Token activity" = "Activitat de tokens";
+"Earlier activity" = "Activitat anterior";
+"More recent activity" = "Activitat més recent";
 "View" = "Vista";
 "in the last year" = "l'últim any";
 "No activity in the last 12 months" = "Sense activitat en els últims 12 mesos";
@@ -1935,8 +1937,8 @@
 "Reset: %@" = "Restableix: %@";
 "Resets every 5 hours" = "Es reinicia cada 5 hores";
 "Resets in" = "Es reinicia";
-"Runs out" = "S'esgota la quota";
-"Runs out in" = "S'esgota la quota";
+"Runs out" = "Esgotament previst";
+"Runs out in" = "S’esgota d’aquí a";
 "SUBSCRIPTIONS" = "SUBSCRIPCIONS";
 "Save" = "Desa";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Deseu les preferències de visualització i notificació dels vostres fitxers de punts. Els comptes, les credencials, l'inici de sessió, els camins locals i el consentiment es mantenen en aquest Mac.";
@@ -2011,7 +2013,7 @@
 "a1.small-equivalent hours" = "Hores equivalents a a1.small";
 "after reset" = "després del reinici";
 "all" = "tots";
-"ark-... or AKLT..." = "arca-... o AKLT...";
+"ark-... or AKLT..." = "ark-... o AKLT...";
 "budget spent" = "pressupost de quota esgotat";
 "cb_..." = "cb_...";
 "claude auth login exited with status %d." = "claude auth login s'ha sortit amb l'estat %d.";
@@ -2085,8 +2087,8 @@
 "Poe usage history is unavailable." = "L'historial d'ús de Poe no està disponible.";
 "Stored in ~/.codexbar/config.json. Get your key from poe.com/api/keys." = "Emmagatzemat a ~/.codexbar/config.json. Obteniu la vostra clau a poe.com/api/keys.";
 "Billing" = "Facturació";
-"Rate limit" = "Límit de tarifa";
-"Billing and rate-limit data from the v0 Platform API" = "Dades de facturació i límit de tarifa de la plataforma v0 API";
+"Rate limit" = "Límit de sol·licituds";
+"Billing and rate-limit data from the v0 Platform API" = "Dades de facturació i límit de sol·licituds de la plataforma v0 API";
 "v0 cost history is not available via the Platform API." = "L'historial de costos v0 no està disponible a través de la plataforma API.";
 "Stored in ~/.config/codexbar/config.json. Create one in v0 settings or set V0_API_KEY." = "Emmagatzemat a ~/.config/codexbar/config.json. Creeu-ne un a la configuració de v0 o configureu V0_API_KEY.";
 "v0_..." = "v0_...";
@@ -2132,7 +2134,7 @@
 "Chutes cost history is not available from CodexBar." = "L'historial de costos de Chutes no està disponible a CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Emmagatzemat a ~/.codexbar/config.json. Enganxeu una clau Chutes API.";
 "chutes key..." = "Clau API de Chutes...";
-"Spend" = "Gastar";
+"Spend" = "Despesa";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "La despesa Fireworks prové del resum de facturació API; no es fa un seguiment de l'historial de costos.";
 "Doubao API-key accounts" = "Doubao API-comptes clau";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "Emmagatzema les claus etiquetades Ark API. Els parells AK/SK i els perfils arkcli no s'admeten aquí.";
@@ -2168,7 +2170,7 @@
 "Store multiple IBM Bob API keys." = "Emmagatzema diverses claus IBM Bob API.";
 "Monthly Bobcoins" = "Bobcoins mensuals";
 "Bobcoin usage from the IBM Bob API." = "Ús de Bobcoin del IBM Bob API.";
-"Shared pool" = "Piscina compartida";
+"Shared pool" = "Quota compartida";
 "GitKraken cost history is not available." = "L'historial de costos de GitKraken no està disponible.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "La despesa diària xAI requereix una clau de gestió API i un equip ID. El saldo de prepagament no es tracta com a despesa.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "Emmagatzemat a ~/.codexbar/config.json. Creeu-ne un a console.x.ai a Configuració > Claus de gestió; Les claus d'inferència API no s'accepten.";
@@ -2247,7 +2249,7 @@
 "Hugging Face usage comes from the billing API; cost history is not tracked." = "L'ús de Hugging Face prové de la facturació API; no es fa un seguiment de l'historial de costos.";
 "Create a token at huggingface.co/settings/tokens. Classic read tokens work; fine-grained tokens need the Billing read permission." = "Creeu un accés tokens a huggingface.co/settings/tokens. S'admet un accés de lectura clàssic tokens. L'accés detallat tokens requereix permís per llegir les dades de facturació.";
 "Credit balance from the Codebuff API" = "Saldo Crèdits del Codebuff API";
-"Reads governance budgets and rate limits from the Bifrost virtual key quota endpoint." = "Llegeix els pressupostos de govern i els límits de tarifa des del punt final de la clau virtual Bifrost Quota.";
+"Reads governance budgets and rate limits from the Bifrost virtual key quota endpoint." = "Llegeix els pressupostos de govern i els límits de sol·licituds des del punt final de la clau virtual Bifrost Quota.";
 "Bifrost spend is reported by the provider API." = "El proveïdor API informa de la despesa de Bifrost.";
 "Virtual keys" = "Claus virtuals";
 "Store multiple Bifrost virtual keys." = "Emmagatzema múltiples claus virtuals Bifrost.";
@@ -2332,7 +2334,7 @@
 "Renews" = "Renova";
 "Orb" = "Orb";
 "Individual" = "Individual";
-"Today spend" = "Avui gasta";
+"Today spend" = "Despesa d’avui";
 "Usage billing" = "Facturació d'ús";
 "Period resets" = "Reinicia el període";
 "Cached input" = "Entrada en memòria cau";
@@ -2343,7 +2345,7 @@
 "Subscription credits available" = "Subscripció Crèdits disponible";
 "Total credits available" = "Total Crèdits disponible";
 "Used this cycle" = "S'ha utilitzat aquest cicle";
-"Bank cap" = "Cap del banc";
+"Bank cap" = "Límit de crèdits acumulats";
 "Next refill" = "Pròxima recàrrega";
 "Gateway" = "Porta d'entrada";
 "Routed" = "Encaminat";
@@ -2368,3 +2370,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Despesa registrada";
+"Highest recorded spend" = "Despesa registrada màxima";
+"Previous day" = "Dia anterior";
+"Next day" = "Dia següent";
+"Click to isolate a source. Click again to show all." = "Fes clic per aïllar una font. Torna a fer clic per mostrar-les totes.";
+"Recorded hourly spend" = "Despesa horària registrada";
+"Highest spend" = "Despesa màxima";
+"Models for this day" = "Models per aquest dia";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Fes clic en una barra per explorar. Consulta els imports exactes al menú inferior.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Desa diverses claus API de ClinePass. La clau seleccionada té prioritat sobre la clau API configurada i la sessió de cline auth.";
+
+"X API cost history is not available." = "L’historial de costos de X API no està disponible.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "Enganxa una capçalera Cookie de console.x.com que contingui auth_token i ct0.";
+
+"Open X Developer Console" = "Obre la consola de desenvolupadors de X";

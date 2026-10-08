@@ -129,8 +129,8 @@
 "Resets in %@" = "Renova em %@";
 "Reviews" = "Avaliações";
 "Rolling" = "Rolando";
-"Runs out" = "Cota acaba";
-"Runs out in" = "Cota acaba em";
+"Runs out" = "Esgotamento previsto";
+"Runs out in" = "Esgota em";
 "Savings" = "Poupança";
 "Search hourly" = "Buscar a cada hora";
 "Secondary budget" = "Orçamento secundário";
@@ -143,9 +143,9 @@
 "Session" = "Sessão";
 "Session (5-hour)" = "Sessão (5 horas)";
 "Session and weekly usage with credits and costs." = "Sessão e uso semanal com Créditos e custos.";
-"Shared pool" = "Piscina compartilhada";
+"Shared pool" = "Cota compartilhada";
 "Sonnet" = "Sonnet";
-"Spend" = "Gastar";
+"Spend" = "Gastos";
 "Standard" = "Padrão";
 "Status" = "Estado";
 "Subscription" = "Assinatura";

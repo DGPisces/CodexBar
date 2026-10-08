@@ -297,7 +297,7 @@
 "Picker" = "Bộ chọn";
 "Picker subtitle" = "Tiêu đề phụ của bộ chọn";
 "Placeholder" = "Trình giữ chỗ";
-"Plan" = "Kế hoạch";
+"Plan" = "Gói dịch vụ";
 "Plan Usage" = "Mức sử dụng gói";
 "Play full-screen confetti when weekly usage resets." = "Phát hoa giấy toàn màn hình khi đặt lại Mức sử dụng hàng tuần.";
 "Polls OpenAI/Claude status pages and Google Workspace for " = "Cuộc thăm dò ý kiến ​​OpenAI / Claude trang trạng thái và Google Không gian làm việc dành cho";
@@ -784,7 +784,7 @@
 "metric_pref_tertiary" = "Đại học";
 "metric_pref_extra_usage" = "Bổ sung Mức sử dụng";
 "metric_pref_average" = "Trung bình";
-"metric_mistral_payg" = "Thanh toán khi bạn di chuyển";
+"metric_mistral_payg" = "Thanh toán theo mức sử dụng";
 "metric_mistral_monthly_plan" = "Gói thuê bao hàng tháng";
 
 /* Display modes */
@@ -1499,6 +1499,8 @@
 
 "Cumulative" = "Tích lũy";
 "Token activity" = "Hoạt động token";
+"Earlier activity" = "Hoạt động trước đây";
+"More recent activity" = "Hoạt động gần đây";
 "View" = "Chế độ xem";
 "in the last year" = "trong năm qua";
 "No activity in the last 12 months" = "Không có hoạt động trong 12 tháng qua";
@@ -1563,9 +1565,9 @@
 "List-price equivalent" = "Giá niêm yết tương đương";
 "Metered and list-price" = "Mức sử dụng được đo lường và giá niêm yết tương đương";
 "List-price equivalent — not a billing receipt." = "Giá niêm yết tương đương — không phải biên lai thanh toán.";
-"Priced" = "Giá sử dụng";
-"Unpriced" = "Mức sử dụng không tính phí";
-"Unmetered" = "Mức sử dụng không được kiểm soát";
+"Priced" = "Mức sử dụng có giá";
+"Unpriced" = "Mức sử dụng chưa có giá";
+"Unmetered" = "Mức sử dụng chưa được đo";
 "Estimated" = "ước tính";
 "Other models" = "Các mô hình khác";
 "Include OpenCodex usage logs" = "Bao gồm nhật ký sử dụng OpenCodex";
@@ -1707,7 +1709,7 @@
 "Account %@" = "Tài khoản %@";
 "Account Added" = "Đã thêm tài khoản";
 "Account Usage" = "Sử dụng tài khoản";
-"Account slug" = "Mã định danh tài khoản (sên)";
+"Account slug" = "Mã định danh tài khoản (slug)";
 "Account switched; restart the Codex background server manually." = "Tài khoản đã chuyển đổi; khởi động lại máy chủ nền Codex theo cách thủ công.";
 "Allow reading Claude Code's credentials" = "Cho phép đọc thông tin đăng nhập của Claude Code";
 "Amp CLI" = "Amp CLI";
@@ -1933,8 +1935,8 @@
 "Reset: %@" = "Đặt lại: %@";
 "Resets every 5 hours" = "Đặt lại sau mỗi 5 giờ";
 "Resets in" = "Đặt lại trong";
-"Runs out" = "Hạn mức hết";
-"Runs out in" = "Hạn mức sắp hết";
+"Runs out" = "Dự kiến hết";
+"Runs out in" = "Hết sau";
 "SUBSCRIPTIONS" = "ĐĂNG KÝ";
 "Save" = "Lưu";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Lưu tùy chọn hiển thị và thông báo cho dotfiles của bạn. Tài khoản, thông tin đăng nhập, thông tin đăng nhập, đường dẫn cục bộ và sự đồng ý vẫn còn trên máy Mac này.";
@@ -2009,7 +2011,7 @@
 "a1.small-equivalent hours" = "Số giờ tương đương a1.small";
 "after reset" = "sau khi thiết lập lại";
 "all" = "tất cả";
-"ark-... or AKLT..." = "tàu-... hoặc AKLT...";
+"ark-... or AKLT..." = "ark-... hoặc AKLT...";
 "budget spent" = "Ngân sách Hạn mức đã cạn";
 "cb_..." = "cb_...";
 "claude auth login exited with status %d." = "claude auth login đã thoát với trạng thái %d.";
@@ -2090,7 +2092,7 @@
 "v0_..." = "v0_...";
 "Open v0 API keys" = "Mở khóa v0 API";
 "Scope" = "Phạm vi";
-"Optional project ID or slug. Leave blank for the default v0 scope." = "Dự án tùy chọn ID hoặc sên. Để trống cho phạm vi v0 mặc định.";
+"Optional project ID or slug. Leave blank for the default v0 scope." = "ID dự án hoặc slug tùy chọn. Để trống để dùng phạm vi v0 mặc định.";
 "project-slug" = "project-slug";
 "Monthly budget" = "Ngân sách hàng tháng";
 "ClawRouter spend is reported by its usage API." = "Chi tiêu ClawRouter được báo cáo theo mức sử dụng API.";
@@ -2107,7 +2109,7 @@
 "Flash Lite" = "Flash Lite";
 "Window" = "Cửa sổ sử dụng";
 "Token plan credits usage." = "mã thông báo lên kế hoạch sử dụng Tín dụng.";
-"API keys" = "Phím API";
+"API keys" = "Khóa API";
 "Store multiple OpenRouter API keys." = "Lưu trữ nhiều khóa OpenRouter API.";
 "Credit balance from OpenRouter API" = "Số dư Tín dụng từ OpenRouter API";
 "GitHub accounts" = "Tài khoản GitHub";
@@ -2130,7 +2132,7 @@
 "Chutes cost history is not available from CodexBar." = "Lịch sử chi phí Chutes không có sẵn từ CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Được lưu trữ trong ~/.codexbar/config.json. Dán khóa Chutes API.";
 "chutes key..." = "Khóa API Chutes...";
-"Spend" = "chi tiêu";
+"Spend" = "Chi phí";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Chi tiêu Fireworks xuất phát từ bản tóm tắt thanh toán API; lịch sử chi phí không được theo dõi.";
 "Doubao API-key accounts" = "Tài khoản khóa Doubao API";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "Lưu trữ các khóa Ark API có nhãn. Các cặp AK/SK và cấu hình arkcli không được hỗ trợ ở đây.";
@@ -2166,7 +2168,7 @@
 "Store multiple IBM Bob API keys." = "Lưu trữ nhiều khóa IBM Bob API.";
 "Monthly Bobcoins" = "Bobcoin hàng tháng";
 "Bobcoin usage from the IBM Bob API." = "Việc sử dụng Bobcoin từ IBM Bob API.";
-"Shared pool" = "Bể bơi chung";
+"Shared pool" = "Hạn mức dùng chung";
 "GitKraken cost history is not available." = "Lịch sử chi phí GitKraken không có sẵn.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "Chi tiêu hàng ngày xAI yêu cầu khóa Quản lý API và nhóm ID. Số dư trả trước không được coi là chi tiêu.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "Được lưu trữ trong ~/.codexbar/config.json. Tạo một cái tại console.x.ai trong Cài đặt > Khóa quản lý; suy luận khóa API không được chấp nhận.";
@@ -2330,7 +2332,7 @@
 "Renews" = "Gia hạn";
 "Orb" = "quả cầu";
 "Individual" = "Cá nhân";
-"Today spend" = "Hôm nay chi tiêu";
+"Today spend" = "Chi phí hôm nay";
 "Usage billing" = "Thanh toán sử dụng";
 "Period resets" = "Đặt lại thời gian";
 "Cached input" = "Đầu vào được lưu vào bộ nhớ đệm";
@@ -2341,7 +2343,7 @@
 "Subscription credits available" = "Đăng ký Tín dụng có sẵn";
 "Total credits available" = "Tổng số Tín dụng có sẵn";
 "Used this cycle" = "Đã sử dụng chu kỳ này";
-"Bank cap" = "Giới hạn ngân hàng";
+"Bank cap" = "Giới hạn tín dụng tích lũy";
 "Next refill" = "Lần nạp tiếp theo";
 "Gateway" = "Cổng vào";
 "Routed" = "Đã định tuyến";
@@ -2366,3 +2368,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Chi tiêu đã ghi nhận";
+"Highest recorded spend" = "Chi tiêu đã ghi nhận cao nhất";
+"Previous day" = "Ngày trước";
+"Next day" = "Ngày tiếp theo";
+"Click to isolate a source. Click again to show all." = "Nhấp để chỉ xem một nguồn. Nhấp lần nữa để xem tất cả.";
+"Recorded hourly spend" = "Chi tiêu theo giờ đã ghi nhận";
+"Highest spend" = "Chi tiêu cao nhất";
+"Models for this day" = "Mô hình của ngày này";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Nhấp vào cột để khám phá. Dùng menu bên dưới để xem số tiền chính xác.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Lưu nhiều khóa API ClinePass. Khóa được chọn được ưu tiên hơn khóa API đã cấu hình và phiên cline auth.";
+
+"X API cost history is not available." = "Không có lịch sử chi phí X API.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "Dán tiêu đề Cookie từ console.x.com có chứa auth_token và ct0.";
+
+"Open X Developer Console" = "Mở bảng điều khiển nhà phát triển X";

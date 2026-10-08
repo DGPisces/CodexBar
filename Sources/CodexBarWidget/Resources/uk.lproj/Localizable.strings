@@ -119,7 +119,7 @@
 "Purchased" = "Придбаний";
 "Quota" = "Квота";
 "Ran out" = "Квота вичерпано";
-"Rate limit" = "Ліміт тарифу";
+"Rate limit" = "Обмеження частоти запитів";
 "Refill" = "Доповнити";
 "Remaining budget compared with an ideal steady burn rate." = "Залишок бюджету в порівнянні з ідеальною стабільною швидкістю горіння.";
 "Requests" = "Запити";
@@ -129,8 +129,8 @@
 "Resets in %@" = "Скидання через %@";
 "Reviews" = "Відгуки";
 "Rolling" = "Прокатка";
-"Runs out" = "Квота закінчується";
-"Runs out in" = "Квота закінчується";
+"Runs out" = "Очікуване вичерпання";
+"Runs out in" = "Вичерпається через";
 "Savings" = "Економія";
 "Search hourly" = "Пошук щогодини";
 "Secondary budget" = "Вторинний бюджет";
@@ -143,9 +143,9 @@
 "Session" = "Сесія";
 "Session (5-hour)" = "Сеанс (5 годин)";
 "Session and weekly usage with credits and costs." = "Сеанс і тижневе використання з Кредити і вартість.";
-"Shared pool" = "Спільний басейн";
-"Sonnet" = "Сонет";
-"Spend" = "витрачати";
+"Shared pool" = "Спільна квота";
+"Sonnet" = "Sonnet";
+"Spend" = "Витрати";
 "Standard" = "Стандартний";
 "Status" = "Статус";
 "Subscription" = "Підписка";

@@ -129,8 +129,8 @@
 "Resets in %@" = "%@ 후 재설정";
 "Reviews" = "리뷰";
 "Rolling" = "롤링";
-"Runs out" = "할당량가 부족합니다";
-"Runs out in" = "할당량가 부족합니다.";
+"Runs out" = "예상 소진 시점";
+"Runs out in" = "소진까지 남은 시간";
 "Savings" = "절약";
 "Search hourly" = "시간당 검색";
 "Secondary budget" = "2차 예산";

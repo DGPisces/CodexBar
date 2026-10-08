@@ -298,7 +298,7 @@
 "Picker" = "Väljare";
 "Picker subtitle" = "Väljarunderrubrik";
 "Placeholder" = "Platshållare";
-"Plan" = "Planera";
+"Plan" = "Abonnemang";
 "Plan Usage" = "Plananvändning";
 "Play full-screen confetti when weekly usage resets." = "Spela konfetti i helskärm när veckoförbrukningen återställs.";
 "Polls OpenAI/Claude status pages and Google Workspace for " = "Kontrollerar OpenAI/Claude-statussidor och Google Workspace för ";
@@ -1497,6 +1497,8 @@
 
 "Cumulative" = "Kumulativt";
 "Token activity" = "Token-aktivitet";
+"Earlier activity" = "Tidigare aktivitet";
+"More recent activity" = "Senare aktivitet";
 "View" = "Vy";
 "in the last year" = "det senaste året";
 "No activity in the last 12 months" = "Ingen aktivitet de senaste 12 månaderna";
@@ -1563,7 +1565,7 @@
 "List-price equivalent — not a billing receipt." = "Listprismotsvarighet – inte ett faktureringskvitto.";
 "Priced" = "Prissatt användning";
 "Unpriced" = "Oprissatt användning";
-"Unmetered" = "Obegränsad användning";
+"Unmetered" = "Omätt användning";
 "Estimated" = "Uppskattad";
 "Other models" = "Andra modeller";
 "Include OpenCodex usage logs" = "Inkludera OpenCodex-användningsloggar";
@@ -1931,8 +1933,8 @@
 "Reset: %@" = "Återställ: %@";
 "Resets every 5 hours" = "Återställs var 5:e timme";
 "Resets in" = "Återställs in";
-"Runs out" = "Kvot tar slut";
-"Runs out in" = "Kvot tar slut";
+"Runs out" = "Beräknas ta slut";
+"Runs out in" = "Tar slut om";
 "SUBSCRIPTIONS" = "PRENUMERATIONER";
 "Save" = "Spara";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Spara visnings- och meddelandeinställningar för dina punktfiler. Konton, inloggningsuppgifter, inloggning, lokala sökvägar och samtycke stannar på den här Macen.";
@@ -2081,14 +2083,14 @@
 "Poe usage history is unavailable." = "Användningshistoriken för Poe är inte tillgänglig.";
 "Stored in ~/.codexbar/config.json. Get your key from poe.com/api/keys." = "Lagrat i ~/.codexbar/config.json. Få din nyckel från poe.com/api/keys.";
 "Billing" = "Fakturering";
-"Rate limit" = "Prisgräns";
-"Billing and rate-limit data from the v0 Platform API" = "Fakturerings- och hastighetsgränsdata från v0-plattformen API";
+"Rate limit" = "Gräns för anropsfrekvens";
+"Billing and rate-limit data from the v0 Platform API" = "Faktureringsdata och gränser för anropsfrekvens från v0-plattformens API";
 "v0 cost history is not available via the Platform API." = "v0 kostnadshistorik är inte tillgänglig via plattformen API.";
 "Stored in ~/.config/codexbar/config.json. Create one in v0 settings or set V0_API_KEY." = "Lagrat i ~/.config/codexbar/config.json. Skapa en i v0-inställningarna eller ställ in V0_API_KEY.";
 "v0_..." = "v0_...";
 "Open v0 API keys" = "Öppna v0 API nycklar";
 "Scope" = "Omfattning";
-"Optional project ID or slug. Leave blank for the default v0 scope." = "Valfritt projekt ID eller snigel. Lämna tomt för standardomfånget v0.";
+"Optional project ID or slug. Leave blank for the default v0 scope." = "Valfritt projekt-ID eller slug. Lämna tomt för standardomfånget i v0.";
 "project-slug" = "project-slug";
 "Monthly budget" = "Månadsbudget";
 "ClawRouter spend is reported by its usage API." = "ClawRouter utgifter rapporteras av dess användning API.";
@@ -2128,7 +2130,7 @@
 "Chutes cost history is not available from CodexBar." = "Kostnadshistorik för Chutes är inte tillgänglig från CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Lagrat i ~/.codexbar/config.json. Klistra in en Chutes API-nyckel.";
 "chutes key..." = "Chutes API-nyckel...";
-"Spend" = "Spendera";
+"Spend" = "Utgifter";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Fireworks-utgifterna kommer från faktureringsöversikten API; kostnadshistorik spåras inte.";
 "Doubao API-key accounts" = "Doubao API-nyckelkonton";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "Förvara märkta Ark API-nycklar. AK/SK-par och arkcli-profiler stöds inte här.";
@@ -2164,7 +2166,7 @@
 "Store multiple IBM Bob API keys." = "Lagra flera IBM Bob API-nycklar.";
 "Monthly Bobcoins" = "Månatliga Bobcoins";
 "Bobcoin usage from the IBM Bob API." = "Bobcoin-användning från IBM Bob API.";
-"Shared pool" = "Delad pool";
+"Shared pool" = "Gemensam kvot";
 "GitKraken cost history is not available." = "Kostnadshistorik för GitKraken är inte tillgänglig.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "xAI dagliga utgifter kräver en Management API nyckel och team ID. Förutbetalt saldo behandlas inte som utgifter.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "Lagrat i ~/.codexbar/config.json. Skapa en på console.x.ai under Inställningar > Hanteringsnycklar; inferens API-nycklar accepteras inte.";
@@ -2243,13 +2245,13 @@
 "Hugging Face usage comes from the billing API; cost history is not tracked." = "Hugging Face användning kommer från fakturering API; kostnadshistorik spåras inte.";
 "Create a token at huggingface.co/settings/tokens. Classic read tokens work; fine-grained tokens need the Billing read permission." = "Skapa en åtkomst token på huggingface.co/settings/tokens. En klassisk läsåtkomst token stöds. Finkornig åtkomst token kräver behörighet att läsa faktureringsdata.";
 "Credit balance from the Codebuff API" = "Krediter saldo från Codebuff API";
-"Reads governance budgets and rate limits from the Bifrost virtual key quota endpoint." = "Läser förvaltningsbudgetar och prisgränser från Bifrost virtuell nyckel Kvot slutpunkt.";
+"Reads governance budgets and rate limits from the Bifrost virtual key quota endpoint." = "Läser förvaltningsbudgetar och gränser för anropsfrekvens från Bifrost virtuell nyckel Kvot slutpunkt.";
 "Bifrost spend is reported by the provider API." = "Bifrost-utgifter rapporteras av leverantören API.";
 "Virtual keys" = "Virtuella nycklar";
 "Store multiple Bifrost virtual keys." = "Lagra flera virtuella Bifrost-nycklar.";
 "Paste Bifrost virtual key…" = "Klistra in Bifrost virtuell nyckel...";
 "Virtual key" = "Virtuell nyckel";
-"Bifrost virtual key used to read its own budgets and rate limits." = "Bifrost virtuell nyckel som används för att läsa sina egna budgetar och räntegränser.";
+"Bifrost virtual key used to read its own budgets and rate limits." = "Bifrost virtuell nyckel som används för att läsa sina egna budgetar och gränser för anropsfrekvens.";
 "Bifrost gateway base URL, e.g. your company's self-hosted Bifrost host." = "Bifrost gatewaybas URL, t.ex. ditt företags självvärdade Bifrost-värd.";
 "https://bifrost.example.com" = "https://bifrost.example.com";
 "Store multiple Ollama Cookie headers or session values." = "Lagra flera Ollama Cookie rubriker eller sessionsvärden.";
@@ -2328,7 +2330,7 @@
 "Renews" = "Förnyar";
 "Orb" = "Orb";
 "Individual" = "Individuell";
-"Today spend" = "Idag spendera";
+"Today spend" = "Dagens utgifter";
 "Usage billing" = "Användningsdebitering";
 "Period resets" = "Period återställs";
 "Cached input" = "Cachad ingång";
@@ -2339,7 +2341,7 @@
 "Subscription credits available" = "Prenumeration Krediter tillgänglig";
 "Total credits available" = "Totalt tillgängliga Krediter";
 "Used this cycle" = "Använde denna cykel";
-"Bank cap" = "Banklock";
+"Bank cap" = "Gräns för sparade krediter";
 "Next refill" = "Nästa påfyllning";
 "Gateway" = "Gateway";
 "Routed" = "Dirigerad";
@@ -2364,3 +2366,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Registrerade utgifter";
+"Highest recorded spend" = "Högsta registrerade utgifter";
+"Previous day" = "Föregående dag";
+"Next day" = "Nästa dag";
+"Click to isolate a source. Click again to show all." = "Klicka för att visa en källa. Klicka igen för att visa alla.";
+"Recorded hourly spend" = "Registrerade utgifter per timme";
+"Highest spend" = "Högsta utgift";
+"Models for this day" = "Modeller för denna dag";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Klicka på en stapel för detaljer. Menyn nedan visar exakta belopp.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Spara flera ClinePass API-nycklar. Den valda nyckeln har företräde framför den konfigurerade API-nyckeln och cline auth-sessionen.";
+
+"X API cost history is not available." = "Kostnadshistorik för X API är inte tillgänglig.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "Klistra in en Cookie-header från console.x.com som innehåller auth_token och ct0.";
+
+"Open X Developer Console" = "Öppna X utvecklarkonsol";

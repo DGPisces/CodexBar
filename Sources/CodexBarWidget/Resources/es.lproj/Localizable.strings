@@ -65,7 +65,7 @@
 "Core Monthly" = "Básico Mensual";
 "Cost" = "Coste";
 "Credits" = "Créditos";
-"Credits left" = "Restante Créditos";
+"Credits left" = "Créditos restantes";
 "Current" = "Actual";
 "Cursor" = "Cursor";
 "Daily" = "Diario";
@@ -105,7 +105,7 @@
 "Peak %@" = "Pico %@";
 "Personal" = "personales";
 "Personal budget" = "Presupuesto personal";
-"Plan" = "Planificar";
+"Plan" = "Plan";
 "Plan credits" = "Plan de suscripción Créditos";
 "Points" = "Puntos";
 "Premium" = "prima";
@@ -119,7 +119,7 @@
 "Purchased" = "Comprado";
 "Quota" = "Cuota";
 "Ran out" = "Cuota agotado";
-"Rate limit" = "Límite de tarifa";
+"Rate limit" = "Límite de solicitudes";
 "Refill" = "Recarga";
 "Remaining budget compared with an ideal steady burn rate." = "Presupuesto restante en comparación con una tasa de consumo constante ideal.";
 "Requests" = "Solicitudes";
@@ -129,8 +129,8 @@
 "Resets in %@" = "Se restablece en %@";
 "Reviews" = "Reseñas";
 "Rolling" = "rodando";
-"Runs out" = "Cuota se agota";
-"Runs out in" = "Cuota se agota en";
+"Runs out" = "Agotamiento previsto";
+"Runs out in" = "Se agota en";
 "Savings" = "Ahorros";
 "Search hourly" = "Búsquedas por hora";
 "Secondary budget" = "Presupuesto secundario";
@@ -143,9 +143,9 @@
 "Session" = "Sesión";
 "Session (5-hour)" = "Sesión (5 horas)";
 "Session and weekly usage with credits and costs." = "Sesión y uso semanal con Créditos y costos.";
-"Shared pool" = "piscina compartida";
+"Shared pool" = "Cuota compartida";
 "Sonnet" = "Sonnet";
-"Spend" = "gastar";
+"Spend" = "Gasto";
 "Standard" = "Estándar";
 "Status" = "Estado";
 "Subscription" = "Suscripción";
@@ -182,13 +182,13 @@
 "after reset" = "después del reinicio";
 "antigravity-cli-usage" = "antigravity-cli-usage";
 "antigravity-cli-version" = "antigravity-cli-version";
-"budget spent" = "Presupuesto Cuota agotado";
-"conserving" = "conservando Cuota";
-"full" = "Cuota completo disponible";
+"budget spent" = "presupuesto de cuota agotado";
+"conserving" = "ahorrando cuota";
+"full" = "cuota completa disponible";
 "left" = "restante";
 "now" = "ahora";
 "on pace" = "uso al ritmo planificado";
 "over pace" = "uso por encima del ritmo planificado";
-"spent" = "Cuota agotado";
+"spent" = "cuota agotada";
 "under pace" = "uso por debajo del ritmo planificado";
 "used" = "usado";

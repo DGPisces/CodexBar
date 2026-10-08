@@ -27,9 +27,6 @@ enum CodexBarEntryPoint {
             exit(CodexBarCoreResourceSmoke.run())
         }
         #if DEBUG
-        if LocalizationNativeProof.runIfRequested() {
-            return
-        }
         if MenuBarLayoutNativeProof.runIfRequested() {
             return
         }
@@ -406,12 +403,23 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             self?.settingsWindowController?.window === window
         })
     private var hasInstalledLimitResetObservers = false
+    private var isWaitingForConfigPersistence = false
     #if DEBUG
     private var debugMemoryPressureObserver: NSObjectProtocol?
     #endif
     var terminateActiveProcessesForAppShutdown: () -> Void = {
         TTYCommandRunner.terminateActiveProcessesForAppShutdown()
     }
+
+    var replyToApplicationShouldTerminate: (NSApplication, Bool) -> Void = { application, shouldTerminate in
+        application.reply(toApplicationShouldTerminate: shouldTerminate)
+    }
+
+    #if DEBUG
+    func _test_configureSettings(_ settings: SettingsStore) {
+        self.settings = settings
+    }
+    #endif
 
     func configure(_ dependencies: Dependencies) {
         self.store = dependencies.store
@@ -455,7 +463,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         self.installDebugMemoryPressureObserverIfNeeded()
         #endif
         self.ensureStatusController()
-        self.closeSwiftUISettingsPlaceholderWindow()
+        DispatchQueue.main.async { [weak self] in
+            self?.placeholderSettingsWindowGuard.sweep()
+        }
         self.observeSettingsApplicationMenuLanguage()
         self.scheduleSettingsApplicationMenuValidation(
             missingItemRetriesRemaining: Self.settingsMenuReadinessRetryCount,
@@ -495,19 +505,23 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    /// The SwiftUI `Settings` scene exists only to own the app-menu Settings command; the real
-    /// settings window is AppKit-managed (`SettingsWindowController`). macOS can still present or
-    /// state-restore the scene's empty placeholder window at launch — close it and keep it out of
-    /// state restoration so it cannot come back on the next launch.
-    private func closeSwiftUISettingsPlaceholderWindow() {
-        DispatchQueue.main.async {
-            for window in NSApp.windows
-                where window.identifier?.rawValue.hasPrefix("com_apple_SwiftUI_Settings") == true
-            {
-                window.isRestorable = false
-                window.close()
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        guard !self.isWaitingForConfigPersistence else { return .terminateLater }
+        guard let save = self.settings?.persistPendingConfigForTermination() else { return .terminateNow }
+        self.isWaitingForConfigPersistence = true
+        Task.detached {
+            await save.value
+            // NSApplication may be inside a modal loop entered from the main dispatch queue.
+            // A MainActor task cannot reliably resume there; deliver the reply on that run loop.
+            RunLoop.main.perform(inModes: [.default, .modalPanel]) {
+                MainActor.assumeIsolated {
+                    self.isWaitingForConfigPersistence = false
+                    self.replyToApplicationShouldTerminate(sender, true)
+                }
             }
+            CFRunLoopWakeUp(CFRunLoopGetMain())
         }
+        return .terminateLater
     }
 
     func applicationWillTerminate(_ notification: Notification) {

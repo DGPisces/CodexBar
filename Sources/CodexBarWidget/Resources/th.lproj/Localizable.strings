@@ -7,7 +7,7 @@
 "%@ used" = "%@ ใช้แล้ว";
 "%@, selected" = "เลือก %@ แล้ว";
 "%@-day limit" = "ขีดจำกัด %@ วัน";
-"%@-hour limit" = "%@ ต่อชั่วโมง";
+"%@-hour limit" = "ขีดจำกัดในช่วง %@ ชั่วโมง";
 "%@-minute limit" = "ขีดจำกัด %@ นาที";
 "%@: %@" = "%@: %@";
 "%@D" = "%@วัน";
@@ -38,7 +38,7 @@
 "Add-on credits" = "อุปกรณ์เสริม เครดิต";
 "Agent" = "ตัวแทน";
 "Amp Free" = "Amp ฟรี";
-"Balance" = "สมดุล";
+"Balance" = "ยอดคงเหลือ";
 "Base" = "ฐาน";
 "Billing" = "การเรียกเก็บเงิน";
 "Billing cycle" = "รอบบิล";
@@ -105,7 +105,7 @@
 "Peak %@" = "พีค %@";
 "Personal" = "ส่วนบุคคล";
 "Personal budget" = "งบประมาณส่วนบุคคล";
-"Plan" = "วางแผน";
+"Plan" = "แผนบริการ";
 "Plan credits" = "แผนการสมัครสมาชิก เครดิต";
 "Points" = "คะแนน";
 "Premium" = "พรีเมี่ยม";
@@ -129,8 +129,8 @@
 "Resets in %@" = "รีเซ็ตใน %@";
 "Reviews" = "รีวิว";
 "Rolling" = "กลิ้ง";
-"Runs out" = "โควต้า หมด";
-"Runs out in" = "โควต้า วิ่งเข้า";
+"Runs out" = "คาดว่าจะหมด";
+"Runs out in" = "เวลาที่เหลือก่อนหมด";
 "Savings" = "ออมทรัพย์";
 "Search hourly" = "ค้นหารายชั่วโมง";
 "Secondary budget" = "งบประมาณรอง";
@@ -143,9 +143,9 @@
 "Session" = "เซสชั่น";
 "Session (5-hour)" = "เซสชั่น (5 ชั่วโมง)";
 "Session and weekly usage with credits and costs." = "การใช้งานเซสชันและรายสัปดาห์กับ เครดิต และค่าใช้จ่าย";
-"Shared pool" = "สระว่ายน้ำรวม";
-"Sonnet" = "โคลง";
-"Spend" = "ใช้จ่าย";
+"Shared pool" = "โควตาที่ใช้ร่วมกัน";
+"Sonnet" = "Sonnet";
+"Spend" = "ค่าใช้จ่าย";
 "Standard" = "มาตรฐาน";
 "Status" = "สถานะ";
 "Subscription" = "การสมัครสมาชิก";

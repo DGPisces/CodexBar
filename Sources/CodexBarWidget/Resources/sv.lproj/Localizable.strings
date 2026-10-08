@@ -105,7 +105,7 @@
 "Peak %@" = "Topp %@";
 "Personal" = "Personligt";
 "Personal budget" = "Personlig budget";
-"Plan" = "Planera";
+"Plan" = "Abonnemang";
 "Plan credits" = "Prenumerationsplan Krediter";
 "Points" = "Poäng";
 "Premium" = "Premium";
@@ -119,7 +119,7 @@
 "Purchased" = "Inköpt";
 "Quota" = "Kvot";
 "Ran out" = "Kvot utarmat";
-"Rate limit" = "Prisgräns";
+"Rate limit" = "Gräns för anropsfrekvens";
 "Refill" = "Påfyllning";
 "Remaining budget compared with an ideal steady burn rate." = "Återstående budget jämfört med en idealisk jämn förbränningshastighet.";
 "Requests" = "Förfrågningar";
@@ -129,8 +129,8 @@
 "Resets in %@" = "Återställs om %@";
 "Reviews" = "Recensioner";
 "Rolling" = "Rullande";
-"Runs out" = "Kvot tar slut";
-"Runs out in" = "Kvot tar slut";
+"Runs out" = "Beräknas ta slut";
+"Runs out in" = "Tar slut om";
 "Savings" = "Besparingar";
 "Search hourly" = "Sökning per timme";
 "Secondary budget" = "Sekundär budget";
@@ -143,9 +143,9 @@
 "Session" = "Session";
 "Session (5-hour)" = "Session (5 timmar)";
 "Session and weekly usage with credits and costs." = "Session och veckovis användning med Krediter och kostnader.";
-"Shared pool" = "Delad pool";
+"Shared pool" = "Gemensam kvot";
 "Sonnet" = "Sonnet";
-"Spend" = "Spendera";
+"Spend" = "Utgifter";
 "Standard" = "Standard";
 "Status" = "Status";
 "Subscription" = "Prenumeration";

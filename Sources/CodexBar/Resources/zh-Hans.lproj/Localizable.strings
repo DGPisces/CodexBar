@@ -1505,6 +1505,8 @@
 
 "Cumulative" = "累计";
 "Token activity" = "Token 活动";
+"Earlier activity" = "更早记录";
+"More recent activity" = "最近记录";
 "View" = "视图";
 "in the last year" = "近一年";
 "No activity in the last 12 months" = "近 12 个月暂无活动";
@@ -2358,3 +2360,23 @@
 "<1%% %@" = "%@ <1%%";
 
 "%.0f%% %@" = "%2$@ %1$.0f%%";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "已记录支出";
+"Highest recorded spend" = "最高已记录支出";
+"Previous day" = "前一天";
+"Next day" = "后一天";
+"Click to isolate a source. Click again to show all." = "点击单独查看此来源，再次点击显示全部。";
+"Recorded hourly spend" = "已记录的小时支出";
+"Highest spend" = "最高支出";
+"Models for this day" = "查看当天模型";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "点击柱形逐层查看，下方菜单可查询具体金额。";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "保存多个 ClinePass API 密钥。所选密钥优先于已配置的 API 密钥和 cline auth 会话。";
+
+"X API cost history is not available." = "X API 费用历史不可用。";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "粘贴包含 auth_token 和 ct0 的 console.x.com Cookie 请求头。";
+
+"Open X Developer Console" = "打开 X 开发者控制台";

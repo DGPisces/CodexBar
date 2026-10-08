@@ -29,7 +29,7 @@
 "another Mac" = "Mac lain";
 "%dm ago" = "%dm lalu";
 "%dh ago" = "%dj yang lalu";
-"%dd ago" = "%dj yang lalu";
+"%dd ago" = "%d hari yang lalu";
 
 "ollama_safari_cookie_access_hint" = "Cookie Safari memerlukan Akses Disk Penuh untuk CodexBar (Pengaturan Sistem > Privasi & Keamanan).";
 "ollama_browser_cookie_decryption_denied" = "Dekripsi cookie %@ ditolak di Rantai Kunci. Buka kartu penyedia dan klik Segarkan (⌘R) untuk meminta akses Rantai Kunci lagi.";
@@ -215,7 +215,7 @@
 "MCP details" = "Detail MCP";
 "Managed Codex accounts unavailable" = "Akun Codex terkelola tidak tersedia";
 "Managed account storage is unreadable. Live account access is still available, " = "Penyimpanan akun terkelola tidak dapat dibaca. Akses akun langsung masih tersedia, ";
-"Manual" = "petunjuk";
+"Manual" = "Manual";
 "May your tokens never run out—keep agent limits in view." = "Semoga token Anda tidak pernah habis—pantau batas agen Anda.";
 "Menu bar" = "Bilah menu";
 "Menu bar auto-shows the provider closest to its rate limit." = "Menu bar otomatis menampilkan penyedia yang paling dekat batas penggunaannya.";
@@ -564,7 +564,7 @@
 "tab_providers" = "Penyedia";
 "tab_notifications" = "Notifikasi";
 "tab_menu_bar" = "Menu bar";
-"tab_menu" = "Tidak bisa";
+"tab_menu" = "Menu";
 "tab_advanced" = "Lanjutan";
 "tab_hooks" = "Hook";
 
@@ -821,7 +821,7 @@
 "status_unknown" = "Status tidak diketahui";
 
 /* Refresh frequency */
-"refresh_manual" = "petunjuk";
+"refresh_manual" = "Manual";
 "refresh_1min" = "1 mnt";
 "refresh_2min" = "2 mnt";
 "refresh_5min" = "5 mnt";
@@ -1502,6 +1502,8 @@
 
 "Cumulative" = "Kumulatif";
 "Token activity" = "Aktivitas token";
+"Earlier activity" = "Aktivitas sebelumnya";
+"More recent activity" = "Aktivitas lebih baru";
 "View" = "Tampilan";
 "in the last year" = "dalam setahun terakhir";
 "No activity in the last 12 months" = "Tidak ada aktivitas dalam 12 bulan terakhir";
@@ -1566,7 +1568,7 @@
 "List-price equivalent" = "Setara dengan harga daftar";
 "Metered and list-price" = "Penggunaan terukur dan setara dengan harga jual";
 "List-price equivalent — not a billing receipt." = "Setara dengan harga jual — bukan tanda terima penagihan.";
-"Priced" = "Penggunaan harga";
+"Priced" = "Penggunaan dengan harga";
 "Unpriced" = "Penggunaan tanpa harga";
 "Unmetered" = "Penggunaan tidak terukur";
 "Estimated" = "Diperkirakan";
@@ -1709,7 +1711,7 @@
 "Account %@" = "Akun %@";
 "Account Added" = "Akun Ditambahkan";
 "Account Usage" = "Penggunaan Akun";
-"Account slug" = "Pengidentifikasi akun (siput)";
+"Account slug" = "Pengidentifikasi akun (slug)";
 "Account switched; restart the Codex background server manually." = "Akun dialihkan; restart server latar belakang Codex secara manual.";
 "Allow reading Claude Code's credentials" = "Izinkan membaca kredensial Claude Code";
 "Amp CLI" = "Amp CLI";
@@ -1935,8 +1937,8 @@
 "Reset: %@" = "Atur Ulang: %@";
 "Resets every 5 hours" = "Reset setiap 5 jam";
 "Resets in" = "Menyetel ulang";
-"Runs out" = "Kuota habis";
-"Runs out in" = "Kuota habis";
+"Runs out" = "Perkiraan habis";
+"Runs out in" = "Habis dalam";
 "SUBSCRIPTIONS" = "BERLANGGANAN";
 "Save" = "Simpan";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Simpan preferensi tampilan dan notifikasi untuk dotfiles Anda. Akun, kredensial, login, jalur lokal, dan persetujuan tetap ada di Mac ini.";
@@ -2011,7 +2013,7 @@
 "a1.small-equivalent hours" = "Jam setara a1.small";
 "after reset" = "setelah diatur ulang";
 "all" = "semuanya";
-"ark-... or AKLT..." = "bahtera-...atau AKLT...";
+"ark-... or AKLT..." = "ark-... atau AKLT...";
 "budget spent" = "Anggaran Kuota habis";
 "cb_..." = "cb_...";
 "claude auth login exited with status %d." = "claude auth login keluar dengan status %d.";
@@ -2085,14 +2087,14 @@
 "Poe usage history is unavailable." = "Riwayat penggunaan Poe tidak tersedia.";
 "Stored in ~/.codexbar/config.json. Get your key from poe.com/api/keys." = "Disimpan di ~/.codexbar/config.json. Dapatkan kunci Anda dari poe.com/api/keys.";
 "Billing" = "Penagihan";
-"Rate limit" = "Batas tarif";
-"Billing and rate-limit data from the v0 Platform API" = "Data penagihan dan batas tarif dari Platform v0 API";
+"Rate limit" = "Batas frekuensi permintaan";
+"Billing and rate-limit data from the v0 Platform API" = "Data penagihan dan batas frekuensi permintaan dari Platform v0 API";
 "v0 cost history is not available via the Platform API." = "Riwayat biaya v0 tidak tersedia melalui Platform API.";
 "Stored in ~/.config/codexbar/config.json. Create one in v0 settings or set V0_API_KEY." = "Disimpan di ~/.config/codexbar/config.json. Buat satu di pengaturan v0 atau atur V0_API_KEY.";
 "v0_..." = "v0_...";
 "Open v0 API keys" = "Buka kunci v0 API";
 "Scope" = "Ruang lingkup";
-"Optional project ID or slug. Leave blank for the default v0 scope." = "Proyek opsional ID atau siput. Biarkan kosong untuk cakupan v0 default.";
+"Optional project ID or slug. Leave blank for the default v0 scope." = "Proyek opsional ID atau slug. Biarkan kosong untuk cakupan v0 default.";
 "project-slug" = "project-slug";
 "Monthly budget" = "Anggaran bulanan";
 "ClawRouter spend is reported by its usage API." = "Pembelanjaan ClawRouter dilaporkan berdasarkan penggunaannya API.";
@@ -2132,7 +2134,7 @@
 "Chutes cost history is not available from CodexBar." = "Riwayat biaya Chutes tidak tersedia dari CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Disimpan di ~/.codexbar/config.json. Tempelkan kunci Chutes API.";
 "chutes key..." = "Kunci API Chutes...";
-"Spend" = "Menghabiskan";
+"Spend" = "Pengeluaran";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "Pembelanjaan Fireworks berasal dari ringkasan penagihan API; riwayat biaya tidak dilacak.";
 "Doubao API-key accounts" = "Doubao API-akun kunci";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "Simpan kunci berlabel Ark API. Pasangan AK/SK dan profil arkcli tidak didukung di sini.";
@@ -2168,7 +2170,7 @@
 "Store multiple IBM Bob API keys." = "Simpan beberapa kunci IBM Bob API.";
 "Monthly Bobcoins" = "Bobcoin Bulanan";
 "Bobcoin usage from the IBM Bob API." = "Penggunaan Bobcoin dari IBM Bob API.";
-"Shared pool" = "Kolam renang bersama";
+"Shared pool" = "Kuota bersama";
 "GitKraken cost history is not available." = "Riwayat biaya GitKraken tidak tersedia.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "Pembelanjaan harian xAI memerlukan kunci Manajemen API dan tim ID. Saldo prabayar tidak diperlakukan sebagai pembelanjaan.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "Disimpan di ~/.codexbar/config.json. Buat satu di console.x.ai di bawah Pengaturan > Kunci Manajemen; kesimpulan kunci API tidak diterima.";
@@ -2247,17 +2249,17 @@
 "Hugging Face usage comes from the billing API; cost history is not tracked." = "Penggunaan Hugging Face berasal dari penagihan API; riwayat biaya tidak dilacak.";
 "Create a token at huggingface.co/settings/tokens. Classic read tokens work; fine-grained tokens need the Billing read permission." = "Buat akses token di huggingface.co/settings/tokens. token akses baca klasik didukung. Akses terperinci token memerlukan izin untuk membaca data penagihan.";
 "Credit balance from the Codebuff API" = "Saldo Kredit dari Codebuff API";
-"Reads governance budgets and rate limits from the Bifrost virtual key quota endpoint." = "Membaca anggaran tata kelola dan batas tarif dari titik akhir kunci virtual Bifrost Kuota.";
+"Reads governance budgets and rate limits from the Bifrost virtual key quota endpoint." = "Membaca anggaran tata kelola dan batas frekuensi permintaan dari titik akhir kunci virtual Bifrost Kuota.";
 "Bifrost spend is reported by the provider API." = "Pembelanjaan Bifrost dilaporkan oleh penyedia API.";
 "Virtual keys" = "Kunci virtual";
 "Store multiple Bifrost virtual keys." = "Simpan beberapa kunci virtual Bifrost.";
 "Paste Bifrost virtual key…" = "Tempelkan kunci virtual Bifrost…";
 "Virtual key" = "Kunci virtual";
-"Bifrost virtual key used to read its own budgets and rate limits." = "Kunci virtual Bifrost digunakan untuk membaca anggaran dan batas tarifnya sendiri.";
+"Bifrost virtual key used to read its own budgets and rate limits." = "Kunci virtual Bifrost digunakan untuk membaca anggaran dan batas frekuensi permintaannya sendiri.";
 "Bifrost gateway base URL, e.g. your company's self-hosted Bifrost host." = "Basis gateway Bifrost URL, mis. host Bifrost yang dihosting sendiri oleh perusahaan Anda.";
 "https://bifrost.example.com" = "https://bifrost.example.com";
 "Store multiple Ollama Cookie headers or session values." = "Simpan beberapa header atau nilai sesi Ollama Cookie.";
-"Cookie header or bare session value" = "Header Cookie atau nilai sesi kosong";
+"Cookie header or bare session value" = "Header Cookie atau nilai sesi tanpa header";
 "Antigravity OAuth credentials JSON" = "Antigravity OAuth kredensial JSON";
 "Gemini Models" = "Model Gemini";
 "Claude and GPT" = "Claude dan GPT";
@@ -2332,7 +2334,7 @@
 "Renews" = "Memperbarui";
 "Orb" = "Bola";
 "Individual" = "Individu";
-"Today spend" = "Habiskan hari ini";
+"Today spend" = "Pengeluaran hari ini";
 "Usage billing" = "Penagihan penggunaan";
 "Period resets" = "Penyetelan ulang periode";
 "Cached input" = "Masukan dalam cache";
@@ -2343,7 +2345,7 @@
 "Subscription credits available" = "Berlangganan Kredit tersedia";
 "Total credits available" = "Total Kredit tersedia";
 "Used this cycle" = "Gunakan siklus ini";
-"Bank cap" = "Batas bank";
+"Bank cap" = "Batas kredit terkumpul";
 "Next refill" = "Isi ulang berikutnya";
 "Gateway" = "Gerbang";
 "Routed" = "Diarahkan";
@@ -2368,3 +2370,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Pengeluaran tercatat";
+"Highest recorded spend" = "Pengeluaran tercatat tertinggi";
+"Previous day" = "Hari sebelumnya";
+"Next day" = "Hari berikutnya";
+"Click to isolate a source. Click again to show all." = "Klik untuk menampilkan satu sumber. Klik lagi untuk menampilkan semua.";
+"Recorded hourly spend" = "Pengeluaran per jam tercatat";
+"Highest spend" = "Pengeluaran tertinggi";
+"Models for this day" = "Model untuk hari ini";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Klik batang untuk menelusuri. Gunakan menu di bawah untuk melihat jumlah tepat.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Simpan beberapa kunci API ClinePass. Kunci yang dipilih mengesampingkan kunci API yang dikonfigurasi dan sesi cline auth.";
+
+"X API cost history is not available." = "Riwayat biaya X API tidak tersedia.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "Tempel header Cookie dari console.x.com yang berisi auth_token dan ct0.";
+
+"Open X Developer Console" = "Buka Konsol Pengembang X";

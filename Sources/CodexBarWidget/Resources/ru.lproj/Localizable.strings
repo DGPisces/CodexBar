@@ -129,8 +129,8 @@
 "Resets in %@" = "Сбрасывается через %@";
 "Reviews" = "Отзывы";
 "Rolling" = "Роллинг";
-"Runs out" = "Квота заканчивается";
-"Runs out in" = "Квота заканчивается через";
+"Runs out" = "Ожидаемое исчерпание";
+"Runs out in" = "Закончится через";
 "Savings" = "Экономия";
 "Search hourly" = "Искать каждый час";
 "Secondary budget" = "Вторичный бюджет";
@@ -143,9 +143,9 @@
 "Session" = "Сеанс";
 "Session (5-hour)" = "Сессия (5 часов)";
 "Session and weekly usage with credits and costs." = "Сеансовое и еженедельное использование с Кредиты и стоимость.";
-"Shared pool" = "Общий бассейн";
+"Shared pool" = "Общая квота";
 "Sonnet" = "Sonnet";
-"Spend" = "Тратить";
+"Spend" = "Расходы";
 "Standard" = "Стандартный";
 "Status" = "Статус";
 "Subscription" = "Подписка";

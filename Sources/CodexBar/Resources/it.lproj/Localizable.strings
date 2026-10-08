@@ -1502,6 +1502,8 @@
 
 "Cumulative" = "Cumulativo";
 "Token activity" = "Attività token";
+"Earlier activity" = "Attività precedente";
+"More recent activity" = "Attività più recente";
 "View" = "Vista";
 "in the last year" = "nell'ultimo anno";
 "No activity in the last 12 months" = "Nessuna attività negli ultimi 12 mesi";
@@ -1684,7 +1686,7 @@
 "%d more accounts ready" = "%d più account pronti";
 "%d percent" = "%d per cento";
 "%d subscriptions" = "%d abbonamenti";
-"%d-DAY SPEND" = "%d SPESA AL GIORNO";
+"%d-DAY SPEND" = "SPESA SU %d GIORNI";
 "%d/%d days" = "%1$d/%2$d giorni";
 "%d/%dd" = "%1$d/%2$dg";
 "%d/all" = "%d/tutti";
@@ -1936,8 +1938,8 @@
 "Reset: %@" = "Ripristina: %@";
 "Resets every 5 hours" = "Si ripristina ogni 5 ore";
 "Resets in" = "Si reimposta";
-"Runs out" = "Limite si esaurisce";
-"Runs out in" = "Limite si esaurisce";
+"Runs out" = "Esaurimento previsto";
+"Runs out in" = "Si esaurisce tra";
 "SUBSCRIPTIONS" = "ABBONAMENTI";
 "Save" = "Salva";
 "Save display and notification preferences for your dotfiles. Accounts, credentials, login, local paths and consent stay on this Mac." = "Salva le preferenze di visualizzazione e notifica per i tuoi dotfile. Account, credenziali, accesso, percorsi locali e consenso rimangono su questo Mac.";
@@ -2012,7 +2014,7 @@
 "a1.small-equivalent hours" = "Ore equivalenti a a1.small";
 "after reset" = "dopo il ripristino";
 "all" = "tutto";
-"ark-... or AKLT..." = "arca-... o AKLT...";
+"ark-... or AKLT..." = "ark-... o AKLT...";
 "budget spent" = "Budget Limite esaurito";
 "cb_..." = "cb_...";
 "claude auth login exited with status %d." = "claude auth login uscito con lo stato %d.";
@@ -2086,8 +2088,8 @@
 "Poe usage history is unavailable." = "La cronologia di utilizzo di Poe non è disponibile.";
 "Stored in ~/.codexbar/config.json. Get your key from poe.com/api/keys." = "Memorizzato in ~/.codexbar/config.json. Ottieni la tua chiave da poe.com/api/keys.";
 "Billing" = "Fatturazione";
-"Rate limit" = "Limite di tariffa";
-"Billing and rate-limit data from the v0 Platform API" = "Dati di fatturazione e limite tariffario dalla piattaforma v0 API";
+"Rate limit" = "Limite di richieste";
+"Billing and rate-limit data from the v0 Platform API" = "Dati di fatturazione e limiti di richieste dall’API della piattaforma v0";
 "v0 cost history is not available via the Platform API." = "Lo storico dei costi v0 non è disponibile tramite la piattaforma API.";
 "Stored in ~/.config/codexbar/config.json. Create one in v0 settings or set V0_API_KEY." = "Memorizzato in ~/.config/codexbar/config.json. Creane uno nelle impostazioni v0 o imposta V0_API_KEY.";
 "v0_..." = "v0_...";
@@ -2133,7 +2135,7 @@
 "Chutes cost history is not available from CodexBar." = "Lo storico dei costi Chutes non è disponibile da CodexBar.";
 "Stored in ~/.codexbar/config.json. Paste a Chutes API key." = "Memorizzato in ~/.codexbar/config.json. Incolla una chiave Chutes API.";
 "chutes key..." = "Chiave API Chutes...";
-"Spend" = "Spendere";
+"Spend" = "Spesa";
 "Fireworks spend comes from the billing summary API; cost history is not tracked." = "La spesa Fireworks proviene dal riepilogo pagamenti API; la cronologia dei costi non viene tracciata.";
 "Doubao API-key accounts" = "Doubao API-conti chiave";
 "Store labeled Ark API keys. AK/SK pairs and arkcli profiles are not supported here." = "Conserva le chiavi etichettate Ark API. Le coppie AK/SK e i profili arkcli non sono supportati qui.";
@@ -2169,7 +2171,7 @@
 "Store multiple IBM Bob API keys." = "Memorizza più chiavi IBM Bob API.";
 "Monthly Bobcoins" = "Bobcoin mensili";
 "Bobcoin usage from the IBM Bob API." = "Utilizzo di Bobcoin da IBM Bob API.";
-"Shared pool" = "Piscina condivisa";
+"Shared pool" = "Quota condivisa";
 "GitKraken cost history is not available." = "Lo storico dei costi GitKraken non è disponibile.";
 "xAI daily spend requires a Management API key and team ID. Prepaid balance is not treated as spend." = "La spesa giornaliera xAI richiede una chiave di gestione API e un team ID. Il saldo prepagato non viene considerato come spesa.";
 "Stored in ~/.codexbar/config.json. Create one at console.x.ai under Settings > Management Keys; inference API keys are not accepted." = "Memorizzato in ~/.codexbar/config.json. Creane uno su console.x.ai in Impostazioni > Chiavi di gestione; le chiavi di inferenza API non sono accettate.";
@@ -2333,7 +2335,7 @@
 "Renews" = "Rinnova";
 "Orb" = "Sfera";
 "Individual" = "Individuale";
-"Today spend" = "Oggi spendi";
+"Today spend" = "Spesa di oggi";
 "Usage billing" = "Fatturazione dell'utilizzo";
 "Period resets" = "Il periodo si ripristina";
 "Cached input" = "Ingresso memorizzato nella cache";
@@ -2344,7 +2346,7 @@
 "Subscription credits available" = "Abbonamento Crediti disponibile";
 "Total credits available" = "Totale Crediti disponibile";
 "Used this cycle" = "Usato questo ciclo";
-"Bank cap" = "Tetto bancario";
+"Bank cap" = "Limite dei crediti accumulati";
 "Next refill" = "Prossima ricarica";
 "Gateway" = "Porta";
 "Routed" = "Instradato";
@@ -2369,3 +2371,23 @@
 "<1%% %@" = "<1%% %@";
 
 "%.0f%% %@" = "%.0f%% %@";
+
+// Spend chart navigation and inspection
+"Recorded spend" = "Spesa registrata";
+"Highest recorded spend" = "Spesa registrata più alta";
+"Previous day" = "Giorno precedente";
+"Next day" = "Giorno successivo";
+"Click to isolate a source. Click again to show all." = "Fai clic per isolare una fonte. Fai clic di nuovo per mostrarle tutte.";
+"Recorded hourly spend" = "Spesa oraria registrata";
+"Highest spend" = "Spesa massima";
+"Models for this day" = "Modelli di questo giorno";
+
+"Click a bar to explore. Use the menu below for exact amounts." = "Fai clic su una barra per esplorare. Il menu sotto mostra gli importi esatti.";
+
+"Store multiple ClinePass API keys. The selected key overrides the configured API key and the cline auth session." = "Salva più chiavi API ClinePass. La chiave selezionata ha la precedenza sulla chiave API configurata e sulla sessione cline auth.";
+
+"X API cost history is not available." = "La cronologia dei costi di X API non è disponibile.";
+
+"Paste a console.x.com Cookie header containing auth_token and ct0." = "Incolla un’intestazione Cookie di console.x.com contenente auth_token e ct0.";
+
+"Open X Developer Console" = "Apri la console sviluppatori di X";

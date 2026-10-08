@@ -38,7 +38,7 @@
 "Add-on credits" = "افزونه اعتبارات";
 "Agent" = "عامل";
 "Amp Free" = "Amp رایگان";
-"Balance" = "تعادل";
+"Balance" = "موجودی";
 "Base" = "پایه";
 "Billing" = "صورتحساب";
 "Billing cycle" = "چرخه صورتحساب";
@@ -76,7 +76,7 @@
 "Edit predictions" = "ویرایش پیش بینی ها";
 "Enable account widgets in CodexBar → Settings → Menu → Widgets. Then edit this widget to choose an account." = "ویجت های حساب را در CodexBar → تنظیمات → منو → ابزارک ها فعال کنید. سپس این ویجت را ویرایش کنید تا یک حساب کاربری انتخاب کنید.";
 "Extra usage" = "استفاده اضافی";
-"Extra usage balance" = "تعادل استفاده اضافی";
+"Extra usage balance" = "موجودی استفاده اضافی";
 "Five-hour quota" = "پنج ساعته سهمیه";
 "Flash" = "Flash";
 "Flash Lite" = "Flash Lite";
@@ -129,8 +129,8 @@
 "Resets in %@" = "ریست ها در %@";
 "Reviews" = "بررسی ها";
 "Rolling" = "نورد";
-"Runs out" = "سهمیه تمام می شود";
-"Runs out in" = "سهمیه تمام می شود";
+"Runs out" = "پایان پیش‌بینی‌شده سهمیه";
+"Runs out in" = "زمان تا پایان سهمیه";
 "Savings" = "پس انداز";
 "Search hourly" = "جستجو ساعتی";
 "Secondary budget" = "بودجه ثانویه";
@@ -143,9 +143,9 @@
 "Session" = "جلسه";
 "Session (5-hour)" = "جلسه (5 ساعت)";
 "Session and weekly usage with credits and costs." = "جلسه و استفاده هفتگی با اعتبارات و هزینه ها.";
-"Shared pool" = "استخر مشترک";
-"Sonnet" = "سونت";
-"Spend" = "خرج کن";
+"Shared pool" = "سهمیه مشترک";
+"Sonnet" = "Sonnet";
+"Spend" = "هزینه";
 "Standard" = "استاندارد";
 "Status" = "وضعیت";
 "Subscription" = "اشتراک";
