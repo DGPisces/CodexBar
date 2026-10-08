@@ -1697,3 +1697,5 @@
 "Models for this day" = "查看當天模型";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "點擊長條逐層查看，下方選單可查詢詳細金額。";
+
+"update_available_notification_body" = "點擊開啟更新設定並安裝新版本。";

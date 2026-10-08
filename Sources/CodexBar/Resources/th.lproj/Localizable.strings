@@ -1670,3 +1670,5 @@
 "Models for this day" = "โมเดลของวันนี้";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "คลิกแท่งกราฟเพื่อดูรายละเอียด ใช้เมนูด้านล่างเพื่อดูจำนวนเงินที่แน่นอน";
+
+"update_available_notification_body" = "คลิกเพื่อเปิดการตั้งค่าการอัปเดตและติดตั้งเวอร์ชันใหม่";

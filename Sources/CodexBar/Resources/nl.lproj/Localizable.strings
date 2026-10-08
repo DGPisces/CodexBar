@@ -1665,3 +1665,5 @@
 "Models for this day" = "Modellen voor deze dag";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Klik op een balk voor details. Het menu hieronder toont exacte bedragen.";
+
+"update_available_notification_body" = "Klik om de update-instellingen te openen en de nieuwe versie te installeren.";

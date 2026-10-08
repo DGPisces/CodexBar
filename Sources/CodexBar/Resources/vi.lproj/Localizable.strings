@@ -1667,3 +1667,5 @@
 "Models for this day" = "Mô hình của ngày này";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Nhấp vào cột để khám phá. Dùng menu bên dưới để xem số tiền chính xác.";
+
+"update_available_notification_body" = "Nhấp để mở cài đặt cập nhật và cài đặt phiên bản mới.";
