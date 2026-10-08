@@ -634,8 +634,6 @@
 "merged_icon_style_stacked" = "Empilé";
 "merge_icon_stacked_top_provider_title" = "Ligne du haut";
 "merge_icon_stacked_bottom_provider_title" = "Ligne du bas";
-"show_most_used_provider_title" = "Afficher le fournisseur le plus utilisé";
-"show_most_used_provider_subtitle" = "La barre de menu affiche automatiquement le fournisseur le plus proche de sa limite de débit.";
 "display_mode_title" = "Mode d'affichage";
 "display_mode_subtitle" = "Choisissez ce que vous voulez afficher dans la barre de menu (Pace affiche l'utilisation par rapport à celle attendue).";
 "show_quota_warning_markers_title" = "Afficher les marqueurs d'avertissement de quota";
@@ -1559,7 +1557,6 @@
 "Cache write" = "Écriture dans le cache";
 "Reasoning" = "Raisonnement";
 "Sessions" = "Séances";
-"Projects" = "Projets";
 "Plan metered" = "Utilisation du forfait limité";
 "List-price equivalent" = "Équivalent au prix catalogue";
 "Metered and list-price" = "Utilisation mesurée et équivalent au prix catalogue";
@@ -2367,6 +2364,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "Le débit par tour de dialogue tient compte du raisonnement, des outils et des attentes. Il ne s’agit pas de la vitesse de génération du modèle. Premier token indique le temps médian avant le premier token du modèle, qui peut relever du raisonnement. Seuls les tours terminés et correctement chronométrés sont inclus. La durée du tour de dialogue est le temps écoulé médian des tours terminés.";
+"First-token samples: %@ / %@" = "Mesures du premier token : %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Détails des performances";
+"Observed turns; workload and tools affect these results." = "Tours de dialogue observés ; la charge de travail et les outils influencent ces résultats.";
+"By model and reasoning effort" = "Par modèle et effort de raisonnement";
+"Unknown model" = "Modèle inconnu";
+"Unknown reasoning effort" = "Effort de raisonnement inconnu";
+"Model first token may be reasoning, before visible answer text." = "Le premier token du modèle peut relever du raisonnement, avant le texte visible de la réponse.";
+"Speed range needs 4 completed turns." = "La plage de vitesse nécessite 4 tours de dialogue terminés.";
+"All accounts" = "Tous les comptes";
+"Refresh all accounts" = "Actualiser tous les comptes";
+"CodexBar follows" = "CodexBar suit";
+"%@ accounts" = "%@ comptes";
+"Refreshes up to %@ accounts at a time." = "Actualise jusqu’à %@ comptes à la fois.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Chaque compte a ses propres limites. Consulter l’utilisation ne change pas de compte.";
+"Local usage is shared across accounts on this Mac." = "L’utilisation locale est commune à tous les comptes sur ce Mac.";
+"Local usage" = "Utilisation locale";
+"Local usage comes from the current Codex profile." = "L’utilisation locale provient du profil Codex actuel.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Dépenses enregistrées";
 "Highest recorded spend" = "Dépenses enregistrées maximales";
@@ -2386,3 +2405,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Collez un en-tête Cookie de console.x.com contenant auth_token et ct0.";
 
 "Open X Developer Console" = "Ouvrir la console développeur X";
+// Structured session performance layout.
+"spend_performance_first_token" = "Premier token";
+"spend_performance_output" = "Débit par tour de dialogue";
+"spend_performance_duration" = "Durée du tour de dialogue";
+"spend_performance_turn_count" = "%@ tours de dialogue chronométrés";
+"spend_performance_turns" = "Tours de dialogue";
+"spend_performance_model_effort" = "Modèle / effort";
+"spend_performance_p95_first_token" = "P95 du premier token";
+"spend_performance_p95_duration" = "P95 de la durée des tours";
+"spend_performance_speed_range" = "Plage de vitesse par tour de dialogue";
+"spend_performance_cached_input" = "Entrée en cache";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 échantillons · insuffisant";
+"spend_performance_coverage" = "%@ / %@ tours de dialogue avec données de cache";
+"spend_performance_p95_help" = "95% des tours de dialogue observés étaient à cette valeur ou en dessous. Chaque métrique nécessite au moins 20 échantillons valides.";
+"spend_performance_speed_range_help" = "Les 50% centraux des débits de sortie par tour de dialogue (P25–P75). Les tâches, le raisonnement, les outils et les attentes influencent cette plage.";
+"spend_performance_cache_help" = "Entrée en cache divisée par l’entrée totale sur les tours de dialogue admissibles. Pondération par les tokens d’entrée, avec affichage de la couverture des échantillons.";
+"spend_performance_metric_help" = "À propos de ces observations";
+"merged_icon_source_title" = "Source de l’icône combinée";
+"merged_icon_source_subtitle" = "Choisissez le fournisseur affiché par l’icône combinée réduite.";
+"merged_icon_source_current_selection" = "Sélection actuelle";
+"merged_icon_source_highest_usage" = "Utilisation la plus élevée";
+"merged_icon_source_frontmost_app" = "Application du fournisseur au premier plan";
+/* Provider menu bar color */
+"Color by provider" = "Couleur par fournisseur";
+
+"show_most_used_provider_subtitle" = "La barre de menu affiche automatiquement le fournisseur le plus proche de sa limite de débit.";
+
+"show_most_used_provider_title" = "Afficher le fournisseur le plus utilisé";

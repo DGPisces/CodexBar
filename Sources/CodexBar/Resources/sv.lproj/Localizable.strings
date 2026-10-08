@@ -633,8 +633,6 @@
 "merged_icon_style_stacked" = "Staplad";
 "merge_icon_stacked_top_provider_title" = "Övre raden";
 "merge_icon_stacked_bottom_provider_title" = "Nedre raden";
-"show_most_used_provider_title" = "Visa mest använda leverantör";
-"show_most_used_provider_subtitle" = "Menyraden visar automatiskt leverantören som ligger närmast sin gräns.";
 "display_mode_title" = "Visningsläge";
 "display_mode_subtitle" = "Välj vad som ska visas i menyraden (takt visar användning mot förväntat).";
 "show_quota_warning_markers_title" = "Visa kvotvarningsmarkörer";
@@ -1558,7 +1556,6 @@
 "Cache write" = "Cache-skriv token";
 "Reasoning" = "Resonemang";
 "Sessions" = "Sessioner";
-"Projects" = "Projekt";
 "Plan metered" = "Uppmätt plananvändning";
 "List-price equivalent" = "Listpris motsvarande";
 "Metered and list-price" = "Uppmätt användning och motsvarande listpris";
@@ -2367,6 +2364,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "Utdata per samtalstur tar hänsyn till resonemang, verktyg och väntetider. Det är inte modellens genereringshastighet. Första token är mediantiden till modellens första token, som kan vara resonemang. Endast slutförda samtalsturer med lyckad tidsmätning ingår. Samtalsturens längd är medianen av den förflutna tiden för slutförda samtalsturer.";
+"First-token samples: %@ / %@" = "Mätningar av första token: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Prestandadetaljer";
+"Observed turns; workload and tools affect these results." = "Observerade samtalsturer; arbetsbelastning och verktyg påverkar resultaten.";
+"By model and reasoning effort" = "Efter modell och resonemangsnivå";
+"Unknown model" = "Okänd modell";
+"Unknown reasoning effort" = "Okänd resonemangsnivå";
+"Model first token may be reasoning, before visible answer text." = "Modellens första token kan vara resonemang, innan synlig svarstext visas.";
+"Speed range needs 4 completed turns." = "Hastighetsintervallet kräver 4 slutförda samtalsturer.";
+"All accounts" = "Alla konton";
+"Refresh all accounts" = "Uppdatera alla konton";
+"CodexBar follows" = "CodexBar följer";
+"%@ accounts" = "%@ konton";
+"Refreshes up to %@ accounts at a time." = "Uppdaterar upp till %@ konton åt gången.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Varje konto har egna gränser. Att visa användning byter inte konto.";
+"Local usage is shared across accounts on this Mac." = "Lokal användning delas mellan konton på denna Mac.";
+"Local usage" = "Lokal användning";
+"Local usage comes from the current Codex profile." = "Lokal användning kommer från den aktuella Codex-profilen.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Registrerade utgifter";
 "Highest recorded spend" = "Högsta registrerade utgifter";
@@ -2386,3 +2405,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Klistra in en Cookie-header från console.x.com som innehåller auth_token och ct0.";
 
 "Open X Developer Console" = "Öppna X utvecklarkonsol";
+// Structured session performance layout.
+"spend_performance_first_token" = "Första token";
+"spend_performance_output" = "Utdata per samtalstur";
+"spend_performance_duration" = "Samtalsturens längd";
+"spend_performance_turn_count" = "%@ tidsmätta samtalsturer";
+"spend_performance_turns" = "Samtalsturer";
+"spend_performance_model_effort" = "Modell / resonemangsnivå";
+"spend_performance_p95_first_token" = "P95 första token";
+"spend_performance_p95_duration" = "P95 för samtalsturens längd";
+"spend_performance_speed_range" = "Hastighetsintervall för samtalsturer";
+"spend_performance_cached_input" = "Cachade indata";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 mätningar · otillräckligt";
+"spend_performance_coverage" = "%@ / %@ samtalsturer med cachedata";
+"spend_performance_p95_help" = "95% av de observerade samtalsturerna låg på eller under detta värde. Minst 20 giltiga mätningar krävs för varje mått.";
+"spend_performance_speed_range_help" = "De mittersta 50% av utdatahastigheterna per samtalstur (P25–P75). Uppgifter, resonemang, verktyg och väntetider påverkar intervallet.";
+"spend_performance_cache_help" = "Cachade indata dividerade med totala indata för de samtalsturer som kan räknas med. Viktat efter indatatoken, med mätningarnas täckning angiven.";
+"spend_performance_metric_help" = "Om dessa observationer";
+"merged_icon_source_title" = "Källa för kombinerad ikon";
+"merged_icon_source_subtitle" = "Välj vilken leverantör den hopfällda kombinerade ikonen visar.";
+"merged_icon_source_current_selection" = "Aktuellt val";
+"merged_icon_source_highest_usage" = "Högsta användning";
+"merged_icon_source_frontmost_app" = "Leverantörsapp i förgrunden";
+/* Provider menu bar color */
+"Color by provider" = "Färg per leverantör";
+
+"show_most_used_provider_subtitle" = "Menyraden visar automatiskt leverantören som ligger närmast sin gräns.";
+
+"show_most_used_provider_title" = "Visa mest använda leverantör";

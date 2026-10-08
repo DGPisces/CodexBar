@@ -621,8 +621,6 @@
 "merged_icon_style_stacked" = "Apilado";
 "merge_icon_stacked_top_provider_title" = "Fila superior";
 "merge_icon_stacked_bottom_provider_title" = "Fila inferior";
-"show_most_used_provider_title" = "Mostrar el proveedor más usado";
-"show_most_used_provider_subtitle" = "La barra de menús muestra automáticamente el proveedor más cercano a su límite.";
 "display_mode_title" = "Modo de visualización";
 "display_mode_subtitle" = "Elige qué mostrar en la barra de menús (Ritmo muestra el uso frente al previsto).";
 "show_quota_warning_markers_title" = "Mostrar marcadores de aviso de cuota";
@@ -1558,7 +1556,6 @@
 "Cache write" = "Escritura en caché";
 "Reasoning" = "Razonamiento";
 "Sessions" = "Sesiones";
-"Projects" = "Proyectos";
 "Plan metered" = "Uso del plan medido";
 "List-price equivalent" = "Equivalente de precio de lista";
 "Metered and list-price" = "Uso medido y precio de lista equivalente";
@@ -2366,6 +2363,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "La salida por turno tiene en cuenta el razonamiento, las herramientas y las esperas. No es la velocidad de generación del modelo. Primer token es la mediana del tiempo hasta el primer token del modelo, que puede ser de razonamiento. Solo se incluyen turnos completados y cronometrados correctamente. La duración del turno es la mediana del tiempo transcurrido de los turnos completados.";
+"First-token samples: %@ / %@" = "Muestras del primer token: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Detalles de rendimiento";
+"Observed turns; workload and tools affect these results." = "Turnos observados; la carga de trabajo y las herramientas influyen en estos resultados.";
+"By model and reasoning effort" = "Por modelo y esfuerzo de razonamiento";
+"Unknown model" = "Modelo desconocido";
+"Unknown reasoning effort" = "Esfuerzo de razonamiento desconocido";
+"Model first token may be reasoning, before visible answer text." = "El primer token del modelo puede ser de razonamiento, antes del texto visible de la respuesta.";
+"Speed range needs 4 completed turns." = "El intervalo de velocidad requiere 4 turnos completados.";
+"All accounts" = "Todas las cuentas";
+"Refresh all accounts" = "Actualizar todas las cuentas";
+"CodexBar follows" = "CodexBar sigue";
+"%@ accounts" = "%@ cuentas";
+"Refreshes up to %@ accounts at a time." = "Actualiza hasta %@ cuentas a la vez.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Cada cuenta tiene sus propios límites. Consultar el uso no cambia de cuenta.";
+"Local usage is shared across accounts on this Mac." = "El uso local es compartido por todas las cuentas de este Mac.";
+"Local usage" = "Uso local";
+"Local usage comes from the current Codex profile." = "El uso local procede del perfil actual de Codex.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Gasto registrado";
 "Highest recorded spend" = "Mayor gasto registrado";
@@ -2385,3 +2404,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Pega una cabecera Cookie de console.x.com que contenga auth_token y ct0.";
 
 "Open X Developer Console" = "Abrir la consola de desarrolladores de X";
+// Structured session performance layout.
+"spend_performance_first_token" = "Primer token";
+"spend_performance_output" = "Salida por turno";
+"spend_performance_duration" = "Duración del turno";
+"spend_performance_turn_count" = "%@ turnos cronometrados";
+"spend_performance_turns" = "Turnos";
+"spend_performance_model_effort" = "Modelo / esfuerzo";
+"spend_performance_p95_first_token" = "P95 del primer token";
+"spend_performance_p95_duration" = "P95 de duración del turno";
+"spend_performance_speed_range" = "Intervalo de velocidad por turno";
+"spend_performance_cached_input" = "Entrada en caché";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 muestras · insuficiente";
+"spend_performance_coverage" = "%@ / %@ turnos con datos de caché";
+"spend_performance_p95_help" = "El 95% de los turnos observados estuvieron en este valor o por debajo. Se requieren al menos 20 muestras válidas para cada métrica.";
+"spend_performance_speed_range_help" = "El 50% central de las tasas de salida por turno (P25–P75). Las tareas, el razonamiento, las herramientas y las esperas influyen en este intervalo.";
+"spend_performance_cache_help" = "Entrada en caché dividida entre la entrada total de los turnos válidos. Ponderada por los tokens de entrada, con la cobertura de las muestras indicada.";
+"spend_performance_metric_help" = "Acerca de estas observaciones";
+"merged_icon_source_title" = "Origen del icono combinado";
+"merged_icon_source_subtitle" = "Elige qué proveedor muestra el icono combinado cuando está contraído.";
+"merged_icon_source_current_selection" = "Selección actual";
+"merged_icon_source_highest_usage" = "Mayor uso";
+"merged_icon_source_frontmost_app" = "Aplicación del proveedor en primer plano";
+/* Provider menu bar color */
+"Color by provider" = "Color por proveedor";
+
+"show_most_used_provider_subtitle" = "La barra de menús muestra automáticamente el proveedor más cercano a su límite.";
+
+"show_most_used_provider_title" = "Mostrar el proveedor más usado";

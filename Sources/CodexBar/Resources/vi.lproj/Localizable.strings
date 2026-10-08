@@ -630,8 +630,6 @@
 "merged_icon_style_stacked" = "Xếp chồng";
 "merge_icon_stacked_top_provider_title" = "Dòng trên";
 "merge_icon_stacked_bottom_provider_title" = "Dòng dưới";
-"show_most_used_provider_title" = "Hiển thị Nhà cung cấp";
-"show_most_used_provider_subtitle" = "thanh menu được sử dụng nhiều nhất tự động hiển thị Nhà cung cấp gần nhất với giới hạn tốc độ của nó.";
 "display_mode_title" = "Chế độ hiển thị";
 "display_mode_subtitle" = "Chọn nội dung sẽ hiển thị trong thanh menu (Tốc độ hiển thị Mức sử dụng so với dự kiến).";
 "show_quota_warning_markers_title" = "Hiển thị Hạn mức dấu cảnh báo";
@@ -1560,7 +1558,6 @@
 "Cache write" = "Ghi bộ nhớ đệm mã thông báo";
 "Reasoning" = "Suy luận";
 "Sessions" = "Phiên";
-"Projects" = "Dự án";
 "Plan metered" = "Mức sử dụng gói có đồng hồ đo";
 "List-price equivalent" = "Giá niêm yết tương đương";
 "Metered and list-price" = "Mức sử dụng được đo lường và giá niêm yết tương đương";
@@ -2369,6 +2366,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "Đầu ra mỗi lượt tính cả suy luận, công cụ và thời gian chờ. Đây không phải tốc độ tạo token của mô hình. Token đầu tiên là trung vị thời gian đến token đầu tiên của mô hình, có thể là token suy luận. Chỉ tính các lượt hoàn tất và được đo thời gian thành công. Thời lượng mỗi lượt là trung vị thời gian thực tế của các lượt hoàn tất.";
+"First-token samples: %@ / %@" = "Mẫu token đầu tiên: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Chi tiết hiệu năng";
+"Observed turns; workload and tools affect these results." = "Các lượt hội thoại được quan sát; khối lượng công việc và công cụ ảnh hưởng đến kết quả này.";
+"By model and reasoning effort" = "Theo mô hình và mức suy luận";
+"Unknown model" = "Mô hình không xác định";
+"Unknown reasoning effort" = "Mức suy luận không xác định";
+"Model first token may be reasoning, before visible answer text." = "Token đầu tiên của mô hình có thể thuộc phần suy luận, trước khi văn bản trả lời xuất hiện.";
+"Speed range needs 4 completed turns." = "Cần 4 lượt hội thoại hoàn tất để hiển thị khoảng tốc độ.";
+"All accounts" = "Tất cả tài khoản";
+"Refresh all accounts" = "Làm mới tất cả tài khoản";
+"CodexBar follows" = "CodexBar theo dõi";
+"%@ accounts" = "%@ tài khoản";
+"Refreshes up to %@ accounts at a time." = "Làm mới tối đa %@ tài khoản cùng lúc.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Mỗi tài khoản có giới hạn riêng. Việc xem mức sử dụng không chuyển đổi tài khoản.";
+"Local usage is shared across accounts on this Mac." = "Mức sử dụng cục bộ được dùng chung giữa các tài khoản trên máy Mac này.";
+"Local usage" = "Mức sử dụng cục bộ";
+"Local usage comes from the current Codex profile." = "Mức sử dụng cục bộ được lấy từ hồ sơ Codex hiện tại.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Chi tiêu đã ghi nhận";
 "Highest recorded spend" = "Chi tiêu đã ghi nhận cao nhất";
@@ -2388,3 +2407,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Dán tiêu đề Cookie từ console.x.com có chứa auth_token và ct0.";
 
 "Open X Developer Console" = "Mở bảng điều khiển nhà phát triển X";
+// Structured session performance layout.
+"spend_performance_first_token" = "Token đầu tiên";
+"spend_performance_output" = "Đầu ra mỗi lượt";
+"spend_performance_duration" = "Thời lượng mỗi lượt";
+"spend_performance_turn_count" = "%@ lượt đã đo thời gian";
+"spend_performance_turns" = "Lượt hội thoại";
+"spend_performance_model_effort" = "Mô hình / mức suy luận";
+"spend_performance_p95_first_token" = "P95 thời gian đến token đầu tiên";
+"spend_performance_p95_duration" = "P95 thời lượng mỗi lượt";
+"spend_performance_speed_range" = "Khoảng tốc độ mỗi lượt";
+"spend_performance_cached_input" = "Đầu vào trong bộ nhớ đệm";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 mẫu · chưa đủ";
+"spend_performance_coverage" = "%@ / %@ lượt có dữ liệu bộ nhớ đệm";
+"spend_performance_p95_help" = "95% số lượt được quan sát có giá trị nhỏ hơn hoặc bằng giá trị này. Mỗi chỉ số cần ít nhất 20 mẫu hợp lệ.";
+"spend_performance_speed_range_help" = "50% ở giữa của các tốc độ đầu ra theo từng lượt (P25–P75). Tác vụ, suy luận, công cụ và thời gian chờ ảnh hưởng đến khoảng này.";
+"spend_performance_cache_help" = "Lượng đầu vào được lưu trong bộ nhớ đệm chia cho tổng đầu vào của các lượt đủ điều kiện. Được tính trọng số theo số token đầu vào, kèm phạm vi bao phủ của mẫu.";
+"spend_performance_metric_help" = "Về các số liệu quan sát này";
+"merged_icon_source_title" = "Nguồn biểu tượng kết hợp";
+"merged_icon_source_subtitle" = "Chọn nhà cung cấp hiển thị trên biểu tượng kết hợp khi thu gọn.";
+"merged_icon_source_current_selection" = "Lựa chọn hiện tại";
+"merged_icon_source_highest_usage" = "Mức sử dụng cao nhất";
+"merged_icon_source_frontmost_app" = "Ứng dụng nhà cung cấp ở phía trước";
+/* Provider menu bar color */
+"Color by provider" = "Màu theo nhà cung cấp";
+
+"show_most_used_provider_subtitle" = "thanh menu được sử dụng nhiều nhất tự động hiển thị Nhà cung cấp gần nhất với giới hạn tốc độ của nó.";
+
+"show_most_used_provider_title" = "Hiển thị Nhà cung cấp";

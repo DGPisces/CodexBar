@@ -634,8 +634,6 @@
 "merged_icon_style_stacked" = "Gestapeld";
 "merge_icon_stacked_top_provider_title" = "Bovenste rij";
 "merge_icon_stacked_bottom_provider_title" = "Onderste rij";
-"show_most_used_provider_title" = "Toon meest gebruikte provider";
-"show_most_used_provider_subtitle" = "De menubalk toont automatisch de aanbieder die het dichtst bij de tarieflimiet zit.";
 "display_mode_title" = "Weergavemodus";
 "display_mode_subtitle" = "Kies wat u wilt weergeven in de menubalk (Tempo toont gebruik vs. verwacht).";
 "show_quota_warning_markers_title" = "Toon waarschuwingsmarkeringen voor quota";
@@ -1559,7 +1557,6 @@
 "Cache write" = "Cache-schrijven tokens";
 "Reasoning" = "Redeneren";
 "Sessions" = "Sessies";
-"Projects" = "Projecten";
 "Plan metered" = "Gemeten abonnementsgebruik";
 "List-price equivalent" = "Equivalent van catalogusprijs";
 "Metered and list-price" = "Gemeten gebruik en equivalent van de catalogusprijs";
@@ -2367,6 +2364,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "Bij de uitvoer per gespreksbeurt tellen redeneren, tools en wachttijden mee. Dit is niet de generatiesnelheid van het model. Eerste token is de mediane tijd tot het eerste modeltoken, dat deel kan uitmaken van het redeneren. Alleen voltooide gespreksbeurten met een geslaagde tijdmeting worden meegenomen. De duur van een gespreksbeurt is de mediane verstreken tijd van voltooide gespreksbeurten.";
+"First-token samples: %@ / %@" = "Metingen eerste token: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Prestatiedetails";
+"Observed turns; workload and tools affect these results." = "Geobserveerde gespreksbeurten; werklast en tools beïnvloeden deze resultaten.";
+"By model and reasoning effort" = "Per model en denkinspanning";
+"Unknown model" = "Onbekend model";
+"Unknown reasoning effort" = "Onbekende denkinspanning";
+"Model first token may be reasoning, before visible answer text." = "Het eerste modeltoken kan deel uitmaken van het redeneren, vóór zichtbare antwoordtekst.";
+"Speed range needs 4 completed turns." = "Het snelheidsbereik vereist 4 voltooide gespreksbeurten.";
+"All accounts" = "Alle accounts";
+"Refresh all accounts" = "Alle accounts vernieuwen";
+"CodexBar follows" = "CodexBar volgt";
+"%@ accounts" = "Accounts: %@";
+"Refreshes up to %@ accounts at a time." = "Vernieuwt maximaal %@ accounts tegelijk.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Elk account heeft eigen limieten. Gebruik bekijken wisselt niet van account.";
+"Local usage is shared across accounts on this Mac." = "Lokaal gebruik wordt gedeeld door de accounts op deze Mac.";
+"Local usage" = "Lokaal gebruik";
+"Local usage comes from the current Codex profile." = "Lokaal gebruik is afkomstig uit het huidige Codex-profiel.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Geregistreerde uitgaven";
 "Highest recorded spend" = "Hoogste geregistreerde uitgaven";
@@ -2386,3 +2405,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Plak een Cookie-header van console.x.com met auth_token en ct0.";
 
 "Open X Developer Console" = "X-ontwikkelaarsconsole openen";
+// Structured session performance layout.
+"spend_performance_first_token" = "Eerste token";
+"spend_performance_output" = "Uitvoer per gespreksbeurt";
+"spend_performance_duration" = "Duur van gespreksbeurt";
+"spend_performance_turn_count" = "%@ gespreksbeurten met tijdmeting";
+"spend_performance_turns" = "Gespreksbeurten";
+"spend_performance_model_effort" = "Model / denkinspanning";
+"spend_performance_p95_first_token" = "P95 eerste token";
+"spend_performance_p95_duration" = "P95-duur van gespreksbeurt";
+"spend_performance_speed_range" = "Snelheidsbereik van gespreksbeurten";
+"spend_performance_cached_input" = "Gecachte invoer";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 metingen · onvoldoende";
+"spend_performance_coverage" = "%@ / %@ gespreksbeurten met cachegegevens";
+"spend_performance_p95_help" = "95% van de geobserveerde gespreksbeurten lag op of onder deze waarde. Voor elke metriek zijn minimaal 20 geldige metingen vereist.";
+"spend_performance_speed_range_help" = "De middelste 50% van de uitvoersnelheden per gespreksbeurt (P25–P75). Taken, redeneren, tools en wachttijden beïnvloeden dit bereik.";
+"spend_performance_cache_help" = "Gecachte invoer gedeeld door de totale invoer van de gespreksbeurten die in aanmerking komen. Gewogen op basis van invoertokens, met vermelding van de dekking van de metingen.";
+"spend_performance_metric_help" = "Over deze waarnemingen";
+"merged_icon_source_title" = "Bron van gecombineerd pictogram";
+"merged_icon_source_subtitle" = "Kies welke provider het ingeklapte gecombineerde pictogram toont.";
+"merged_icon_source_current_selection" = "Huidige selectie";
+"merged_icon_source_highest_usage" = "Hoogste gebruik";
+"merged_icon_source_frontmost_app" = "Provider-app op de voorgrond";
+/* Provider menu bar color */
+"Color by provider" = "Kleur per provider";
+
+"show_most_used_provider_subtitle" = "De menubalk toont automatisch de aanbieder die het dichtst bij de tarieflimiet zit.";
+
+"show_most_used_provider_title" = "Toon meest gebruikte provider";

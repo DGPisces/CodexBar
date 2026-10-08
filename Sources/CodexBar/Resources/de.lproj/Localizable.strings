@@ -1560,7 +1560,6 @@
 "Cache write" = "Cache-Schreiben";
 "Reasoning" = "Reasoning";
 "Sessions" = "Sitzungen";
-"Projects" = "Projekte";
 "Plan metered" = "Im Plan gemessen";
 "List-price equivalent" = "Listenpreisäquivalent";
 "Metered and list-price" = "Gemessen und Listenpreis";
@@ -2368,6 +2367,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "Die Ausgabe pro Gesprächsrunde berücksichtigt Reasoning, Werkzeuge und Wartezeiten. Sie entspricht nicht der Generierungsgeschwindigkeit des Modells. Erstes Token ist die mediane Zeit bis zum ersten Token des Modells, das zum Reasoning gehören kann. Es werden nur abgeschlossene Gesprächsrunden mit erfolgreicher Zeitmessung berücksichtigt. Die Dauer pro Gesprächsrunde ist der Median der verstrichenen Zeit abgeschlossener Gesprächsrunden.";
+"First-token samples: %@ / %@" = "Messwerte für das erste Token: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Leistungsdetails";
+"Observed turns; workload and tools affect these results." = "Beobachtete Gesprächsrunden; Arbeitslast und Werkzeuge beeinflussen diese Ergebnisse.";
+"By model and reasoning effort" = "Nach Modell und Reasoning-Aufwand";
+"Unknown model" = "Unbekanntes Modell";
+"Unknown reasoning effort" = "Unbekannter Reasoning-Aufwand";
+"Model first token may be reasoning, before visible answer text." = "Das erste Token des Modells kann zum Reasoning gehören, noch bevor sichtbarer Antworttext erscheint.";
+"Speed range needs 4 completed turns." = "Der Geschwindigkeitsbereich erfordert 4 abgeschlossene Gesprächsrunden.";
+"All accounts" = "Alle Konten";
+"Refresh all accounts" = "Alle Konten aktualisieren";
+"CodexBar follows" = "CodexBar folgt";
+"%@ accounts" = "%@ Konten";
+"Refreshes up to %@ accounts at a time." = "Aktualisiert bis zu %@ Konten gleichzeitig.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Jedes Konto hat eigene Limits. Das Anzeigen der Nutzung wechselt nicht das Konto.";
+"Local usage is shared across accounts on this Mac." = "Die lokale Nutzung gilt für alle Konten auf diesem Mac gemeinsam.";
+"Local usage" = "Lokale Nutzung";
+"Local usage comes from the current Codex profile." = "Die lokale Nutzung stammt aus dem aktuellen Codex-Profil.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Erfasste Ausgaben";
 "Highest recorded spend" = "Höchste erfasste Ausgaben";
@@ -2387,3 +2408,31 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Einen Cookie-Header von console.x.com mit auth_token und ct0 einfügen.";
 
 "Open X Developer Console" = "X-Entwicklerkonsole öffnen";
+// Structured session performance layout.
+"spend_performance_first_token" = "Erstes Token";
+"spend_performance_output" = "Ausgabe pro Gesprächsrunde";
+"spend_performance_duration" = "Dauer pro Gesprächsrunde";
+"spend_performance_turn_count" = "%@ zeitlich erfasste Gesprächsrunden";
+"spend_performance_turns" = "Gesprächsrunden";
+"spend_performance_model_effort" = "Modell / Aufwand";
+"spend_performance_p95_first_token" = "P95 bis zum ersten Token";
+"spend_performance_p95_duration" = "P95 der Gesprächsrundendauer";
+"spend_performance_speed_range" = "Geschwindigkeitsbereich pro Gesprächsrunde";
+"spend_performance_cached_input" = "Zwischengespeicherte Eingabe";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 Messwerte · nicht ausreichend";
+"spend_performance_coverage" = "%@ / %@ Gesprächsrunden mit Cache-Daten";
+"spend_performance_p95_help" = "95% der beobachteten Gesprächsrunden lagen bei oder unter diesem Wert. Für jede Kennzahl sind mindestens 20 gültige Messwerte erforderlich.";
+"spend_performance_speed_range_help" = "Mittlere 50% der Ausgaberaten pro Gesprächsrunde (P25–P75). Aufgaben, Reasoning, Werkzeuge und Wartezeiten beeinflussen diesen Bereich.";
+"spend_performance_cache_help" = "Zwischengespeicherte Eingabe geteilt durch die gesamte Eingabe aller berücksichtigten Gesprächsrunden. Gewichtet nach Eingabetokens; der Anteil der erfassten Runden wird angezeigt.";
+"spend_performance_metric_help" = "Zu diesen Beobachtungen";
+"merged_icon_source_title" = "Quelle des kombinierten Symbols";
+"merged_icon_source_subtitle" = "Wählen Sie, welchen Anbieter das eingeklappte kombinierte Symbol anzeigt.";
+"merged_icon_source_current_selection" = "Aktuelle Auswahl";
+"merged_icon_source_highest_usage" = "Höchste Nutzung";
+"merged_icon_source_frontmost_app" = "Anbieter-App im Vordergrund";
+/* Provider menu bar color */
+"Color by provider" = "Nach Anbieter einfärben";

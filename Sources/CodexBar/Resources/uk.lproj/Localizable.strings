@@ -634,8 +634,6 @@
 "merged_icon_style_stacked" = "Стос";
 "merge_icon_stacked_top_provider_title" = "Верхній рядок";
 "merge_icon_stacked_bottom_provider_title" = "Нижній рядок";
-"show_most_used_provider_title" = "Показати постачальника, який найчастіше використовується";
-"show_most_used_provider_subtitle" = "Рядок меню автоматично показує постачальника, який найближче до ліміту.";
 "display_mode_title" = "Режим відображення";
 "display_mode_subtitle" = "Виберіть, що відображати на панелі меню (Pace показує використання порівняно з очікуваним).";
 "show_quota_warning_markers_title" = "Показати маркери попередження про квоти";
@@ -1559,7 +1557,6 @@
 "Cache write" = "Кеш-запис жетони";
 "Reasoning" = "Міркування";
 "Sessions" = "Сеанси";
-"Projects" = "Проекти";
 "Plan metered" = "Використання плану з виміром";
 "List-price equivalent" = "Еквівалент прейскурантної ціни";
 "Metered and list-price" = "Виміряне використання та еквівалент роздрібної ціни";
@@ -2368,6 +2365,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "Під час розрахунку виводу за хід діалогу враховуються міркування, інструменти й очікування. Це не швидкість генерації моделі. Перший токен — медіанний час до першого токена моделі, який може стосуватися міркування. Враховуються лише завершені ходи діалогу з коректним вимірюванням часу. Тривалість ходу діалогу — медіанний час, що минув за завершені ходи.";
+"First-token samples: %@ / %@" = "Вимірювання першого токена: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Докладніше про продуктивність";
+"Observed turns; workload and tools affect these results." = "Спостережені ходи діалогу; навантаження та інструменти впливають на ці результати.";
+"By model and reasoning effort" = "За моделлю та рівнем міркування";
+"Unknown model" = "Невідома модель";
+"Unknown reasoning effort" = "Невідомий рівень міркування";
+"Model first token may be reasoning, before visible answer text." = "Перший токен моделі може стосуватися міркування й передувати видимому тексту відповіді.";
+"Speed range needs 4 completed turns." = "Для діапазону швидкості потрібні 4 завершені ходи діалогу.";
+"All accounts" = "Усі облікові записи";
+"Refresh all accounts" = "Оновити всі облікові записи";
+"CodexBar follows" = "CodexBar відстежує";
+"%@ accounts" = "Облікових записів: %@";
+"Refreshes up to %@ accounts at a time." = "Оновлює до %@ облікових записів одночасно.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Кожен обліковий запис має власні ліміти. Перегляд використання не перемикає облікові записи.";
+"Local usage is shared across accounts on this Mac." = "Локальне використання є спільним для облікових записів на цьому Mac.";
+"Local usage" = "Локальне використання";
+"Local usage comes from the current Codex profile." = "Дані про локальне використання надходять із поточного профілю Codex.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Зафіксовані витрати";
 "Highest recorded spend" = "Найвищі зафіксовані витрати";
@@ -2387,3 +2406,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Вставте заголовок Cookie з console.x.com, що містить auth_token і ct0.";
 
 "Open X Developer Console" = "Відкрити консоль розробника X";
+// Structured session performance layout.
+"spend_performance_first_token" = "Перший токен";
+"spend_performance_output" = "Вивід за хід діалогу";
+"spend_performance_duration" = "Тривалість ходу діалогу";
+"spend_performance_turn_count" = "Ходів діалогу з вимірюванням часу: %@";
+"spend_performance_turns" = "Ходи діалогу";
+"spend_performance_model_effort" = "Модель / рівень міркування";
+"spend_performance_p95_first_token" = "P95 першого токена";
+"spend_performance_p95_duration" = "P95 тривалості ходу діалогу";
+"spend_performance_speed_range" = "Діапазон швидкості ходів діалогу";
+"spend_performance_cached_input" = "Кешовані вхідні дані";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 вимірювань · недостатньо";
+"spend_performance_coverage" = "%@ / %@ ходів діалогу з даними про кеш";
+"spend_performance_p95_help" = "95% спостережених ходів діалогу мали це значення або нижче. Для кожного показника потрібно щонайменше 20 коректних вимірювань.";
+"spend_performance_speed_range_help" = "Центральні 50% значень швидкості виводу за хід діалогу (P25–P75). Завдання, міркування, інструменти й очікування впливають на цей діапазон.";
+"spend_performance_cache_help" = "Кешовані вхідні дані, поділені на всі вхідні дані за придатними ходами діалогу. Значення зважено за вхідними токенами; показано охоплення вимірювань.";
+"spend_performance_metric_help" = "Про ці спостереження";
+"merged_icon_source_title" = "Джерело об’єднаної іконки";
+"merged_icon_source_subtitle" = "Виберіть провайдера для згорнутої об’єднаної іконки.";
+"merged_icon_source_current_selection" = "Поточний вибір";
+"merged_icon_source_highest_usage" = "Найбільше використання";
+"merged_icon_source_frontmost_app" = "Застосунок провайдера на передньому плані";
+/* Provider menu bar color */
+"Color by provider" = "Колір за провайдером";
+
+"show_most_used_provider_subtitle" = "Рядок меню автоматично показує постачальника, який найближче до ліміту.";
+
+"show_most_used_provider_title" = "Показати постачальника, який найчастіше використовується";

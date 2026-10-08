@@ -617,8 +617,6 @@
 "merged_icon_style_stacked" = "Apilat";
 "merge_icon_stacked_top_provider_title" = "Fila superior";
 "merge_icon_stacked_bottom_provider_title" = "Fila inferior";
-"show_most_used_provider_title" = "Mostreu el proveïdor més utilitzat";
-"show_most_used_provider_subtitle" = "La barra de menús mostra automàticament el proveïdor més a prop del seu límit.";
 "display_mode_title" = "Mode de visualització";
 "display_mode_subtitle" = "Trieu què es mostra a la barra de menús (Ritme mostra l'ús respecte al previst).";
 "show_quota_warning_markers_title" = "Mostreu els marcadors d'avís de quota";
@@ -2371,6 +2369,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "La sortida per torn té en compte el raonament, les eines i les esperes. No és la velocitat de generació del model. Primer token és la mediana del temps fins al primer token del model, que pot ser de raonament. Només s’hi inclouen torns completats i cronometrats correctament. La durada del torn és la mediana del temps transcorregut dels torns completats.";
+"First-token samples: %@ / %@" = "Mostres del primer token: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Detalls del rendiment";
+"Observed turns; workload and tools affect these results." = "Torns observats; la càrrega de treball i les eines influeixen en aquests resultats.";
+"By model and reasoning effort" = "Per model i esforç de raonament";
+"Unknown model" = "Model desconegut";
+"Unknown reasoning effort" = "Esforç de raonament desconegut";
+"Model first token may be reasoning, before visible answer text." = "El primer token del model pot ser de raonament, abans del text visible de la resposta.";
+"Speed range needs 4 completed turns." = "L’interval de velocitat requereix 4 torns completats.";
+"All accounts" = "Tots els comptes";
+"Refresh all accounts" = "Actualitza tots els comptes";
+"CodexBar follows" = "CodexBar segueix";
+"%@ accounts" = "%@ comptes";
+"Refreshes up to %@ accounts at a time." = "Actualitza fins a %@ comptes alhora.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Cada compte té els seus propis límits. Consultar l’ús no canvia de compte.";
+"Local usage is shared across accounts on this Mac." = "L’ús local és compartit per tots els comptes d’aquest Mac.";
+"Local usage" = "Ús local";
+"Local usage comes from the current Codex profile." = "L’ús local prové del perfil actual de Codex.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Despesa registrada";
 "Highest recorded spend" = "Despesa registrada màxima";
@@ -2390,3 +2410,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Enganxa una capçalera Cookie de console.x.com que contingui auth_token i ct0.";
 
 "Open X Developer Console" = "Obre la consola de desenvolupadors de X";
+// Structured session performance layout.
+"spend_performance_first_token" = "Primer token";
+"spend_performance_output" = "Sortida per torn";
+"spend_performance_duration" = "Durada del torn";
+"spend_performance_turn_count" = "%@ torns cronometrats";
+"spend_performance_turns" = "Torns";
+"spend_performance_model_effort" = "Model / esforç";
+"spend_performance_p95_first_token" = "P95 del primer token";
+"spend_performance_p95_duration" = "P95 de la durada del torn";
+"spend_performance_speed_range" = "Interval de velocitat per torn";
+"spend_performance_cached_input" = "Entrada en memòria cau";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 mostres · insuficient";
+"spend_performance_coverage" = "%@ / %@ torns amb dades de memòria cau";
+"spend_performance_p95_help" = "El 95% dels torns observats es trobaven en aquest valor o per sota. Calen almenys 20 mostres vàlides per a cada mètrica.";
+"spend_performance_speed_range_help" = "El 50% central de les taxes de sortida per torn (P25–P75). Les tasques, el raonament, les eines i les esperes influeixen en aquest interval.";
+"spend_performance_cache_help" = "Entrada en memòria cau dividida per l’entrada total dels torns vàlids. Ponderada pels tokens d’entrada, amb la cobertura de les mostres indicada.";
+"spend_performance_metric_help" = "Sobre aquestes observacions";
+"merged_icon_source_title" = "Origen de la icona combinada";
+"merged_icon_source_subtitle" = "Trieu quin proveïdor mostra la icona combinada quan està plegada.";
+"merged_icon_source_current_selection" = "Selecció actual";
+"merged_icon_source_highest_usage" = "Ús més alt";
+"merged_icon_source_frontmost_app" = "Aplicació del proveïdor en primer pla";
+/* Provider menu bar color */
+"Color by provider" = "Color per proveïdor";
+
+"show_most_used_provider_subtitle" = "La barra de menús mostra automàticament el proveïdor més a prop del seu límit.";
+
+"show_most_used_provider_title" = "Mostreu el proveïdor més utilitzat";

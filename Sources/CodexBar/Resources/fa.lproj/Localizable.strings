@@ -46,7 +46,7 @@
 "API tokens" = "توکن های API";
 "About" = "درباره";
 "Account" = "حساب";
-"Accounts" = "گزارش ها";
+"Accounts" = "حساب‌ها";
 "Accounts subtitle" = "زیرنویس حساب ها";
 "Active" = "فعال";
 "Add" = "افزودن";
@@ -640,8 +640,6 @@
 "merged_icon_style_stacked" = "پشته‌ای";
 "merge_icon_stacked_top_provider_title" = "ردیف بالا";
 "merge_icon_stacked_bottom_provider_title" = "ردیف پایین";
-"show_most_used_provider_title" = "نمایش ارائه دهنده پرکاربرد";
-"show_most_used_provider_subtitle" = "نوار منو به طور خودکار ارائه دهنده ای را نشان می دهد که به محدودیت نرخ خود نزدیک تر است.";
 "display_mode_title" = "حالت نمایش";
 "display_mode_subtitle" = "انتخاب کنید که در نوار منو چه چیزی نمایش داده شود (Pace میزان مصرف در مقابل مورد انتظار را نشان می دهد).";
 "show_quota_warning_markers_title" = "نشانگرهای هشدار سهمیه را نشان دهید";
@@ -1563,7 +1561,6 @@
 "Cache write" = "حافظه پنهان توکن ها را بنویسید";
 "Reasoning" = "استدلال";
 "Sessions" = "جلسات";
-"Projects" = "پروژه ها";
 "Plan metered" = "استفاده از طرح اندازه گیری شده";
 "List-price equivalent" = "معادل فهرست قیمت";
 "Metered and list-price" = "استفاده اندازه‌گیری شده و معادل فهرست قیمت";
@@ -2372,6 +2369,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "معیار خروجی نوبت گفت‌وگو، استدلال، ابزارها و زمان انتظار را در بر می‌گیرد. این معیار سرعت تولید مدل نیست. معیار اولین توکن، میانهٔ زمان تا اولین توکن مدل است که ممکن است بخشی از استدلال باشد. فقط نوبت‌های کامل که زمان آن‌ها با موفقیت اندازه‌گیری شده است لحاظ می‌شوند. مدت نوبت، میانهٔ زمان سپری‌شدهٔ نوبت‌های کامل است.";
+"First-token samples: %@ / %@" = "نمونه‌های اولین توکن: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "جزئیات عملکرد";
+"Observed turns; workload and tools affect these results." = "نوبت‌های گفت‌وگوی مشاهده‌شده؛ حجم کار و ابزارها بر این نتایج تأثیر می‌گذارند.";
+"By model and reasoning effort" = "بر اساس مدل و میزان تلاش استدلال";
+"Unknown model" = "مدل نامشخص";
+"Unknown reasoning effort" = "میزان تلاش استدلال نامشخص";
+"Model first token may be reasoning, before visible answer text." = "اولین توکن مدل ممکن است بخشی از استدلال باشد و پیش از متن قابل‌مشاهدهٔ پاسخ تولید شود.";
+"Speed range needs 4 completed turns." = "بازهٔ سرعت به 4 نوبت گفت‌وگوی کامل نیاز دارد.";
+"All accounts" = "همهٔ حساب‌ها";
+"Refresh all accounts" = "تازه‌سازی همهٔ حساب‌ها";
+"CodexBar follows" = "دنبال‌شده توسط CodexBar";
+"%@ accounts" = "%@ حساب";
+"Refreshes up to %@ accounts at a time." = "در هر نوبت حداکثر %@ حساب را تازه‌سازی می‌کند.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "هر حساب محدودیت‌های خودش را دارد. مشاهدهٔ میزان مصرف، حساب را تغییر نمی‌دهد.";
+"Local usage is shared across accounts on this Mac." = "مصرف محلی بین حساب‌های این Mac مشترک است.";
+"Local usage" = "مصرف محلی";
+"Local usage comes from the current Codex profile." = "داده‌های مصرف محلی از نمایهٔ فعلی Codex به دست می‌آید.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "هزینه ثبت‌شده";
 "Highest recorded spend" = "بیشترین هزینه ثبت‌شده";
@@ -2391,3 +2410,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "سرآیند Cookie از console.x.com شامل auth_token و ct0 را جای‌گذاری کنید.";
 
 "Open X Developer Console" = "باز کردن کنسول توسعه‌دهندگان X";
+// Structured session performance layout.
+"spend_performance_first_token" = "اولین توکن";
+"spend_performance_output" = "خروجی نوبت گفت‌وگو";
+"spend_performance_duration" = "مدت نوبت گفت‌وگو";
+"spend_performance_turn_count" = "%@ نوبت گفت‌وگوی زمان‌سنجی‌شده";
+"spend_performance_turns" = "نوبت‌های گفت‌وگو";
+"spend_performance_model_effort" = "مدل / میزان تلاش";
+"spend_performance_p95_first_token" = "صدک 95 زمان اولین توکن";
+"spend_performance_p95_duration" = "صدک 95 مدت نوبت";
+"spend_performance_speed_range" = "بازهٔ سرعت نوبت گفت‌وگو";
+"spend_performance_cached_input" = "ورودی ذخیره‌شده در حافظهٔ پنهان";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 نمونه · ناکافی";
+"spend_performance_coverage" = "%@ / %@ نوبت دارای دادهٔ حافظهٔ پنهان";
+"spend_performance_p95_help" = "نتایج 95% از نوبت‌های گفت‌وگوی مشاهده‌شده برابر با این مقدار یا کمتر بودند. برای هر معیار حداقل 20 نمونهٔ معتبر لازم است.";
+"spend_performance_speed_range_help" = "50% میانی نرخ‌های خروجی هر نوبت گفت‌وگو (P25–P75). کارها، استدلال، ابزارها و زمان‌های انتظار بر این بازه تأثیر می‌گذارند.";
+"spend_performance_cache_help" = "ورودی ذخیره‌شده در حافظهٔ پنهان تقسیم بر کل ورودی در نوبت‌های واجد شرایط. نتیجه بر اساس تعداد توکن‌های ورودی وزن‌دهی می‌شود و پوشش نمونه‌ها نیز نمایش داده می‌شود.";
+"spend_performance_metric_help" = "دربارهٔ این مشاهدات";
+"merged_icon_source_title" = "منبع نماد ترکیبی";
+"merged_icon_source_subtitle" = "انتخاب کنید نماد ترکیبی در حالت جمع‌شده کدام ارائه‌دهنده را نشان دهد.";
+"merged_icon_source_current_selection" = "انتخاب فعلی";
+"merged_icon_source_highest_usage" = "بیشترین استفاده";
+"merged_icon_source_frontmost_app" = "برنامه ارائه‌دهنده در پیش‌زمینه";
+/* Provider menu bar color */
+"Color by provider" = "رنگ بر اساس ارائه‌دهنده";
+
+"show_most_used_provider_subtitle" = "نوار منو به طور خودکار ارائه دهنده ای را نشان می دهد که به محدودیت نرخ خود نزدیک تر است.";
+
+"show_most_used_provider_title" = "نمایش ارائه دهنده پرکاربرد";

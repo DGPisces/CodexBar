@@ -4,6 +4,76 @@ import Testing
 
 struct LocalizationLanguageCatalogTests {
     @Test
+    func `Persian and Arabic account labels describe user accounts`() {
+        CodexBarLocalizationOverride.$appLanguage.withValue("fa") {
+            #expect(L("Accounts") == "حساب\u{200C}ها")
+        }
+        CodexBarLocalizationOverride.$appLanguage.withValue("ar") {
+            #expect(L("Google accounts") == "حسابات Google")
+        }
+    }
+
+    @Test
+    func `account overview and turn performance copy is translated in every catalog`() throws {
+        let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
+            .deletingLastPathComponent().deletingLastPathComponent()
+        let resources = root.appendingPathComponent("Sources/CodexBar/Resources")
+        let english = try #require(NSDictionary(contentsOf: resources
+                .appendingPathComponent("en.lproj/Localizable.strings")) as? [String: String])
+        let keys = [
+            "%@ accounts",
+            "All accounts",
+            "By model and reasoning effort",
+            "CodexBar follows",
+            "Color by provider",
+            "Each account has its own limits. Viewing usage does not switch accounts.",
+            "First-token samples: %@ / %@",
+            "Local usage",
+            "Local usage comes from the current Codex profile.",
+            "Local usage is shared across accounts on this Mac.",
+            "Model first token may be reasoning, before visible answer text.",
+            "Observed turns; workload and tools affect these results.",
+            "Performance details",
+            "Refresh all accounts",
+            "Refreshes up to %@ accounts at a time.",
+            "Speed range needs 4 completed turns.",
+            "Unknown model",
+            "Unknown reasoning effort",
+            "merged_icon_source_current_selection",
+            "merged_icon_source_frontmost_app",
+            "merged_icon_source_highest_usage",
+            "merged_icon_source_subtitle",
+            "merged_icon_source_title",
+            "spend_performance_cache_help",
+            "spend_performance_cached_input",
+            "spend_performance_coverage",
+            "spend_performance_duration",
+            "spend_performance_first_token",
+            "spend_performance_metric_help",
+            "spend_performance_model_effort",
+            "spend_performance_output",
+            "spend_performance_p95_duration",
+            "spend_performance_p95_first_token",
+            "spend_performance_p95_help",
+            "spend_performance_p95_samples",
+            "spend_performance_speed_range",
+            "spend_performance_speed_range_help",
+            "spend_performance_turn_count",
+            "spend_performance_turns",
+            "spend_turn_performance_help",
+        ]
+        for language in AppLanguage.allCases where language != .system && language != .english {
+            let url = resources.appendingPathComponent("\(language.rawValue).lproj/Localizable.strings")
+            let catalog = try #require(NSDictionary(contentsOf: url) as? [String: String])
+            for key in keys {
+                let phrase = try #require(catalog[key], "Missing \(language.rawValue): \(key)")
+                #expect(!phrase.isEmpty)
+                #expect(phrase != english[key], "Untranslated \(language.rawValue): \(key)")
+            }
+        }
+    }
+
+    @Test
     func `statistics time zone controls are translated in every catalog`() throws {
         let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
             .deletingLastPathComponent().deletingLastPathComponent()
@@ -41,6 +111,27 @@ struct LocalizationLanguageCatalogTests {
             #expect(phrase.components(separatedBy: "%@").count == 2)
             #expect(phrase.count(where: { $0 == "%" }) == 1)
             if url.lastPathComponent != "en.lproj" { #expect(phrase != key) }
+        }
+    }
+
+    @Test
+    func `provider color menu bar controls are translated in every catalog`() throws {
+        let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
+            .deletingLastPathComponent().deletingLastPathComponent()
+        let resources = root.appendingPathComponent("Sources/CodexBar/Resources")
+        let catalogs = try FileManager.default.contentsOfDirectory(at: resources, includingPropertiesForKeys: nil)
+            .filter { $0.pathExtension == "lproj" }
+        #expect(catalogs.count == AppLanguage.allCases.count - 1)
+        for url in catalogs {
+            let catalog = try #require(NSDictionary(contentsOf: url.appendingPathComponent("Localizable.strings"))
+                as? [String: String])
+            for key in [
+                "Color by provider",
+            ] {
+                let phrase = try #require(catalog[key], "Missing phrase in \(url.lastPathComponent)")
+                #expect(!phrase.isEmpty)
+                if url.lastPathComponent != "en.lproj" { #expect(phrase != key) }
+            }
         }
     }
 
@@ -736,6 +827,11 @@ struct LocalizationLanguageCatalogTests {
             "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
             "~/.local/bin/cswap",
             "~/Library/Application Support/JetBrains/IntelliJIdea2024.3",
+            // Measurement units and numeric formats are shared with English.
+            "spend_performance_percent",
+            "spend_performance_rate",
+            "spend_performance_rate_range",
+            "spend_performance_seconds",
         ]
         let unchanged = Set(english.keys.filter { italian[$0] == english[$0] })
         #expect(unchanged == intentionallyUnchanged)
@@ -754,7 +850,9 @@ struct LocalizationLanguageCatalogTests {
             arguments: ["Codex", "settimanale"])
         #expect(title == "Quota settimanale di Codex quasi esaurita")
     }
+}
 
+extension LocalizationLanguageCatalogTests {
     @Test
     func `indonesian localization matches English catalog and preserves format placeholders`() throws {
         let root = URL(fileURLWithPath: #filePath)

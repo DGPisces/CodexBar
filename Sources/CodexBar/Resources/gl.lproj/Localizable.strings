@@ -608,8 +608,6 @@
 "merged_icon_style_stacked" = "Amoreado";
 "merge_icon_stacked_top_provider_title" = "Fila superior";
 "merge_icon_stacked_bottom_provider_title" = "Fila inferior";
-"show_most_used_provider_title" = "Amosar o provedor máis usado";
-"show_most_used_provider_subtitle" = "A barra de menús amosa automaticamente o provedor máis próximo ao seu límite.";
 "display_mode_title" = "Modo de visualización";
 "display_mode_subtitle" = "Escolle que amosar na barra de menús (Ritmo amosa o uso fronte ao previsto).";
 "show_quota_warning_markers_title" = "Amosar os marcadores de aviso de cota";
@@ -1559,7 +1557,6 @@
 "Cache write" = "Escribir en caché tokens";
 "Reasoning" = "Razoamento";
 "Sessions" = "Sesións";
-"Projects" = "Proxectos";
 "Plan metered" = "Uso do plan medido";
 "List-price equivalent" = "Equivalente ao prezo de lista";
 "Metered and list-price" = "Uso medido e equivalente ao prezo de lista";
@@ -2367,6 +2364,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "A saída por quenda ten en conta o razoamento, as ferramentas e as esperas. Non é a velocidade de xeración do modelo. Primeiro token é a mediana do tempo ata o primeiro token do modelo, que pode ser de razoamento. Só se inclúen quendas completadas e cronometradas correctamente. A duración da quenda é a mediana do tempo transcorrido das quendas completadas.";
+"First-token samples: %@ / %@" = "Mostras do primeiro token: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Detalles do rendemento";
+"Observed turns; workload and tools affect these results." = "Quendas observadas; a carga de traballo e as ferramentas inflúen nestes resultados.";
+"By model and reasoning effort" = "Por modelo e esforzo de razoamento";
+"Unknown model" = "Modelo descoñecido";
+"Unknown reasoning effort" = "Esforzo de razoamento descoñecido";
+"Model first token may be reasoning, before visible answer text." = "O primeiro token do modelo pode ser de razoamento, antes do texto visible da resposta.";
+"Speed range needs 4 completed turns." = "O intervalo de velocidade require 4 quendas completadas.";
+"All accounts" = "Todas as contas";
+"Refresh all accounts" = "Actualizar todas as contas";
+"CodexBar follows" = "CodexBar segue";
+"%@ accounts" = "%@ contas";
+"Refreshes up to %@ accounts at a time." = "Actualiza ata %@ contas á vez.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Cada conta ten os seus propios límites. Consultar o uso non cambia de conta.";
+"Local usage is shared across accounts on this Mac." = "O uso local é compartido por todas as contas deste Mac.";
+"Local usage" = "Uso local";
+"Local usage comes from the current Codex profile." = "O uso local procede do perfil actual de Codex.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Gasto rexistrado";
 "Highest recorded spend" = "Maior gasto rexistrado";
@@ -2386,3 +2405,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Pega unha cabeceira Cookie de console.x.com que conteña auth_token e ct0.";
 
 "Open X Developer Console" = "Abrir a consola de desenvolvedores de X";
+// Structured session performance layout.
+"spend_performance_first_token" = "Primeiro token";
+"spend_performance_output" = "Saída por quenda";
+"spend_performance_duration" = "Duración da quenda";
+"spend_performance_turn_count" = "%@ quendas cronometradas";
+"spend_performance_turns" = "Quendas";
+"spend_performance_model_effort" = "Modelo / esforzo";
+"spend_performance_p95_first_token" = "P95 do primeiro token";
+"spend_performance_p95_duration" = "P95 da duración da quenda";
+"spend_performance_speed_range" = "Intervalo de velocidade por quenda";
+"spend_performance_cached_input" = "Entrada almacenada en caché";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 mostras · insuficiente";
+"spend_performance_coverage" = "%@ / %@ quendas con datos de caché";
+"spend_performance_p95_help" = "O 95% das quendas observadas estiveron neste valor ou por debaixo. Precísanse polo menos 20 mostras válidas para cada métrica.";
+"spend_performance_speed_range_help" = "O 50% central das taxas de saída por quenda (P25–P75). As tarefas, o razoamento, as ferramentas e as esperas inflúen neste intervalo.";
+"spend_performance_cache_help" = "Entrada almacenada en caché dividida entre a entrada total das quendas válidas. Ponderada polos tokens de entrada, coa cobertura das mostras indicada.";
+"spend_performance_metric_help" = "Sobre estas observacións";
+"merged_icon_source_title" = "Orixe da icona combinada";
+"merged_icon_source_subtitle" = "Escolle que provedor mostra a icona combinada cando está contraída.";
+"merged_icon_source_current_selection" = "Selección actual";
+"merged_icon_source_highest_usage" = "Maior uso";
+"merged_icon_source_frontmost_app" = "Aplicación do provedor en primeiro plano";
+/* Provider menu bar color */
+"Color by provider" = "Cor por provedor";
+
+"show_most_used_provider_subtitle" = "A barra de menús amosa automaticamente o provedor máis próximo ao seu límite.";
+
+"show_most_used_provider_title" = "Amosar o provedor máis usado";

@@ -624,8 +624,6 @@
 "merged_icon_style_stacked" = "쌓기";
 "merge_icon_stacked_top_provider_title" = "위쪽 행";
 "merge_icon_stacked_bottom_provider_title" = "아래쪽 행";
-"show_most_used_provider_title" = "가장 많이 사용한 공급자 표시";
-"show_most_used_provider_subtitle" = "메뉴 막대에 사용 한도에 가장 가까운 공급자를 자동으로 표시합니다.";
 "display_mode_title" = "표시 모드";
 "display_mode_subtitle" = "메뉴 막대에 표시할 내용을 선택하세요(사용 속도는 사용량 대 예상치를 표시).";
 "show_quota_warning_markers_title" = "할당량 경고 표시기 표시";
@@ -1529,7 +1527,6 @@
 "Cache write" = "캐시 쓰기 토큰";
 "Reasoning" = "추론";
 "Sessions" = "세션";
-"Projects" = "프로젝트";
 "Plan metered" = "요금제 사용량";
 "List-price equivalent" = "정가 상당";
 "Metered and list-price" = "측정된 사용량 및 정가와 동일";
@@ -2336,6 +2333,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "턴 출력에는 추론, 도구, 대기 시간이 포함되며, 모델의 생성 속도를 뜻하지 않습니다. 첫 토큰은 모델의 첫 토큰까지 걸린 시간의 중앙값이며, 첫 토큰은 추론 토큰일 수 있습니다. 완료되었으며 시간을 정상적으로 측정한 턴만 포함합니다. 턴 소요 시간은 완료된 턴의 경과 시간 중앙값입니다.";
+"First-token samples: %@ / %@" = "첫 토큰 표본: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "성능 세부 정보";
+"Observed turns; workload and tools affect these results." = "관측된 대화 턴의 결과이며, 작업량과 도구의 영향을 받습니다.";
+"By model and reasoning effort" = "모델 및 추론 수준별";
+"Unknown model" = "알 수 없는 모델";
+"Unknown reasoning effort" = "알 수 없는 추론 수준";
+"Model first token may be reasoning, before visible answer text." = "모델의 첫 토큰은 답변 텍스트가 표시되기 전의 추론 토큰일 수 있습니다.";
+"Speed range needs 4 completed turns." = "속도 범위를 표시하려면 완료된 대화 턴이 4개 필요합니다.";
+"All accounts" = "모든 계정";
+"Refresh all accounts" = "모든 계정 새로 고침";
+"CodexBar follows" = "CodexBar 추적 대상";
+"%@ accounts" = "계정 %@개";
+"Refreshes up to %@ accounts at a time." = "한 번에 최대 %@개의 계정을 새로 고칩니다.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "계정별로 한도가 따로 있습니다. 사용량을 확인해도 계정은 전환되지 않습니다.";
+"Local usage is shared across accounts on this Mac." = "로컬 사용량은 이 Mac의 계정 간에 공유됩니다.";
+"Local usage" = "로컬 사용량";
+"Local usage comes from the current Codex profile." = "로컬 사용량은 현재 Codex 프로필에서 가져옵니다.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "기록된 지출";
 "Highest recorded spend" = "기록된 최대 지출";
@@ -2355,3 +2374,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "auth_token과 ct0이 포함된 console.x.com의 Cookie 헤더를 붙여넣으세요.";
 
 "Open X Developer Console" = "X 개발자 콘솔 열기";
+// Structured session performance layout.
+"spend_performance_first_token" = "첫 토큰";
+"spend_performance_output" = "턴 출력";
+"spend_performance_duration" = "턴 소요 시간";
+"spend_performance_turn_count" = "시간이 측정된 턴 %@개";
+"spend_performance_turns" = "대화 턴";
+"spend_performance_model_effort" = "모델 / 추론 수준";
+"spend_performance_p95_first_token" = "P95 첫 토큰 시간";
+"spend_performance_p95_duration" = "P95 턴 소요 시간";
+"spend_performance_speed_range" = "턴 속도 범위";
+"spend_performance_cached_input" = "캐시된 입력";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20개 표본 · 부족";
+"spend_performance_coverage" = "%@ / %@개 턴에 캐시 데이터 있음";
+"spend_performance_p95_help" = "관측된 턴의 95%가 이 값 이하였습니다. 각 지표에는 유효한 표본이 20개 이상 필요합니다.";
+"spend_performance_speed_range_help" = "턴별 출력 속도의 중간 50% 범위(P25–P75)입니다. 작업, 추론, 도구, 대기 시간의 영향을 받습니다.";
+"spend_performance_cache_help" = "대상 턴의 캐시된 입력을 전체 입력으로 나눈 값입니다. 입력 토큰 수로 가중치를 적용하며 표본 범위도 표시합니다.";
+"spend_performance_metric_help" = "관측값 안내";
+"merged_icon_source_title" = "통합 아이콘 표시 기준";
+"merged_icon_source_subtitle" = "접힌 통합 아이콘에 표시할 공급자를 선택합니다.";
+"merged_icon_source_current_selection" = "현재 선택";
+"merged_icon_source_highest_usage" = "사용량이 가장 높음";
+"merged_icon_source_frontmost_app" = "전면의 공급자 앱";
+/* Provider menu bar color */
+"Color by provider" = "제공업체별 색상";
+
+"show_most_used_provider_subtitle" = "메뉴 막대에 사용 한도에 가장 가까운 공급자를 자동으로 표시합니다.";
+
+"show_most_used_provider_title" = "가장 많이 사용한 공급자 표시";

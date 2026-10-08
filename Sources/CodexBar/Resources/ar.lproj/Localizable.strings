@@ -640,8 +640,6 @@
 "merged_icon_style_stacked" = "مكدّس";
 "merge_icon_stacked_top_provider_title" = "الصف العلوي";
 "merge_icon_stacked_bottom_provider_title" = "الصف السفلي";
-"show_most_used_provider_title" = "عرض المزود الأكثر استخداما";
-"show_most_used_provider_subtitle" = "شريط القوائم يعرض تلقائيا مزود الخدمة الأقرب إلى حد السعر.";
 "display_mode_title" = "وضع العرض";
 "display_mode_subtitle" = "اختر ما تريد عرضه في شريط القائمة (Pace يظهر الاستخدام مقابل المتوقع).";
 "show_quota_warning_markers_title" = "عرض علامات التحذير من الحصص";
@@ -851,7 +849,7 @@
 "Store multiple OpenAI API keys." = "خزن عدة مفاتيح OpenAI API.";
 "Admin API key" = "مفتاح API الإدارة";
 "Open billing" = "الفوترة المفتوحة";
-"Google accounts" = "Google الروايات";
+"Google accounts" = "حسابات Google";
 "Store multiple Antigravity Google OAuth accounts for quick switching." = "تخزين عدة حسابات Antigravity Google OAuth للتبديل السريع.";
 "Add Google Account" = "أضف Google الحساب";
 "Open Token Plan" = "خطة التوكن المفتوحة";
@@ -1563,7 +1561,6 @@
 "Cache write" = "ذاكرة التخزين المؤقت الكتابة الرموز";
 "Reasoning" = "الاستدلال";
 "Sessions" = "الجلسات";
-"Projects" = "المشاريع";
 "Plan metered" = "استخدام الخطة المقاسة";
 "List-price equivalent" = "قائمة الأسعار المعادلة";
 "Metered and list-price" = "الاستخدام المقنن وما يعادله من قائمة الأسعار";
@@ -2372,6 +2369,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "يُحتسب مقياس مخرجات الجولة مع الاستدلال واستخدام الأدوات وفترات الانتظار، ولا يمثّل سرعة توليد النموذج. مقياس الرمز الأول هو وسيط الزمن حتى أول رمز من النموذج، وقد يكون هذا الرمز جزءًا من الاستدلال. تُدرج فقط جولات المحادثة المكتملة التي قيس زمنها بنجاح. مدة الجولة هي وسيط الزمن المنقضي للجولات المكتملة.";
+"First-token samples: %@ / %@" = "عينات الرمز الأول: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "تفاصيل الأداء";
+"Observed turns; workload and tools affect these results." = "جولات محادثة مرصودة؛ يؤثر حجم العمل والأدوات في هذه النتائج.";
+"By model and reasoning effort" = "حسب النموذج وجهد الاستدلال";
+"Unknown model" = "نموذج غير معروف";
+"Unknown reasoning effort" = "جهد استدلال غير معروف";
+"Model first token may be reasoning, before visible answer text." = "قد يكون أول رمز من النموذج جزءًا من الاستدلال، قبل ظهور نص الإجابة.";
+"Speed range needs 4 completed turns." = "يتطلب نطاق السرعة 4 جولات محادثة مكتملة.";
+"All accounts" = "جميع الحسابات";
+"Refresh all accounts" = "تحديث جميع الحسابات";
+"CodexBar follows" = "يتابعه CodexBar";
+"%@ accounts" = "%@ حسابات";
+"Refreshes up to %@ accounts at a time." = "يحدّث ما يصل إلى %@ حسابات في المرة الواحدة.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "لكل حساب حدوده الخاصة. عرض الاستخدام لا يبدّل الحسابات.";
+"Local usage is shared across accounts on this Mac." = "الاستخدام المحلي مشترك بين الحسابات على جهاز Mac هذا.";
+"Local usage" = "الاستخدام المحلي";
+"Local usage comes from the current Codex profile." = "تأتي بيانات الاستخدام المحلي من ملف تعريف Codex الحالي.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "الإنفاق المسجل";
 "Highest recorded spend" = "أعلى إنفاق مسجل";
@@ -2391,3 +2410,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "الصق ترويسة Cookie من console.x.com تحتوي على auth_token وct0.";
 
 "Open X Developer Console" = "افتح وحدة تحكم مطوري X";
+// Structured session performance layout.
+"spend_performance_first_token" = "الرمز الأول";
+"spend_performance_output" = "مخرجات جولة المحادثة";
+"spend_performance_duration" = "مدة جولة المحادثة";
+"spend_performance_turn_count" = "%@ جولات محادثة مقاسة زمنيًا";
+"spend_performance_turns" = "جولات المحادثة";
+"spend_performance_model_effort" = "النموذج / الجهد";
+"spend_performance_p95_first_token" = "زمن الرمز الأول عند المئين 95";
+"spend_performance_p95_duration" = "مدة الجولة عند المئين 95";
+"spend_performance_speed_range" = "نطاق سرعة جولة المحادثة";
+"spend_performance_cached_input" = "المدخلات المخزنة مؤقتًا";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 عينة · غير كافية";
+"spend_performance_coverage" = "%@ / %@ جولات تحتوي على بيانات التخزين المؤقت";
+"spend_performance_p95_help" = "كانت النتائج في 95% من جولات المحادثة المرصودة مساوية لهذه القيمة أو أقل منها. يتطلب كل مقياس 20 عينة صالحة على الأقل.";
+"spend_performance_speed_range_help" = "الـ50% الوسطى من معدلات المخرجات لكل جولة محادثة (P25–P75). تؤثر المهام والاستدلال والأدوات وفترات الانتظار في هذا النطاق.";
+"spend_performance_cache_help" = "المدخلات المخزنة مؤقتًا مقسومة على إجمالي المدخلات في الجولات المؤهلة. تُرجّح النتيجة بعدد رموز الإدخال، مع عرض مدى تغطية العينات.";
+"spend_performance_metric_help" = "حول هذه الملاحظات";
+"merged_icon_source_title" = "مصدر الأيقونة المدمجة";
+"merged_icon_source_subtitle" = "اختر المزوّد الذي تعرضه الأيقونة المدمجة عند طيّها.";
+"merged_icon_source_current_selection" = "التحديد الحالي";
+"merged_icon_source_highest_usage" = "أعلى استخدام";
+"merged_icon_source_frontmost_app" = "تطبيق المزوّد في المقدمة";
+/* Provider menu bar color */
+"Color by provider" = "تلوين حسب المزوّد";
+
+"show_most_used_provider_subtitle" = "شريط القوائم يعرض تلقائيا مزود الخدمة الأقرب إلى حد السعر.";
+
+"show_most_used_provider_title" = "عرض المزود الأكثر استخداما";

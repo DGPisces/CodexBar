@@ -635,8 +635,6 @@
 "merged_icon_style_stacked" = "Стопка";
 "merge_icon_stacked_top_provider_title" = "Верхняя строка";
 "merge_icon_stacked_bottom_provider_title" = "Нижняя строка";
-"show_most_used_provider_title" = "Показывать провайдера с наибольшим использованием";
-"show_most_used_provider_subtitle" = "В строке меню автоматически отображается провайдер, ближайший к лимиту.";
 "display_mode_title" = "Режим отображения";
 "display_mode_subtitle" = "Выберите, что показывать в строке меню: темп сравнивает фактическое использование с ожидаемым.";
 "show_quota_warning_markers_title" = "Показывать маркеры предупреждений о квоте";
@@ -1561,7 +1559,6 @@
 "Cache write" = "Кэш-запись токены";
 "Reasoning" = "Рассуждение";
 "Sessions" = "Сессии";
-"Projects" = "Проекты";
 "Plan metered" = "Использование тарифного плана по счетчику";
 "List-price equivalent" = "Эквивалент прейскурантной цены";
 "Metered and list-price" = "Измеренное использование и эквивалент прейскурантной цены";
@@ -2369,6 +2366,28 @@
 
 "%.0f%% %@" = "%.0f%% %@";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "При расчёте вывода за ход диалога учитываются рассуждения, инструменты и ожидание. Это не скорость генерации модели. Первый токен — медианное время до первого токена модели, который может относиться к рассуждению. Учитываются только завершённые ходы диалога с корректным замером времени. Длительность хода диалога — медианное время, прошедшее за завершённые ходы.";
+"First-token samples: %@ / %@" = "Замеры первого токена: %@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "Сведения о производительности";
+"Observed turns; workload and tools affect these results." = "Наблюдаемые ходы диалога; нагрузка и инструменты влияют на результаты.";
+"By model and reasoning effort" = "По модели и уровню рассуждений";
+"Unknown model" = "Неизвестная модель";
+"Unknown reasoning effort" = "Неизвестный уровень рассуждений";
+"Model first token may be reasoning, before visible answer text." = "Первый токен модели может относиться к рассуждению и предшествовать видимому тексту ответа.";
+"Speed range needs 4 completed turns." = "Для диапазона скорости нужны 4 завершённых хода диалога.";
+"All accounts" = "Все аккаунты";
+"Refresh all accounts" = "Обновить все аккаунты";
+"CodexBar follows" = "CodexBar отслеживает";
+"%@ accounts" = "Аккаунтов: %@";
+"Refreshes up to %@ accounts at a time." = "Обновляет до %@ аккаунтов одновременно.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "У каждого аккаунта свои лимиты. Просмотр использования не переключает аккаунты.";
+"Local usage is shared across accounts on this Mac." = "Локальное использование учитывается совместно для всех аккаунтов на этом Mac.";
+"Local usage" = "Локальное использование";
+"Local usage comes from the current Codex profile." = "Данные о локальном использовании берутся из текущего профиля Codex.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "Учтённые расходы";
 "Highest recorded spend" = "Максимальные учтённые расходы";
@@ -2388,3 +2407,35 @@
 "Paste a console.x.com Cookie header containing auth_token and ct0." = "Вставьте заголовок Cookie с console.x.com, содержащий auth_token и ct0.";
 
 "Open X Developer Console" = "Открыть консоль разработчика X";
+// Structured session performance layout.
+"spend_performance_first_token" = "Первый токен";
+"spend_performance_output" = "Вывод за ход диалога";
+"spend_performance_duration" = "Длительность хода диалога";
+"spend_performance_turn_count" = "Ходов диалога с замером времени: %@";
+"spend_performance_turns" = "Ходы диалога";
+"spend_performance_model_effort" = "Модель / уровень рассуждений";
+"spend_performance_p95_first_token" = "P95 первого токена";
+"spend_performance_p95_duration" = "P95 длительности хода диалога";
+"spend_performance_speed_range" = "Диапазон скорости ходов диалога";
+"spend_performance_cached_input" = "Кэшированный ввод";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 замеров · недостаточно";
+"spend_performance_coverage" = "%@ / %@ ходов диалога с данными о кэше";
+"spend_performance_p95_help" = "95% наблюдаемых ходов диалога имели это значение или ниже. Для каждого показателя требуется не менее 20 корректных замеров.";
+"spend_performance_speed_range_help" = "Центральные 50% значений скорости вывода за ход диалога (P25–P75). Задачи, рассуждения, инструменты и ожидание влияют на этот диапазон.";
+"spend_performance_cache_help" = "Кэшированный ввод, делённый на весь ввод по подходящим ходам диалога. Значение взвешено по входным токенам; показан охват замеров.";
+"spend_performance_metric_help" = "Об этих наблюдениях";
+"merged_icon_source_title" = "Источник объединённого значка";
+"merged_icon_source_subtitle" = "Выберите провайдера для свёрнутого объединённого значка.";
+"merged_icon_source_current_selection" = "Текущий выбор";
+"merged_icon_source_highest_usage" = "Наибольшее использование";
+"merged_icon_source_frontmost_app" = "Приложение провайдера на переднем плане";
+/* Provider menu bar color */
+"Color by provider" = "Цвет по провайдеру";
+
+"show_most_used_provider_subtitle" = "В строке меню автоматически отображается провайдер, ближайший к лимиту.";
+
+"show_most_used_provider_title" = "Показывать провайдера с наибольшим использованием";
