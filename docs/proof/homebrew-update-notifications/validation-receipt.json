@@ -1,0 +1,44 @@
+{
+  "production_commit": "c16e1a6f7f6f85be9e6f9b26bdd2438e3d57e8f9",
+  "platform": "macOS 27.0.1",
+  "make_check": {
+    "exit_code": 0,
+    "lint_files": 2846,
+    "violations": 0,
+    "log_sha256": "97d5d27a698bd318e0657953418b27952dcf56d3549b87d8b6c5fbdab8897c58"
+  },
+  "focused_tests": {
+    "command": "make test-fast FILTER='HomebrewUpdateNotifierTests|HomebrewUpdaterControllerTests|UpdateNotificationActionTests|SparkleUpdaterControllerTests|LocalizationBundleTests|CredentialNotificationTests'",
+    "exit_code": 0,
+    "tests": 54,
+    "suites": 6,
+    "log_sha256": "459d737cda08eec3b7ef8db996cf8500eecf70090175993c5d11b644ad88efde"
+  },
+  "latest_full_tests": {
+    "command": "./Scripts/test.sh --direct-workers 4",
+    "status": "passed",
+    "exit_code": 0,
+    "execution_mode": "direct; complete inventory verified",
+    "workers": 4,
+    "verified_test_methods": 14081,
+    "discovered_selections": 1593,
+    "selected_selections": 1593,
+    "selected_groups": 144,
+    "first_pass_successful_groups": 144,
+    "first_pass_failed_groups": 0,
+    "full_group_retries": 0,
+    "isolated_selection_retries": 0,
+    "timed_out_groups": 0,
+    "recovered_groups": 0,
+    "total_seconds": 343.0,
+    "log_sha256": "129c0be4b100b18ada521d1ae5bab48b070df6ed47461bc6cb94d59fd2c5245a"
+  },
+  "native_proof_status": "partial; see README and interaction record",
+  "privacy": "Allowlisted receipt only; raw logs are retained locally and not published.",
+  "serial_make_test": {
+    "command": "make test",
+    "status": "interrupted to use the documented complete direct runner; not a pass",
+    "successful_groups_before_interruption": 8,
+    "log_sha256": "5f3df8f178e648532b09444fb7b9e849ae6be516a16b6f466a485852ba86c7f5"
+  }
+}
