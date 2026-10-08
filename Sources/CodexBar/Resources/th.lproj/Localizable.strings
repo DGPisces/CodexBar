@@ -636,8 +636,6 @@
 "merged_icon_style_stacked" = "แบบซ้อน";
 "merge_icon_stacked_top_provider_title" = "แถวบน";
 "merge_icon_stacked_bottom_provider_title" = "แถวล่าง";
-"show_most_used_provider_title" = "แสดงผู้ให้บริการที่ใช้บ่อยที่สุด";
-"show_most_used_provider_subtitle" = "แถบเมนูจะแสดงผู้ให้บริการที่ใกล้เคียงกับขีดจํากัดอัตรามากที่สุดโดยอัตโนมัติ";
 "display_mode_title" = "โหมดการแสดงผล";
 "display_mode_subtitle" = "เลือกสิ่งที่จะแสดงในแถบเมนู (อัตราก้าวแสดงการใช้งานเทียบกับที่คาดไว้)";
 "show_quota_warning_markers_title" = "แสดงเครื่องหมายเตือนโควต้า";
@@ -1563,7 +1561,6 @@
 "Independent chat" = "แชทอิสระ";
 "Independent chats" = "แชทอิสระ";
 "Chat %d" = "แชท %d";
-"Projects" = "Projects";
 "Plan metered" = "Plan metered";
 "List-price equivalent" = "List-price equivalent";
 "Metered and list-price" = "Metered and list-price";
@@ -1671,6 +1668,15 @@
 "Unknown reasoning effort" = "Unknown reasoning effort";
 "Model first token may be reasoning, before visible answer text." = "Model first token may be reasoning, before visible answer text.";
 "Speed range needs 4 completed turns." = "Speed range needs 4 completed turns.";
+"All accounts" = "All accounts";
+"Refresh all accounts" = "Refresh all accounts";
+"CodexBar follows" = "CodexBar follows";
+"%@ accounts" = "%@ accounts";
+"Refreshes up to %@ accounts at a time." = "Refreshes up to %@ accounts at a time.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Each account has its own limits. Viewing usage does not switch accounts.";
+"Local usage is shared across accounts on this Mac." = "Local usage is shared across accounts on this Mac.";
+"Local usage" = "Local usage";
+"Local usage comes from the current Codex profile." = "Local usage comes from the current Codex profile.";
 
 // Spend chart navigation and inspection
 "Recorded spend" = "ค่าใช้จ่ายที่บันทึกไว้";
@@ -1705,3 +1711,10 @@
 "spend_performance_speed_range_help" = "Middle 50% of per-turn output rates (P25–P75). Tasks, reasoning, tools and waits affect this range.";
 "spend_performance_cache_help" = "Cached input divided by total input across eligible turns. Weighted by input tokens, with sample coverage shown.";
 "spend_performance_metric_help" = "About these observations";
+"merged_icon_source_title" = "แหล่งที่มาของไอคอนรวม";
+"merged_icon_source_subtitle" = "เลือกผู้ให้บริการที่จะแสดงบนไอคอนรวมเมื่อยุบ";
+"merged_icon_source_current_selection" = "ตัวเลือกปัจจุบัน";
+"merged_icon_source_highest_usage" = "การใช้งานสูงสุด";
+"merged_icon_source_frontmost_app" = "แอปผู้ให้บริการที่อยู่ด้านหน้า";
+/* Provider menu bar color */
+"Color by provider" = "สีตามผู้ให้บริการ";

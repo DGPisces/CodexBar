@@ -607,8 +607,6 @@
 "merged_icon_style_stacked" = "堆叠";
 "merge_icon_stacked_top_provider_title" = "上排";
 "merge_icon_stacked_bottom_provider_title" = "下排";
-"show_most_used_provider_title" = "显示用量最高的提供商";
-"show_most_used_provider_subtitle" = "菜单栏会自动显示最接近速率限制的提供商。";
 "display_mode_title" = "显示模式";
 "display_mode_subtitle" = "选择菜单栏中显示的内容（进度会显示实际用量与预期的对比）。";
 "show_quota_warning_markers_title" = "显示配额预警标记";
@@ -1369,7 +1367,6 @@
 "Independent chats" = "独立聊天";
 "Independent chat" = "独立聊天";
 "Chat %d" = "聊天 %d";
-"Projects" = "项目";
 "Plan metered" = "套餐计量";
 "List-price equivalent" = "目录价等值";
 "Metered and list-price" = "计量与目录价";
@@ -1681,6 +1678,15 @@
 "Unknown reasoning effort" = "推理档位未知或混用";
 "Model first token may be reasoning, before visible answer text." = "模型首 token 可能是推理内容，早于可见回答。";
 "Speed range needs 4 completed turns." = "速度范围至少需要 4 个完成轮次。";
+"All accounts" = "全部账号";
+"Refresh all accounts" = "刷新全部账号";
+"CodexBar follows" = "CodexBar 跟随账号";
+"%@ accounts" = "%@ 个账号";
+"Refreshes up to %@ accounts at a time." = "每批最多刷新 %@ 个账号。";
+"Each account has its own limits. Viewing usage does not switch accounts." = "各账号的额度独立计算。查看用量不会切换账号。";
+"Local usage is shared across accounts on this Mac." = "本机用量包含这台 Mac 上各账号的使用记录。";
+"Local usage" = "本机用量";
+"Local usage comes from the current Codex profile." = "本机用量来自当前 Codex 配置档案。";
 
 // Spend chart navigation and inspection
 "Recorded spend" = "已记录支出";
@@ -1715,3 +1721,10 @@
 "spend_performance_speed_range_help" = "每轮输出速度的中间 50%（P25–P75）。任务、推理、工具和等待都会影响这个区间。";
 "spend_performance_cache_help" = "有效轮次中，缓存输入占总输入的比例。按输入 token 加权，并显示样本覆盖情况。";
 "spend_performance_metric_help" = "关于这些统计";
+"merged_icon_source_title" = "合并图标来源";
+"merged_icon_source_subtitle" = "选择折叠后的合并图标显示哪个服务提供方。";
+"merged_icon_source_current_selection" = "当前选择";
+"merged_icon_source_highest_usage" = "最高用量";
+"merged_icon_source_frontmost_app" = "最前台的服务提供方应用";
+/* Provider menu bar color */
+"Color by provider" = "按服务商着色";
