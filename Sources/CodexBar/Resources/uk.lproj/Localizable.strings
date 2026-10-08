@@ -1666,3 +1666,5 @@
 "Models for this day" = "Моделі за цей день";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Натисніть на стовпчик для перегляду деталей. Точні суми доступні в меню нижче.";
+/* Provider menu bar color */
+"Color by provider" = "Колір за провайдером";

@@ -1667,3 +1667,5 @@
 "Models for this day" = "Mô hình của ngày này";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Nhấp vào cột để khám phá. Dùng menu bên dưới để xem số tiền chính xác.";
+/* Provider menu bar color */
+"Color by provider" = "Màu theo nhà cung cấp";

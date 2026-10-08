@@ -1666,3 +1666,5 @@
 "Models for this day" = "この日のモデル";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "棒をクリックして詳しく確認できます。下のメニューで正確な金額を確認できます。";
+/* Provider menu bar color */
+"Color by provider" = "プロバイダー別の色";
