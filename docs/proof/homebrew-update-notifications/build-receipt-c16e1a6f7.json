@@ -1,7 +1,7 @@
 {
   "kind": "full CodexBar executable with documentation-only native notification fixture",
-  "source_commit": "54ada0fe3aaaa8cd1be49bd6422725e903a494e7",
-  "executable_sha256": "ad9a9eef02761d6ac1da35806197f21a312cd4af2309b48b5d1319102ed9c2ef",
+  "source_commit": "c16e1a6f7f6f85be9e6f9b26bdd2438e3d57e8f9",
+  "executable_sha256": "df6b81588039c8282a9d9bda524dc8b1f642be214ef8e22f5b910b9c30ba8e1b",
   "fixture_source_sha256": "a8b34ffaaf92c57bca883b1b7a5d3373191fb25691a656719e031ba09f6db5e1",
   "original_entry_source_sha256": "9b86e42a3781ef20a002b377ba995969324a81c61d9a22a0904ebd5f850ecce2",
   "instrumented_entry_source_sha256": "10d480d18fde707b682978d34c99c44a18fd402ccca9ab637ec9e0dc51525563",

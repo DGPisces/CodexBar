@@ -40,5 +40,35 @@
     "status": "interrupted to use the documented complete direct runner; not a pass",
     "successful_groups_before_interruption": 8,
     "log_sha256": "5f3df8f178e648532b09444fb7b9e849ae6be516a16b6f466a485852ba86c7f5"
+  },
+  "latest_head_validation": {
+    "production_commit": "54ada0fe3aaaa8cd1be49bd6422725e903a494e7",
+    "make_check": {
+      "exit_code": 0,
+      "lint_files": 2848,
+      "violations": 0,
+      "log_sha256": "e9910b1b28b7a2b97329e2e8957250fe5b5725ad74dd65fcce8b4b8dc89c99a5"
+    },
+    "notification_and_settings_sources": "All six source hashes match the prior production revision and current build receipt.",
+    "focused_tests": {
+      "command": "make test-fast FILTER='HomebrewUpdateNotifierTests|HomebrewUpdaterControllerTests|UpdateNotificationActionTests|SparkleUpdaterControllerTests|LocalizationBundleTests|CredentialNotificationTests|CostUsageCodexRowStorageTests|CostUsageClaudeRowStorageTests|CostUsageCoverageCompatibilityTests'",
+      "status": "passed",
+      "exit_code": 0,
+      "swift_testing_tests": 61,
+      "swift_testing_suites": 9,
+      "log_sha256": "c849530e1af7a4480d6dd8b575e6e93a3bb58664bdb80bf2eee1257a2e3fbaec"
+    },
+    "native_saved_disabled_preference": "observed; actual About toggle, restart, zero startup and explicit automatic fetches",
+    "native_clicks": "pending human-assisted notification-card click",
+    "maintainer_recorded_full_regression": {
+      "source": "Existing maintainer continuation verification in PR 4327 body",
+      "verified_test_methods": 14084,
+      "selected_selections": 1595,
+      "groups": 144,
+      "first_pass_successful_groups": 144,
+      "retries": 0,
+      "timeouts": 0,
+      "independently_repeated_this_followup": false
+    }
   }
 }

@@ -16,25 +16,37 @@ The bundle is ad-hoc signed and passes `codesign --verify --deep --strict`. This
 
 The [native event receipt](native-events.jsonl) is an allowlisted diagnostic stream produced by the running application. Notification authorization and delivered/pending requests come from the real system notification center. Saved submitted versions and automatic-check preferences come from the isolated app's real persistent standard defaults. Settings visibility and selected pane come from the actual production window and preferences selection.
 
-The [verification report](verification.json) checks compiled-source identity and observed lifecycle transitions. Click claims additionally require the native UI interaction transcript; opening settings through the fixture control is not notification-click proof.
+The [verification report](verification.json) checks compiled-source identity and observed lifecycle transitions. The [native UI transcript](ui-interactions.json) records manually opening About separately from clicking a system notification. The verifier explicitly excludes those manual opens from notification-click proof.
 
-The [validation receipt](validation-receipt.json) records passing code checks, 54 focused tests in six suites, and the complete inventory-verified regression run on the production commit in the build receipt: 14,081 methods, all 1,593 selections, and 144/144 groups passed on their first attempt, with no retries or timeouts. An earlier serial `make test` invocation was deliberately interrupted after eight successful groups to use the documented parallel runner; that interrupted run is not counted as a pass.
+The [validation receipt](validation-receipt.json) records passing code checks, 54 focused tests in six suites, and the complete inventory-verified regression run on production commit `c16e1a6f7`: 14,081 methods, all 1,593 selections, and 144/144 groups passed on their first attempt, with no retries or timeouts. An earlier serial `make test` invocation was deliberately interrupted after eight successful groups to use the documented parallel runner; that interrupted run is not counted as a pass. The current fixture was rebuilt from `54ada0fe3`; all six production notification and settings-route source hashes remain identical.
+
+On `54ada0fe3`, the follow-up `make check` passed with zero violations in 2,848 files, and the focused notification plus synchronized cost-row regression selection passed 61 tests in nine suites. The existing maintainer continuation in the PR body also records a complete 144/144-group regression on that revision; that reported run is kept separate from the directly observed local results.
 
 ### Captured results
 
-These receipts are partial native evidence from October 8, 2026. They do not clear the PR's remaining native click and saved-preference proof requirements.
+These receipts are partial native evidence from October 8, 2026. Delivery, deduplication, and saved disabled-check behavior are observed; native notification-click proof remains outstanding.
 
 | Behavior | Observed result |
 | --- | --- |
-| Native delivery | The system center returned the silent `99.0.1`, `99.0.2`, and `99.0.3` requests as delivered. The production notification delegate remained installed. |
+| Native delivery | The system center returned the silent `99.0.1` through `99.0.5` requests as delivered. The production notification delegate remained installed. |
 | Permission state | Launch 1 observed denied authorization, no delivered request, and no saved submitted version in that snapshot. |
 | Restart deduplication | Launch 2 loaded the saved `99.0.1` submission, performed one startup fetch, and did not submit that version again. |
 | Visible banner | Pending; delivered-request diagnostics do not establish that a banner appeared on screen. |
-| Running-app notification click | Pending; no notification click or About transition has been observed. |
+| Running-app notification click | Pending; observed About transitions came from the fixture's settings control and are explicitly excluded. |
 | Cold-launch notification click | Pending. |
-| Saved disabled checks after restart | Pending native UI verification; regression tests cover the controller behavior. |
+| Saved disabled checks after restart | Observed: the actual About toggle was turned off, delivered notices were removed, and launch 3 retained the saved false preference. Its startup and explicit automatic-check request performed zero fetches. |
 
-The [interaction record](interaction-record.md) distinguishes system diagnostics from UI observations and documents the remaining steps. Launch 1 used an earlier fixture wrapper with the same production notifier sources; the current build receipt identifies the wrapper used for launch 2. It should not be used to attest the earlier wrapper's executable identity.
+The [interaction record](interaction-record.md) distinguishes system diagnostics from UI observations and documents the remaining steps. Launch 1 used an earlier fixture wrapper with the same production notifier sources. The [earlier build receipt](build-receipt-c16e1a6f7.json) identifies the executable used for launches 2–3; the [current receipt](build-receipt.json) identifies the executable used from launch 4. Neither receipt attests the earlier launch-1 wrapper's executable identity.
+
+### Native disabled-check screenshots
+
+These window captures contain only synthetic app data and disabled providers. They demonstrate the actual preference UI, not notification-click routing.
+
+![Automatic checks enabled](automatic-check-enabled.jpg)
+
+![Automatic checks turned off](automatic-check-disabled.jpg)
+
+![Automatic checks remain off after restart](automatic-check-disabled-after-restart.jpg)
 
 ## Reproduce
 
