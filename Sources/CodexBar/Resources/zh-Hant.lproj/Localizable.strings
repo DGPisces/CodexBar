@@ -1683,6 +1683,17 @@
 "Unavailable profile: %@" = "無法使用的設定檔：%@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "僅讀取所選的 %@ 設定檔。絕不會自動選擇帳號。";
 
+"All accounts" = "All accounts";
+"Refresh all accounts" = "Refresh all accounts";
+"CodexBar follows" = "CodexBar follows";
+"%@ accounts" = "%@ accounts";
+"Refreshes up to %@ accounts at a time." = "Refreshes up to %@ accounts at a time.";
+"Each account has its own limits. Viewing usage does not switch accounts." = "Each account has its own limits. Viewing usage does not switch accounts.";
+"Local usage is shared across accounts on this Mac." = "Local usage is shared across accounts on this Mac.";
+
+"Local usage" = "Local usage";
+"Local usage comes from the current Codex profile." = "Local usage comes from the current Codex profile.";
+
 // Spend chart navigation and inspection
 "Recorded spend" = "已記錄支出";
 "Highest recorded spend" = "最高已記錄支出";

@@ -101,6 +101,16 @@ Usage source picker:
   valid sibling readings, their original ages, errors, and credits in memory and across restart. Removed accounts
   and rows whose ownership no longer matches the current account list are pruned; refresh failures only invalidate
   the affected account's reading.
+- Settings → Providers → Codex shows each visible account's saved usage when multiple OAuth accounts are available.
+  Opening the pane reads the retained snapshots without starting a refresh. Each row keeps its own usage age and
+  error, including accounts not fetched yet, and distinguishes **CodexBar follows** from **System**.
+  **Hide personal information** uses the same numbered account and workspace labels as the account switcher.
+  Authorized OpenAI Code review usage remains on the followed account's row; sibling rows never inherit it,
+  and same-email ambiguity keeps the existing display-only dashboard policy.
+- Refresh an individual row or choose **Refresh all accounts** to visit every account in batches of up to six,
+  without changing the followed account or promoting credentials to System. The provider header keeps its existing
+  account-scoped refresh, including credits and OpenAI web extras. Zero or one account, and ambient PAT mode, keep
+  the single-account presentation. Local token/cost usage appears once, with its current-profile or **This Mac** scope.
 - Reusing OpenCode OAuth enables remote account quota, not OpenCode session token/cost ingestion. See
   [OpenCode with Codex or OpenAI](opencode.md#using-opencode-with-codex-or-openai) for the current history boundary.
 
