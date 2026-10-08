@@ -629,8 +629,6 @@
 "merged_icon_style_stacked" = "Staplad";
 "merge_icon_stacked_top_provider_title" = "Övre raden";
 "merge_icon_stacked_bottom_provider_title" = "Nedre raden";
-"show_most_used_provider_title" = "Visa mest använda leverantör";
-"show_most_used_provider_subtitle" = "Menyraden visar automatiskt leverantören som ligger närmast sin gräns.";
 "display_mode_title" = "Visningsläge";
 "display_mode_subtitle" = "Välj vad som ska visas i menyraden (takt visar användning mot förväntat).";
 "show_quota_warning_markers_title" = "Visa kvotvarningsmarkörer";
@@ -1665,3 +1663,8 @@
 "Models for this day" = "Modeller för denna dag";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Klicka på en stapel för detaljer. Menyn nedan visar exakta belopp.";
+"merged_icon_source_title" = "Källa för kombinerad ikon";
+"merged_icon_source_subtitle" = "Välj vilken leverantör den hopfällda kombinerade ikonen visar.";
+"merged_icon_source_current_selection" = "Aktuellt val";
+"merged_icon_source_highest_usage" = "Högsta användning";
+"merged_icon_source_frontmost_app" = "Leverantörsapp i förgrunden";

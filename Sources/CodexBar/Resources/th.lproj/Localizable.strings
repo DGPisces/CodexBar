@@ -636,8 +636,6 @@
 "merged_icon_style_stacked" = "แบบซ้อน";
 "merge_icon_stacked_top_provider_title" = "แถวบน";
 "merge_icon_stacked_bottom_provider_title" = "แถวล่าง";
-"show_most_used_provider_title" = "แสดงผู้ให้บริการที่ใช้บ่อยที่สุด";
-"show_most_used_provider_subtitle" = "แถบเมนูจะแสดงผู้ให้บริการที่ใกล้เคียงกับขีดจํากัดอัตรามากที่สุดโดยอัตโนมัติ";
 "display_mode_title" = "โหมดการแสดงผล";
 "display_mode_subtitle" = "เลือกสิ่งที่จะแสดงในแถบเมนู (อัตราก้าวแสดงการใช้งานเทียบกับที่คาดไว้)";
 "show_quota_warning_markers_title" = "แสดงเครื่องหมายเตือนโควต้า";
@@ -1670,3 +1668,8 @@
 "Models for this day" = "โมเดลของวันนี้";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "คลิกแท่งกราฟเพื่อดูรายละเอียด ใช้เมนูด้านล่างเพื่อดูจำนวนเงินที่แน่นอน";
+"merged_icon_source_title" = "แหล่งที่มาของไอคอนรวม";
+"merged_icon_source_subtitle" = "เลือกผู้ให้บริการที่จะแสดงบนไอคอนรวมเมื่อยุบ";
+"merged_icon_source_current_selection" = "ตัวเลือกปัจจุบัน";
+"merged_icon_source_highest_usage" = "การใช้งานสูงสุด";
+"merged_icon_source_frontmost_app" = "แอปผู้ให้บริการที่อยู่ด้านหน้า";

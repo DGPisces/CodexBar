@@ -638,8 +638,6 @@
 "merged_icon_style_stacked" = "Ułożone w stosie";
 "merge_icon_stacked_top_provider_title" = "Górny wiersz";
 "merge_icon_stacked_bottom_provider_title" = "Dolny wiersz";
-"show_most_used_provider_title" = "Pokaż najczęściej używanego dostawcę";
-"show_most_used_provider_subtitle" = "Pasek menu automatycznie pokazuje dostawcę najbliżej limitu.";
 "display_mode_title" = "Tryb wyświetlania";
 "display_mode_subtitle" = "Wybierz, co pokazywać na pasku menu (Tempo pokazuje użycie względem oczekiwanego).";
 "show_quota_warning_markers_title" = "Pokaż znaczniki ostrzeżeń limitu";
@@ -1669,3 +1667,8 @@
 "Models for this day" = "Modele dla tego dnia";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Kliknij słupek, aby zobaczyć szczegóły. Menu poniżej pokazuje dokładne kwoty.";
+"merged_icon_source_title" = "Źródło połączonej ikony";
+"merged_icon_source_subtitle" = "Wybierz dostawcę wyświetlanego przez zwiniętą połączoną ikonę.";
+"merged_icon_source_current_selection" = "Bieżący wybór";
+"merged_icon_source_highest_usage" = "Najwyższe użycie";
+"merged_icon_source_frontmost_app" = "Aplikacja dostawcy na pierwszym planie";
