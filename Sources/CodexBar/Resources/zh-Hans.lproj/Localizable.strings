@@ -1680,3 +1680,5 @@
 "Models for this day" = "查看当天模型";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "点击柱形逐层查看，下方菜单可查询具体金额。";
+/* Provider menu bar color */
+"Color by provider" = "按服务商着色";

@@ -1665,3 +1665,5 @@
 "Models for this day" = "Modeller för denna dag";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Klicka på en stapel för detaljer. Menyn nedan visar exakta belopp.";
+/* Provider menu bar color */
+"Color by provider" = "Färg per leverantör";

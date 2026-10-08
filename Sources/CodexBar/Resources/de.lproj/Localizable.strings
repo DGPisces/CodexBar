@@ -1666,3 +1666,5 @@
 "Models for this day" = "Modelle für diesen Tag";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Klicke auf einen Balken für Details. Das Menü unten zeigt genaue Beträge.";
+/* Provider menu bar color */
+"Color by provider" = "Nach Anbieter einfärben";

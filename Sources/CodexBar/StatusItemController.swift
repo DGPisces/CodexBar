@@ -465,6 +465,11 @@ final class StatusItemController: NSObject, NSMenuDelegate, StatusItemControllin
             selector: #selector(self.handleScreenParametersDidChange(_:)),
             name: NSApplication.didChangeScreenParametersNotification,
             object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(
+            self,
+            selector: #selector(self.refreshStatusItemContentForColorMode),
+            name: NSWorkspace.accessibilityDisplayOptionsDidChangeNotification,
+            object: nil)
         self.observeMenuBarTimeEnvironmentChanges()
     }
 
@@ -932,6 +937,7 @@ final class StatusItemController: NSObject, NSMenuDelegate, StatusItemControllin
         self.overviewSharePresentation.task?.cancel()
         self.screenChangeVisibilityTask?.cancel()
         NotificationCenter.default.removeObserver(self)
+        NSWorkspace.shared.notificationCenter.removeObserver(self)
     }
 }
 
