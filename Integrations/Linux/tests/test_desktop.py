@@ -272,8 +272,9 @@ else:
             self.assertEqual(settings.read_bytes(), saved)
         self.client('--refresh')
         self.wait_for(lambda value: not value['busy'])
-        polled = [json.loads(line)['args'] for line in (self.root / 'calls.jsonl').read_text().splitlines()[-3:]]
-        self.assertEqual([args[args.index('--provider') + 1] for args in polled], providers)
+        calls = [json.loads(line)['args'] for line in (self.root / 'calls.jsonl').read_text().splitlines()]
+        polled = [args[args.index('--provider') + 1] for args in calls if args[0] == 'usage']
+        self.assertEqual(polled[-3:], providers)
 
     def test_settings_from_before_the_bar_preferences_survive_an_upgrade(self):
         self.client('--quit')
