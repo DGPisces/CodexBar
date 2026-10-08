@@ -696,6 +696,11 @@ struct LocalizationLanguageCatalogTests {
             "ory_session_…=…; csrftoken=…",
             "section_privacy",
             "session_quota_estimate_value_format",
+            // Measurement units and numeric formats are shared with English.
+            "spend_performance_percent",
+            "spend_performance_rate",
+            "spend_performance_rate_range",
+            "spend_performance_seconds",
             "tab_menu",
             "OpenCodex",
         ]
