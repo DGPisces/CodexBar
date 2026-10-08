@@ -4,6 +4,7 @@
 
 ### Added
 
+- CLI: discover saved token and managed Codex accounts through read-only `/accounts` endpoints, with stable provider-scoped IDs, privacy-aware labels, and no usage refresh or credential export (#4326). Thanks @zieglar!
 - Menu bar: add an opt-in Color by provider toggle across existing icon styles and stacked rows, with monochrome contrast and menu-tracking fallbacks (#4321). Thanks @aronchick!
 
 - Qwen Cloud: show Team Token Plan credit usage, remaining credits, seats, and cycle resets through a bundled plugin, with Individual usage retained when no active Team plan is available (#3711). Thanks @tavioto!
