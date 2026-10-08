@@ -955,6 +955,8 @@ extension CostUsageStoreTests {
 
 extension CostUsageStoreTests {
     @Test(arguments: [
+        "89c0662767e633ea", // Upstream row-string sharing before timing.
+        "e1088fb29c221187", // Timing before value-preserving row-string sharing.
         "7ff985e81e281a11", // Upstream accounting before timing.
         "865cef15206ea5c0", // Advanced timing before upstream accounting correction.
         "d35c9fb00bee059b", // Initial timing before upstream accounting correction.
@@ -1006,6 +1008,8 @@ extension CostUsageStoreTests {
         let fixture = try StoreFixture()
         defer { fixture.remove() }
         #expect(CostUsageStore.compatiblePredecessorParserHashes == [
+            "89c0662767e633ea",
+            "e1088fb29c221187",
             "7ff985e81e281a11",
             "865cef15206ea5c0",
             "d35c9fb00bee059b",
