@@ -1658,12 +1658,8 @@
 "Read only the selected %@ profile. Accounts are never selected automatically." = "Llegeix només el perfil de %@ seleccionat. Els comptes no se seleccionen mai automàticament.";
 
 // Completed Codex turn timing.
-"Turn output: %@ tok/s" = "Turn output: %@ tok/s";
-"First token: %@ s" = "First token: %@ s";
-"Timed turns: %@" = "Timed turns: %@";
 "spend_turn_performance_help" = "Turn output includes reasoning, tools and waits. It is not model generation speed. First token is the median time to the first model token, which may be reasoning. Only complete, successfully timed turns are included. Turn duration is the median elapsed time of complete turns.";
 "First-token samples: %@ / %@" = "First-token samples: %@ / %@";
-"Turn duration: %@ s" = "Turn duration: %@ s";
 
 // Completed-turn performance details.
 "Performance details" = "Performance details";
@@ -1672,14 +1668,7 @@
 "Unknown model" = "Unknown model";
 "Unknown reasoning effort" = "Unknown reasoning effort";
 "Model first token may be reasoning, before visible answer text." = "Model first token may be reasoning, before visible answer text.";
-"P95 first token: %@ s" = "P95 first token: %@ s";
-"P95 first token: %@ / 20 samples" = "P95 first token: %@ / 20 samples";
-"P95 turn duration: %@ s" = "P95 turn duration: %@ s";
-"P95 turn duration: %@ / 20 samples" = "P95 turn duration: %@ / 20 samples";
-"Middle 50%% of turns: %@–%@ tok/s" = "Middle 50%% of turns: %@–%@ tok/s";
 "Speed range needs 4 completed turns." = "Speed range needs 4 completed turns.";
-"Cached input: %@%% (%@ / %@ turns)" = "Cached input: %@%% (%@ / %@ turns)";
-"Cached input: unavailable" = "Cached input: unavailable";
 
 // Spend chart navigation and inspection
 "Recorded spend" = "Despesa registrada";
@@ -1692,3 +1681,25 @@
 "Models for this day" = "Models per aquest dia";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "Fes clic en una barra per explorar. Consulta els imports exactes al menú inferior.";
+
+// Structured session performance layout.
+"spend_performance_first_token" = "First token";
+"spend_performance_output" = "Turn output";
+"spend_performance_duration" = "Turn duration";
+"spend_performance_turn_count" = "%@ timed turns";
+"spend_performance_turns" = "Turns";
+"spend_performance_model_effort" = "Model / effort";
+"spend_performance_p95_first_token" = "P95 first token";
+"spend_performance_p95_duration" = "P95 turn duration";
+"spend_performance_speed_range" = "Turn speed range";
+"spend_performance_cached_input" = "Cached input";
+"spend_performance_seconds" = "%@ s";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 samples · insufficient";
+"spend_performance_coverage" = "%@ / %@ turns with cache data";
+"spend_performance_p95_help" = "95% of observed turns were at or below this value. At least 20 valid samples are required for each metric.";
+"spend_performance_speed_range_help" = "Middle 50% of per-turn output rates (P25–P75). Tasks, reasoning, tools and waits affect this range.";
+"spend_performance_cache_help" = "Cached input divided by total input across eligible turns. Weighted by input tokens, with sample coverage shown.";
+"spend_performance_metric_help" = "About these observations";

@@ -1670,12 +1670,8 @@
 "Read only the selected %@ profile. Accounts are never selected automatically." = "仅读取所选的 %@ 配置文件。绝不会自动选择账户。";
 
 // Completed Codex turn timing.
-"Turn output: %@ tok/s" = "整轮输出：%@ tok/s";
-"First token: %@ s" = "首 token：%@ 秒";
-"Timed turns: %@" = "计时轮数：%@";
 "spend_turn_performance_help" = "整轮输出包含推理、工具执行和等待时间，不能代表模型生成速度。首 token 是第一枚模型 token 的延迟中位数，可能属于推理。仅统计成功且计时完整的轮次。 每轮耗时是完整轮次耗时的中位数。";
 "First-token samples: %@ / %@" = "首 token 样本：%@ / %@";
-"Turn duration: %@ s" = "每轮耗时：%@ 秒";
 
 // Completed-turn performance details.
 "Performance details" = "性能详情";
@@ -1684,14 +1680,7 @@
 "Unknown model" = "模型未知或混用";
 "Unknown reasoning effort" = "推理档位未知或混用";
 "Model first token may be reasoning, before visible answer text." = "模型首 token 可能是推理内容，早于可见回答。";
-"P95 first token: %@ s" = "P95 首 token：%@ 秒";
-"P95 first token: %@ / 20 samples" = "P95 首 token：%@ / 20 个样本（不足）";
-"P95 turn duration: %@ s" = "P95 每轮耗时：%@ 秒";
-"P95 turn duration: %@ / 20 samples" = "P95 每轮耗时：%@ / 20 个样本（不足）";
-"Middle 50%% of turns: %@–%@ tok/s" = "中间 50%% 轮次的速度：%@–%@ tok/s";
 "Speed range needs 4 completed turns." = "速度范围至少需要 4 个完成轮次。";
-"Cached input: %@%% (%@ / %@ turns)" = "缓存输入：%@%%（%@ / %@ 轮）";
-"Cached input: unavailable" = "缓存输入：暂无有效数据";
 
 // Spend chart navigation and inspection
 "Recorded spend" = "已记录支出";
@@ -1704,3 +1693,25 @@
 "Models for this day" = "查看当天模型";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "点击柱形逐层查看，下方菜单可查询具体金额。";
+
+// Structured session performance layout.
+"spend_performance_first_token" = "首 token";
+"spend_performance_output" = "整轮速度";
+"spend_performance_duration" = "每轮耗时";
+"spend_performance_turn_count" = "%@ 个计时轮次";
+"spend_performance_turns" = "轮数";
+"spend_performance_model_effort" = "模型 / 推理档位";
+"spend_performance_p95_first_token" = "P95 首 token";
+"spend_performance_p95_duration" = "P95 每轮耗时";
+"spend_performance_speed_range" = "整轮速度区间";
+"spend_performance_cached_input" = "缓存输入";
+"spend_performance_seconds" = "%@ 秒";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 个样本 · 不足";
+"spend_performance_coverage" = "%@ / %@ 轮有缓存数据";
+"spend_performance_p95_help" = "95% 的观测轮次不超过该数值。每项指标分别需要至少 20 个有效样本。";
+"spend_performance_speed_range_help" = "每轮输出速度的中间 50%（P25–P75）。任务、推理、工具和等待都会影响这个区间。";
+"spend_performance_cache_help" = "有效轮次中，缓存输入占总输入的比例。按输入 token 加权，并显示样本覆盖情况。";
+"spend_performance_metric_help" = "关于这些统计";

@@ -68,9 +68,9 @@ struct SpendSessionPerformanceTests {
             #expect(row.totalTokens == 3500)
             #expect(row.totalCost == 0.03)
             CodexBarLocalizationOverride.$appLanguage.withValue("en") {
-                let lines = spendSessionPerformanceDetailLines(summary)
-                #expect(lines.contains(selectedDay == nil
-                        ? "P95 turn duration: 21.0 s" : "P95 turn duration: 12 / 20 samples"))
+                let p95 = spendSessionPerformanceDetailMetrics(summary).first { $0.id == "p95-duration" }
+                #expect(p95?.value == (selectedDay == nil ? "21.0 s" : "—"))
+                #expect(p95?.note == (selectedDay == nil ? nil : "12 / 20 samples · insufficient"))
             }
         }
         let emptyDay = try Self.group(
@@ -115,17 +115,21 @@ struct SpendSessionPerformanceTests {
     }
 
     @Test
-    func `labels describe whole turn throughput and omit missing first token timing`() throws {
+    func `metrics describe whole turn throughput and keep missing first token timing unavailable`() throws {
         let sample = try #require(CostUsageTurnPerformanceSample(
             completedAt: Date(),
             outputTokens: 20,
             durationMilliseconds: 10000))
         let summary = try #require(CostUsageTurnPerformanceSummary(samples: [sample]))
         CodexBarLocalizationOverride.$appLanguage.withValue("en") {
-            #expect(spendSessionPerformanceText(summary) == "Turn output: 2.0 tok/s · Turn duration: 10.0 s")
+            let metrics = spendSessionPerformanceMetrics(summary)
+            #expect(metrics.map(\.label) == ["First token", "Turn output", "Turn duration"])
+            #expect(metrics.map(\.value) == ["—", "2.0 tok/s", "10.0 s"])
         }
         CodexBarLocalizationOverride.$appLanguage.withValue("zh-Hans") {
-            #expect(spendSessionPerformanceText(summary) == "整轮输出：2.0 tok/s · 每轮耗时：10.0 秒")
+            let metrics = spendSessionPerformanceMetrics(summary)
+            #expect(metrics.map(\.label) == ["首 token", "整轮速度", "每轮耗时"])
+            #expect(metrics.map(\.value) == ["—", "2.0 tok/s", "10.0 秒"])
         }
     }
 
@@ -139,10 +143,12 @@ struct SpendSessionPerformanceTests {
             cachedInputTokens: 80))
         let summary = try #require(CostUsageTurnPerformanceSummary(samples: [sample]))
         CodexBarLocalizationOverride.$appLanguage.withValue("en") {
-            let lines = spendSessionPerformanceDetailLines(summary)
-            #expect(lines.contains("P95 first token: 0 / 20 samples"))
-            #expect(lines.contains("P95 turn duration: 1 / 20 samples"))
-            #expect(lines.contains("Cached input: 80.0% (1 / 1 turns)"))
+            let metrics = spendSessionPerformanceDetailMetrics(summary)
+            #expect(metrics[0].value == "—")
+            #expect(metrics[0].note == "0 / 20 samples · insufficient")
+            #expect(metrics[1].note == "1 / 20 samples · insufficient")
+            #expect(metrics[3].value == "80.0%")
+            #expect(metrics[3].note == "1 / 1 turns with cache data")
         }
     }
 

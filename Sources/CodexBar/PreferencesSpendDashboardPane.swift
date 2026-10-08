@@ -1042,37 +1042,35 @@ struct SpendSessionRows: View {
                 if row.rank > 1 {
                     Divider()
                 }
-                HStack(spacing: 10) {
-                    Text(spendDashboardRankText(row.rank))
-                        .font(.caption.monospacedDigit())
-                        .foregroundStyle(.tertiary)
-                        .frame(width: 26, alignment: .leading)
-                    SpendProviderIcon(provider: row.provider, sourceKind: .native)
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack(alignment: .top, spacing: 10) {
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(identity.name)
-                                    .lineLimit(1)
-                                    .help(identity.name)
-                                Text(subtitle)
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                                    .lineLimit(1)
-                                    .help(subtitle)
-                            }
-                            Spacer()
-                            Text(spendDashboardMetricText(
-                                cost: row.totalCost,
-                                tokens: row.totalTokens,
-                                currencyCode: self.group.currencyCode))
-                                .monospacedDigit()
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack(alignment: .top, spacing: 10) {
+                        SpendProviderIcon(provider: row.provider, sourceKind: .native)
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text(identity.name)
+                                .fontWeight(.medium)
+                                .lineLimit(1)
+                                .help(identity.name)
+                            Text(subtitle)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                                .lineLimit(1)
+                                .help(subtitle)
                         }
-                        if let performance = row.turnPerformance {
-                            SpendSessionPerformanceView(summary: performance)
-                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        Text(spendDashboardMetricText(
+                            cost: row.totalCost,
+                            tokens: row.totalTokens,
+                            currencyCode: self.group.currencyCode))
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .monospacedDigit()
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    if let performance = row.turnPerformance {
+                        SpendSessionPerformanceView(summary: performance)
                     }
                 }
-                .padding(.vertical, 9)
+                .padding(.vertical, 12)
             }
             SpendPanelExpandButton(
                 rowCount: self.group.sessions.count,
