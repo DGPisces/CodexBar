@@ -8,7 +8,8 @@ read_when:
 # Spend session turn performance validation
 
 Validated on arm64 macOS 27 with Swift 6.4. Current installed-window code:
-`d66ac3e9cc37eb4a1e8f46b143aec35f8887ec31`. The historical release comparison
+`7290172ec2fd8cc780269864b66e136560a24fac` (structured layout; final native
+interaction remains blocked by a locked host session). The historical release comparison
 used upstream baseline `ab32496d3c1f861981aa1a19aee2f933204f9bb9` and feature
 production code `22fdcb88e8d77a03c9d8447f889012247d4bb483`.
 The original validation used parser revision 9. The advanced details use parser revision 11 after merging main at `03a51bdcf`; the current generated parser hash is checked by `make check`.
@@ -17,7 +18,7 @@ The original validation used parser revision 9. The advanced details use parser 
 
 Native Codex session rows show total valid output tokens divided by total valid
 turn duration, median available first-token latency, and median completed-turn
-duration. The number of timed turns remains in the tooltip and expanded details. Output includes reasoning tokens already contained in output. Duration
+duration. The number of timed turns remains visible beside the collapsed disclosure and in its tooltip. Output includes reasoning tokens already contained in output. Duration
 includes tools, retries, network and waiting; this is whole-turn throughput.
 Session summaries can combine models and tool-heavy turns and are not a model
 streaming benchmark. Samples belong to their completion day.
@@ -78,7 +79,8 @@ provider CLI stub. No credentials or account configuration were copied.
 
 Those earlier artifacts did not establish installed-window behavior. The current
 synthetic native-window checks and their bounded runtime limits are recorded in
-[Installed-window verification](#installed-window-verification-2026-10-07) below.
+[Structured session layout](#structured-session-layout-2026-10-08) and the historical
+[installed-window verification](#installed-window-verification-2026-10-07) below.
 
 ## Follow-up date-filter review
 
@@ -345,3 +347,61 @@ revisions. See the [exact receipt](proofs/spend-turn-performance-details.json).
 A separate post-suite confirmation of `OpenAISubscriptionMetadataTests` passed
 all seven XCTest cases without retry. This does not erase the full-run first-pass
 fixture timeout recorded above.
+
+## Structured session layout (2026-10-08)
+
+Session rows now separate the title/billing header from the performance metrics.
+The provider icon stays beside the title, with billing as secondary text. The
+visible session rank was removed. Three primary values show first-token latency,
+whole-turn output and completed-turn duration; labels remain smaller than values.
+
+The initially collapsed disclosure keeps the timed-turn count visible. Expanded
+details use four aligned fields for P95 first token, P95 duration, the middle 50%
+of per-turn speeds and cached input, including its coverage. Missing values use
+an em dash with an independent insufficient-sample note. Model/effort observations
+use a comparison table with aligned numeric columns and partial TTFT coverage;
+narrow widths switch to compact model blocks. Explanation is available through
+help and accessibility text instead of repeated prose in each row.
+
+The data contract above remains unchanged. These observations include workload,
+reasoning, tools and waits and are not a model streaming-speed leaderboard.
+
+Validation and screenshots are recorded separately from the October 7 layout.
+
+Production UI renders were checked in English and Simplified Chinese, light and
+dark, at 320, 420 and 820 points. The installed `70937cc62` window completed the
+seven-day/collapse/expand/today/clear/yesterday/clear checks, with 24/12/12 timed
+turns matching the independent synthetic reference. Continuous expansion was
+interrupted when its AX window became unavailable; the process remained alive.
+These screenshots belong to that UI revision, which is unchanged by the latest
+upstream merge.
+
+![Structured details in the installed window, synthetic data](screenshots/spend-turn-performance-layout-expanded-synthetic.png)
+
+[Collapsed](screenshots/spend-turn-performance-layout-collapsed-synthetic.png) ·
+[Selected day with insufficient P95 samples](screenshots/spend-turn-performance-layout-today-synthetic.png) ·
+[Narrow dark component](screenshots/spend-turn-performance-layout-narrow-dark-synthetic.png)
+
+The latest source merges upstream `844b0e19b`. Parser revision 11 now has hash
+`c0f8e9be04d824c2`; value-preserving string-sharing and earlier timing caches
+remain compatible, including saved report pricing. Forty-six focused tests in
+five suites passed, including all 47 predecessor-adoption parameter cases.
+`make check` passed with 2,856 Swift files and zero violations. A fresh complete
+four-worker regression exited 0: all 144 groups and 1,599 selections passed on
+the first attempt, with no failures, timeouts or retries (592.1 seconds; runtime
+inventory verified 14,098 methods).
+
+The first layout run stopped at the Italian unchanged-key allowlist. Four shared
+unit/numeric formats were registered explicitly; exact set equality remains.
+The failed run is retained in the receipt and is not counted as passed.
+
+A fresh debug/ad-hoc bundle was built from the clean merged source. Its isolated
+cache contains exactly one synthetic file and 24 usage rows; no credentials were
+copied. Final native-window repetition is **not passed**: macOS reported
+`CGSSessionScreenIsLocked = 1`; the accessibility windows were returned with the
+wrong roles, and target-window capture was unavailable. The process stayed
+running. Before diagnosing the lock, the watchdog recorded 540/840/384 ms on a
+shared host with the regression concurrently active. This is not stall-free or
+release performance evidence. A restart while locked recorded 393/557 ms; it
+also does not establish interactive responsiveness. Unlocking the host is required to finish this
+runtime gate. Earlier October 7 runtime receipts remain historical evidence.
