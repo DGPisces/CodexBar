@@ -1666,6 +1666,18 @@
 "Unavailable profile: %@" = "配置文件不可用：%@";
 "Read only the selected %@ profile. Accounts are never selected automatically." = "仅读取所选的 %@ 配置文件。绝不会自动选择账户。";
 
+// Completed Codex turn timing.
+"spend_turn_performance_help" = "整轮输出包含推理、工具执行和等待时间，不能代表模型生成速度。首 token 是第一枚模型 token 的延迟中位数，可能属于推理。仅统计成功且计时完整的轮次。 每轮耗时是完整轮次耗时的中位数。";
+"First-token samples: %@ / %@" = "首 token 样本：%@ / %@";
+
+// Completed-turn performance details.
+"Performance details" = "性能详情";
+"Observed turns; workload and tools affect these results." = "实际完成轮次的统计；任务内容和工具耗时会影响结果。";
+"By model and reasoning effort" = "按模型与推理档位对比";
+"Unknown model" = "模型未知或混用";
+"Unknown reasoning effort" = "推理档位未知或混用";
+"Model first token may be reasoning, before visible answer text." = "模型首 token 可能是推理内容，早于可见回答。";
+"Speed range needs 4 completed turns." = "速度范围至少需要 4 个完成轮次。";
 "All accounts" = "全部账号";
 "Refresh all accounts" = "刷新全部账号";
 "CodexBar follows" = "CodexBar 跟随账号";
@@ -1673,7 +1685,6 @@
 "Refreshes up to %@ accounts at a time." = "每批最多刷新 %@ 个账号。";
 "Each account has its own limits. Viewing usage does not switch accounts." = "各账号的额度独立计算。查看用量不会切换账号。";
 "Local usage is shared across accounts on this Mac." = "本机用量包含这台 Mac 上各账号的使用记录。";
-
 "Local usage" = "本机用量";
 "Local usage comes from the current Codex profile." = "本机用量来自当前 Codex 配置档案。";
 
@@ -1688,6 +1699,28 @@
 "Models for this day" = "查看当天模型";
 
 "Click a bar to explore. Use the menu below for exact amounts." = "点击柱形逐层查看，下方菜单可查询具体金额。";
+
+// Structured session performance layout.
+"spend_performance_first_token" = "首 token";
+"spend_performance_output" = "整轮速度";
+"spend_performance_duration" = "每轮耗时";
+"spend_performance_turn_count" = "%@ 个计时轮次";
+"spend_performance_turns" = "轮数";
+"spend_performance_model_effort" = "模型 / 推理档位";
+"spend_performance_p95_first_token" = "P95 首 token";
+"spend_performance_p95_duration" = "P95 每轮耗时";
+"spend_performance_speed_range" = "整轮速度区间";
+"spend_performance_cached_input" = "缓存输入";
+"spend_performance_seconds" = "%@ 秒";
+"spend_performance_rate" = "%@ tok/s";
+"spend_performance_rate_range" = "%@–%@ tok/s";
+"spend_performance_percent" = "%@%%";
+"spend_performance_p95_samples" = "%@ / 20 个样本 · 不足";
+"spend_performance_coverage" = "%@ / %@ 轮有缓存数据";
+"spend_performance_p95_help" = "95% 的观测轮次不超过该数值。每项指标分别需要至少 20 个有效样本。";
+"spend_performance_speed_range_help" = "每轮输出速度的中间 50%（P25–P75）。任务、推理、工具和等待都会影响这个区间。";
+"spend_performance_cache_help" = "有效轮次中，缓存输入占总输入的比例。按输入 token 加权，并显示样本覆盖情况。";
+"spend_performance_metric_help" = "关于这些统计";
 "merged_icon_source_title" = "合并图标来源";
 "merged_icon_source_subtitle" = "选择折叠后的合并图标显示哪个服务提供方。";
 "merged_icon_source_current_selection" = "当前选择";
