@@ -19,29 +19,30 @@ extension UsageStore {
             let record = matches.count == 1 ? matches.first : nil
             let sourceLabel = PersonalInfoRedactor.redactEmails(
                 in: record?.sourceLabel, isEnabled: self.settings.hidePersonalInfo)
-            let followedError: String? = if account.id == projection.activeVisibleAccountID,
-                                            let owner = self.lastCodexUsagePublicationGuard,
-                                            Self.codexScopedRefreshGuardsMatchAccount(
-                                                owner, Self.codexScopedRefreshGuard(for: account))
-            {
-                self.userFacingError(for: .codex)
-            } else {
-                nil
-            }
+            let isFollowed = account.id == projection.activeVisibleAccountID
+            let ownsLiveUsage = isFollowed && self.lastCodexUsagePublicationGuard.map {
+                Self.codexScopedRefreshGuardsMatchAccount($0, Self.codexScopedRefreshGuard(for: account))
+            } == true
+            let followedError = ownsLiveUsage ? self.userFacingError(for: .codex) : nil
             let error = PersonalInfoRedactor.redactEmails(
                 in: followedError ?? CodexUIErrorMapper.userFacingMessage(record?.error),
                 isEnabled: self.settings.hidePersonalInfo)
-            let model = UsageMenuCardView.Model.make(self.menuCardInput(for: .codex, context: .settingsAccount(.init(
+            var model = UsageMenuCardView.Model.make(self.menuCardInput(for: .codex, context: .settingsAccount(.init(
                 snapshot: record?.snapshot,
                 error: error,
                 info: AccountInfo(email: account.email, plan: nil),
                 privacyOrdinal: ordinals[account.id].flatMap { PersonalInfoRedactor.AccountOrdinal($0) },
                 sourceLabel: sourceLabel,
                 credits: record?.credits))))
+            if ownsLiveUsage {
+                // Keep authorized dashboard extras on their owner; sibling cards never read live adjuncts.
+                let liveModel = UsageMenuCardView.Model.make(self.menuCardInput(for: .codex, context: .settings))
+                model.metrics += liveModel.metrics.filter { $0.id == "code-review" }
+            }
             return ProviderAccountUsageOverview.Row(
                 id: account.id,
                 title: labels[account.id] ?? account.menuDisplayName,
-                isFollowed: account.id == projection.activeVisibleAccountID,
+                isFollowed: isFollowed,
                 isSystem: account.id == projection.liveVisibleAccountID,
                 model: model.applyingUsageItemVisibility(hiddenItemIDs: self.settings.hiddenUsageItemIDs(for: .codex)),
                 usageItems: model.usageItemDescriptors,
@@ -55,14 +56,6 @@ extension UsageStore {
             refreshLimit: Self.tokenAccountMenuSnapshotLimit,
             canRefresh: self.isEnabled(.codex) && !self.refreshingProviders.contains(.codex),
             onRefresh: onRefresh)
-    }
-
-    func refreshCodexFromSettingsHeader(allowDisabled: Bool = false) async {
-        if let overview = self.codexAccountUsageOverview(onRefresh: { _ in }) {
-            await self.refreshCodexAccountsForSettings(
-                Set(overview.rows.map(\.id)), allowDisabled: allowDisabled)
-        }
-        await self.refreshCodexAccountScopedState(allowDisabled: allowDisabled)
     }
 
     func refreshCodexAccountsForSettings(_ accountIDs: Set<String>, allowDisabled: Bool = false) async {

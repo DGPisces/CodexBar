@@ -38,28 +38,66 @@ extension CodexAccountScopedRefreshTests {
                         .formStyle(.grouped)
                         .frame(width: width, height: 1080)
                         .environment(\.colorScheme, .light)
-                        let hosting = NSHostingView(rootView: content)
-                        hosting.appearance = NSAppearance(named: .aqua)
-                        hosting.frame = CGRect(origin: .zero, size: hosting.fittingSize)
-                        let window = NSWindow(
-                            contentRect: hosting.frame, styleMask: [.borderless], backing: .buffered, defer: false)
-                        window.isReleasedWhenClosed = false
-                        window.contentView = hosting
-                        defer {
-                            window.contentView = nil
-                            window.close()
-                        }
-                        window.layoutIfNeeded()
-                        hosting.layoutSubtreeIfNeeded()
-                        RunLoop.current.run(until: Date().addingTimeInterval(0.1))
-                        let bitmap = try #require(hosting.bitmapImageRepForCachingDisplay(in: hosting.bounds))
-                        hosting.cacheDisplay(in: hosting.bounds, to: bitmap)
-                        try #require(bitmap.representation(using: .png, properties: [:])).write(
-                            to: output.appendingPathComponent("overview-\(language)-\(Int(width)).png"),
-                            options: .atomic)
+                        try self.writeOverviewProof(content, to: output.appendingPathComponent(
+                            "overview-\(language)-\(Int(width)).png"))
                     }
                 }
             }
         }
+    }
+
+    @Test
+    func `render synthetic prior single account settings usage`() async throws {
+        guard let path = ProcessInfo.processInfo.environment["CODEXBAR_ACCOUNT_OVERVIEW_PROOF_DIR"] else { return }
+        let output = URL(fileURLWithPath: path, isDirectory: true)
+        try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
+        try await self.withSelectedAccountRetentionFixture(sameEmail: true, count: 3) { store, _, accounts in
+            store.snapshots[.codex] = store.codexAccountSnapshots.first { $0.id == accounts[0].id }?.snapshot
+            try CodexBarLocalizationOverride.$appLanguage.withValue("en") {
+                let model = store.menuCardModel(for: .codex, context: .settings)
+                // The pre-overview settings layout uses these same shared components for one live model.
+                let content = Form {
+                    Text("Synthetic Codex account data — prior settings layout").font(.headline)
+                    Section {
+                        ProviderDetailInfoRows(
+                            provider: .codex, store: store, isEnabled: true, versionText: nil, model: model)
+                    }
+                    Section {
+                        ProviderMetricsInlineView(
+                            provider: .codex,
+                            model: model,
+                            openAIWebDiagnostic: nil,
+                            isEnabled: true,
+                            isRefreshing: false)
+                    } header: {
+                        Text(L("Usage"))
+                    }
+                }
+                .formStyle(.grouped)
+                .frame(width: 860, height: 440)
+                .environment(\.colorScheme, .light)
+                try self.writeOverviewProof(content, to: output.appendingPathComponent("before-en-860.png"))
+            }
+        }
+    }
+
+    private func writeOverviewProof(_ content: some View, to url: URL) throws {
+        let hosting = NSHostingView(rootView: content)
+        hosting.appearance = NSAppearance(named: .aqua)
+        hosting.frame = CGRect(origin: .zero, size: hosting.fittingSize)
+        let window = NSWindow(
+            contentRect: hosting.frame, styleMask: [.borderless], backing: .buffered, defer: false)
+        window.isReleasedWhenClosed = false
+        window.contentView = hosting
+        defer {
+            window.contentView = nil
+            window.close()
+        }
+        window.layoutIfNeeded()
+        hosting.layoutSubtreeIfNeeded()
+        RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+        let bitmap = try #require(hosting.bitmapImageRepForCachingDisplay(in: hosting.bounds))
+        hosting.cacheDisplay(in: hosting.bounds, to: bitmap)
+        try #require(bitmap.representation(using: .png, properties: [:])).write(to: url, options: .atomic)
     }
 }

@@ -2,6 +2,10 @@
 
 ## 0.73.1 — Unreleased
 
+### Added
+
+- Codex: show saved accounts with their own cached usage, errors, and privacy labels in settings, with individual or all-account refresh controls that preserve the followed and System accounts (#4310). Thanks @Yuxin-Qiao!
+
 ## 0.73.0 — 2026-10-07
 
 ### Highlights

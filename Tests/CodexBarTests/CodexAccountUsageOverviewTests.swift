@@ -17,6 +17,9 @@ extension CodexAccountScopedRefreshTests {
     func `overview retains every inventory row and never borrows selected account data`() async throws {
         try await self.withSelectedAccountRetentionFixture(sameEmail: true, count: 8) { store, _, accounts in
             store.codexAccountSnapshots.removeAll { $0.id == accounts[7].id }
+            let recorder = OverviewFetchRecorder()
+            self.installOverviewProvider(on: store, accounts: accounts, recorder: recorder)
+            let capturedDates = store.codexAccountSnapshots.map { $0.snapshot?.updatedAt }
             let source = store.settings.codexActiveSource
             let overview = try #require(store.codexAccountUsageOverview(onRefresh: { _ in }))
             #expect(overview.rows.count == 8)
@@ -30,6 +33,22 @@ extension CodexAccountScopedRefreshTests {
             #expect(overview.rows.allSatisfy { $0.model.tokenUsage == nil })
             #expect(overview.rows.first { $0.id == accounts[1].id }?.error != nil)
             #expect(store.settings.codexActiveSource == source)
+            #expect(await recorder.workspaceIDs.isEmpty)
+            #expect(store.codexAccountSnapshots.map { $0.snapshot?.updatedAt } == capturedDates)
+        }
+    }
+
+    @Test(arguments: [0, 1])
+    func `zero and one account retain the single account settings presentation`(count: Int) async throws {
+        try await self.withSelectedAccountRetentionFixture(sameEmail: false, count: count) { store, _, accounts in
+            #expect(store.settings.codexVisibleAccountProjection.visibleAccounts.count == count)
+            #expect(store.codexAccountUsageOverview(onRefresh: { _ in }) == nil)
+            if let account = accounts.first {
+                store.snapshots[.codex] = store.codexAccountSnapshots.first?.snapshot
+                let model = store.menuCardModel(for: .codex, context: .settings)
+                #expect(model.email == account.email)
+                #expect(!model.metrics.isEmpty)
+            }
         }
     }
 
@@ -37,9 +56,19 @@ extension CodexAccountScopedRefreshTests {
     func `overview privacy labels stay distinct across same email workspaces`() async throws {
         try await self.withSelectedAccountRetentionFixture(sameEmail: true) { store, _, _ in
             store.settings.hidePersonalInfo = true
+            store.codexAccountSnapshots = store.codexAccountSnapshots.map { record in
+                CodexAccountUsageSnapshot(
+                    account: record.account,
+                    snapshot: record.snapshot,
+                    error: "Failed for shared@example.com",
+                    sourceLabel: "oauth shared@example.com",
+                    credits: record.credits)
+            }
             let overview = try #require(store.codexAccountUsageOverview(onRefresh: { _ in }))
             #expect(Set(overview.rows.map(\.title)).count == 2)
             #expect(overview.rows.allSatisfy { !$0.title.contains("@") && !$0.model.email.contains("@") })
+            #expect(overview.rows.allSatisfy { $0.error?.contains("@") == false })
+            #expect(overview.rows.allSatisfy { $0.sourceLabel?.contains("@") == false })
         }
     }
 
@@ -192,25 +221,62 @@ extension CodexAccountScopedRefreshTests {
         }
     }
 
-    @Test
-    func `settings header refresh preserves followed account dashboard enrichment`() async throws {
-        try await self.withSelectedAccountRetentionFixture(sameEmail: true) { store, _, accounts in
+    @Test(arguments: [false, true])
+    func `settings header refreshes followed usage once with dashboard enrichment`(sameEmail: Bool) async throws {
+        try await self.withSelectedAccountRetentionFixture(sameEmail: sameEmail) { store, _, accounts in
             store.settings.openAIWebAccessEnabled = true
             store.settings.codexCookieSource = .auto
             let recorder = OverviewFetchRecorder()
             self.installOverviewProvider(on: store, accounts: accounts, recorder: recorder)
 
+            var creditsCalled = false
+            store._test_codexCreditsLoaderOverride = {
+                creditsCalled = true
+                return self.credits(remaining: 42)
+            }
             var dashboardCalled = false
             store._test_openAIDashboardLoaderOverride = { _, _, _, _ in
                 dashboardCalled = true
-                return self.dashboard(email: accounts[0].email, creditsRemaining: 42, usedPercent: 10)
+                return OpenAIDashboardSnapshot(
+                    signedInEmail: accounts[0].email,
+                    accountID: accounts[0].workspaceAccountID,
+                    codeReviewRemainingPercent: 88,
+                    creditEvents: [],
+                    dailyBreakdown: [],
+                    usageBreakdown: [],
+                    creditsPurchaseURL: nil,
+                    creditsRemaining: 42,
+                    updatedAt: Date())
             }
-            defer { store._test_openAIDashboardLoaderOverride = nil }
+            defer {
+                store._test_codexCreditsLoaderOverride = nil
+                store._test_openAIDashboardLoaderOverride = nil
+            }
 
-            await store.refreshCodexFromSettingsHeader(allowDisabled: true)
+            await store.refreshCodexAccountScopedState(allowDisabled: true)
             let fetched = await recorder.workspaceIDs
-            #expect(Set(fetched) == Set(accounts.compactMap(\.workspaceAccountID)))
+            #expect(fetched == accounts.prefix(1).compactMap(\.workspaceAccountID))
+            #expect(creditsCalled)
             #expect(dashboardCalled)
+            #expect(!store.openAIDashboardRequiresLogin)
+            #expect(store.openAIDashboard?.accountID == accounts[0].workspaceAccountID)
+            let overview = try #require(store.codexAccountUsageOverview(onRefresh: { _ in }))
+            let followed = try #require(overview.rows.first { $0.isFollowed })
+            let liveReview = store.menuCardModel(for: .codex, context: .settings)
+                .metrics.first { $0.id == "code-review" }
+            if sameEmail {
+                #expect(liveReview == nil)
+                #expect(!followed.model.metrics.contains { $0.id == "code-review" })
+            } else {
+                let review = try #require(liveReview)
+                #expect(followed.model.metrics.first { $0.id == "code-review" }?.percent == review.percent)
+            }
+            #expect(overview.rows.filter { !$0.isFollowed }.allSatisfy { row in
+                !row.model.metrics.contains { $0.id == "code-review" }
+            })
+            store.lastCodexUsagePublicationGuard = UsageStore.codexScopedRefreshGuard(for: accounts[1])
+            let mismatched = try #require(store.codexAccountUsageOverview(onRefresh: { _ in }))
+            #expect(mismatched.rows.allSatisfy { row in !row.model.metrics.contains { $0.id == "code-review" } })
         }
     }
 }
